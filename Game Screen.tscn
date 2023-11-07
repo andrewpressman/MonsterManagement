@@ -1,0 +1,295 @@
+[gd_scene load_steps=9 format=3 uid="uid://crrb8pd5fdrp4"]
+
+[ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
+[ext_resource type="Script" path="res://Audio Controller.gd" id="1_jtjcn"]
+[ext_resource type="Script" path="res://Clock.gd" id="2_kakbt"]
+[ext_resource type="AudioStream" uid="uid://cigyx5u5dqiyq" path="res://Assets/TestAudio.wav" id="2_pjbmj"]
+[ext_resource type="Script" path="res://Actions.gd" id="3_aqjdg"]
+[ext_resource type="Script" path="res://Character.gd" id="3_o7a42"]
+[ext_resource type="Texture2D" uid="uid://ea8a3ckdjpp2" path="res://Assets/RTEVaPZh_400x400.jpg" id="4_75rfu"]
+
+[sub_resource type="Theme" id="Theme_ks27t"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_61weh")
+
+[node name="Clock" type="Timer" parent="."]
+wait_time = 10.0
+script = ExtResource("2_kakbt")
+
+[node name="Waveform" type="Panel" parent="."]
+offset_left = 6.0
+offset_top = 9.0
+offset_right = 1138.0
+offset_bottom = 94.0
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pjbmj")
+
+[node name="Actions" type="Panel" parent="."]
+offset_left = 781.0
+offset_top = 104.0
+offset_right = 1135.0
+offset_bottom = 637.0
+script = ExtResource("3_aqjdg")
+
+[node name="PowerOn" type="Button" parent="Actions"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 344.0
+offset_bottom = 63.0
+text = "Power On"
+
+[node name="PowerOff" type="Button" parent="Actions"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 344.0
+offset_bottom = 63.0
+text = "Power Off"
+
+[node name="Agitate1" type="Button" parent="Actions"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 269.0
+offset_right = 249.0
+offset_bottom = 322.0
+text = "Agitate"
+
+[node name="Agitate2" type="Button" parent="Actions"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 328.0
+offset_right = 249.0
+offset_bottom = 381.0
+text = "Agitate"
+
+[node name="Agitate3" type="Button" parent="Actions"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 386.0
+offset_right = 249.0
+offset_bottom = 439.0
+text = "Agitate"
+
+[node name="Calm" type="Button" parent="Actions"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 270.0
+offset_right = 328.0
+offset_bottom = 440.0
+text = "Calm"
+
+[node name="Execute" type="Button" parent="Actions"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 450.0
+offset_right = 340.0
+offset_bottom = 516.0
+theme = SubResource("Theme_ks27t")
+text = "Execute"
+
+[node name="Audio Controller" type="Panel" parent="."]
+offset_left = 535.0
+offset_top = 19.0
+offset_right = 807.0
+offset_bottom = 86.0
+script = ExtResource("1_jtjcn")
+
+[node name="Play" type="Button" parent="Audio Controller"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = 69.0
+offset_bottom = 56.0
+text = "Play"
+
+[node name="Pause" type="Button" parent="Audio Controller"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 9.0
+offset_right = 157.0
+offset_bottom = 56.0
+text = "Pause"
+
+[node name="Restart" type="Button" parent="Audio Controller"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 10.0
+offset_right = 254.0
+offset_bottom = 57.0
+text = "Restart"
+
+[node name="HealthMonitor" type="Panel" parent="."]
+offset_left = 279.0
+offset_top = 104.0
+offset_right = 771.0
+offset_bottom = 633.0
+
+[node name="Character1" type="Panel" parent="HealthMonitor"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 476.0
+offset_bottom = 117.0
+script = ExtResource("3_o7a42")
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character1"]
+position = Vector2(49, 49)
+scale = Vector2(0.2025, 0.19)
+texture = ExtResource("4_75rfu")
+
+[node name="Status" type="Panel" parent="HealthMonitor/Character1"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 14.0
+offset_right = 440.0
+offset_bottom = 83.0
+
+[node name="Character2" type="Panel" parent="HealthMonitor"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 123.0
+offset_right = 476.0
+offset_bottom = 221.0
+script = ExtResource("3_o7a42")
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character2"]
+position = Vector2(49, 49)
+scale = Vector2(0.2025, 0.19)
+texture = ExtResource("4_75rfu")
+
+[node name="Status" type="Panel" parent="HealthMonitor/Character2"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 14.0
+offset_right = 440.0
+offset_bottom = 83.0
+
+[node name="Character3" type="Panel" parent="HealthMonitor"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 228.0
+offset_right = 476.0
+offset_bottom = 326.0
+script = ExtResource("3_o7a42")
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character3"]
+position = Vector2(49, 49)
+scale = Vector2(0.2025, 0.19)
+texture = ExtResource("4_75rfu")
+
+[node name="Status" type="Panel" parent="HealthMonitor/Character3"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 14.0
+offset_right = 440.0
+offset_bottom = 83.0
+
+[node name="Monster" type="Panel" parent="HealthMonitor"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 338.0
+offset_right = 476.0
+offset_bottom = 515.0
+script = ExtResource("3_o7a42")
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Monster"]
+position = Vector2(48, 82)
+scale = Vector2(0.2025, 0.19)
+texture = ExtResource("4_75rfu")
+
+[node name="Status" type="Panel" parent="HealthMonitor/Monster"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 14.0
+offset_right = 445.0
+offset_bottom = 163.0
+
+[node name="CaseNo" type="Panel" parent="."]
+offset_left = 7.0
+offset_top = 558.0
+offset_right = 274.0
+offset_bottom = 635.0
+
+[node name="GameState" type="Panel" parent="."]
+offset_left = 6.0
+offset_top = 105.0
+offset_right = 273.0
+offset_bottom = 186.0
+
+[node name="Score" type="Label" parent="GameState"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 11.0
+offset_right = 243.0
+offset_bottom = 70.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Extra" type="Panel" parent="."]
+offset_left = 7.0
+offset_top = 194.0
+offset_right = 274.0
+offset_bottom = 551.0
+
+[node name="Menu" type="Node2D" parent="."]
+
+[node name="MenuBox" type="Panel" parent="Menu"]
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 1132.0
+offset_bottom = 635.0
+
+[node name="Title" type="Label" parent="Menu/MenuBox"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 187.0
+offset_right = 703.0
+offset_bottom = 244.0
+text = "This is a game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="Menu/MenuBox"]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 383.0
+offset_right = 780.0
+offset_bottom = 442.0
+text = "Start"
+
+[node name="GameOver" type="Label" parent="Menu/MenuBox"]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 289.0
+offset_right = 659.0
+offset_bottom = 336.0
+text = "Game Over, try agian?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScore" type="Label" parent="Menu/MenuBox"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 335.0
+offset_right = 649.0
+offset_bottom = 370.0
+text = "Final Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
+[connection signal="pressed" from="Actions/PowerOn" to="Actions" method="_on_PowerOn_pressed"]
+[connection signal="pressed" from="Actions/PowerOff" to="Actions" method="_on_PowerOff_pressed"]
+[connection signal="pressed" from="Actions/Agitate1" to="Actions" method="_on_Agitate1_pressed"]
+[connection signal="pressed" from="Actions/Agitate2" to="Actions" method="_on_Agitate2_pressed"]
+[connection signal="pressed" from="Actions/Agitate3" to="Actions" method="_on_Agitate3_pressed"]
+[connection signal="pressed" from="Actions/Calm" to="Actions" method="_on_Calm_pressed"]
+[connection signal="pressed" from="Actions/Execute" to="Actions" method="_on_execute_button_pressed"]
+[connection signal="pressed" from="Audio Controller/Play" to="Audio Controller" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Audio Controller/Pause" to="Audio Controller" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="Audio Controller/Restart" to="Audio Controller" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Menu/MenuBox/Start" to="." method="StartGame"]
