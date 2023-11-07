@@ -2,24 +2,46 @@ extends Panel
 
 var GameController: Node2D
 
+#Monster Controls
 var Agitate1Button: Button
 var Agitate2Button: Button
 var Agitate3Button: Button
 var CalmButton: Button
+
+#Power Controls
 var PowerOnButton: Button
 var PowerOffButton: Button
+
+#Character Controls
+var Char1Trigger : Button
+var Char1Type : Button
+var Char2Trigger : Button
+var Char2Type : Button
+var Char3Trigger : Button
+var Char3Type : Button
+
 var executeButton: Button
 
 var selectedButton: Button  # Stores the currently selected button
 
 func _ready():
-	Agitate1Button = $Agitate1
-	Agitate2Button = $Agitate2
-	Agitate3Button = $Agitate3
-	CalmButton = $Calm
+	Agitate1Button = $Monster/Agitate1
+	Agitate2Button = $Monster/Agitate2
+	Agitate3Button = $Monster/Agitate3
+	
+	CalmButton = $Monster/Calm
 	executeButton = $Execute
-	PowerOnButton = $PowerOn
-	PowerOffButton = $PowerOff
+	
+	PowerOnButton = $Environment/Power/PowerOn
+	PowerOffButton = $Environment/Power/PowerOff
+	
+	Char1Trigger = $Char1Ping/PingType
+	Char1Type = $Char1Ping/PingTrigger
+	#Char2Trigger = $Char2Ping/PingType
+	#Char2Type = $Char2Ping/PingTrigger
+	#Char3Trigger = $Char3Ping/PingType
+	#Char3Type = $Char3Ping/PingTrigger
+	
 	GameController = get_parent()
 	# Initially, no button is selected
 	selectedButton = null

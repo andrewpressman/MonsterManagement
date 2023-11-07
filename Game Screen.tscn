@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=10 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Audio Controller.gd" id="1_jtjcn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Actions.gd" id="3_aqjdg"]
 [ext_resource type="Script" path="res://Character.gd" id="3_o7a42"]
 [ext_resource type="Texture2D" uid="uid://ea8a3ckdjpp2" path="res://Assets/RTEVaPZh_400x400.jpg" id="4_75rfu"]
+[ext_resource type="Script" path="res://CharacterPing.gd" id="5_1bmgd"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
 
@@ -33,52 +34,116 @@ offset_right = 1135.0
 offset_bottom = 637.0
 script = ExtResource("3_aqjdg")
 
-[node name="PowerOn" type="Button" parent="Actions"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 10.0
-offset_right = 344.0
-offset_bottom = 63.0
+[node name="Environment" type="Node" parent="Actions"]
+
+[node name="PingAll" type="Button" parent="Actions/Environment"]
+offset_left = 794.0
+offset_top = 178.0
+offset_right = 1123.0
+offset_bottom = 232.0
+text = "Ping Subjects"
+
+[node name="Power" type="Node" parent="Actions/Environment"]
+
+[node name="PowerOn" type="Button" parent="Actions/Environment/Power"]
+offset_left = 793.0
+offset_top = 114.0
+offset_right = 1125.0
+offset_bottom = 167.0
 text = "Power On"
 
-[node name="PowerOff" type="Button" parent="Actions"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 10.0
-offset_right = 344.0
-offset_bottom = 63.0
+[node name="PowerOff" type="Button" parent="Actions/Environment/Power"]
+offset_left = 793.0
+offset_top = 114.0
+offset_right = 1125.0
+offset_bottom = 167.0
 text = "Power Off"
 
-[node name="Agitate1" type="Button" parent="Actions"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 269.0
-offset_right = 249.0
-offset_bottom = 322.0
+[node name="Char1Ping" type="Node" parent="Actions/Environment"]
+script = ExtResource("5_1bmgd")
+
+[node name="PingType" type="CheckButton" parent="Actions/Environment/Char1Ping"]
+offset_left = 801.0
+offset_top = 242.0
+offset_right = 889.0
+offset_bottom = 275.0
+text = "Calm"
+
+[node name="PingTrigger" type="Button" parent="Actions/Environment/Char1Ping"]
+offset_left = 799.0
+offset_top = 273.0
+offset_right = 893.0
+offset_bottom = 360.0
+text = "Ping
+subject
+1"
+
+[node name="Char2Ping" type="Node" parent="Actions/Environment"]
+script = ExtResource("5_1bmgd")
+
+[node name="PingType" type="CheckButton" parent="Actions/Environment/Char2Ping"]
+offset_left = 915.0
+offset_top = 243.0
+offset_right = 1003.0
+offset_bottom = 276.0
+text = "Calm"
+
+[node name="PingTrigger" type="Button" parent="Actions/Environment/Char2Ping"]
+offset_left = 913.0
+offset_top = 274.0
+offset_right = 1007.0
+offset_bottom = 361.0
+text = "Ping
+subject
+1"
+
+[node name="Char3Ping" type="Node" parent="Actions/Environment"]
+script = ExtResource("5_1bmgd")
+
+[node name="PingType" type="CheckButton" parent="Actions/Environment/Char3Ping"]
+offset_left = 1028.0
+offset_top = 243.0
+offset_right = 1116.0
+offset_bottom = 276.0
+text = "Calm"
+
+[node name="PingTrigger" type="Button" parent="Actions/Environment/Char3Ping"]
+offset_left = 1026.0
+offset_top = 274.0
+offset_right = 1120.0
+offset_bottom = 361.0
+text = "Ping
+subject
+1"
+
+[node name="Monster" type="Node" parent="Actions"]
+
+[node name="Agitate1" type="Button" parent="Actions/Monster"]
+offset_left = 799.0
+offset_top = 373.0
+offset_right = 1030.0
+offset_bottom = 426.0
 text = "Agitate"
 
-[node name="Agitate2" type="Button" parent="Actions"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 328.0
-offset_right = 249.0
-offset_bottom = 381.0
+[node name="Agitate2" type="Button" parent="Actions/Monster"]
+offset_left = 799.0
+offset_top = 432.0
+offset_right = 1030.0
+offset_bottom = 485.0
 text = "Agitate"
 
-[node name="Agitate3" type="Button" parent="Actions"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 386.0
-offset_right = 249.0
-offset_bottom = 439.0
+[node name="Agitate3" type="Button" parent="Actions/Monster"]
+offset_left = 799.0
+offset_top = 490.0
+offset_right = 1030.0
+offset_bottom = 543.0
 text = "Agitate"
 
-[node name="Calm" type="Button" parent="Actions"]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 270.0
-offset_right = 328.0
-offset_bottom = 440.0
+[node name="Calm" type="Button" parent="Actions/Monster"]
+offset_left = 1037.0
+offset_top = 374.0
+offset_right = 1109.0
+offset_bottom = 544.0
 text = "Calm"
 
 [node name="Execute" type="Button" parent="Actions"]
@@ -236,6 +301,7 @@ offset_right = 274.0
 offset_bottom = 551.0
 
 [node name="Menu" type="Node2D" parent="."]
+visible = false
 
 [node name="MenuBox" type="Panel" parent="Menu"]
 offset_left = 7.0
@@ -263,10 +329,10 @@ text = "Start"
 
 [node name="GameOver" type="Label" parent="Menu/MenuBox"]
 layout_mode = 0
-offset_left = 468.0
-offset_top = 289.0
-offset_right = 659.0
-offset_bottom = 336.0
+offset_left = 469.0
+offset_top = 274.0
+offset_right = 660.0
+offset_bottom = 321.0
 text = "Game Over, try agian?"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -282,12 +348,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
-[connection signal="pressed" from="Actions/PowerOn" to="Actions" method="_on_PowerOn_pressed"]
-[connection signal="pressed" from="Actions/PowerOff" to="Actions" method="_on_PowerOff_pressed"]
-[connection signal="pressed" from="Actions/Agitate1" to="Actions" method="_on_Agitate1_pressed"]
-[connection signal="pressed" from="Actions/Agitate2" to="Actions" method="_on_Agitate2_pressed"]
-[connection signal="pressed" from="Actions/Agitate3" to="Actions" method="_on_Agitate3_pressed"]
-[connection signal="pressed" from="Actions/Calm" to="Actions" method="_on_Calm_pressed"]
+[connection signal="pressed" from="Actions/Environment/Power/PowerOn" to="Actions" method="_on_PowerOn_pressed"]
+[connection signal="pressed" from="Actions/Environment/Power/PowerOff" to="Actions" method="_on_PowerOff_pressed"]
+[connection signal="toggled" from="Actions/Environment/Char1Ping/PingType" to="Actions/Environment/Char1Ping" method="_on_check_button_toggled"]
+[connection signal="toggled" from="Actions/Environment/Char2Ping/PingType" to="Actions/Environment/Char2Ping" method="_on_check_button_toggled"]
+[connection signal="toggled" from="Actions/Environment/Char3Ping/PingType" to="Actions/Environment/Char3Ping" method="_on_check_button_toggled"]
+[connection signal="pressed" from="Actions/Monster/Agitate1" to="Actions" method="_on_Agitate1_pressed"]
+[connection signal="pressed" from="Actions/Monster/Agitate2" to="Actions" method="_on_Agitate2_pressed"]
+[connection signal="pressed" from="Actions/Monster/Agitate3" to="Actions" method="_on_Agitate3_pressed"]
+[connection signal="pressed" from="Actions/Monster/Calm" to="Actions" method="_on_Calm_pressed"]
 [connection signal="pressed" from="Actions/Execute" to="Actions" method="_on_execute_button_pressed"]
 [connection signal="pressed" from="Audio Controller/Play" to="Audio Controller" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Audio Controller/Pause" to="Audio Controller" method="_on_PauseButton_pressed"]
