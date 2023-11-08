@@ -41,7 +41,7 @@ offset_left = 794.0
 offset_top = 178.0
 offset_right = 1123.0
 offset_bottom = 232.0
-text = "Ping Subjects"
+text = "Ping all subjects"
 
 [node name="Power" type="Node" parent="Actions/Environment"]
 
@@ -95,7 +95,7 @@ offset_right = 1007.0
 offset_bottom = 361.0
 text = "Ping
 subject
-1"
+2"
 
 [node name="Char3Ping" type="Node" parent="Actions/Environment"]
 script = ExtResource("5_1bmgd")
@@ -114,7 +114,7 @@ offset_right = 1120.0
 offset_bottom = 361.0
 text = "Ping
 subject
-1"
+2"
 
 [node name="Monster" type="Node" parent="Actions"]
 
@@ -123,28 +123,29 @@ offset_left = 799.0
 offset_top = 373.0
 offset_right = 1030.0
 offset_bottom = 426.0
-text = "Agitate"
+text = "Agitate Anomaly"
 
 [node name="Agitate2" type="Button" parent="Actions/Monster"]
 offset_left = 799.0
 offset_top = 432.0
 offset_right = 1030.0
 offset_bottom = 485.0
-text = "Agitate"
+text = "Shock Anomaly"
 
 [node name="Agitate3" type="Button" parent="Actions/Monster"]
 offset_left = 799.0
 offset_top = 490.0
 offset_right = 1030.0
 offset_bottom = 543.0
-text = "Agitate"
+text = "Enrage Anomaly"
 
 [node name="Calm" type="Button" parent="Actions/Monster"]
 offset_left = 1037.0
 offset_top = 374.0
-offset_right = 1109.0
+offset_right = 1116.0
 offset_bottom = 544.0
-text = "Calm"
+text = "Calm
+Anomaly"
 
 [node name="Execute" type="Button" parent="Actions"]
 layout_mode = 0
@@ -156,9 +157,9 @@ theme = SubResource("Theme_ks27t")
 text = "Execute"
 
 [node name="Audio Controller" type="Panel" parent="."]
-offset_left = 535.0
+offset_left = 405.0
 offset_top = 19.0
-offset_right = 807.0
+offset_right = 677.0
 offset_bottom = 86.0
 script = ExtResource("1_jtjcn")
 
@@ -351,8 +352,11 @@ vertical_alignment = 1
 [connection signal="pressed" from="Actions/Environment/Power/PowerOn" to="Actions" method="_on_PowerOn_pressed"]
 [connection signal="pressed" from="Actions/Environment/Power/PowerOff" to="Actions" method="_on_PowerOff_pressed"]
 [connection signal="toggled" from="Actions/Environment/Char1Ping/PingType" to="Actions/Environment/Char1Ping" method="_on_check_button_toggled"]
+[connection signal="pressed" from="Actions/Environment/Char1Ping/PingTrigger" to="Actions" method="_on_Char1Trigger_pressed"]
 [connection signal="toggled" from="Actions/Environment/Char2Ping/PingType" to="Actions/Environment/Char2Ping" method="_on_check_button_toggled"]
+[connection signal="pressed" from="Actions/Environment/Char2Ping/PingTrigger" to="Actions" method="_on_Char2Trigger_pressed"]
 [connection signal="toggled" from="Actions/Environment/Char3Ping/PingType" to="Actions/Environment/Char3Ping" method="_on_check_button_toggled"]
+[connection signal="pressed" from="Actions/Environment/Char3Ping/PingTrigger" to="Actions" method="_on_Char3Trigger_pressed"]
 [connection signal="pressed" from="Actions/Monster/Agitate1" to="Actions" method="_on_Agitate1_pressed"]
 [connection signal="pressed" from="Actions/Monster/Agitate2" to="Actions" method="_on_Agitate2_pressed"]
 [connection signal="pressed" from="Actions/Monster/Agitate3" to="Actions" method="_on_Agitate3_pressed"]

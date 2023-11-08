@@ -35,12 +35,12 @@ func _ready():
 	PowerOnButton = $Environment/Power/PowerOn
 	PowerOffButton = $Environment/Power/PowerOff
 	
-	Char1Trigger = $Char1Ping/PingType
-	Char1Type = $Char1Ping/PingTrigger
-	#Char2Trigger = $Char2Ping/PingType
-	#Char2Type = $Char2Ping/PingTrigger
-	#Char3Trigger = $Char3Ping/PingType
-	#Char3Type = $Char3Ping/PingTrigger
+	Char1Trigger = $Environment/Char1Ping/PingTrigger
+	Char1Type = $Environment/Char1Ping/PingType
+	Char2Trigger = $Environment/Char2Ping/PingTrigger
+	Char2Type = $Environment/Char2Ping/PingType
+	Char3Trigger = $Environment/Char3Ping/PingTrigger
+	Char3Type = $Environment/Char3Ping/PingType
 	
 	GameController = get_parent()
 	# Initially, no button is selected
@@ -58,7 +58,7 @@ func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
 	
-	for button in [Agitate1Button, Agitate2Button, Agitate3Button, CalmButton, PowerOnButton, PowerOffButton]:
+	for button in [Agitate1Button, Agitate2Button, Agitate3Button, CalmButton, PowerOnButton, PowerOffButton, Char1Trigger, Char2Trigger, Char3Trigger]:
 		if button != selectedButton:
 			button.modulate = Color(1, 1, 1)  # Reset color
 
@@ -79,6 +79,15 @@ func _on_Agitate3_pressed():
 
 func _on_Calm_pressed():
 	update_button_selection(CalmButton)
+	
+func _on_Char1Trigger_pressed():
+	update_button_selection(Char1Trigger)
+
+func _on_Char2Trigger_pressed():
+	update_button_selection(Char2Trigger)
+	
+func _on_Char3Trigger_pressed():
+	update_button_selection(Char3Trigger)
 
 # Callback when the "Execute" button is pressed
 func _on_execute_button_pressed():
@@ -108,11 +117,30 @@ func _on_execute_button_pressed():
 		GameController.UpdateStatus(1,1,1,0)
 		togglePower()
 	
+	#Triggers for specific character agitation: increase for true, decrease for false
+	if selectedButton == Char1Trigger:
+		if $Environment/Char1Ping.CheckType():
+			GameController.UpdateStatus(1,0,0,0)
+		else:
+			GameController.UpdateStatus(-1,0,0,0)
+			
+	if selectedButton == Char2Trigger:
+		if $Environment/Char2Ping.CheckType():
+			GameController.UpdateStatus(0,1,0,0)
+		else:
+			GameController.UpdateStatus(0,-1,0,0)
+			
+	if selectedButton == Char3Trigger:
+		if $Environment/Char3Ping.CheckType():
+			GameController.UpdateStatus(0,0,1,0)
+		else:
+			GameController.UpdateStatus(0,0,-1,0)
+
 	if CheckPower:
 		#if power is off, increment all characters by 1 extra
-		GameController.UpdateStatus(1,1,1,0)
+		GameController.UpdateStatus(-1,-1,-1,0)
 	else:
-		GameController.UpdateStatus(-1,-1,-1,1)
+		GameController.UpdateStatus(1,1,1,1)
 	
 	# Reset the button selection
 	unselectButtions(true)

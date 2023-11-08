@@ -90,15 +90,15 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	clamp_values()
 	
 	#debug
-	print("Character 1 value:", Character1)
+	#print("Character 1 value:", Character1)
 	#print("Character 1 change:", char1)
-	print("Character 2 value:", Character2)
+	#print("Character 2 value:", Character2)
 	#print("Character 2 change:", char2)
-	print("Character 3 value:", Character3)
+	#print("Character 3 value:", Character3)
 	#print("Character 3 change:", char3)
-	print("Monster value:", Monster)
+	#print("Monster value:", Monster)
 	#print("Monster change:", monster)
-	print("")
+	print("Update ran")
 	
 	character1_node.update_panel_color(Character1)
 	character2_node.update_panel_color(Character2)
