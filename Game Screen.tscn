@@ -157,10 +157,10 @@ theme = SubResource("Theme_ks27t")
 text = "Execute"
 
 [node name="Audio Controller" type="Panel" parent="."]
-offset_left = 405.0
-offset_top = 19.0
-offset_right = 677.0
-offset_bottom = 86.0
+offset_left = 406.0
+offset_top = 16.0
+offset_right = 678.0
+offset_bottom = 83.0
 script = ExtResource("1_jtjcn")
 
 [node name="Play" type="Button" parent="Audio Controller"]

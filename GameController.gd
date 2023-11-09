@@ -61,7 +61,6 @@ func _ready():
 	character3_node.update_panel_color(Character3)
 	monster_node.update_panel_color(Monster)
 
-#
 func clamp_values():
 	if Character1 < 0:
 		Character1 = 0
