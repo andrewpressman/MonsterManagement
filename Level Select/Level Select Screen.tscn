@@ -1,12 +1,169 @@
-[gd_scene format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=3 format=3 uid="uid://dst8wwsxp2d0w"]
+
+[ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
+[ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Case options" type="Panel" parent="."]
-offset_left = 142.0
-offset_top = 117.0
-offset_right = 972.0
-offset_bottom = 516.0
+offset_left = 249.0
+offset_top = 112.0
+offset_right = 1030.0
+offset_bottom = 561.0
+script = ExtResource("1_t3wki")
+
+[node name="Level1" type="Node" parent="Case options"]
+script = ExtResource("1_1i0fd")
+
+[node name="select" type="Button" parent="Case options/Level1"]
+offset_left = 260.0
+offset_top = 128.0
+offset_right = 367.0
+offset_bottom = 228.0
+
+[node name="MiniInfo" type="Panel" parent="Case options/Level1"]
+offset_left = 379.0
+offset_top = 129.0
+offset_right = 1002.0
+offset_bottom = 228.0
+
+[node name="Label" type="Label" parent="Case options/Level1/MiniInfo"]
+layout_mode = 0
+offset_right = 626.0
+offset_bottom = 98.0
+text = "This is level 1 simple info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BigInfo" type="Panel" parent="Case options/Level1"]
+visible = false
+offset_left = 379.0
+offset_top = 129.0
+offset_right = 1002.0
+offset_bottom = 538.0
+
+[node name="Label" type="Label" parent="Case options/Level1/BigInfo"]
+layout_mode = 0
+offset_right = 623.0
+offset_bottom = 407.0
+text = "This is level 1 complex info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info"
+
+[node name="Level2" type="Node" parent="Case options"]
+script = ExtResource("1_1i0fd")
+
+[node name="select" type="Button" parent="Case options/Level2"]
+offset_left = 260.0
+offset_top = 281.0
+offset_right = 367.0
+offset_bottom = 381.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MiniInfo" type="Panel" parent="Case options/Level2"]
+offset_left = 379.0
+offset_top = 282.0
+offset_right = 1002.0
+offset_bottom = 381.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Case options/Level2/MiniInfo"]
+layout_mode = 0
+offset_right = 626.0
+offset_bottom = 98.0
+text = "This is level 2 simple info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BigInfo" type="Panel" parent="Case options/Level2"]
+visible = false
+offset_left = 379.0
+offset_top = 129.0
+offset_right = 1002.0
+offset_bottom = 538.0
+
+[node name="Label" type="Label" parent="Case options/Level2/BigInfo"]
+layout_mode = 0
+offset_right = 623.0
+offset_bottom = 407.0
+text = "This is level 2 complex info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info"
+
+[node name="Level3" type="Node" parent="Case options"]
+script = ExtResource("1_1i0fd")
+
+[node name="select" type="Button" parent="Case options/Level3"]
+offset_left = 260.0
+offset_top = 431.0
+offset_right = 367.0
+offset_bottom = 531.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MiniInfo" type="Panel" parent="Case options/Level3"]
+offset_left = 379.0
+offset_top = 432.0
+offset_right = 1002.0
+offset_bottom = 531.0
+
+[node name="Label" type="Label" parent="Case options/Level3/MiniInfo"]
+layout_mode = 0
+offset_right = 626.0
+offset_bottom = 98.0
+text = "This is level 3 simple info"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BigInfo" type="Panel" parent="Case options/Level3"]
+visible = false
+offset_left = 379.0
+offset_top = 129.0
+offset_right = 1002.0
+offset_bottom = 538.0
+
+[node name="Label" type="Label" parent="Case options/Level3/BigInfo"]
+layout_mode = 0
+offset_right = 623.0
+offset_bottom = 407.0
+text = "This is level 3 complex info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info
+
+more info"
 
 [node name="Budget" type="Panel" parent="."]
 offset_left = 17.0
@@ -30,3 +187,17 @@ offset_top = 568.0
 offset_right = 1137.0
 offset_bottom = 632.0
 text = "Begin test"
+
+[node name="meta element" type="Panel" parent="."]
+offset_left = 17.0
+offset_top = 103.0
+offset_right = 227.0
+offset_bottom = 613.0
+
+[connection signal="pressed" from="Case options/Level1/select" to="Case options" method="_on_Level1_pressed"]
+[connection signal="pressed" from="Case options/Level1/select" to="Case options/Level1" method="_on_Select_Pressed"]
+[connection signal="pressed" from="Case options/Level2/select" to="Case options" method="_on_Level2_pressed"]
+[connection signal="pressed" from="Case options/Level2/select" to="Case options/Level2" method="_on_Select_Pressed"]
+[connection signal="pressed" from="Case options/Level3/select" to="Case options" method="_on_Level3_pressed"]
+[connection signal="pressed" from="Case options/Level3/select" to="Case options/Level3" method="_on_Select_Pressed"]
+[connection signal="pressed" from="Begin" to="Case options" method="_on_begin_button_pressed"]
