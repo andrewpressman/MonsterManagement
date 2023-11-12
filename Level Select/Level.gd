@@ -13,11 +13,7 @@ func _ready():
 	BigInfo.hide()
 
 func _on_Select_Pressed(): # Toggle panel size and update internal text
-	if isPanelExpanded:
-		Smallinfo.show()
-		BigInfo.hide()
-	else:
-		Smallinfo.hide()
-		BigInfo.show()
+	#Send variables to scene from here? 
+	pass
 
 	isPanelExpanded = not isPanelExpanded

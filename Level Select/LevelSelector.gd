@@ -29,26 +29,33 @@ func update_button_selection(button: Button):
 func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
-	
+		hideBig()
+	ShowHideSmall(false)
 	for button in [Level1Button, Level2Button, Level3Button]:
 		if button != selectedButton:
 			button.modulate = Color(1, 1, 1)  # Reset color
 
 #TODO: properly show/hide info panels
 func _on_Level1_pressed():
-	update_button_selection(Level1Button)
-	$Level2/BigInfo.hide();
-	$Level3/BigInfo.hide();
+	if selectedButton == Level1Button:
+		unselectButtions(true)
+	else:
+		update_button_selection(Level1Button)
+		showBig(1)
 	
 func _on_Level2_pressed():
-	update_button_selection(Level2Button)
-	$Level1/BigInfo.hide();
-	$Level3/BigInfo.hide();
+	if selectedButton == Level2Button:
+		unselectButtions(true)
+	else:
+		update_button_selection(Level2Button)
+		showBig(2)
 	
 func _on_Level3_pressed():
-	update_button_selection(Level3Button)
-	$Level2/BigInfo.hide();
-	$Level1/BigInfo.hide();
+	if selectedButton == Level3Button:
+		unselectButtions(true)
+	else:
+		update_button_selection(Level3Button)
+		showBig(3)
 
 func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
@@ -62,6 +69,37 @@ func _on_begin_button_pressed():
 	
 	# Reset the button selection
 	unselectButtions(true)
+
+func showBig(button : int):
+	ShowHideSmall(true)
+	match(button):
+		1:
+			$Level1/BigInfo.show()
+			$Level2/BigInfo.hide()
+			$Level3/BigInfo.hide()
+		2:
+			$Level2/BigInfo.show()
+			$Level3/BigInfo.hide()
+			$Level1/BigInfo.hide()
+		3:
+			$Level3/BigInfo.show()
+			$Level2/BigInfo.hide()
+			$Level1/BigInfo.hide()
+
+func ShowHideSmall(type: bool):
+	if type:
+		$Level1/MiniInfo.hide()
+		$Level2/MiniInfo.hide()
+		$Level3/MiniInfo.hide()
+	else:
+		$Level1/MiniInfo.show()
+		$Level2/MiniInfo.show()
+		$Level3/MiniInfo.show()
+		
+func hideBig():
+	$Level1/BigInfo.hide()
+	$Level2/BigInfo.hide()
+	$Level3/BigInfo.hide()
 
 func StartGame():
 	#pass in parameters for game
