@@ -66,9 +66,9 @@ func _on_begin_button_pressed():
 		
 	if selectedButton == Level3Button:
 		pass
-	
 	# Reset the button selection
 	unselectButtions(true)
+	StartGame()
 
 func showBig(button : int):
 	ShowHideSmall(true)
@@ -103,4 +103,4 @@ func hideBig():
 
 func StartGame():
 	#pass in parameters for game
-	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+	get_tree().change_scene_to_file("res://Game Screen.tscn")

@@ -14,3 +14,7 @@ config/name="MonsterManagement"
 run/main_scene="res://Level Select/Level Select Screen.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalVariables="*res://global_variables.gd"

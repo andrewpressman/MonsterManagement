@@ -1,13 +1,21 @@
 extends Node2D
 
 #goals: Keep characters in Scared State, Don't let Monster Escape
+var MinState : int
+var YellowThreshold : int
+var RedThreshold : int
+var MaxState : int
 
-# 1- calm, 2-scared, 3-panic 4-dead
+var GreenRate : int
+var YellowRate : int
+var RedRate : int
+
+# calm, scared, panic dead
 var Character1 : int
 var Character2 : int
 var Character3 : int
 
-# 1- inactive, 2-active, 3-angry, 4-escaped
+# inactive, active, angry, escaped
 var Monster : int
 
 # Get references to character and monster nodes in the HealthMonitor panel
@@ -43,12 +51,21 @@ func _ready():
 	Menu_Node.modulate = Color(1, 0, 0) # Red
 	FinalScore = $Menu/MenuBox/FinalScore
 	FinalScore.hide()
-
+	
+	#declare global variables
+	MinState = GlobalVariables.MinState
+	YellowThreshold = GlobalVariables.MinState
+	RedThreshold = GlobalVariables.MinState
+	MaxState = GlobalVariables.MinState
+	GreenRate = GlobalVariables.MinState
+	YellowRate = GlobalVariables.MinState
+	RedRate = GlobalVariables.MinState
+	
 	# TEMP
-	Character1 = 0
-	Character2 = 0
-	Character3 = 0
-	Monster = 0
+	Character1 = MinState
+	Character2 = MinState
+	Character3 = MinState
+	Monster = MinState
 
 	#Scoreboard
 	Score = 0
@@ -62,24 +79,24 @@ func _ready():
 	monster_node.update_panel_color(Monster)
 
 func clamp_values():
-	if Character1 < 0:
-		Character1 = 0
-	if Character2 < 0:
-		Character2 = 0
-	if Character3 < 0:
-		Character3 = 0
-	if Monster < 0:
-		Monster = 0
+	if Character1 < MinState:
+		Character1 = MinState
+	if Character2 < MinState:
+		Character2 = MinState
+	if Character3 < MinState:
+		Character3 = MinState
+	if Monster < MinState:
+		Monster = MinState
 	
-	#Temp DeadCheck
-	if Character1 >= 9:
-		Character1 = 100
-	if Character2 >= 9:
-		Character2 = 100
-	if Character3 >= 9:
-		Character3 = 100
-	if Monster >= 9:
-		Monster = 100
+	#Temp DeadCheck (eventually not needed)
+	if Character1 >= MaxState:
+		Character1 = MaxState * 100
+	if Character2 >= MaxState:
+		Character2 = MaxState * 100
+	if Character3 >= MaxState:
+		Character3 = MaxState * 100
+	if Monster >= MaxState:
+		Monster = MaxState * 100
 		
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	Character1 += char1
@@ -113,7 +130,7 @@ func StartGame():
 	Menu_Node.hide()
 
 func UpdateScore():
-	if (Character1 >= 9 && Character2 >= 9 && Character3 >= 9) || Monster >= 9:
+	if (Character1 >= MaxState && Character2 >= MaxState && Character3 >= MaxState) || Monster >= MaxState:
 		FinalScore.text = "Final Score: " + str(Score)
 		EndGame()
 	else:
@@ -122,21 +139,17 @@ func UpdateScore():
 	ScoreTag.text = str(Score)
 		
 func CalcScore(value:int):
-	if value >= 8:
-		return 3
-	elif value >= 6:
-		return 2
-	elif value >= 3:
-		return 1
-	elif value >= 0:
-		return 0
+	if value >= RedThreshold:
+		return 10
+	elif value >= YellowThreshold:
+		return 5
 
 func Reset():
-	Character1 = 0
-	Character2 = 0
-	Character3 = 0
-	Monster = 0
-	UpdateStatus(0,0,0,0)
+	Character1 = MinState
+	Character2 = MinState
+	Character3 = MinState
+	Monster = MinState
+	UpdateStatus(MinState,MinState,MinState,MinState)
 
 func EndGame():
 	Menu_Node.show()

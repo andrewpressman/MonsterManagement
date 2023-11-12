@@ -1,10 +1,17 @@
 extends Timer
 
 var GameController: Node2D
+var GreenRate : int
+var YellowRate : int
+var RedRate : int
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GameController = get_parent()
+	#declare global variables
+	GreenRate = GlobalVariables.GreenRate
+	YellowRate = GlobalVariables.YellowRate
+	RedRate = GlobalVariables.RedRate
 
 func _on_timer_timeout():
 	# Generate a random number between 1 and 100
@@ -13,17 +20,17 @@ func _on_timer_timeout():
 	
 	match CharacterTrack:
 		1:
-			GameController.UpdateStatus(1,0,0,0)
+			GameController.UpdateStatus(GreenRate,0,0,0)
 		2:
-			GameController.UpdateStatus(0,1,0,0)
+			GameController.UpdateStatus(0,GreenRate,0,0)
 		3:
-			GameController.UpdateStatus(0,0,1,0)
+			GameController.UpdateStatus(0,0,GreenRate,0)
 	
 	match MonsterTrack:
 		1:
-			GameController.UpdateStatus(0,0,0,1)
+			GameController.UpdateStatus(0,0,0,GreenRate)
 		4:
-			GameController.UpdateStatus(0,0,0,4)
+			GameController.UpdateStatus(0,0,0,GreenRate * 2)
 	
 func Start():
 	start()
