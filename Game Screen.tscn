@@ -334,6 +334,7 @@ offset_bottom = 337.0
 text = "monst"
 
 [node name="Menu" type="Node2D" parent="."]
+visible = false
 
 [node name="MenuBox" type="Panel" parent="Menu"]
 offset_left = 7.0

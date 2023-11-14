@@ -35,7 +35,6 @@ var l4 : Label
 
 #Score Settings
 var GameState
-var Score : int
 var ScoreTag : Label
 var FinalScore : Label
 
@@ -74,15 +73,17 @@ func _ready():
 	Monster = MinState
 
 	#Scoreboard
-	Score = 0
+	GlobalVariables.Score = 0
 	ScoreTag = $GameState/Score
-	ScoreTag.text = str(Score)
+	ScoreTag.text = str(GlobalVariables.Score)
 
 	# Call the update_panel_color function for each character and the monster
 	character1_node.update_panel_color(Character1)
 	character2_node.update_panel_color(Character2)
 	character3_node.update_panel_color(Character3)
 	monster_node.update_panel_color(Monster)
+	
+	StartGame()
 
 func clamp_values():
 	if Character1 < MinState:
@@ -105,9 +106,7 @@ func clamp_values():
 		Monster = MaxState * 100
 		
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
-	print(Character1)
 	Character1 += char1
-	print(Character1)
 	Character2 += char2
 	Character3 += char3
 	Monster += monster
@@ -129,18 +128,18 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	
 func StartGame():
 	Reset()	
-	Score = 0
+	GlobalVariables.Score = 0
 	$Clock.Start()
 	Menu_Node.hide()
 
 func UpdateScore():
 	if (Character1 >= MaxState && Character2 >= MaxState && Character3 >= MaxState) || Monster >= MaxState:
-		FinalScore.text = "Final Score: " + str(Score)
+		FinalScore.text = "Final Score: " + str(GlobalVariables.Score)
 		EndGame()
 	else:
-		Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
+		GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
 	
-	ScoreTag.text = str(Score)
+	ScoreTag.text = str(GlobalVariables.Score)
 		
 func CalcScore(value:int):
 	if value >= RedThreshold:
@@ -156,6 +155,4 @@ func Reset():
 	UpdateStatus(MinState,MinState,MinState,MinState)
 
 func EndGame():
-	Menu_Node.show()
-	FinalScore.show()
-	GameOver.show()
+	get_tree().change_scene_to_file("res://Game Screen.tscn")

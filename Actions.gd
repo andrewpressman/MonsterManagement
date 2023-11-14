@@ -153,7 +153,7 @@ func _on_execute_button_pressed():
 	
 	if CheckPower:
 		#if power is off, increment all characters by 1 extra
-		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,0)
+		GameController.UpdateStatus(DecreaseRate / 2,DecreaseRate / 2,DecreaseRate / 2,0)
 	else:
 		GameController.UpdateStatus(IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2)
 	

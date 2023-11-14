@@ -1,4 +1,4 @@
-extends Panel
+extends Node2D
 
 var GameController: Node2D
 
@@ -7,18 +7,37 @@ var Level1Button: Button
 var Level2Button: Button
 var Level3Button: Button
 
+var Level1
+var Level2
+var Level3
+
 var executeButton: Button
 
 var selectedButton: Button  # Stores the currently selected button
 
+#testing
+var LastScore : Label
+
 func _ready():
-	Level1Button = $Level1/select
-	Level2Button = $Level2/select
-	Level3Button = $Level3/select
-		
+	Level1Button = $Cases/Level1/select
+	Level2Button = $Cases/Level2/select
+	Level3Button = $Cases/Level3/select
+	
+	Level1 = $Cases/Level1
+	Level2 = $Cases/Level2
+	Level3 = $Cases/Level3
+	
 	#GameController = get_parent() #TODO: ping to GameController scene
 	# Initially, no button is selected
 	selectedButton = null
+	
+	#testing
+	LastScore = $TempScore/Score
+	if GlobalVariables.Score == null:
+		GlobalVariables.Score = 0
+	var score = GlobalVariables.Score
+	LastScore.text = "Last score: " + str(score)
+
 
 # Function to update the button selection and visuals
 func update_button_selection(button: Button):
@@ -29,8 +48,8 @@ func update_button_selection(button: Button):
 func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
-		hideBig()
-	ShowHideSmall(false)
+	hideBig()
+	ShowSmall()
 	for button in [Level1Button, Level2Button, Level3Button]:
 		if button != selectedButton:
 			button.modulate = Color(1, 1, 1)  # Reset color
@@ -59,47 +78,58 @@ func _on_Level3_pressed():
 
 func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
-		pass
+		setDifficulty(50,80,100,10,-10)
 		
 	if selectedButton == Level2Button:
-		pass
+		setDifficulty(50,80,100,10,-5)
 		
 	if selectedButton == Level3Button:
-		pass
+		setDifficulty(50,80,100,10,-1)
 	# Reset the button selection
 	unselectButtions(true)
 	StartGame()
 
-func showBig(button : int):
-	ShowHideSmall(true)
-	match(button):
-		1:
-			$Level1/BigInfo.show()
-			$Level2/BigInfo.hide()
-			$Level3/BigInfo.hide()
-		2:
-			$Level2/BigInfo.show()
-			$Level3/BigInfo.hide()
-			$Level1/BigInfo.hide()
-		3:
-			$Level3/BigInfo.show()
-			$Level2/BigInfo.hide()
-			$Level1/BigInfo.hide()
-
-func ShowHideSmall(type: bool):
-	if type:
-		$Level1/MiniInfo.hide()
-		$Level2/MiniInfo.hide()
-		$Level3/MiniInfo.hide()
-	else:
-		$Level1/MiniInfo.show()
-		$Level2/MiniInfo.show()
-		$Level3/MiniInfo.show()
+func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
+	GlobalVariables.YellowThreshold = yellow
+	GlobalVariables.RedThreshold = red
+	GlobalVariables.MaxState = maxVal
+ 
+	GlobalVariables.IncreaseRate = INC
+	GlobalVariables.DecreaseRate = DEC
 		
+
+#show selected bigInfo
+func showBig(button : int):
+	hideSmall()
+	match button:
+		1:
+			Level1.showBig()
+			Level2.hideBig()
+			Level3.hideBig()
+		2:
+			Level2.showBig()
+			Level1.hideBig()
+			Level3.hideBig()
+		3:
+			Level3.showBig()
+			Level1.hideBig()
+			Level2.hideBig()
+
+
+func ShowSmall():
+	Level1.showSmall()
+	Level2.showSmall()
+	Level3.showSmall()
+
+func hideSmall():
+	Level1.hideSmall()
+	Level2.hideSmall()
+	Level3.hideSmall()
+
 func hideBig():
-	$Level1/BigInfo.hide()
-	$Level2/BigInfo.hide()
-	$Level3/BigInfo.hide()
+	Level1.hideBig()
+	Level2.hideBig()
+	Level3.hideBig()
 
 func StartGame():
 	#pass in parameters for game

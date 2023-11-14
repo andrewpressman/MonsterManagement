@@ -1,9 +1,12 @@
 extends Node
 
 var MinState : int = 0
-var YellowThreshold : int = 30
-var RedThreshold : int = 60
-var MaxState : int = 90
 
-var IncreaseRate : int = 10
-var DecreaseRate : int = -10
+var YellowThreshold : int
+var RedThreshold : int
+var MaxState : int
+
+var IncreaseRate : int
+var DecreaseRate : int
+
+var Score : int = 0
