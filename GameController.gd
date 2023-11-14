@@ -6,9 +6,8 @@ var YellowThreshold : int
 var RedThreshold : int
 var MaxState : int
 
-var GreenRate : int
-var YellowRate : int
-var RedRate : int
+var IncreaseRate : int
+var DecreaseRate : int
 
 # calm, scared, panic dead
 var Character1 : int
@@ -24,10 +23,15 @@ var character2_node
 var character3_node
 var monster_node
 
-#Temp Menu Settings
+#Temp Settings/controls
 var Menu_Node
 var GameOver
 var Start : Button
+var Extra : Panel
+var l1 : Label
+var l2 : Label
+var l3 : Label
+var l4 : Label
 
 #Score Settings
 var GameState
@@ -43,7 +47,7 @@ func _ready():
 	character3_node = $HealthMonitor/Character3
 	monster_node = $HealthMonitor/Monster
 	
-	#Menu loading
+	#Temp Stuff
 	Menu_Node = $Menu/MenuBox
 	GameOver = $Menu/MenuBox/GameOver
 	GameOver.hide()
@@ -51,16 +55,18 @@ func _ready():
 	Menu_Node.modulate = Color(1, 0, 0) # Red
 	FinalScore = $Menu/MenuBox/FinalScore
 	FinalScore.hide()
+	l1 = $Extra/Label1
+	l2 = $Extra/Label2
+	l3 = $Extra/Label3
+	l4 = $Extra/Label4
 	
 	#declare global variables
 	MinState = GlobalVariables.MinState
 	YellowThreshold = GlobalVariables.MinState
-	RedThreshold = GlobalVariables.MinState
-	MaxState = GlobalVariables.MinState
-	GreenRate = GlobalVariables.MinState
-	YellowRate = GlobalVariables.MinState
-	RedRate = GlobalVariables.MinState
-	
+	RedThreshold = GlobalVariables.RedThreshold
+	MaxState = GlobalVariables.MaxState
+	IncreaseRate = GlobalVariables.IncreaseRate
+	DecreaseRate = GlobalVariables.DecreaseRate
 	# TEMP
 	Character1 = MinState
 	Character2 = MinState
@@ -99,21 +105,19 @@ func clamp_values():
 		Monster = MaxState * 100
 		
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
+	print(Character1)
 	Character1 += char1
+	print(Character1)
 	Character2 += char2
 	Character3 += char3
 	Monster += monster
 	clamp_values()
 	
 	#debug
-	#print("Character 1 value:", Character1)
-	#print("Character 1 change:", char1)
-	#print("Character 2 value:", Character2)
-	#print("Character 2 change:", char2)
-	#print("Character 3 value:", Character3)
-	#print("Character 3 change:", char3)
-	#print("Monster value:", Monster)
-	#print("Monster change:", monster)
+	l1.text = "char1 " + str(Character1)
+	l2.text = "char2 " + str(Character1)
+	l3.text = "char3 " + str(Character1)
+	l4.text = "Monster " + str(Monster)
 	print("Update ran")
 	
 	character1_node.update_panel_color(Character1)

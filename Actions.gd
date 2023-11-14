@@ -19,10 +19,15 @@ var Char2Trigger : Button
 var Char2Type : Button
 var Char3Trigger : Button
 var Char3Type : Button
+var AllCharTrigger : Button
 
 var executeButton: Button
 
 var selectedButton: Button  # Stores the currently selected button
+
+#Global Variables
+var IncreaseRate : int
+var DecreaseRate : int
 
 func _ready():
 	Agitate1Button = $Monster/Agitate1
@@ -41,6 +46,10 @@ func _ready():
 	Char2Type = $Environment/Char2Ping/PingType
 	Char3Trigger = $Environment/Char3Ping/PingTrigger
 	Char3Type = $Environment/Char3Ping/PingType
+	AllCharTrigger = $Environment/PingAll
+	
+	IncreaseRate = GlobalVariables.IncreaseRate
+	DecreaseRate = GlobalVariables.DecreaseRate
 	
 	GameController = get_parent()
 	# Initially, no button is selected
@@ -58,7 +67,7 @@ func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
 	
-	for button in [Agitate1Button, Agitate2Button, Agitate3Button, CalmButton, PowerOnButton, PowerOffButton, Char1Trigger, Char2Trigger, Char3Trigger]:
+	for button in [Agitate1Button, Agitate2Button, Agitate3Button, CalmButton, PowerOnButton, PowerOffButton, Char1Trigger, Char2Trigger, Char3Trigger, AllCharTrigger]:
 		if button != selectedButton:
 			button.modulate = Color(1, 1, 1)  # Reset color
 
@@ -88,59 +97,65 @@ func _on_Char2Trigger_pressed():
 	
 func _on_Char3Trigger_pressed():
 	update_button_selection(Char3Trigger)
+	
+func _on_AllCharTrigger_pressed():
+	update_button_selection(AllCharTrigger)
 
 # Callback when the "Execute" button is pressed
 func _on_execute_button_pressed():
 	if selectedButton == Agitate1Button:
-		# Increment Character1, Character2, and Character3 by 1, and decrement Monster by 1
-		GameController.UpdateStatus(1,1,1,1)
+		# ncrease all leveles at lowest rate
+		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,IncreaseRate)
 		
 	if selectedButton == Agitate2Button:
-		# Increment Character1, Character2, and Character3 by 2, and decrement Monster by 2
-		GameController.UpdateStatus(2,2,2,2)
+		# increase all leveles at medium rate
+		GameController.UpdateStatus(1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate)
 		
 	if selectedButton == Agitate3Button:
-		# Increment Character1, Character2, and Character3 by 3, and decrement Monster by 3
-		GameController.UpdateStatus(3,3,3,3)
+		# increase all leveles at max rate
+		GameController.UpdateStatus(2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate)
 
 	if selectedButton == CalmButton:
-		# Decrement Character1, Character2, and Character3 by 1, and increment Monster by 1
-		GameController.UpdateStatus(-2,-2,-2,-2)
+		# decrease all levels
+		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,DecreaseRate)
 		
 	if selectedButton == PowerOnButton:
-		# Increment Character1, Character2, and Character3 by 1, and decrement Monster by 1
-		GameController.UpdateStatus(-1,-1,-1,0)
+		# Increment Character1, Character2, and Character3
+		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,0)
 		togglePower()
 		
 	if selectedButton == PowerOffButton:
-		# Increment Character1, Character2, and Character3 by 1, and decrement Monster by 1
-		GameController.UpdateStatus(1,1,1,0)
+		# Increment Character1, Character2, and Character3, and decrement Monster
+		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,DecreaseRate)
 		togglePower()
 	
-	#Triggers for specific character agitation: increase for true, decrease for false
+	#Triggers for specific character agitation: increase for true (agitate), decrease for false(calm)
 	if selectedButton == Char1Trigger:
 		if $Environment/Char1Ping.CheckType():
-			GameController.UpdateStatus(1,0,0,0)
+			GameController.UpdateStatus(IncreaseRate,0,0,0)
 		else:
-			GameController.UpdateStatus(-1,0,0,0)
+			GameController.UpdateStatus(DecreaseRate,0,0,0)
 			
 	if selectedButton == Char2Trigger:
 		if $Environment/Char2Ping.CheckType():
-			GameController.UpdateStatus(0,1,0,0)
+			GameController.UpdateStatus(0,IncreaseRate,0,0)
 		else:
-			GameController.UpdateStatus(0,-1,0,0)
+			GameController.UpdateStatus(0,DecreaseRate,0,0)
 			
 	if selectedButton == Char3Trigger:
 		if $Environment/Char3Ping.CheckType():
-			GameController.UpdateStatus(0,0,1,0)
+			GameController.UpdateStatus(0,0,IncreaseRate,0)
 		else:
-			GameController.UpdateStatus(0,0,-1,0)
-
+			GameController.UpdateStatus(0,0,DecreaseRate,0)
+	
+	if(selectedButton == AllCharTrigger):
+		GameController.UpdateStatus(0,0,DecreaseRate,0)
+	
 	if CheckPower:
 		#if power is off, increment all characters by 1 extra
-		GameController.UpdateStatus(-1,-1,-1,0)
+		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,0)
 	else:
-		GameController.UpdateStatus(1,1,1,1)
+		GameController.UpdateStatus(IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2)
 	
 	# Reset the button selection
 	unselectButtions(true)

@@ -301,8 +301,39 @@ offset_top = 194.0
 offset_right = 274.0
 offset_bottom = 551.0
 
+[node name="Label1" type="Label" parent="Extra"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 258.0
+offset_bottom = 83.0
+text = "char"
+
+[node name="Label2" type="Label" parent="Extra"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 93.0
+offset_right = 240.0
+offset_bottom = 150.0
+text = "char"
+
+[node name="Label3" type="Label" parent="Extra"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 173.0
+offset_right = 255.0
+offset_bottom = 240.0
+text = "char"
+
+[node name="Label4" type="Label" parent="Extra"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 276.0
+offset_right = 255.0
+offset_bottom = 337.0
+text = "monst"
+
 [node name="Menu" type="Node2D" parent="."]
-visible = false
 
 [node name="MenuBox" type="Panel" parent="Menu"]
 offset_left = 7.0
@@ -349,6 +380,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
+[connection signal="pressed" from="Actions/Environment/PingAll" to="Actions" method="_on_AllCharTrigger_pressed"]
 [connection signal="pressed" from="Actions/Environment/Power/PowerOn" to="Actions" method="_on_PowerOn_pressed"]
 [connection signal="pressed" from="Actions/Environment/Power/PowerOff" to="Actions" method="_on_PowerOff_pressed"]
 [connection signal="toggled" from="Actions/Environment/Char1Ping/PingType" to="Actions/Environment/Char1Ping" method="_on_check_button_toggled"]
