@@ -22,7 +22,7 @@ func _ready():
 	Level1Button = $Cases/Level1/select
 	Level2Button = $Cases/Level2/select
 	Level3Button = $Cases/Level3/select
-	
+	GlobalVariables.IncreaseRate = GlobalVariables.StartRate
 	Level1 = $Cases/Level1
 	Level2 = $Cases/Level2
 	Level3 = $Cases/Level3

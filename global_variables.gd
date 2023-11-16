@@ -6,6 +6,7 @@ var YellowThreshold : int
 var RedThreshold : int
 var MaxState : int
 
+var StartRate : int
 var IncreaseRate : int
 var DecreaseRate : int
 

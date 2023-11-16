@@ -22,6 +22,7 @@ var Char3Type : Button
 var AllCharTrigger : Button
 
 var executeButton: Button
+var Clock : Timer
 
 var selectedButton: Button  # Stores the currently selected button
 
@@ -33,9 +34,11 @@ func _ready():
 	Agitate1Button = $Monster/Agitate1
 	Agitate2Button = $Monster/Agitate2
 	Agitate3Button = $Monster/Agitate3
-	
 	CalmButton = $Monster/Calm
+	
+	Clock = $ResetClock
 	executeButton = $Execute
+	executeButton.modulate = Color(0, 1, 0)
 	
 	PowerOnButton = $Environment/Power/PowerOn
 	PowerOffButton = $Environment/Power/PowerOff
@@ -103,21 +106,27 @@ func _on_AllCharTrigger_pressed():
 
 # Callback when the "Execute" button is pressed
 func _on_execute_button_pressed():
+	start_Clock()
+	
 	if selectedButton == Agitate1Button:
 		# ncrease all leveles at lowest rate
 		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,IncreaseRate)
+		TickPower()
 		
 	if selectedButton == Agitate2Button:
 		# increase all leveles at medium rate
 		GameController.UpdateStatus(1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate)
+		TickPower()
 		
 	if selectedButton == Agitate3Button:
 		# increase all leveles at max rate
 		GameController.UpdateStatus(2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate)
+		TickPower()
 
 	if selectedButton == CalmButton:
 		# decrease all levels
 		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,DecreaseRate)
+		TickPower()
 		
 	if selectedButton == PowerOnButton:
 		# Increment Character1, Character2, and Character3
@@ -149,16 +158,27 @@ func _on_execute_button_pressed():
 			GameController.UpdateStatus(0,0,DecreaseRate,0)
 	
 	if(selectedButton == AllCharTrigger):
-		GameController.UpdateStatus(0,0,DecreaseRate,0)
+		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,0)
+		TickPower()
 	
+	# Reset the button selection
+	unselectButtions(true)
+
+func TickPower():
 	if CheckPower:
 		#if power is off, increment all characters by 1 extra
 		GameController.UpdateStatus(DecreaseRate / 2,DecreaseRate / 2,DecreaseRate / 2,0)
 	else:
 		GameController.UpdateStatus(IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2)
-	
-	# Reset the button selection
-	unselectButtions(true)
+
+func start_Clock():
+	Clock.start()
+	executeButton.modulate = Color(1, 1, 1)
+	executeButton.disabled = true
+
+func _on_clock_timeout():
+	executeButton.modulate = Color(0, 1, 0)
+	executeButton.disabled = false
 
 #return false is Power is OFF, return true is Power is ON
 func CheckPower():
@@ -174,5 +194,3 @@ func togglePower():
 	else:
 		PowerOffButton.hide()
 		PowerOnButton.show()		
-
-

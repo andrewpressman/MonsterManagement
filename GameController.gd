@@ -24,10 +24,6 @@ var character3_node
 var monster_node
 
 #Temp Settings/controls
-var Menu_Node
-var GameOver
-var Start : Button
-var Extra : Panel
 var l1 : Label
 var l2 : Label
 var l3 : Label
@@ -36,7 +32,6 @@ var l4 : Label
 #Score Settings
 var GameState
 var ScoreTag : Label
-var FinalScore : Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,13 +42,6 @@ func _ready():
 	monster_node = $HealthMonitor/Monster
 	
 	#Temp Stuff
-	Menu_Node = $Menu/MenuBox
-	GameOver = $Menu/MenuBox/GameOver
-	GameOver.hide()
-	Start = $Menu/MenuBox/Start
-	Menu_Node.modulate = Color(1, 0, 0) # Red
-	FinalScore = $Menu/MenuBox/FinalScore
-	FinalScore.hide()
 	l1 = $Extra/Label1
 	l2 = $Extra/Label2
 	l3 = $Extra/Label3
@@ -106,6 +94,7 @@ func clamp_values():
 		Monster = MaxState * 100
 		
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
+	#print("1: " + str(char1) + " 2: " + str(char2) +" 3: " + str(char3) + " Monster: " + str(monster))
 	Character1 += char1
 	Character2 += char2
 	Character3 += char3
@@ -114,10 +103,10 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	
 	#debug
 	l1.text = "char1 " + str(Character1)
-	l2.text = "char2 " + str(Character1)
-	l3.text = "char3 " + str(Character1)
+	l2.text = "char2 " + str(Character2)
+	l3.text = "char3 " + str(Character3)
 	l4.text = "Monster " + str(Monster)
-	print("Update ran")
+	#print("Update ran")
 	
 	character1_node.update_panel_color(Character1)
 	character2_node.update_panel_color(Character2)
@@ -127,14 +116,12 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	UpdateScore()
 	
 func StartGame():
-	Reset()	
+	#Reset()	
 	GlobalVariables.Score = 0
 	$Clock.Start()
-	Menu_Node.hide()
 
 func UpdateScore():
 	if (Character1 >= MaxState && Character2 >= MaxState && Character3 >= MaxState) || Monster >= MaxState:
-		FinalScore.text = "Final Score: " + str(GlobalVariables.Score)
 		EndGame()
 	else:
 		GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
@@ -155,4 +142,4 @@ func Reset():
 	UpdateStatus(MinState,MinState,MinState,MinState)
 
 func EndGame():
-	get_tree().change_scene_to_file("res://Game Screen.tscn")
+	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
