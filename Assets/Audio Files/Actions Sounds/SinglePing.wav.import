@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clvlwf1vedolx"
+path="res://.godot/imported/SinglePing.wav-61be4f35b0cb530b9adb9283d0dca218.sample"
+
+[deps]
+
+source_file="res://Assets/Audio Files/Actions Sounds/SinglePing.wav"
+dest_files=["res://.godot/imported/SinglePing.wav-61be4f35b0cb530b9adb9283d0dca218.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

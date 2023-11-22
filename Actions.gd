@@ -112,14 +112,17 @@ func _on_execute_button_pressed():
 	if selectedButton == Agitate1Button:
 		# ncrease all leveles at lowest rate
 		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,IncreaseRate)
+		GameController.PlaySound(4)
 		TickPower()
 	elif selectedButton == Agitate2Button:
 		# increase all leveles at medium rate
 		GameController.UpdateStatus(1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate)
+		GameController.PlaySound(5)
 		TickPower()
 	elif selectedButton == Agitate3Button:
 		# increase all leveles at max rate
 		GameController.UpdateStatus(2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate)
+		GameController.PlaySound(6)
 		TickPower()
 	elif selectedButton == CalmButton:
 		# decrease all levels
@@ -137,16 +140,19 @@ func _on_execute_button_pressed():
 		togglePower()
 	#Triggers for specific character agitation: increase for true (agitate), decrease for false(calm)
 	elif selectedButton == Char1Trigger:
+		GameController.PlaySound(7)
 		if $Environment/Char1Ping.CheckType():
 			GameController.UpdateStatus(IncreaseRate,0,0,0)
 		else:
 			GameController.UpdateStatus(DecreaseRate,0,0,0)		
 	elif selectedButton == Char2Trigger:
+		GameController.PlaySound(7)
 		if $Environment/Char2Ping.CheckType():
 			GameController.UpdateStatus(0,IncreaseRate,0,0)
 		else:
 			GameController.UpdateStatus(0,DecreaseRate,0,0)	
 	elif selectedButton == Char3Trigger:
+		GameController.PlaySound(7)
 		if $Environment/Char3Ping.CheckType():
 			GameController.UpdateStatus(0,0,IncreaseRate,0)
 		else:
