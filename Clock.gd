@@ -13,9 +13,9 @@ func _ready():
 
 func _on_timer_timeout():
 	# Generate a random number between 1 and 100
-	var CharacterTrack = randi_range(1,3)
 	var MonsterTrack = randi_range(1,4)
 	
+	var CharacterTrack = randi_range(1,3)
 	match CharacterTrack:
 		1:
 			GameController.UpdateStatus(IncreaseRate,0,0,0)
@@ -36,7 +36,7 @@ func Start():
 	start()
 
 func IncreaseDifficulty():
-	if count > 12:
-		GlobalVariables.IncreaseRate * 1.5
+	if count > 24:
+		GlobalVariables.IncreaseRate * 3
 	else:
 		count += 1

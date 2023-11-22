@@ -27,20 +27,20 @@ func _ready():
 	Level2 = $Cases/Level2
 	Level3 = $Cases/Level3
 	
-	#GameController = get_parent() #TODO: ping to GameController scene
-	# Initially, no button is selected
+	executeButton = $Begin
 	selectedButton = null
-	
+	executeButton.disabled = true
 	#testing
 	LastScore = $TempScore/Score
 	if GlobalVariables.Score == null:
 		GlobalVariables.Score = 0
 	var score = GlobalVariables.Score
 	LastScore.text = "Last score: " + str(score)
-
+	
 
 # Function to update the button selection and visuals
 func update_button_selection(button: Button):
+	executeButton.disabled = false
 	selectedButton = button
 	selectedButton.modulate = Color(0, 1, 0)  # Set selected button to green
 	unselectButtions(false)
@@ -48,6 +48,7 @@ func update_button_selection(button: Button):
 func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
+		executeButton.disabled = true
 	hideBig()
 	ShowSmall()
 	for button in [Level1Button, Level2Button, Level3Button]:
@@ -114,7 +115,6 @@ func showBig(button : int):
 			Level3.showBig()
 			Level1.hideBig()
 			Level2.hideBig()
-
 
 func ShowSmall():
 	Level1.showSmall()

@@ -17,6 +17,9 @@ var Character3 : int
 # inactive, active, angry, escaped
 var Monster : int
 
+#Audio Settings
+var EffectsPlayer : AudioStreamPlayer2D
+
 # Get references to character and monster nodes in the HealthMonitor panel
 var character1_node
 var character2_node
@@ -46,6 +49,9 @@ func _ready():
 	l2 = $Extra/Label2
 	l3 = $Extra/Label3
 	l4 = $Extra/Label4
+	
+	#audio
+	EffectsPlayer = $Sounds/EffectsPlayer
 	
 	#declare global variables
 	MinState = GlobalVariables.MinState
@@ -114,6 +120,9 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	monster_node.update_panel_color(Monster)
 	
 	UpdateScore()
+
+func PlaySound(sound : int):
+	EffectsPlayer.play_sound(sound)
 	
 func StartGame():
 	#Reset()	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=11 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Audio Controller.gd" id="1_jtjcn"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Character.gd" id="3_o7a42"]
 [ext_resource type="Texture2D" uid="uid://ea8a3ckdjpp2" path="res://Assets/RTEVaPZh_400x400.jpg" id="4_75rfu"]
 [ext_resource type="Script" path="res://CharacterPing.gd" id="5_1bmgd"]
+[ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
 
@@ -15,7 +16,7 @@
 script = ExtResource("1_61weh")
 
 [node name="Clock" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 script = ExtResource("2_kakbt")
 
 [node name="Waveform" type="Panel" parent="."]
@@ -23,6 +24,7 @@ offset_left = 6.0
 offset_top = 9.0
 offset_right = 1138.0
 offset_bottom = 94.0
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_pjbmj")
@@ -33,6 +35,7 @@ offset_top = 104.0
 offset_right = 1135.0
 offset_bottom = 637.0
 script = ExtResource("3_aqjdg")
+metadata/_edit_use_anchors_ = true
 
 [node name="Environment" type="Node" parent="Actions"]
 
@@ -41,7 +44,8 @@ offset_left = 794.0
 offset_top = 178.0
 offset_right = 1123.0
 offset_bottom = 232.0
-text = "Ping all subjects"
+text = "Agitate all subjects"
+metadata/_edit_use_anchors_ = true
 
 [node name="Power" type="Node" parent="Actions/Environment"]
 
@@ -51,6 +55,7 @@ offset_top = 114.0
 offset_right = 1125.0
 offset_bottom = 167.0
 text = "Power On"
+metadata/_edit_use_anchors_ = true
 
 [node name="PowerOff" type="Button" parent="Actions/Environment/Power"]
 offset_left = 793.0
@@ -58,6 +63,7 @@ offset_top = 114.0
 offset_right = 1125.0
 offset_bottom = 167.0
 text = "Power Off"
+metadata/_edit_use_anchors_ = true
 
 [node name="Char1Ping" type="Node" parent="Actions/Environment"]
 script = ExtResource("5_1bmgd")
@@ -68,6 +74,7 @@ offset_top = 242.0
 offset_right = 889.0
 offset_bottom = 275.0
 text = "Calm"
+metadata/_edit_use_anchors_ = true
 
 [node name="PingTrigger" type="Button" parent="Actions/Environment/Char1Ping"]
 offset_left = 799.0
@@ -77,6 +84,7 @@ offset_bottom = 360.0
 text = "Ping
 subject
 1"
+metadata/_edit_use_anchors_ = true
 
 [node name="Char2Ping" type="Node" parent="Actions/Environment"]
 script = ExtResource("5_1bmgd")
@@ -87,6 +95,7 @@ offset_top = 243.0
 offset_right = 1003.0
 offset_bottom = 276.0
 text = "Calm"
+metadata/_edit_use_anchors_ = true
 
 [node name="PingTrigger" type="Button" parent="Actions/Environment/Char2Ping"]
 offset_left = 913.0
@@ -96,6 +105,7 @@ offset_bottom = 361.0
 text = "Ping
 subject
 2"
+metadata/_edit_use_anchors_ = true
 
 [node name="Char3Ping" type="Node" parent="Actions/Environment"]
 script = ExtResource("5_1bmgd")
@@ -106,6 +116,7 @@ offset_top = 243.0
 offset_right = 1116.0
 offset_bottom = 276.0
 text = "Calm"
+metadata/_edit_use_anchors_ = true
 
 [node name="PingTrigger" type="Button" parent="Actions/Environment/Char3Ping"]
 offset_left = 1026.0
@@ -115,6 +126,7 @@ offset_bottom = 361.0
 text = "Ping
 subject
 3"
+metadata/_edit_use_anchors_ = true
 
 [node name="Monster" type="Node" parent="Actions"]
 
@@ -124,6 +136,7 @@ offset_top = 373.0
 offset_right = 1030.0
 offset_bottom = 426.0
 text = "Agitate Anomaly"
+metadata/_edit_use_anchors_ = true
 
 [node name="Agitate2" type="Button" parent="Actions/Monster"]
 offset_left = 799.0
@@ -131,6 +144,7 @@ offset_top = 432.0
 offset_right = 1030.0
 offset_bottom = 485.0
 text = "Shock Anomaly"
+metadata/_edit_use_anchors_ = true
 
 [node name="Agitate3" type="Button" parent="Actions/Monster"]
 offset_left = 799.0
@@ -138,6 +152,7 @@ offset_top = 490.0
 offset_right = 1030.0
 offset_bottom = 543.0
 text = "Enrage Anomaly"
+metadata/_edit_use_anchors_ = true
 
 [node name="Calm" type="Button" parent="Actions/Monster"]
 offset_left = 1037.0
@@ -146,6 +161,7 @@ offset_right = 1116.0
 offset_bottom = 544.0
 text = "Calm
 Anomaly"
+metadata/_edit_use_anchors_ = true
 
 [node name="Execute" type="Button" parent="Actions"]
 layout_mode = 0
@@ -155,6 +171,7 @@ offset_right = 340.0
 offset_bottom = 516.0
 theme = SubResource("Theme_ks27t")
 text = "Execute"
+metadata/_edit_use_anchors_ = true
 
 [node name="ResetClock" type="Timer" parent="Actions"]
 wait_time = 2.0
@@ -196,6 +213,7 @@ offset_left = 279.0
 offset_top = 104.0
 offset_right = 771.0
 offset_bottom = 633.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Character1" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
@@ -204,6 +222,7 @@ offset_top = 19.0
 offset_right = 476.0
 offset_bottom = 117.0
 script = ExtResource("3_o7a42")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character1"]
 position = Vector2(49, 49)
@@ -216,6 +235,7 @@ offset_left = 102.0
 offset_top = 14.0
 offset_right = 440.0
 offset_bottom = 83.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Character2" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
@@ -224,6 +244,7 @@ offset_top = 123.0
 offset_right = 476.0
 offset_bottom = 221.0
 script = ExtResource("3_o7a42")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character2"]
 position = Vector2(49, 49)
@@ -236,6 +257,7 @@ offset_left = 102.0
 offset_top = 14.0
 offset_right = 440.0
 offset_bottom = 83.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Character3" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
@@ -244,6 +266,7 @@ offset_top = 228.0
 offset_right = 476.0
 offset_bottom = 326.0
 script = ExtResource("3_o7a42")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character3"]
 position = Vector2(49, 49)
@@ -256,6 +279,7 @@ offset_left = 102.0
 offset_top = 14.0
 offset_right = 440.0
 offset_bottom = 83.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Monster" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
@@ -264,6 +288,7 @@ offset_top = 338.0
 offset_right = 476.0
 offset_bottom = 515.0
 script = ExtResource("3_o7a42")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Monster"]
 position = Vector2(48, 82)
@@ -276,18 +301,21 @@ offset_left = 102.0
 offset_top = 14.0
 offset_right = 445.0
 offset_bottom = 163.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CaseNo" type="Panel" parent="."]
 offset_left = 7.0
 offset_top = 558.0
 offset_right = 274.0
 offset_bottom = 635.0
+metadata/_edit_use_anchors_ = true
 
 [node name="GameState" type="Panel" parent="."]
 offset_left = 6.0
 offset_top = 105.0
 offset_right = 273.0
 offset_bottom = 186.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Score" type="Label" parent="GameState"]
 layout_mode = 0
@@ -298,12 +326,14 @@ offset_bottom = 70.0
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Extra" type="Panel" parent="."]
 offset_left = 7.0
 offset_top = 194.0
 offset_right = 274.0
 offset_bottom = 551.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label1" type="Label" parent="Extra"]
 layout_mode = 0
@@ -312,6 +342,7 @@ offset_top = 5.0
 offset_right = 258.0
 offset_bottom = 83.0
 text = "char"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Extra"]
 layout_mode = 0
@@ -320,6 +351,7 @@ offset_top = 93.0
 offset_right = 240.0
 offset_bottom = 150.0
 text = "char"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Extra"]
 layout_mode = 0
@@ -328,6 +360,7 @@ offset_top = 173.0
 offset_right = 255.0
 offset_bottom = 240.0
 text = "char"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label4" type="Label" parent="Extra"]
 layout_mode = 0
@@ -336,6 +369,12 @@ offset_top = 276.0
 offset_right = 255.0
 offset_bottom = 337.0
 text = "monst"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="EffectsPlayer" type="AudioStreamPlayer2D" parent="Sounds"]
+script = ExtResource("9_3vj8r")
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
 [connection signal="pressed" from="Actions/Environment/PingAll" to="Actions" method="_on_AllCharTrigger_pressed"]

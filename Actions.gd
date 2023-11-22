@@ -12,6 +12,9 @@ var CalmButton: Button
 var PowerOnButton: Button
 var PowerOffButton: Button
 
+#Audio Trigger
+var EffectsPlayer : AudioStreamPlayer2D
+
 #Character Controls
 var Char1Trigger : Button
 var Char1Type : Button
@@ -69,7 +72,6 @@ func update_button_selection(button: Button):
 func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
-	
 	for button in [Agitate1Button, Agitate2Button, Agitate3Button, CalmButton, PowerOnButton, PowerOffButton, Char1Trigger, Char2Trigger, Char3Trigger, AllCharTrigger]:
 		if button != selectedButton:
 			button.modulate = Color(1, 1, 1)  # Reset color
@@ -106,61 +108,58 @@ func _on_AllCharTrigger_pressed():
 
 # Callback when the "Execute" button is pressed
 func _on_execute_button_pressed():
-	start_Clock()
-	
+		
 	if selectedButton == Agitate1Button:
 		# ncrease all leveles at lowest rate
 		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,IncreaseRate)
 		TickPower()
-		
-	if selectedButton == Agitate2Button:
+	elif selectedButton == Agitate2Button:
 		# increase all leveles at medium rate
 		GameController.UpdateStatus(1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate)
 		TickPower()
-		
-	if selectedButton == Agitate3Button:
+	elif selectedButton == Agitate3Button:
 		# increase all leveles at max rate
 		GameController.UpdateStatus(2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate)
 		TickPower()
-
-	if selectedButton == CalmButton:
+	elif selectedButton == CalmButton:
 		# decrease all levels
 		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,DecreaseRate)
 		TickPower()
-		
-	if selectedButton == PowerOnButton:
+	elif selectedButton == PowerOnButton:
 		# Increment Character1, Character2, and Character3
 		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,0)
+		GameController.PlaySound(2)
 		togglePower()
-		
-	if selectedButton == PowerOffButton:
+	elif selectedButton == PowerOffButton:
 		# Increment Character1, Character2, and Character3, and decrement Monster
 		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,DecreaseRate)
+		GameController.PlaySound(3)
 		togglePower()
-	
 	#Triggers for specific character agitation: increase for true (agitate), decrease for false(calm)
-	if selectedButton == Char1Trigger:
+	elif selectedButton == Char1Trigger:
 		if $Environment/Char1Ping.CheckType():
 			GameController.UpdateStatus(IncreaseRate,0,0,0)
 		else:
-			GameController.UpdateStatus(DecreaseRate,0,0,0)
-			
-	if selectedButton == Char2Trigger:
+			GameController.UpdateStatus(DecreaseRate,0,0,0)		
+	elif selectedButton == Char2Trigger:
 		if $Environment/Char2Ping.CheckType():
 			GameController.UpdateStatus(0,IncreaseRate,0,0)
 		else:
-			GameController.UpdateStatus(0,DecreaseRate,0,0)
-			
-	if selectedButton == Char3Trigger:
+			GameController.UpdateStatus(0,DecreaseRate,0,0)	
+	elif selectedButton == Char3Trigger:
 		if $Environment/Char3Ping.CheckType():
 			GameController.UpdateStatus(0,0,IncreaseRate,0)
 		else:
 			GameController.UpdateStatus(0,0,DecreaseRate,0)
-	
-	if(selectedButton == AllCharTrigger):
+	elif(selectedButton == AllCharTrigger):
 		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,0)
+		GameController.PlaySound(1)
 		TickPower()
-	
+	else:
+		#TODO: alert the player no button was pressed. TickPower anyways???
+		pass
+		
+	start_Clock()
 	# Reset the button selection
 	unselectButtions(true)
 
