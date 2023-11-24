@@ -37,6 +37,6 @@ func Start():
 
 func IncreaseDifficulty():
 	if count > 24:
-		GlobalVariables.IncreaseRate * 3
+		GlobalVariables.IncreaseRate = GlobalVariables.IncreaseRate * 3
 	else:
 		count += 1
