@@ -25,7 +25,8 @@ var Char3Type : Button
 var AllCharTrigger : Button
 
 var executeButton: Button
-var Clock : Timer
+var ExecuteClock : Timer
+var CalmClock : Timer
 
 var selectedButton: Button  # Stores the currently selected button
 
@@ -38,8 +39,9 @@ func _ready():
 	Agitate2Button = $Monster/Agitate2
 	Agitate3Button = $Monster/Agitate3
 	CalmButton = $Monster/Calm
+	CalmClock = $Monster/Timer
 	
-	Clock = $ResetClock
+	ExecuteClock = $ResetClock
 	executeButton = $Execute
 	executeButton.modulate = Color(0, 1, 0)
 	
@@ -126,8 +128,9 @@ func _on_execute_button_pressed():
 		TickPower()
 	elif selectedButton == CalmButton:
 		# decrease all levels
-		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,DecreaseRate)
+		GameController.UpdateStatus(DecreaseRate * 3,DecreaseRate * 3,DecreaseRate * 3,DecreaseRate * 3)
 		TickPower()
+		CalmLockout()
 	elif selectedButton == PowerOnButton:
 		# Increment Character1, Character2, and Character3
 		GameController.UpdateStatus(DecreaseRate,DecreaseRate,DecreaseRate,0)
@@ -176,11 +179,20 @@ func TickPower():
 	else:
 		GameController.UpdateStatus(IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2)
 
+func CalmLockout():
+	CalmClock.start()
+	CalmButton.disabled = true
+
+func On_Calm_Timeout():
+	CalmButton.disabled = false
+
+#execute button timer
 func start_Clock():
-	Clock.start()
+	ExecuteClock.start()
 	executeButton.modulate = Color(1, 1, 1)
 	executeButton.disabled = true
 
+#execute timer clock
 func _on_clock_timeout():
 	executeButton.modulate = Color(0, 1, 0)
 	executeButton.disabled = false

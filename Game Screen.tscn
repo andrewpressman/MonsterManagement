@@ -16,7 +16,7 @@
 script = ExtResource("1_61weh")
 
 [node name="Clock" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 script = ExtResource("2_kakbt")
 
 [node name="Waveform" type="Panel" parent="."]
@@ -162,6 +162,9 @@ offset_bottom = 544.0
 text = "Calm
 Anomaly"
 metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Actions/Monster"]
+wait_time = 5.0
 
 [node name="Execute" type="Button" parent="Actions"]
 layout_mode = 0
@@ -390,6 +393,7 @@ script = ExtResource("9_3vj8r")
 [connection signal="pressed" from="Actions/Monster/Agitate2" to="Actions" method="_on_Agitate2_pressed"]
 [connection signal="pressed" from="Actions/Monster/Agitate3" to="Actions" method="_on_Agitate3_pressed"]
 [connection signal="pressed" from="Actions/Monster/Calm" to="Actions" method="_on_Calm_pressed"]
+[connection signal="timeout" from="Actions/Monster/Timer" to="Actions" method="On_Calm_Timeout"]
 [connection signal="pressed" from="Actions/Execute" to="Actions" method="_on_execute_button_pressed"]
 [connection signal="timeout" from="Actions/ResetClock" to="Actions" method="_on_clock_timeout"]
 [connection signal="pressed" from="Audio Controller/Play" to="Audio Controller" method="_on_PlayButton_pressed"]

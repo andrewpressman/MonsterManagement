@@ -55,7 +55,7 @@ func _ready():
 	
 	#declare global variables
 	MinState = GlobalVariables.MinState
-	YellowThreshold = GlobalVariables.MinState
+	YellowThreshold = GlobalVariables.YellowThreshold
 	RedThreshold = GlobalVariables.RedThreshold
 	MaxState = GlobalVariables.MaxState
 	IncreaseRate = GlobalVariables.IncreaseRate
@@ -139,9 +139,11 @@ func UpdateScore():
 		
 func CalcScore(value:int):
 	if value >= RedThreshold:
-		return 10
+		return 4
 	elif value >= YellowThreshold:
-		return 5
+		return 2
+	else:
+		return -2
 
 func Reset():
 	Character1 = MinState
