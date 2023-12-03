@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=12 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Audio Controller.gd" id="1_jtjcn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ea8a3ckdjpp2" path="res://Assets/RTEVaPZh_400x400.jpg" id="4_75rfu"]
 [ext_resource type="Script" path="res://CharacterPing.gd" id="5_1bmgd"]
 [ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
+[ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
 
@@ -20,10 +21,10 @@ wait_time = 10.0
 script = ExtResource("2_kakbt")
 
 [node name="Waveform" type="Panel" parent="."]
-offset_left = 6.0
-offset_top = 9.0
-offset_right = 1138.0
-offset_bottom = 94.0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 1141.0
+offset_bottom = 96.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
@@ -135,7 +136,7 @@ offset_left = 799.0
 offset_top = 373.0
 offset_right = 1030.0
 offset_bottom = 426.0
-text = "Agitate Anomaly"
+text = "Shock Anomaly lvl 1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Agitate2" type="Button" parent="Actions/Monster"]
@@ -143,7 +144,7 @@ offset_left = 799.0
 offset_top = 432.0
 offset_right = 1030.0
 offset_bottom = 485.0
-text = "Shock Anomaly"
+text = "Shock Anomaly lvl 2"
 metadata/_edit_use_anchors_ = true
 
 [node name="Agitate3" type="Button" parent="Actions/Monster"]
@@ -151,7 +152,7 @@ offset_left = 799.0
 offset_top = 490.0
 offset_right = 1030.0
 offset_bottom = 543.0
-text = "Enrage Anomaly"
+text = "Shock Anomaly lvl 3"
 metadata/_edit_use_anchors_ = true
 
 [node name="Calm" type="Button" parent="Actions/Monster"]
@@ -308,20 +309,25 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CaseNo" type="Panel" parent="."]
 offset_left = 7.0
-offset_top = 558.0
+offset_top = 556.0
 offset_right = 274.0
-offset_bottom = 635.0
+offset_bottom = 633.0
 metadata/_edit_use_anchors_ = true
 
 [node name="GameState" type="Panel" parent="."]
-offset_left = 6.0
-offset_top = 105.0
-offset_right = 273.0
-offset_bottom = 186.0
-metadata/_edit_use_anchors_ = true
+offset_left = 8.0
+offset_top = 225.0
+offset_right = 275.0
+offset_bottom = 546.0
+script = ExtResource("9_4ck7d")
 
 [node name="Score" type="Label" parent="GameState"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00749064
+anchor_top = 1.01869
+anchor_right = -0.00749064
+anchor_bottom = 1.01869
 offset_left = 23.0
 offset_top = 11.0
 offset_right = 243.0
@@ -331,48 +337,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Extra" type="Panel" parent="."]
-offset_left = 7.0
-offset_top = 194.0
-offset_right = 274.0
-offset_bottom = 551.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label1" type="Label" parent="Extra"]
+[node name="Objective" type="Label" parent="GameState"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 5.0
-offset_right = 258.0
-offset_bottom = 83.0
-text = "char"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="Extra"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 93.0
+offset_left = 21.0
+offset_top = 11.0
 offset_right = 240.0
-offset_bottom = 150.0
-text = "char"
-metadata/_edit_use_anchors_ = true
+offset_bottom = 50.0
+text = "Current Objective:"
 
-[node name="Label3" type="Label" parent="Extra"]
+[node name="CurrObj" type="Label" parent="GameState"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 173.0
-offset_right = 255.0
-offset_bottom = 240.0
-text = "char"
-metadata/_edit_use_anchors_ = true
+offset_left = 25.0
+offset_top = 44.0
+offset_right = 214.0
+offset_bottom = 109.0
 
-[node name="Label4" type="Label" parent="Extra"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 276.0
-offset_right = 255.0
-offset_bottom = 337.0
-text = "monst"
-metadata/_edit_use_anchors_ = true
+[node name="Extra" type="Panel" parent="."]
+offset_left = 9.0
+offset_top = 108.0
+offset_right = 274.0
+offset_bottom = 217.0
 
 [node name="Sounds" type="Node" parent="."]
 

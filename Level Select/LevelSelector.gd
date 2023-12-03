@@ -23,6 +23,7 @@ func _ready():
 	Level2Button = $Cases/Level2/select
 	Level3Button = $Cases/Level3/select
 	GlobalVariables.IncreaseRate = GlobalVariables.StartRate
+	GlobalVariables.TargetScore = 0
 	Level1 = $Cases/Level1
 	Level2 = $Cases/Level2
 	Level3 = $Cases/Level3
@@ -80,12 +81,15 @@ func _on_Level3_pressed():
 func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
 		setDifficulty(50,80,100,10,-10)
+		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level2Button:
 		setDifficulty(50,80,100,10,-5)
+		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level3Button:
 		setDifficulty(50,80,100,10,-1)
+		GlobalVariables.TargetScore = 1000
 	# Reset the button selection
 	unselectButtions(true)
 	StartGame()

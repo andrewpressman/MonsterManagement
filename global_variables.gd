@@ -11,3 +11,6 @@ var IncreaseRate : int
 var DecreaseRate : int
 
 var Score : int = 0
+var TargetScore : int
+var SecondayObjective : int
+var SecondayObjectiveTxt : String

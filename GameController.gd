@@ -36,6 +36,9 @@ var l4 : Label
 var GameState
 var ScoreTag : Label
 
+#ObjectivePanel
+var Objective : Panel
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get references to character and monster nodes in the HealthMonitor panel
@@ -49,6 +52,9 @@ func _ready():
 	l2 = $Extra/Label2
 	l3 = $Extra/Label3
 	l4 = $Extra/Label4
+	
+	#Objective
+	Objective = $GameState
 	
 	#audio
 	EffectsPlayer = $Sounds/EffectsPlayer
@@ -130,12 +136,17 @@ func StartGame():
 	$Clock.Start()
 
 func UpdateScore():
-	if (Character1 >= MaxState && Character2 >= MaxState && Character3 >= MaxState) || Monster >= MaxState:
+	if GlobalVariables.Score >= GlobalVariables.TargetScore:
+		if Objective.GetObjective():
+			pass
 		EndGame()
 	else:
 		GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
 	
 	ScoreTag.text = str(GlobalVariables.Score)
+	
+	if GlobalVariables.Score > 1000:
+		EndGame()
 		
 func CalcScore(value:int):
 	if value >= RedThreshold:
@@ -153,4 +164,5 @@ func Reset():
 	UpdateStatus(MinState,MinState,MinState,MinState)
 
 func EndGame():
+	#TODO track if objective was passed
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
