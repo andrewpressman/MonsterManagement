@@ -80,11 +80,11 @@ func _on_Level3_pressed():
 
 func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
-		setDifficulty(50,80,100,10,-10)
+		setDifficulty(30,60,90,10,-10)
 		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level2Button:
-		setDifficulty(50,80,100,10,-5)
+		setDifficulty(20,60,120,5,-1)
 		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level3Button:

@@ -20,17 +20,15 @@ var Monster : int
 #Audio Settings
 var EffectsPlayer : AudioStreamPlayer2D
 
+#GameOver
+var GameOver : Panel
+var backToMenu : Button
+
 # Get references to character and monster nodes in the HealthMonitor panel
 var character1_node
 var character2_node
 var character3_node
 var monster_node
-
-#Temp Settings/controls
-var l1 : Label
-var l2 : Label
-var l3 : Label
-var l4 : Label
 
 #Score Settings
 var GameState
@@ -47,14 +45,14 @@ func _ready():
 	character3_node = $HealthMonitor/Character3
 	monster_node = $HealthMonitor/Monster
 	
-	#Temp Stuff
-	l1 = $Extra/Label1
-	l2 = $Extra/Label2
-	l3 = $Extra/Label3
-	l4 = $Extra/Label4
-	
 	#Objective
 	Objective = $GameState
+	
+	#GameOver
+	GameOver = $GameOver
+	backToMenu = $GameOver/Button
+	GameOver.modulate = Color(1, 0, 0)
+	GameOver.hide()
 	
 	#audio
 	EffectsPlayer = $Sounds/EffectsPlayer
@@ -113,13 +111,6 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	Monster += monster
 	clamp_values()
 	
-	#debug
-	l1.text = "char1 " + str(Character1)
-	l2.text = "char2 " + str(Character2)
-	l3.text = "char3 " + str(Character3)
-	l4.text = "Monster " + str(Monster)
-	#print("Update ran")
-	
 	character1_node.update_panel_color(Character1)
 	character2_node.update_panel_color(Character2)
 	character3_node.update_panel_color(Character3)
@@ -137,24 +128,35 @@ func StartGame():
 
 func UpdateScore():
 	if GlobalVariables.Score >= GlobalVariables.TargetScore:
-		if Objective.GetObjective():
-			pass
+		#if Objective.GetObjective():
+		#	pass
 		EndGame()
 	else:
 		GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
 	
 	ScoreTag.text = str(GlobalVariables.Score)
 	
-	if GlobalVariables.Score > 1000:
+	if GlobalVariables.Score > 1000 || CheckStatus():
 		EndGame()
-		
+
+func CheckStatus():
+	if Monster >= GlobalVariables.MaxState:
+		return true
+	if Character1 >= GlobalVariables.MaxState && Character2 >= GlobalVariables.MaxState && Character3 >= GlobalVariables.MaxState:
+		return true
+	else:
+		return false
+
 func CalcScore(value:int):
 	if value >= RedThreshold:
-		return 4
+		return 20
 	elif value >= YellowThreshold:
-		return 2
+		return 10
 	else:
-		return -2
+		if GlobalVariables.Score <= 0:
+			return 0
+		else:
+			return -5
 
 func Reset():
 	Character1 = MinState
@@ -163,6 +165,11 @@ func Reset():
 	Monster = MinState
 	UpdateStatus(MinState,MinState,MinState,MinState)
 
+func BackToMenu():
+	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+
+
 func EndGame():
 	#TODO track if objective was passed
-	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+	GameOver.show()
+	#get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
