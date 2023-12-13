@@ -7,41 +7,43 @@
 script = ExtResource("1_t3wki")
 
 [node name="TempScore" type="Panel" parent="."]
-offset_left = 313.0
+offset_left = 201.0
 offset_top = 9.0
-offset_right = 901.0
-offset_bottom = 105.0
+offset_right = 789.0
+offset_bottom = 94.0
 
 [node name="Score" type="Label" parent="TempScore"]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 14.0
-offset_right = 517.0
-offset_bottom = 80.0
+offset_left = 40.0
+offset_top = 10.0
+offset_right = 519.0
+offset_bottom = 76.0
 text = "Last Score: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cases" type="Panel" parent="."]
-offset_left = 249.0
-offset_top = 112.0
-offset_right = 1030.0
+offset_left = 199.0
+offset_top = 108.0
+offset_right = 1143.0
 offset_bottom = 561.0
 
 [node name="Level1" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
 
 [node name="select" type="Button" parent="Cases/Level1"]
-offset_left = 260.0
+offset_left = 215.0
 offset_top = 128.0
-offset_right = 367.0
+offset_right = 322.0
 offset_bottom = 228.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level1"]
-offset_left = 379.0
+offset_left = 334.0
 offset_top = 129.0
-offset_right = 1002.0
+offset_right = 957.0
 offset_bottom = 228.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level1/MiniInfo"]
 layout_mode = 0
@@ -50,12 +52,13 @@ offset_bottom = 98.0
 text = "Level 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BigInfo" type="Panel" parent="Cases/Level1"]
 visible = false
-offset_left = 379.0
+offset_left = 337.0
 offset_top = 129.0
-offset_right = 1002.0
+offset_right = 960.0
 offset_bottom = 538.0
 
 [node name="Label" type="Label" parent="Cases/Level1/BigInfo"]
@@ -68,16 +71,16 @@ text = "This will test the first iteration of scaling"
 script = ExtResource("1_1i0fd")
 
 [node name="select" type="Button" parent="Cases/Level2"]
-offset_left = 260.0
+offset_left = 215.0
 offset_top = 281.0
-offset_right = 367.0
+offset_right = 322.0
 offset_bottom = 381.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level2"]
-offset_left = 379.0
+offset_left = 334.0
 offset_top = 282.0
-offset_right = 1002.0
+offset_right = 957.0
 offset_bottom = 381.0
 metadata/_edit_use_anchors_ = true
 
@@ -88,12 +91,13 @@ offset_bottom = 98.0
 text = "Level 2"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BigInfo" type="Panel" parent="Cases/Level2"]
 visible = false
-offset_left = 379.0
+offset_left = 337.0
 offset_top = 129.0
-offset_right = 1002.0
+offset_right = 960.0
 offset_bottom = 538.0
 
 [node name="Label" type="Label" parent="Cases/Level2/BigInfo"]
@@ -106,16 +110,16 @@ text = "This will test the second iteration of scaling"
 script = ExtResource("1_1i0fd")
 
 [node name="select" type="Button" parent="Cases/Level3"]
-offset_left = 260.0
+offset_left = 215.0
 offset_top = 431.0
-offset_right = 367.0
+offset_right = 322.0
 offset_bottom = 531.0
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level3"]
-offset_left = 379.0
+offset_left = 334.0
 offset_top = 432.0
-offset_right = 1002.0
+offset_right = 957.0
 offset_bottom = 531.0
 
 [node name="Label" type="Label" parent="Cases/Level3/MiniInfo"]
@@ -128,9 +132,9 @@ vertical_alignment = 1
 
 [node name="BigInfo" type="Panel" parent="Cases/Level3"]
 visible = false
-offset_left = 379.0
+offset_left = 337.0
 offset_top = 129.0
-offset_right = 1002.0
+offset_right = 960.0
 offset_bottom = 538.0
 
 [node name="Label" type="Label" parent="Cases/Level3/BigInfo"]
@@ -165,7 +169,7 @@ text = "Begin test"
 [node name="meta element" type="Panel" parent="."]
 offset_left = 17.0
 offset_top = 103.0
-offset_right = 227.0
+offset_right = 187.0
 offset_bottom = 613.0
 
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]

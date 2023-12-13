@@ -348,10 +348,19 @@ text = "Current Objective:"
 
 [node name="CurrObj" type="Label" parent="GameState"]
 layout_mode = 0
-offset_left = 25.0
+offset_left = 14.0
 offset_top = 44.0
-offset_right = 214.0
-offset_bottom = 109.0
+offset_right = 212.0
+offset_bottom = 93.0
+text = "-Release the creature
+-preserve all subjects"
+
+[node name="ObjStatus" type="ColorRect" parent="GameState"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 100.0
+offset_right = 247.0
+offset_bottom = 201.0
 
 [node name="Extra" type="Panel" parent="."]
 offset_left = 9.0
@@ -365,6 +374,7 @@ offset_bottom = 217.0
 script = ExtResource("9_3vj8r")
 
 [node name="GameOver" type="Panel" parent="."]
+visible = false
 offset_left = 11.0
 offset_top = 11.0
 offset_right = 1135.0
