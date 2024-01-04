@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdt441cqsrc7a"]
+
+[ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jo4rk")
+
+[node name="MainMenu" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 645.0
+
+[node name="Title" type="Panel" parent="MainMenu"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 24.0
+offset_right = 1110.0
+offset_bottom = 162.0
+
+[node name="Label" type="Label" parent="MainMenu/Title"]
+layout_mode = 0
+offset_right = 1073.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 81
+text = "Monster Management"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="MainMenu"]
+visible = false
+layout_mode = 0
+offset_left = 51.0
+offset_top = 181.0
+offset_right = 477.0
+offset_bottom = 265.0
+text = "Continue"
+
+[node name="New Game" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 282.0
+offset_right = 477.0
+offset_bottom = 366.0
+text = "New Game"
+
+[node name="Options" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 378.0
+offset_right = 475.0
+offset_bottom = 461.0
+text = "Options (COMING SOON)"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 475.0
+offset_right = 359.0
+offset_bottom = 558.0
+text = "Quit"
+
+[node name="Options" type="Panel" parent="."]
+visible = false
+offset_right = 1150.0
+offset_bottom = 645.0
+
+[connection signal="toggled" from="MainMenu/Continue" to="." method="ContinueGame"]
+[connection signal="toggled" from="MainMenu/New Game" to="." method="StartNewGame"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="QuitGame"]
