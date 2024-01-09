@@ -352,8 +352,6 @@ offset_left = 14.0
 offset_top = 44.0
 offset_right = 212.0
 offset_bottom = 93.0
-text = "-Release the creature
--preserve all subjects"
 
 [node name="ObjStatus" type="ColorRect" parent="GameState"]
 layout_mode = 0
