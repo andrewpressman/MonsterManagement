@@ -15,6 +15,10 @@ func _ready():
 
 func StartNewGame():
 	#clear Savegame
+	GlobalVariables.Level1Status = 0
+	GlobalVariables.Level2Status = 0
+	GlobalVariables.Level3Status = 0
+	GlobalVariables.CurrentLevel = 1
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func ContinueGame():

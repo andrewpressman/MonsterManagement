@@ -24,7 +24,7 @@ vertical_alignment = 1
 
 [node name="Cases" type="Panel" parent="."]
 offset_left = 199.0
-offset_top = 108.0
+offset_top = 100.0
 offset_right = 1143.0
 offset_bottom = 561.0
 
@@ -67,6 +67,12 @@ offset_right = 623.0
 offset_bottom = 407.0
 text = "This will test the first iteration of scaling"
 
+[node name="Status" type="Panel" parent="Cases/Level1"]
+offset_left = 970.0
+offset_top = 128.0
+offset_right = 1119.0
+offset_bottom = 225.0
+
 [node name="Level2" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
 
@@ -106,6 +112,12 @@ offset_right = 623.0
 offset_bottom = 407.0
 text = "This will test the second iteration of scaling"
 
+[node name="Status" type="Panel" parent="Cases/Level2"]
+offset_left = 967.0
+offset_top = 285.0
+offset_right = 1124.0
+offset_bottom = 383.0
+
 [node name="Level3" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
 
@@ -142,6 +154,12 @@ layout_mode = 0
 offset_right = 623.0
 offset_bottom = 407.0
 text = "This will test the third iteration of scaling"
+
+[node name="Status" type="Panel" parent="Cases/Level3"]
+offset_left = 966.0
+offset_top = 433.0
+offset_right = 1123.0
+offset_bottom = 531.0
 
 [node name="Budget" type="Panel" parent="."]
 offset_left = 17.0

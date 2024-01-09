@@ -31,6 +31,7 @@ func _ready():
 	executeButton = $Begin
 	selectedButton = null
 	executeButton.disabled = true
+	
 	#testing
 	LastScore = $TempScore/Score
 	if GlobalVariables.Score == null:
@@ -38,6 +39,20 @@ func _ready():
 	var score = GlobalVariables.Score
 	LastScore.text = "Last score: " + str(score)
 	
+func SetStatus():
+	if GlobalVariables.Level1Status == 1:
+		Level1.MarkComplete()
+	else:
+		Level1.MarkIncomplete()
+	if GlobalVariables.Level1Status == 1:
+		Level2.MarkComplete()
+	else:
+		Level2.MarkIncomplete()
+	if GlobalVariables.Level1Status == 1:
+		Level3.MarkComplete()
+	else:
+		Level3.MarkIncomplete()
+
 
 # Function to update the button selection and visuals
 func update_button_selection(button: Button):
@@ -80,14 +95,17 @@ func _on_Level3_pressed():
 
 func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
+		GlobalVariables.CurrentStage = 1
 		setDifficulty(30,60,90,10,-10)
 		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level2Button:
+		GlobalVariables.CurrentStage = 2
 		setDifficulty(20,60,120,5,-1)
 		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level3Button:
+		GlobalVariables.CurrentStage = 3
 		setDifficulty(50,80,100,10,-1)
 		GlobalVariables.TargetScore = 1000
 	# Reset the button selection

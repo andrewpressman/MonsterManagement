@@ -3,6 +3,7 @@ extends Node
 var Select : Button
 var SmallInfo : Panel
 var BigInfo : Panel
+var Status : Panel
 
 var isPanelExpanded : bool = false
 
@@ -10,6 +11,7 @@ var isPanelExpanded : bool = false
 func _ready():
 	SmallInfo = $MiniInfo
 	BigInfo = $BigInfo
+	Status = $Status
 	BigInfo.hide()
 
 func hideBig():
@@ -23,3 +25,9 @@ func showBig():
 	
 func showSmall():
 	SmallInfo.show()
+
+func MarkCompete():
+	Status.modulate = Color(0, 1, 0) # green
+	
+func MarkIncomplete():
+	Status.modulate = Color(1, 0, 0) # Red

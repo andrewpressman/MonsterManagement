@@ -2,23 +2,74 @@ extends Panel
 
 var GameController: Node2D
 var CurrObj : Label
+var Objective : int
 var objColor : ColorRect
 
 var SecondaryObjectiveTxt : String
 
 func _ready():
-	
-	#temp
-	GlobalVariables.SecondayObjective = 1
-	
+		
+	#TEMP
+	GlobalVariables.CurrentLevel = 1
+		
 	objColor = $ObjStatus
+	objColor.show()
 	GameController = get_parent()
 	CurrObj = $CurrObj
-	SetObjective(GlobalVariables.SecondayObjective)
-	CurrObj.text = SecondaryObjectiveTxt
-	GetObjective(GlobalVariables.SecondayObjective)
+	GetCurrentLevel()
 
-func SetObjective(obj : int):
+#Sets/Stores all secondary objectives for each level (1 - 15)
+func GetCurrentLevel():
+	match GlobalVariables.CurrentLevel:
+		1:
+			GetStage(9,9,9)
+		2:
+			GetStage(9,9,9)
+		3:
+			GetStage(9,9,9)
+		4:
+			GetStage(1,2,3)
+		5:
+			GetStage(1,2,3)
+		6:
+			GetStage(1,2,3)
+		7:
+			GetStage(1,2,3)
+		8:
+			GetStage(1,2,3)
+		9:
+			GetStage(1,2,3)
+		10:
+			GetStage(1,2,3)
+		11:
+			GetStage(1,2,3)
+		12:
+			GetStage(1,2,3)
+		13:
+			GetStage(1,2,3)
+		14:
+			GetStage(1,2,3)
+		15:
+			GetStage(1,2,3)
+
+#Checks which stage is active and sets secondary objective
+func GetStage(o1 : int, o2 : int, o3 : int):
+	GlobalVariables.Level1Objective = o1
+	GlobalVariables.Level2Objective = o2
+	GlobalVariables.Level3Objective = o3
+	match GlobalVariables.CurrentStage:
+		1:
+			SetObjectiveText(GlobalVariables.Level1Objective)
+			GetObjective(GlobalVariables.Level1Objective)
+		2:
+			SetObjectiveText(GlobalVariables.Level2Objective)
+			GetObjective(GlobalVariables.Level2Objective)
+		3:
+			SetObjectiveText(GlobalVariables.Level3Objective)
+			GetObjective(GlobalVariables.Level3Objective)
+
+#Set's the text of the secondary objective
+func SetObjectiveText(obj : int):
 	match obj:
 		1:
 			#kill only char 1
@@ -47,7 +98,10 @@ func SetObjective(obj : int):
 		9:
 			#Just complete test
 			SecondaryObjectiveTxt = "-Complete experiemnt"
+	
+	CurrObj.text = SecondaryObjectiveTxt
 
+#function to check if the ojbective conditions are met or not
 func GetObjective(obj : int):
 	match obj:
 		1:
@@ -76,6 +130,7 @@ func GetObjective(obj : int):
 			return OneAlive(3)
 		9:
 			#Just complete test
+			objColor.hide() #do not show status indicator when not needed
 			return true
 
 #ALl characters alive, True: keep all green, False: get monster to escape without killing
@@ -94,6 +149,7 @@ func AllAlive(type : bool):
 		else:
 			objColor.modulate = Color(1,0,0)
 			return false
+
 #leave only 1 alive
 func OneAlive(char : int):
 	match char:
