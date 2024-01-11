@@ -18,6 +18,8 @@ var selectedButton: Button  # Stores the currently selected button
 #testing
 var LastScore : Label
 
+var CurrentLevel : Label
+
 func _ready():
 	Level1Button = $Cases/Level1/select
 	Level2Button = $Cases/Level2/select
@@ -27,6 +29,8 @@ func _ready():
 	Level1 = $Cases/Level1
 	Level2 = $Cases/Level2
 	Level3 = $Cases/Level3
+	
+	CurrentLevel = $"Level Tracker/Label"
 	
 	executeButton = $Begin
 	selectedButton = null
@@ -38,7 +42,10 @@ func _ready():
 		GlobalVariables.Score = 0
 	var score = GlobalVariables.Score
 	LastScore.text = "Last score: " + str(score)
-	
+
+func SetLevel():
+	CurrentLevel.text = "Current Case: " + str(GlobalVariables.CurrentLevel)
+
 func SetStatus():
 	if GlobalVariables.Level1Status == 1:
 		Level1.MarkComplete()

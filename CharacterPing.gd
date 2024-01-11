@@ -7,8 +7,6 @@ func _ready():
 	PingTrigger = $PingTrigger
 	PingType = $PingType
 
-	# Connect the CheckButton's "toggled" signal to the "_on_check_button_toggled" method
-
 func _on_check_button_toggled(_button_pressed):
 	# Check if the CheckButton is checked
 	if PingType.is_pressed():
@@ -16,6 +14,7 @@ func _on_check_button_toggled(_button_pressed):
 	else:
 		PingType.text = "Calm"
 
+#return true for anger toggle, return false for calm toggle
 func CheckType():
 	if PingType.is_pressed():
 		return true

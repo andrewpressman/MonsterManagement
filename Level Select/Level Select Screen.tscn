@@ -161,19 +161,19 @@ offset_top = 433.0
 offset_right = 1123.0
 offset_bottom = 531.0
 
-[node name="Budget" type="Panel" parent="."]
+[node name="Level Tracker" type="Panel" parent="."]
 offset_left = 17.0
 offset_top = 12.0
 offset_right = 186.0
 offset_bottom = 90.0
 
-[node name="Label" type="Label" parent="Budget"]
+[node name="Label" type="Label" parent="Level Tracker"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 15.0
 offset_right = 155.0
 offset_bottom = 59.0
-text = "Resource X"
+text = "Current Case:"
 horizontal_alignment = 1
 vertical_alignment = 1
 

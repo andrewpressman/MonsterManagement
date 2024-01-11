@@ -71,6 +71,7 @@ func update_button_selection(button: Button):
 	selectedButton.modulate = Color(0, 1, 0)  # Set selected button to green
 	unselectButtions(false)
 
+#unselets all control buttons
 func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
@@ -171,18 +172,20 @@ func _on_execute_button_pressed():
 	start_Clock()
 	# Reset the button selection
 	unselectButtions(true)
-
+	
+#if power is off, increment all characters by 1 extra
 func TickPower():
 	if CheckPower:
-		#if power is off, increment all characters by 1 extra
 		GameController.UpdateStatus(DecreaseRate / 2,DecreaseRate / 2,DecreaseRate / 2,0)
 	else:
 		GameController.UpdateStatus(IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2,IncreaseRate / 2)
 
+#locks calm button to prevent spamming
 func CalmLockout():
 	CalmClock.start()
 	CalmButton.disabled = true
 
+#re-enables calm button
 func On_Calm_Timeout():
 	CalmButton.disabled = false
 
@@ -204,6 +207,7 @@ func CheckPower():
 	else:
 		return true
 
+#toggle powers
 func togglePower():
 	if PowerOnButton.is_visible():
 		PowerOnButton.hide()

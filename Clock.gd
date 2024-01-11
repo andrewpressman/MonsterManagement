@@ -22,10 +22,13 @@ func _ready():
 			ObjectiveCheck = GlobalVariables.Level3Objective	
 
 func _on_timer_timeout():
-	# Generate a random number between 1 and 100
-	var MonsterTrack = randi_range(1,4)
+	# Generate a random number between 1 and 5
+	var MonsterTrack = randi_range(1,5)
 	
+	# Generate a random number between 1 and 10
 	var CharacterTrack = randi_range(1,10)
+	
+	# 3/10 chance one of the characters gets pinged
 	match CharacterTrack:
 		1:
 			GameController.UpdateStatus(IncreaseRate,0,0,0)
@@ -34,6 +37,7 @@ func _on_timer_timeout():
 		3:
 			GameController.UpdateStatus(0,0,IncreaseRate,0)
 	
+	#1/5 chance monster gets pinged, 1/5 chance monster gets boosted pinged
 	match MonsterTrack:
 		3:
 			GameController.UpdateStatus(0,0,0,IncreaseRate)
@@ -43,9 +47,11 @@ func _on_timer_timeout():
 	IncreaseDifficulty()
 	ObjectiveTracker.GetObjective(ObjectiveCheck)
 	
+#starts clock	
 func Start():
 	start()
 
+#Every 30 cycles of he clock, difficulty increases by 2
 func IncreaseDifficulty():
 	if count > 30:
 		GlobalVariables.IncreaseRate = GlobalVariables.IncreaseRate * 2

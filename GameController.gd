@@ -83,6 +83,7 @@ func _ready():
 	
 	StartGame()
 
+#prevents values from going outside of set limits
 func clamp_values():
 	if Character1 < MinState:
 		Character1 = MinState
@@ -102,9 +103,9 @@ func clamp_values():
 		Character3 = MaxState * 100
 	if Monster >= MaxState:
 		Monster = MaxState * 100
-		
+
+#updates characters values and indicator color		
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
-	#print("1: " + str(char1) + " 2: " + str(char2) +" 3: " + str(char3) + " Monster: " + str(monster))
 	Character1 += char1
 	Character2 += char2
 	Character3 += char3
@@ -118,14 +119,18 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	
 	UpdateScore()
 
+#plays sounds
 func PlaySound(sound : int):
 	EffectsPlayer.play_sound(sound)
 	
+#stars game, resets score
 func StartGame():
 	#Reset()	
 	GlobalVariables.Score = 0
 	$Clock.Start()
 
+#Updates score, checks for completion
+#TODO: add in win state and objective tracking
 func UpdateScore():
 	if GlobalVariables.Score >= GlobalVariables.TargetScore:
 		#if Objective.GetObjective():
@@ -139,6 +144,7 @@ func UpdateScore():
 	if GlobalVariables.Score > 1000 || CheckStatus():
 		EndGame()
 
+#Chceks if any failure state has passed
 func CheckStatus():
 	if Monster >= GlobalVariables.MaxState:
 		return true
@@ -147,6 +153,7 @@ func CheckStatus():
 	else:
 		return false
 
+#calculates score based on character values
 func CalcScore(value:int):
 	if value >= RedThreshold:
 		return 20
@@ -158,6 +165,7 @@ func CalcScore(value:int):
 		else:
 			return -5
 
+#resets all values
 func Reset():
 	Character1 = MinState
 	Character2 = MinState
@@ -165,10 +173,11 @@ func Reset():
 	Monster = MinState
 	UpdateStatus(MinState,MinState,MinState,MinState)
 
+#return to menu
 func BackToMenu():
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
-
+#end game
 func EndGame():
 	#TODO track if objective was passed
 	GameOver.show()
