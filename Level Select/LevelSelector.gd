@@ -46,6 +46,7 @@ func _ready():
 func SetLevel():
 	CurrentLevel.text = "Current Case: " + str(GlobalVariables.CurrentLevel)
 
+#markes a level complete
 func SetStatus():
 	if GlobalVariables.Level1Status == 1:
 		Level1.MarkComplete()
@@ -68,6 +69,7 @@ func update_button_selection(button: Button):
 	selectedButton.modulate = Color(0, 1, 0)  # Set selected button to green
 	unselectButtions(false)
 
+#unselects all buttons
 func unselectButtions(clear:bool):
 	if clear:
 		selectedButton = null
@@ -78,7 +80,7 @@ func unselectButtions(clear:bool):
 		if button != selectedButton:
 			button.modulate = Color(1, 1, 1)  # Reset color
 
-#TODO: properly show/hide info panels
+
 func _on_Level1_pressed():
 	if selectedButton == Level1Button:
 		unselectButtions(true)
@@ -100,6 +102,8 @@ func _on_Level3_pressed():
 		update_button_selection(Level3Button)
 		showBig(3)
 
+#starts game and sets difficulty
+#TODO: move difficulty settings and make it scale with level
 func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
 		GlobalVariables.CurrentStage = 1
@@ -119,6 +123,7 @@ func _on_begin_button_pressed():
 	unselectButtions(true)
 	StartGame()
 
+#sets game difficulty
 func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
 	GlobalVariables.YellowThreshold = yellow
 	GlobalVariables.RedThreshold = red
@@ -160,6 +165,7 @@ func hideBig():
 	Level2.hideBig()
 	Level3.hideBig()
 
+#switch to game screen
 func StartGame():
 	#pass in parameters for game
 	get_tree().change_scene_to_file("res://Game Screen.tscn")
