@@ -4,7 +4,7 @@ var MinState : int = 0 #minimum state for each entitiy
 
 var YellowThreshold : int #Character turns yellow when hitting this value
 var RedThreshold : int #Character turns red when hitting this value
-var MaxState : int ##Character is dead/escaped when hitting/passing this value
+var MaxState : int #Character is dead/escaped when hitting/passing this value
 
 var StartRate : int #base value for increasing/decreasing charater state (stays static)
 var IncreaseRate : int #determines how much to increase a character value(variable)

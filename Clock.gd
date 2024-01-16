@@ -53,8 +53,24 @@ func Start():
 
 #Every 30 cycles of he clock, difficulty increases by 2
 func IncreaseDifficulty():
-	if count > 30:
+	if count > 30 + GetLevel():
 		GlobalVariables.IncreaseRate = GlobalVariables.IncreaseRate * 2
 		count = 0
 	else:
 		count += 1
+
+func GetLevel():
+	if GlobalVariables.CurrentLevel <= 3:
+		return 15
+	
+	elif GlobalVariables.CurrentLevel <= 6:
+		return 10
+	
+	elif GlobalVariables.CurrentLevel <= 9:
+		return 5
+	
+	elif GlobalVariables.CurrentLevel <= 12:
+		return 0
+	
+	else:
+		return -5
