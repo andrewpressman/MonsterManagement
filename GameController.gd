@@ -20,9 +20,17 @@ var Monster : int
 #Audio Settings
 var EffectsPlayer : AudioStreamPlayer2D
 
-#GameOver
+#info panel
+var LevelNo
+var TestNo
+
+#Start/End Game
 var GameOver : Panel
+var StartPanel : Panel
 var backToMenu : Button
+var begin : Button
+var EndState : Label
+var PassFail : bool #True: test passed, False: test failed
 
 # Get references to character and monster nodes in the HealthMonitor panel
 var character1_node
@@ -48,14 +56,26 @@ func _ready():
 	#Objective
 	Objective = $GameState
 	
+	#begin
+	StartPanel = $StartGame
+	begin = $StartGame/Button
+	StartPanel.show()
+	
 	#GameOver
 	GameOver = $GameOver
 	backToMenu = $GameOver/Button
-	GameOver.modulate = Color(1, 0, 0)
+	EndState = $GameOver/Text
 	GameOver.hide()
+	PassFail = false
 	
 	#audio
 	EffectsPlayer = $Sounds/EffectsPlayer
+	
+	#Level tracker
+	LevelNo = $Info/LevelNo
+	TestNo = $Info/TestNo
+	LevelNo.text = "Level: " + str(GlobalVariables.CurrentLevel)
+	TestNo.text = "Test: " + str(GlobalVariables.CurrentStage)
 	
 	#declare global variables
 	MinState = GlobalVariables.MinState
@@ -64,12 +84,9 @@ func _ready():
 	MaxState = GlobalVariables.MaxState
 	IncreaseRate = GlobalVariables.IncreaseRate
 	DecreaseRate = GlobalVariables.DecreaseRate
-	# TEMP
-	Character1 = MinState
-	Character2 = MinState
-	Character3 = MinState
-	Monster = MinState
-
+	
+	#Reset Values
+	Reset()
 	#Scoreboard
 	GlobalVariables.Score = 0
 	ScoreTag = $GameState/Score
@@ -80,8 +97,6 @@ func _ready():
 	character2_node.update_panel_color(Character2)
 	character3_node.update_panel_color(Character3)
 	monster_node.update_panel_color(Monster)
-	
-	StartGame()
 
 #prevents values from going outside of set limits
 func clamp_values():
@@ -116,7 +131,6 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	character2_node.update_panel_color(Character2)
 	character3_node.update_panel_color(Character3)
 	monster_node.update_panel_color(Monster)
-	
 	UpdateScore()
 
 #plays sounds
@@ -125,21 +139,18 @@ func PlaySound(sound : int):
 	
 #stars game, resets score
 func StartGame():
-	#Reset()	
-	GlobalVariables.Score = 0
+	StartPanel.hide()
 	$Clock.Start()
 
 #Updates score, checks for completion
 #TODO: add in win state and objective tracking
 func UpdateScore():
+	$GameState/Score.text = str(GlobalVariables.Score)
 	if GlobalVariables.Score >= GlobalVariables.TargetScore:
-		#if Objective.GetObjective():
-		#	pass
+		PassFail = true
 		EndGame()
 	else:
 		GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
-	
-	ScoreTag.text = str(GlobalVariables.Score)
 	
 	if GlobalVariables.Score > 1000 || CheckStatus():
 		EndGame()
@@ -167,6 +178,7 @@ func CalcScore(value:int):
 
 #resets all values
 func Reset():
+	GlobalVariables.Score = 0
 	Character1 = MinState
 	Character2 = MinState
 	Character3 = MinState
@@ -177,8 +189,25 @@ func Reset():
 func BackToMenu():
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
+func MarkComplete():
+	#TODO: Check secondary objective
+	match GlobalVariables.CurrentStage:
+		1:
+			GlobalVariables.Level1Status = 1
+		2:
+			GlobalVariables.Level2Status = 1
+		3:
+			GlobalVariables.Level3Status = 1
+			
 #end game
 func EndGame():
-	#TODO track if objective was passed
+	if PassFail:
+		MarkComplete()
+		EndState.text = "Test Passed"
+		GameOver.modulate = Color(0, 1, 0)
+	else:
+		EndState.text = "Test Failed"
+		GameOver.modulate = Color(1, 0, 0)
+	
 	GameOver.show()
 	#get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")

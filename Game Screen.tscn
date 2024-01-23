@@ -360,11 +360,29 @@ offset_top = 100.0
 offset_right = 247.0
 offset_bottom = 201.0
 
-[node name="Extra" type="Panel" parent="."]
+[node name="Info" type="Panel" parent="."]
 offset_left = 9.0
 offset_top = 108.0
 offset_right = 274.0
 offset_bottom = 217.0
+
+[node name="LevelNo" type="Label" parent="Info"]
+layout_mode = 0
+offset_right = 265.0
+offset_bottom = 51.0
+text = "Level:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TestNo" type="Label" parent="Info"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 55.0
+offset_right = 267.0
+offset_bottom = 106.0
+text = "Test:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -385,7 +403,7 @@ offset_top = 173.0
 offset_right = 714.0
 offset_bottom = 264.0
 theme_override_font_sizes/font_size = 60
-text = "Game over"
+text = "Test Failed"
 
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
 layout_mode = 0
@@ -402,6 +420,29 @@ offset_top = 375.0
 offset_right = 670.0
 offset_bottom = 471.0
 text = "back to menu"
+
+[node name="StartGame" type="Panel" parent="."]
+visible = false
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 1135.0
+offset_bottom = 640.0
+
+[node name="ColorRect" type="ColorRect" parent="StartGame"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 428.0
+offset_right = 246.0
+offset_bottom = 513.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="StartGame"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 424.0
+offset_right = 257.0
+offset_bottom = 520.0
+text = "Begin"
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
 [connection signal="pressed" from="Actions/Environment/PingAll" to="Actions" method="_on_AllCharTrigger_pressed"]
@@ -424,3 +465,4 @@ text = "back to menu"
 [connection signal="pressed" from="Audio Controller/Pause" to="Audio Controller" method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="Audio Controller/Restart" to="Audio Controller" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="GameOver/Button" to="." method="BackToMenu"]
+[connection signal="pressed" from="StartGame/Button" to="." method="StartGame"]
