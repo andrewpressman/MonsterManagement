@@ -134,17 +134,17 @@ func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
 		GlobalVariables.CurrentStage = 1
 		GetLevel()
-		GlobalVariables.TargetScore = 10
+		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level2Button:
 		GlobalVariables.CurrentStage = 2
 		GetLevel()
-		GlobalVariables.TargetScore = 10
+		GlobalVariables.TargetScore = 1000
 		
 	if selectedButton == Level3Button:
 		GlobalVariables.CurrentStage = 3
 		GetLevel()
-		GlobalVariables.TargetScore = 10
+		GlobalVariables.TargetScore = 1000
 	# Reset the button selection
 	unselectButtions(true)
 	StartGame()

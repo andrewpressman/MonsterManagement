@@ -18,35 +18,35 @@ func _ready():
 func GetCurrentLevel():
 	match GlobalVariables.CurrentLevel:
 		1:
-			GetStage(9,9,9)
+			GetStage(9,9,9) #intro levls, no obj
 		2:
-			GetStage(9,9,9)
+			GetStage(9,9,9) #intro levls, no obj
 		3:
-			GetStage(9,9,9)
+			GetStage(9,9,9) #intro levls, no obj
 		4:
-			GetStage(1,2,3)
+			GetStage(1,1,3) #eliminate 1,eliminate 1, eliminate3
 		5:
-			GetStage(1,2,3)
+			GetStage(3,2,2) #eliminate 3, eliminate 2, eliminate2
 		6:
-			GetStage(1,2,3)
+			GetStage(2,3,1) #eliminate 2, eliminate 3, eliminate1
 		7:
-			GetStage(1,2,3)
+			GetStage(1,2,8) #elminate 1, eliminate 2, Preserve 3
 		8:
-			GetStage(1,2,3)
+			GetStage(3,1,7) #elminate 3, eliminate 1, Preserve 2
 		9:
-			GetStage(1,2,3)
+			GetStage(8,2,7) #Preserve 3, eliminate 2, Preserve 2
 		10:
-			GetStage(1,2,3)
+			GetStage(6,7,8) #Preserve 1, Preserve 2, Preserve 3
 		11:
-			GetStage(1,2,3)
+			GetStage(8,6,7) #Preserve 3, Preserve 1, Preserve 2
 		12:
-			GetStage(1,2,3)
+			GetStage(3,7,4) #Eliminate 3, Preserve 2, preserve all
 		13:
-			GetStage(1,2,3)
+			GetStage(4,4,1) #preserve all, preserve all, eliminate 1
 		14:
-			GetStage(1,2,3)
+			GetStage(4,4,4) #preserve all
 		15:
-			GetStage(1,2,3)
+			GetStage(5,5,5) #release the creatures
 
 #Checks which stage is active and sets secondary objective
 func GetStage(o1 : int, o2 : int, o3 : int):
@@ -87,7 +87,7 @@ func SetObjectiveText(obj : int):
 			SecondaryObjectiveTxt = "-Eliminate Subject 2\n-Eliminate Subject 3"
 		7:
 			#Leave only char 2 alive
-			SecondaryObjectiveTxt = "-Eliminate Subject 2\n-Eliminate Subject 3"
+			SecondaryObjectiveTxt = "-Eliminate Subject 1\n-Eliminate Subject 3"
 		8:
 			#Leave only char 3 alive
 			SecondaryObjectiveTxt = "-Eliminate Subject 1\n-Eliminate Subject 2"

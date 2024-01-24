@@ -198,7 +198,6 @@ func BackToMenu():
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func MarkComplete():
-	#TODO: Check secondary objective
 	match GlobalVariables.CurrentStage:
 		1:
 			if Objective.GetObjective(GlobalVariables.Level1Objective):

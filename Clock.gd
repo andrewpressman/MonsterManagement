@@ -19,9 +19,9 @@ func _ready():
 		2: 
 			ObjectiveCheck = GlobalVariables.Level2Objective
 		3: 
-			ObjectiveCheck = GlobalVariables.Level3Objective	
+			ObjectiveCheck = GlobalVariables.Level3Objective
 
-func _on_timer_timeout():
+func _on_timer_timeout():	
 	# Generate a random number between 1 and 5
 	var MonsterTrack = randi_range(1,5)
 	
