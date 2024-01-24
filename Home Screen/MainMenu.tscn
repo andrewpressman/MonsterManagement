@@ -63,6 +63,6 @@ visible = false
 offset_right = 1150.0
 offset_bottom = 645.0
 
-[connection signal="toggled" from="MainMenu/Continue" to="." method="ContinueGame"]
-[connection signal="toggled" from="MainMenu/New Game" to="." method="StartNewGame"]
+[connection signal="pressed" from="MainMenu/Continue" to="." method="ContinueGame"]
+[connection signal="pressed" from="MainMenu/New Game" to="." method="StartNewGame"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="QuitGame"]

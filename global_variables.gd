@@ -27,3 +27,6 @@ var Level3Status : int
 var Level1Objective : int 
 var Level2Objective : int
 var Level3Objective : int
+
+#GameisOn
+var GameStarted : int = 0

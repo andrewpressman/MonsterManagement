@@ -8,10 +8,6 @@ var objColor : ColorRect
 var SecondaryObjectiveTxt : String
 
 func _ready():
-		
-	#TEMP
-	GlobalVariables.CurrentLevel = 1
-		
 	objColor = $ObjStatus
 	objColor.show()
 	GameController = get_parent()

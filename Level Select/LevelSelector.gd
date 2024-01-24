@@ -15,10 +15,17 @@ var executeButton: Button
 
 var selectedButton: Button  # Stores the currently selected button
 
+#NextLevel Variables
+var NextLevel : Panel
+var Continue : Button
+var AllComplete : bool
+
 #testing
 var LastScore : Label
 
+#LevelControls
 var CurrentLevel : Label
+var Exit : Button
 
 func _ready():
 	Level1Button = $Cases/Level1/select
@@ -32,9 +39,24 @@ func _ready():
 	
 	CurrentLevel = $"Level Tracker/Label"
 	
+	Exit = $Exit
+	
 	executeButton = $Begin
 	selectedButton = null
 	executeButton.disabled = true
+		
+	SetStatus()
+	SetLevel()
+
+	NextLevel = $NextLevel
+	if AllComplete:
+		if GlobalVariables.CurrentLevel >= 15:
+			$NextLevel/Label.text = "A winner is you."
+			GlobalVariables.CurrentLevel += 1
+			$NextLevel/Continue.hide()
+		NextLevel.show()
+	else:
+		NextLevel.hide()
 	
 	#testing
 	LastScore = $TempScore/Score
@@ -48,19 +70,24 @@ func SetLevel():
 
 #markes a level complete
 func SetStatus():
-	if GlobalVariables.Level1Status == 1:
-		Level1.MarkComplete()
+	AllComplete = true
+	if GlobalVariables.Level1Status > 0:
+		Level1.MarkComplete(GlobalVariables.Level1Status)
 	else:
 		Level1.MarkIncomplete()
-	if GlobalVariables.Level1Status == 1:
-		Level2.MarkComplete()
+		AllComplete = false
+	
+	if GlobalVariables.Level2Status > 0:
+		Level2.MarkComplete(GlobalVariables.Level2Status)
 	else:
 		Level2.MarkIncomplete()
-	if GlobalVariables.Level1Status == 1:
-		Level3.MarkComplete()
+		AllComplete = false
+	
+	if GlobalVariables.Level3Status > 0:
+		Level3.MarkComplete(GlobalVariables.Level3Status)
 	else:
 		Level3.MarkIncomplete()
-
+		AllComplete = false
 
 # Function to update the button selection and visuals
 func update_button_selection(button: Button):
@@ -79,7 +106,6 @@ func unselectButtions(clear:bool):
 	for button in [Level1Button, Level2Button, Level3Button]:
 		if button != selectedButton:
 			button.modulate = Color(1, 1, 1)  # Reset color
-
 
 func _on_Level1_pressed():
 	if selectedButton == Level1Button:
@@ -108,17 +134,17 @@ func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
 		GlobalVariables.CurrentStage = 1
 		GetLevel()
-		GlobalVariables.TargetScore = 1000
+		GlobalVariables.TargetScore = 10
 		
 	if selectedButton == Level2Button:
 		GlobalVariables.CurrentStage = 2
 		GetLevel()
-		GlobalVariables.TargetScore = 1000
+		GlobalVariables.TargetScore = 10
 		
 	if selectedButton == Level3Button:
 		GlobalVariables.CurrentStage = 3
 		GetLevel()
-		GlobalVariables.TargetScore = 1000
+		GlobalVariables.TargetScore = 10
 	# Reset the button selection
 	unselectButtions(true)
 	StartGame()
@@ -139,7 +165,6 @@ func GetLevel():
 	else:
 		setDifficulty(10,50,100,4,-1) #TODO: make hardest
 
-
 #sets game difficulty
 func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
 	GlobalVariables.YellowThreshold = yellow
@@ -149,6 +174,16 @@ func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
 	GlobalVariables.IncreaseRate = INC
 	GlobalVariables.DecreaseRate = DEC
 		
+
+#reset values and proceed to next level
+func Reset():
+	GlobalVariables.Level1Status = 0
+	GlobalVariables.Level2Status = 0
+	GlobalVariables.Level3Status = 0
+	SetStatus()
+	GlobalVariables.CurrentLevel += 7
+	SetLevel()
+	NextLevel.hide()
 
 #show selected bigInfo
 func showBig(button : int):
@@ -181,6 +216,9 @@ func hideBig():
 	Level1.hideBig()
 	Level2.hideBig()
 	Level3.hideBig()
+
+func ReturnToMenu():
+	get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
 
 #switch to game screen
 func StartGame():

@@ -12,6 +12,10 @@ func _ready():
 	NewGame = $MainMenu/NewGame
 	Options = $MainMenu/Options
 	Quit = $MainMenu/Quit
+	if GlobalVariables.GameStarted == 1 && GlobalVariables.CurrentLevel <= 15 :
+		Continue.show()
+	else:
+		Continue.hide()
 
 func StartNewGame():
 	#clear Savegame
@@ -19,10 +23,11 @@ func StartNewGame():
 	GlobalVariables.Level2Status = 0
 	GlobalVariables.Level3Status = 0
 	GlobalVariables.CurrentLevel = 1
+	GlobalVariables.GameStarted = 1
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func ContinueGame():
-	pass
+	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func QuitGame():
 	get_tree().quit()

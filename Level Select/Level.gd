@@ -26,8 +26,11 @@ func showBig():
 func showSmall():
 	SmallInfo.show()
 
-func MarkCompete():
-	Status.modulate = Color(0, 1, 0) # green
+func MarkComplete(option: int):
+	if option == 1:
+		Status.modulate = Color(0, 1, 0) # green
+	if option == 2:
+		Status.modulate = Color(1, 1, 0) # yellow
 	
 func MarkIncomplete():
 	Status.modulate = Color(1, 0, 0) # Red
