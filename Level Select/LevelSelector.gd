@@ -181,7 +181,7 @@ func Reset():
 	GlobalVariables.Level2Status = 0
 	GlobalVariables.Level3Status = 0
 	SetStatus()
-	GlobalVariables.CurrentLevel += 7
+	GlobalVariables.CurrentLevel += 1
 	SetLevel()
 	NextLevel.hide()
 
