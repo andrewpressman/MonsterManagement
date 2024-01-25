@@ -59,6 +59,7 @@ func IncreaseDifficulty():
 	else:
 		count += 1
 
+#difficulty scales faster at harder levles
 func GetLevel():
 	if GlobalVariables.CurrentLevel <= 3:
 		return 15

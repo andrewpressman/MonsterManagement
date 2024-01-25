@@ -198,6 +198,7 @@ offset_right = 187.0
 offset_bottom = 613.0
 
 [node name="NextLevel" type="Panel" parent="."]
+visible = false
 offset_left = 199.0
 offset_top = 567.0
 offset_right = 967.0

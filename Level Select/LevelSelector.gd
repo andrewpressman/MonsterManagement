@@ -129,7 +129,6 @@ func _on_Level3_pressed():
 		showBig(3)
 
 #starts game and sets difficulty
-#TODO: move difficulty settings and make it scale with level
 func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
 		GlobalVariables.CurrentStage = 1
@@ -151,7 +150,7 @@ func _on_begin_button_pressed():
 
 func GetLevel():
 	if GlobalVariables.CurrentLevel <= 3:
-		setDifficulty(40,80,300,5,-2) #TODO: make easier
+		setDifficulty(10,40,100,2,-2) #TODO: make easier
 	
 	elif GlobalVariables.CurrentLevel <= 6:
 		setDifficulty(20,60,120,5,-1) #main difficulty (BALANCED)
@@ -163,7 +162,7 @@ func GetLevel():
 		setDifficulty(20,60,120,5,-1) #TODO: make harder
 	
 	else:
-		setDifficulty(10,50,100,4,-1) #TODO: make hardest
+		setDifficulty(10,50,80,5,-1) #TODO: make hardest
 
 #sets game difficulty
 func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
