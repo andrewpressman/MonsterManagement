@@ -130,6 +130,7 @@ func _on_execute_button_pressed():
 	elif selectedButton == CalmButton:
 		# decrease all levels
 		GameController.UpdateStatus(DecreaseRate * 3,DecreaseRate * 3,DecreaseRate * 3,DecreaseRate * 3)
+		GameController.PlaySound(8)
 		TickPower()
 		CalmLockout()
 	elif selectedButton == PowerOnButton:
@@ -167,7 +168,7 @@ func _on_execute_button_pressed():
 		TickPower()
 	else:
 		#TODO: alert the player no button was pressed. TickPower anyways???
-		pass
+		TickPower()
 		
 	start_Clock()
 	# Reset the button selection
