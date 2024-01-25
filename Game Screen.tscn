@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=13 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Audio Controller.gd" id="1_jtjcn"]
@@ -6,8 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://cigyx5u5dqiyq" path="res://Assets/TestAudio.wav" id="2_pjbmj"]
 [ext_resource type="Script" path="res://Actions.gd" id="3_aqjdg"]
 [ext_resource type="Script" path="res://Character.gd" id="3_o7a42"]
-[ext_resource type="Texture2D" uid="uid://ea8a3ckdjpp2" path="res://Assets/RTEVaPZh_400x400.jpg" id="4_75rfu"]
 [ext_resource type="Script" path="res://CharacterPing.gd" id="5_1bmgd"]
+[ext_resource type="Texture2D" uid="uid://bkucuu3ry52ye" path="res://Assets/Images/TestSubject.png" id="8_a8xxo"]
+[ext_resource type="Texture2D" uid="uid://djqscuy7ruiw7" path="res://Assets/Images/monster-cartoon-icon.png" id="9_0keos"]
 [ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
 [ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
 
@@ -230,9 +231,9 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character1"]
-position = Vector2(49, 49)
-scale = Vector2(0.2025, 0.19)
-texture = ExtResource("4_75rfu")
+position = Vector2(55, 49)
+scale = Vector2(0.393125, 0.3775)
+texture = ExtResource("8_a8xxo")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Character1"]
 layout_mode = 0
@@ -252,9 +253,9 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character2"]
-position = Vector2(49, 49)
-scale = Vector2(0.2025, 0.19)
-texture = ExtResource("4_75rfu")
+position = Vector2(52, 51)
+scale = Vector2(0.410625, 0.4075)
+texture = ExtResource("8_a8xxo")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Character2"]
 layout_mode = 0
@@ -274,9 +275,9 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character3"]
-position = Vector2(49, 49)
-scale = Vector2(0.2025, 0.19)
-texture = ExtResource("4_75rfu")
+position = Vector2(50, 50)
+scale = Vector2(0.415625, 0.39)
+texture = ExtResource("8_a8xxo")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Character3"]
 layout_mode = 0
@@ -296,9 +297,9 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Monster"]
-position = Vector2(48, 82)
-scale = Vector2(0.2025, 0.19)
-texture = ExtResource("4_75rfu")
+position = Vector2(52, 87)
+scale = Vector2(0.2025, 0.214141)
+texture = ExtResource("9_0keos")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Monster"]
 layout_mode = 0
@@ -442,7 +443,7 @@ offset_left = 12.0
 offset_top = 424.0
 offset_right = 257.0
 offset_bottom = 520.0
-text = "Begin"
+text = "Begin Test"
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
 [connection signal="pressed" from="Actions/Environment/PingAll" to="Actions" method="_on_AllCharTrigger_pressed"]
