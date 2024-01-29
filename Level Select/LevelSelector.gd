@@ -28,6 +28,7 @@ var CurrentLevel : Label
 var Exit : Button
 
 func _ready():
+	Save()
 	Level1Button = $Cases/Level1/select
 	Level2Button = $Cases/Level2/select
 	Level3Button = $Cases/Level3/select
@@ -223,3 +224,27 @@ func ReturnToMenu():
 func StartGame():
 	#pass in parameters for game
 	get_tree().change_scene_to_file("res://Game Screen.tscn")
+	
+func Save():
+	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var save_data = {
+		"YellowThreshold" : GlobalVariables.YellowThreshold,
+		"RedThreshold" : GlobalVariables.RedThreshold,
+		"MaxState" : GlobalVariables.MaxState,
+		"StartRate" : GlobalVariables.StartRate,
+		"IncreaseRate" : GlobalVariables.IncreaseRate,
+		"DecreaseRate" : GlobalVariables.DecreaseRate,
+		"Score" : GlobalVariables.Score,
+		"TargetScore" : GlobalVariables.TargetScore,
+		"CurrentLevel" : GlobalVariables.CurrentLevel,
+		"Level1Status" : GlobalVariables.Level1Status,
+		"Level1Objective" : GlobalVariables.Level1Objective,
+		"Level2Status" : GlobalVariables.Level2Status,
+		"Level2Objective" : GlobalVariables.Level2Objective,
+		"Level3Status" : GlobalVariables.Level3Status,
+		"Level3Objective" : GlobalVariables.Level3Objective,
+		"GameStarted" : GlobalVariables.GameStarted
+	}
+	var json_str = JSON.stringify(save_data)
+	save_game.store_line(json_str)
+	

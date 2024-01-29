@@ -63,6 +63,14 @@ visible = false
 offset_right = 1150.0
 offset_bottom = 645.0
 
+[node name="PurgeSave" type="Button" parent="."]
+offset_left = 956.0
+offset_top = 562.0
+offset_right = 1127.0
+offset_bottom = 626.0
+text = "Purge SaveGame"
+
 [connection signal="pressed" from="MainMenu/Continue" to="." method="ContinueGame"]
 [connection signal="pressed" from="MainMenu/New Game" to="." method="StartNewGame"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="QuitGame"]
+[connection signal="pressed" from="PurgeSave" to="." method="ClearDir"]
