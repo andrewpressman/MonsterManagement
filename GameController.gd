@@ -83,6 +83,7 @@ func _ready():
 	MaxState = GlobalVariables.MaxState
 	IncreaseRate = GlobalVariables.IncreaseRate
 	DecreaseRate = GlobalVariables.DecreaseRate
+	GlobalVariables.PowerState = true
 	
 	#Reset Values
 	Reset()
@@ -151,23 +152,27 @@ func StartGame():
 	$Clock.Start()
 
 #Updates score, checks for completion
-#TODO: add in win state and objective tracking
 func UpdateScore():
+	$Progress.UpdateScore()
 	$GameState/Score.text = str(GlobalVariables.Score)
 	if GlobalVariables.Score >= GlobalVariables.TargetScore:
 		PassFail = true
 		EndGame()
-	else:
-		GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
+	elif GlobalVariables.Score >= 0:
+		if GlobalVariables.PowerState:
+			GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
+		else: #Bonus points if power is off
+			GlobalVariables.Score += (CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)) * 1.5
 	
-	if GlobalVariables.Score > GlobalVariables.TargetScore || CheckStatus():
+	if CheckStatus():
+		GlobalVariables.Score = -1
 		EndGame()
 
-#Chceks if any failure state has passed
+#Checks if any failure state has passed
 func CheckStatus():
-	if Monster >= GlobalVariables.MaxState:
+	if Monster >= GlobalVariables.MaxState: #Monster has escaped
 		return true
-	if Character1 >= GlobalVariables.MaxState && Character2 >= GlobalVariables.MaxState && Character3 >= GlobalVariables.MaxState:
+	if Character1 >= GlobalVariables.MaxState && Character2 >= GlobalVariables.MaxState && Character3 >= GlobalVariables.MaxState: #ALl characters are dead
 		return true
 	else:
 		return false
@@ -197,6 +202,7 @@ func Reset():
 func BackToMenu():
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
+#Marks the level as complete with or without secondary objective
 func MarkComplete():
 	match GlobalVariables.CurrentStage:
 		1:

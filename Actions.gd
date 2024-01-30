@@ -80,9 +80,11 @@ func unselectButtions(clear:bool):
 			button.modulate = Color(1, 1, 1)  # Reset color
 
 func _on_PowerOn_pressed():
+	GlobalVariables.PowerState = true
 	update_button_selection(PowerOnButton)
 
 func _on_PowerOff_pressed():
+	GlobalVariables.PowerState = false
 	update_button_selection(PowerOffButton)
 
 func _on_Agitate1_pressed():

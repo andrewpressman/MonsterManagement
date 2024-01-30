@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=14 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Audio Controller.gd" id="1_jtjcn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://djqscuy7ruiw7" path="res://Assets/Images/monster-cartoon-icon.png" id="9_0keos"]
 [ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
 [ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
+[ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
 
@@ -309,12 +310,48 @@ offset_right = 445.0
 offset_bottom = 163.0
 metadata/_edit_use_anchors_ = true
 
-[node name="CaseNo" type="Panel" parent="."]
-offset_left = 7.0
-offset_top = 556.0
-offset_right = 274.0
-offset_bottom = 633.0
+[node name="Progress" type="Panel" parent="."]
+offset_left = 8.0
+offset_top = 555.0
+offset_right = 275.0
+offset_bottom = 632.0
+script = ExtResource("10_7574l")
 metadata/_edit_use_anchors_ = true
+
+[node name="P1" type="Panel" parent="Progress"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 69.0
+
+[node name="P2" type="Panel" parent="Progress"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 69.0
+
+[node name="P3" type="Panel" parent="Progress"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 8.0
+offset_right = 157.0
+offset_bottom = 69.0
+
+[node name="P4" type="Panel" parent="Progress"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 8.0
+offset_right = 210.0
+offset_bottom = 69.0
+
+[node name="P5" type="Panel" parent="Progress"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 8.0
+offset_right = 262.0
+offset_bottom = 69.0
 
 [node name="GameState" type="Panel" parent="."]
 offset_left = 8.0
@@ -324,12 +361,13 @@ offset_bottom = 546.0
 script = ExtResource("9_4ck7d")
 
 [node name="Score" type="Label" parent="GameState"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.00749064
-anchor_top = 1.01869
-anchor_right = -0.00749064
-anchor_bottom = 1.01869
+anchor_left = -0.011236
+anchor_top = 0.728972
+anchor_right = -0.011236
+anchor_bottom = 0.728972
 offset_left = 23.0
 offset_top = 11.0
 offset_right = 243.0
