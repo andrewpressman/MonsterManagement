@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=4 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
+[ext_resource type="Script" path="res://Level Select/Cases.gd" id="2_oikne"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t3wki")
@@ -16,10 +17,11 @@ text = "Return to Main Menu"
 [node name="TempScore" type="Panel" parent="."]
 offset_left = 201.0
 offset_top = 9.0
-offset_right = 789.0
+offset_right = 924.0
 offset_bottom = 94.0
 
 [node name="Score" type="Label" parent="TempScore"]
+visible = false
 layout_mode = 0
 offset_left = 40.0
 offset_top = 10.0
@@ -34,6 +36,7 @@ offset_left = 199.0
 offset_top = 100.0
 offset_right = 1143.0
 offset_bottom = 561.0
+script = ExtResource("2_oikne")
 
 [node name="Level1" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
@@ -43,6 +46,7 @@ offset_left = 215.0
 offset_top = 128.0
 offset_right = 322.0
 offset_bottom = 228.0
+text = "o"
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level1"]
@@ -56,7 +60,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 626.0
 offset_bottom = 98.0
-text = "Level 1"
+text = "Experiment 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -72,11 +76,11 @@ offset_bottom = 538.0
 layout_mode = 0
 offset_right = 623.0
 offset_bottom = 407.0
-text = "Test Paramenters
+text = "Experiment no: 
 
-Test Details
+Anomaly Classification: 
 
-Funny flavor text"
+Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level1"]
 offset_left = 970.0
@@ -92,6 +96,7 @@ offset_left = 215.0
 offset_top = 281.0
 offset_right = 322.0
 offset_bottom = 381.0
+text = "o"
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level2"]
@@ -105,7 +110,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 626.0
 offset_bottom = 98.0
-text = "Level 2"
+text = "Experiment 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -121,11 +126,11 @@ offset_bottom = 538.0
 layout_mode = 0
 offset_right = 623.0
 offset_bottom = 407.0
-text = "Test Paramenters
+text = "Experiment no: 
 
-Test Details
+Anomaly Classification: 
 
-Funny flavor text"
+Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level2"]
 offset_left = 967.0
@@ -141,6 +146,7 @@ offset_left = 215.0
 offset_top = 431.0
 offset_right = 322.0
 offset_bottom = 531.0
+text = "o"
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level3"]
@@ -153,7 +159,7 @@ offset_bottom = 531.0
 layout_mode = 0
 offset_right = 626.0
 offset_bottom = 98.0
-text = "Level 3"
+text = "Experiment 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -168,11 +174,11 @@ offset_bottom = 538.0
 layout_mode = 0
 offset_right = 623.0
 offset_bottom = 407.0
-text = "Test Paramenters
+text = "Experiment no: 
 
-Test Details
+Anomaly Classification: 
 
-Funny flavor text"
+Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level3"]
 offset_left = 966.0
