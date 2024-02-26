@@ -51,7 +51,7 @@ func _on_timer_timeout():
 func Start():
 	start()
 
-#Every 30 cycles of he clock, difficulty increases by 2
+#Every 30 cycles (+ scale of current level) of he clock, difficulty increases by 2
 func IncreaseDifficulty():
 	if count > 30 + GetLevel():
 		GlobalVariables.IncreaseRate = GlobalVariables.IncreaseRate * 2
@@ -59,19 +59,20 @@ func IncreaseDifficulty():
 	else:
 		count += 1
 
-#difficulty scales faster at harder levles
+#difficulty scales faster at harder levles 
+#TODO: balance
 func GetLevel():
-	if GlobalVariables.CurrentLevel <= 3:
+	if GlobalVariables.CurrentLevel == 1:
+		return 20
+	
+	elif GlobalVariables.CurrentLevel == 2:
 		return 15
 	
-	elif GlobalVariables.CurrentLevel <= 6:
+	elif GlobalVariables.CurrentLevel == 3:
 		return 10
 	
-	elif GlobalVariables.CurrentLevel <= 9:
+	elif GlobalVariables.CurrentLevel == 4:
 		return 5
 	
-	elif GlobalVariables.CurrentLevel <= 12:
-		return 0
-	
 	else:
-		return -5
+		return 0

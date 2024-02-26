@@ -150,19 +150,19 @@ func _on_begin_button_pressed():
 	StartGame()
 
 func GetLevel():
-	if GlobalVariables.CurrentLevel <= 3:
+	if GlobalVariables.CurrentLevel == 1:
 		setDifficulty(10,40,100,2,-2) #TODO: make easier
 	
-	elif GlobalVariables.CurrentLevel <= 6:
-		setDifficulty(20,60,120,5,-1) #main difficulty (BALANCED)
+	elif GlobalVariables.CurrentLevel == 2:
+		setDifficulty(20,60,120,5,-1) #TODO: make easier
 	
-	elif GlobalVariables.CurrentLevel <= 9:
+	elif GlobalVariables.CurrentLevel == 3:
+		setDifficulty(20,60,120,5,-1) #main difficluty
+	
+	elif GlobalVariables.CurrentLevel == 4:
 		setDifficulty(20,60,120,5,-1) #TODO: make harder
 	
-	elif GlobalVariables.CurrentLevel <= 12:
-		setDifficulty(20,60,120,5,-1) #TODO: make harder
-	
-	else:
+	elif GlobalVariables.CurrentLevel == 5:
 		setDifficulty(10,50,80,5,-1) #TODO: make hardest
 
 #sets game difficulty

@@ -13,7 +13,7 @@ func _ready():
 	NewGame = $MainMenu/NewGame
 	Options = $MainMenu/Options
 	Quit = $MainMenu/Quit
-	if GlobalVariables.GameStarted == 1 && GlobalVariables.CurrentLevel <= 15 :
+	if GlobalVariables.GameStarted == 1 && GlobalVariables.CurrentLevel <= 5 :
 		Continue.show()
 	else:
 		Continue.hide()
