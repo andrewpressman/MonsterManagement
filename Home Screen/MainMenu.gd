@@ -82,3 +82,22 @@ func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	var file_to_remove = "user://savegame.save"
 	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
 
+func Debug1():
+	GlobalVariables.GameStarted = 1
+	GlobalVariables.CurrentLevel = 1
+	
+func Debug2():
+	GlobalVariables.GameStarted = 1
+	GlobalVariables.CurrentLevel = 2
+	
+func Debug3():
+	GlobalVariables.GameStarted = 1
+	GlobalVariables.CurrentLevel = 3
+	
+func Debug4():
+	GlobalVariables.GameStarted = 1
+	GlobalVariables.CurrentLevel = 4
+	
+func Debug5():
+	GlobalVariables.GameStarted = 1
+	GlobalVariables.CurrentLevel = 5

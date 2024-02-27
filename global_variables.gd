@@ -17,7 +17,7 @@ var PowerState : bool #track if power is On (true) or Off (false)
 
 #meta variables
 var CurrentStage : int #track which set of 3 levels the player is at
-var CurrentLevel : int #track which of the 15 levels the player is curerntly on
+var CurrentLevel : int #track which of the 5 levels the player is curerntly on
 
 #Level status, 0 = incomplete, 1 = complete w/o objective, 2 = completed w/ objective 
 var Level1Status : int 

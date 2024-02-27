@@ -70,7 +70,68 @@ offset_right = 1127.0
 offset_bottom = 626.0
 text = "Purge SaveGame"
 
+[node name="Debug" type="Panel" parent="."]
+offset_left = 621.0
+offset_top = 179.0
+offset_right = 856.0
+offset_bottom = 615.0
+
+[node name="Label" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 228.0
+offset_bottom = 58.0
+text = "Debug"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 55.0
+offset_right = 185.0
+offset_bottom = 114.0
+text = "1"
+
+[node name="Button2" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 137.0
+offset_right = 185.0
+offset_bottom = 196.0
+text = "2"
+
+[node name="Button3" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 215.0
+offset_right = 187.0
+offset_bottom = 274.0
+text = "3"
+
+[node name="Button4" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 290.0
+offset_right = 188.0
+offset_bottom = 349.0
+text = "4"
+
+[node name="Button5" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 360.0
+offset_right = 189.0
+offset_bottom = 419.0
+text = "5"
+
 [connection signal="pressed" from="MainMenu/Continue" to="." method="ContinueGame"]
 [connection signal="pressed" from="MainMenu/New Game" to="." method="StartNewGame"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="QuitGame"]
 [connection signal="pressed" from="PurgeSave" to="." method="ClearDir"]
+[connection signal="pressed" from="Debug/Button" to="." method="Debug1"]
+[connection signal="pressed" from="Debug/Button2" to="." method="Debug2"]
+[connection signal="pressed" from="Debug/Button3" to="." method="Debug3"]
+[connection signal="pressed" from="Debug/Button4" to="." method="Debug4"]
+[connection signal="pressed" from="Debug/Button5" to="." method="Debug5"]

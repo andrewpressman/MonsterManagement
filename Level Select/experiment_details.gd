@@ -1,13 +1,16 @@
 extends Node
 
-var CreatureTypes = ["Phantom", "Wraith", "Shade", "Wendigo", "Mutant", "Oni", "OctoPod", "Mantis", "Imp", "Beast"]
+var CreatureTypes = ["Phantom", "Wraith", "Shade", "Wendigo", "Mutant", "Oni", "OctoPod"]
 
-var Subject1Names = ["Jacob S", "Jesica R", "Daniel G", "Oliva M", "Ethan A", "Kathryn B", "Noah E", "Mia Q", "Liam Z", "Ava D", "Ryan B", "Abigail L"]
-var Subject2Names = ["Jacob S", "Jesica R", "Daniel G", "Oliva M", "Ethan A", "Kathryn B", "Noah E", "Mia Q", "Liam Z", "Ava D", "Ryan B", "Abigail L"]
-var Subject3Names = ["Jacob S", "Jesica R", "Daniel G", "Oliva M", "Ethan A", "Kathryn B", "Noah E", "Mia Q", "Liam Z", "Ava D", "Ryan B", "Abigail L"]
+var Subject1Names = ["Jacob S.", "Kathryn B.", "Liam Z."]
+var Subject2Names = ["Olivia M.", "Noah E.", "Mia Q."]
+var Subject3Names = ["Daniel G.", "Ava D.", "Ethan A."]
 
-var Scientist1Names = ["Dr. Malcom Cunningham", "Dr. Evenlyn Danson", "Dr. Zachary Finch", "Dr. Sophia Jacobs"]
-var Scientist2Names = ["Dr. Malcom Cunningham", "Dr. Evenlyn Danson", "Dr. Zachary Finch", "Dr. Sophia Jacobs"]
-var Scientist3Names = ["Dr. Malcom Cunningham", "Dr. Evenlyn Danson", "Dr. Zachary Finch", "Dr. Sophia Jacobs"]
+var Employee1Numbers = ["Employee 1048937", "Employee 3722831", "Employee 1385474"]
+var Employee2Numbers = ["Employee 5943833", "Employee 5722346", "Employee 2340957"]
+var Employee3Numbers = ["Employee 7534562", "Employee 4812619", "Employee 8392489"]
 
-#TODO: Move all names to these arrays, have code reference specific indexes per level/stage to remove randomness
+var Scientist1Names = ["Dr. Malcom Cunningham", "Dr. Zachary Finch", "Dr. Zachary Finch", "Dr. Sophia Jacobs"]
+var Scientist2Names = ["Dr. Evenlyn Danson", "Dr. Olive Jenkins", "Dr. Zachary Finch", "Dr, Gregory Manchester"]
+var Scientist3Names = ["UNAVAILABLE", "UNAVAILABLE", "UNAVAILABLE"] #TEMP??
+
