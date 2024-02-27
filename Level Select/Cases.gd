@@ -46,48 +46,48 @@ func SetNames(testNo : int):
 	
 	elif GlobalVariables.CurrentLevel == 3: #Level 3 Characters are random names
 		match testNo:
+			0:
+				FinalString = FinalString + "-" + Lore.Subject1Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject2Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject3Names[testNo] + "\n"
 			1:
-				FinalString = FinalString + "-" + Lore.Subject1Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Subject2Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Subject3Names[testNo - 1] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject1Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject2Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject3Names[testNo] + "\n"
 			2:
-				FinalString = FinalString + "-" + Lore.Subject1Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Subject2Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Subject3Names[testNo - 1] + "\n"
-			3:
-				FinalString = FinalString + "-" + Lore.Subject1Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Subject2Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Subject3Names[testNo - 1] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject1Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject2Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Subject3Names[testNo] + "\n"
 
 	elif GlobalVariables.CurrentLevel == 4: #Level 4 Characters are employees
 		match testNo:
+			0:
+				FinalString = FinalString + "-" + Lore.Employee1Numbers[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee2Numbers[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee3Numbers[testNo] + "\n"
 			1:
-				FinalString = FinalString + "-" + Lore.Employee1Numbers[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Employee2Numbers[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Employee3Numbers[testNo - 1] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee1Numbers[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee2Numbers[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee3Numbers[testNo] + "\n"
 			2:
-				FinalString = FinalString + "-" + Lore.Employee1Numbers[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Employee2Numbers[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Employee3Numbers[testNo - 1] + "\n"
-			3:
-				FinalString = FinalString + "-" + Lore.Employee1Numbers[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Employee2Numbers[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Employee3Numbers[testNo - 1] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee1Numbers[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee2Numbers[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Employee3Numbers[testNo] + "\n"
 	
 	elif GlobalVariables.CurrentLevel == 5: #Level 5 Characters are scientists
 		match testNo:
+			0:
+				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo] + "\n"
 			1:
-				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo - 1] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo] + "\n"
 			2:
-				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo - 1] + "\n"
-			3:
-				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo - 1] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo - 1] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo] + "\n"
+				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo] + "\n"
 	
 	return FinalString
 
