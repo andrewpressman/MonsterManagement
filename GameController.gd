@@ -232,4 +232,3 @@ func EndGame():
 		GameOver.modulate = Color(1, 0, 0)
 	
 	GameOver.show()
-	#get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")

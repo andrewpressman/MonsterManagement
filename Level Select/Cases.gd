@@ -1,7 +1,5 @@
 extends Panel
 
-#TODO: move away from random numbers to maintain consistency
-
 func _ready():
 	$Level1/BigInfo/Label.text = SetExperimentNumber(1) + Space() + SetCreature(1) + "\n" + "Threat Level:" + str(GlobalVariables.CurrentLevel) + Space() + SetNames(1) + Space() + "Further Information Unavailable"
 	$Level2/BigInfo/Label.text = SetExperimentNumber(2) + Space() + SetCreature(2) + "\n" + "Threat Level:" + str(GlobalVariables.CurrentLevel) + Space() + SetNames(2) + Space() + "Further Information Unavailable"
@@ -75,19 +73,9 @@ func SetNames(testNo : int):
 				FinalString = FinalString + "-" + Lore.Employee3Numbers[testNo] + "\n"
 	
 	elif GlobalVariables.CurrentLevel == 5: #Level 5 Characters are scientists
-		match testNo:
-			0:
-				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo] + "\n"
-			1:
-				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo] + "\n"
-			2:
-				FinalString = FinalString + "-" + Lore.Scientist1Names[testNo] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist2Names[testNo] + "\n"
-				FinalString = FinalString + "-" + Lore.Scientist3Names[testNo] + "\n"
+		FinalString = FinalString + "-" + Lore.ScientistNames[0] + "\n"
+		FinalString = FinalString + "-" + Lore.ScientistNames[1] + "\n"
+		FinalString = FinalString + "-" + Lore.ScientistNames[2] + "\n"
 	
 	return FinalString
 

@@ -68,6 +68,12 @@ func _ready():
 
 func SetLevel():
 	CurrentLevel.text = "Current Case: " + str(GlobalVariables.CurrentLevel)
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+		#Level 1 and 3 are hidden and thus marked as fully complete
+		GlobalVariables.Level2Status = 2
+		GlobalVariables.Level3Status = 2
+		Level2.hideAll()
+		Level3.hideAll()
 
 #markes a level complete
 func SetStatus():
@@ -184,7 +190,8 @@ func Reset():
 	GlobalVariables.CurrentLevel += 1
 	SetLevel()
 	NextLevel.hide()
-
+	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+	
 #show selected bigInfo
 func showBig(button : int):
 	hideSmall()
@@ -203,19 +210,28 @@ func showBig(button : int):
 			Level2.hideBig()
 
 func ShowSmall():
-	Level1.showSmall()
-	Level2.showSmall()
-	Level3.showSmall()
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+		Level1.showSmall()
+	else:
+		Level1.showSmall()
+		Level2.showSmall()
+		Level3.showSmall()
 
 func hideSmall():
-	Level1.hideSmall()
-	Level2.hideSmall()
-	Level3.hideSmall()
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+		Level1.hideSmall()
+	else:
+		Level1.hideSmall()
+		Level2.hideSmall()
+		Level3.hideSmall()
 
 func hideBig():
-	Level1.hideBig()
-	Level2.hideBig()
-	Level3.hideBig()
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+		Level1.hideBig()
+	else:
+		Level1.hideBig()
+		Level2.hideBig()
+		Level3.hideBig()
 
 func ReturnToMenu():
 	get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")

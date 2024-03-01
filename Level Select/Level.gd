@@ -12,6 +12,7 @@ func _ready():
 	SmallInfo = $MiniInfo
 	BigInfo = $BigInfo
 	Status = $Status
+	Select = $select
 	BigInfo.hide()
 
 func hideBig():
@@ -26,6 +27,12 @@ func showBig():
 func showSmall():
 	SmallInfo.show()
 
+func hideAll():
+	Select.hide()
+	SmallInfo.hide()
+	BigInfo.hide()
+	Status.hide()
+	
 func MarkComplete(option: int):
 	if option == 1:
 		Status.modulate = Color(0, 1, 0) # green
