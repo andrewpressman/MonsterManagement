@@ -186,6 +186,7 @@ func Reset():
 	GlobalVariables.Level1Status = 0
 	GlobalVariables.Level2Status = 0
 	GlobalVariables.Level3Status = 0
+	GlobalVariables.MessagePlayed = false
 	SetStatus()
 	GlobalVariables.CurrentLevel += 1
 	SetLevel()

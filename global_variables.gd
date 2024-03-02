@@ -31,3 +31,5 @@ var Level3Objective : int
 
 #GameisOn
 var GameStarted : int = 0
+#Track if a level message has been plyed yet
+var MessagePlayed : bool = false

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=6 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
 [ext_resource type="Script" path="res://Level Select/Cases.gd" id="2_oikne"]
+[ext_resource type="Script" path="res://Level Select/Message Controller.gd" id="4_32hnr"]
+[ext_resource type="Script" path="res://Level Select/LogPlayer.gd" id="4_qolbh"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t3wki")
@@ -209,11 +211,34 @@ offset_right = 1137.0
 offset_bottom = 632.0
 text = "Begin test"
 
-[node name="meta element" type="Panel" parent="."]
+[node name="MessagePanel" type="Panel" parent="."]
 offset_left = 17.0
-offset_top = 103.0
+offset_top = 313.0
 offset_right = 187.0
-offset_bottom = 613.0
+offset_bottom = 634.0
+script = ExtResource("4_32hnr")
+
+[node name="Button" type="Button" parent="MessagePanel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 154.0
+offset_right = 161.0
+offset_bottom = 291.0
+text = "PLAY"
+
+[node name="Label" type="Label" parent="MessagePanel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 56.0
+offset_right = 155.0
+offset_bottom = 129.0
+text = "New message 
+available"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LogPlayer" type="AudioStreamPlayer2D" parent="MessagePanel"]
+script = ExtResource("4_qolbh")
 
 [node name="NextLevel" type="Panel" parent="."]
 visible = false
@@ -245,4 +270,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
 [connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
 [connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
+[connection signal="pressed" from="MessagePanel/Button" to="MessagePanel" method="PlayMessage"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="Reset"]

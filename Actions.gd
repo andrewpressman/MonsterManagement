@@ -12,9 +12,6 @@ var CalmButton: Button
 var PowerOnButton: Button
 var PowerOffButton: Button
 
-#Audio Trigger
-var EffectsPlayer : AudioStreamPlayer2D
-
 #Character Controls
 var Char1Trigger : Button
 var Char1Type : Button

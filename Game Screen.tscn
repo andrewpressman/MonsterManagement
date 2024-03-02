@@ -1,9 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=12 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
-[ext_resource type="Script" path="res://Audio Controller.gd" id="1_jtjcn"]
 [ext_resource type="Script" path="res://Clock.gd" id="2_kakbt"]
-[ext_resource type="AudioStream" uid="uid://cigyx5u5dqiyq" path="res://Assets/TestAudio.wav" id="2_pjbmj"]
 [ext_resource type="Script" path="res://Actions.gd" id="3_aqjdg"]
 [ext_resource type="Script" path="res://Character.gd" id="3_o7a42"]
 [ext_resource type="Script" path="res://CharacterPing.gd" id="5_1bmgd"]
@@ -29,9 +27,6 @@ offset_top = 11.0
 offset_right = 1141.0
 offset_bottom = 96.0
 metadata/_edit_use_anchors_ = true
-
-[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_pjbmj")
 
 [node name="Actions" type="Panel" parent="."]
 offset_left = 781.0
@@ -182,38 +177,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ResetClock" type="Timer" parent="Actions"]
 wait_time = 2.0
-
-[node name="Audio Controller" type="Panel" parent="."]
-visible = false
-offset_left = 406.0
-offset_top = 16.0
-offset_right = 678.0
-offset_bottom = 83.0
-script = ExtResource("1_jtjcn")
-
-[node name="Play" type="Button" parent="Audio Controller"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 9.0
-offset_right = 69.0
-offset_bottom = 56.0
-text = "Play"
-
-[node name="Pause" type="Button" parent="Audio Controller"]
-layout_mode = 0
-offset_left = 102.0
-offset_top = 9.0
-offset_right = 157.0
-offset_bottom = 56.0
-text = "Pause"
-
-[node name="Restart" type="Button" parent="Audio Controller"]
-layout_mode = 0
-offset_left = 189.0
-offset_top = 10.0
-offset_right = 254.0
-offset_bottom = 57.0
-text = "Restart"
 
 [node name="HealthMonitor" type="Panel" parent="."]
 offset_left = 279.0
@@ -383,7 +346,7 @@ offset_left = 21.0
 offset_top = 11.0
 offset_right = 240.0
 offset_bottom = 50.0
-text = "Current Objective:"
+text = "Secondary test parameters:"
 
 [node name="CurrObj" type="Label" parent="GameState"]
 layout_mode = 0
@@ -394,10 +357,10 @@ offset_bottom = 93.0
 
 [node name="ObjStatus" type="ColorRect" parent="GameState"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 100.0
-offset_right = 247.0
-offset_bottom = 201.0
+offset_left = 15.0
+offset_top = 152.0
+offset_right = 248.0
+offset_bottom = 300.0
 
 [node name="Info" type="Panel" parent="."]
 offset_left = 9.0
@@ -500,8 +463,5 @@ text = "Begin Test"
 [connection signal="timeout" from="Actions/Monster/Timer" to="Actions" method="On_Calm_Timeout"]
 [connection signal="pressed" from="Actions/Execute" to="Actions" method="_on_execute_button_pressed"]
 [connection signal="timeout" from="Actions/ResetClock" to="Actions" method="_on_clock_timeout"]
-[connection signal="pressed" from="Audio Controller/Play" to="Audio Controller" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="Audio Controller/Pause" to="Audio Controller" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="Audio Controller/Restart" to="Audio Controller" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="GameOver/Button" to="." method="BackToMenu"]
 [connection signal="pressed" from="StartGame/Button" to="." method="StartGame"]

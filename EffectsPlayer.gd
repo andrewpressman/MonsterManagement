@@ -1,7 +1,6 @@
 extends AudioStreamPlayer2D
 
 func play_sound(parameter_value: int):
-	# Add your conditions to determine which sound to play based on the parameter_value
 	match parameter_value:
 		1:
 			#Group Ping Sound
