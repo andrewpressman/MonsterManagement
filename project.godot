@@ -25,3 +25,7 @@ Lore="*res://Level Select/experiment_details.gd"
 gdscript/warnings/unassigned_variable=2
 gdscript/warnings/unassigned_variable_op_assign=2
 gdscript/warnings/integer_division=0
+
+[gui]
+
+theme/custom_font="res://Assets/Fonts/consola.ttf"

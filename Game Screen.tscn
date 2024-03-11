@@ -16,12 +16,19 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_61weh")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -27.0
+offset_top = -24.0
+offset_right = 1190.0
+offset_bottom = 681.0
+color = Color(0, 0, 0, 1)
+
 [node name="Clock" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 script = ExtResource("2_kakbt")
 
-[node name="Waveform" type="Panel" parent="."]
+[node name="Message" type="Panel" parent="."]
 offset_left = 9.0
 offset_top = 11.0
 offset_right = 1141.0
@@ -35,6 +42,14 @@ offset_right = 1135.0
 offset_bottom = 637.0
 script = ExtResource("3_aqjdg")
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Actions"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 352.0
+offset_bottom = 531.0
+color = Color(0.639216, 0.623529, 0, 1)
 
 [node name="Environment" type="Node" parent="Actions"]
 
@@ -185,6 +200,14 @@ offset_right = 771.0
 offset_bottom = 633.0
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect" type="ColorRect" parent="HealthMonitor"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 490.0
+offset_bottom = 527.0
+color = Color(0.639216, 0.623529, 0, 1)
+
 [node name="Character1" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
 offset_left = 15.0
@@ -281,6 +304,14 @@ offset_bottom = 632.0
 script = ExtResource("10_7574l")
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect" type="ColorRect" parent="Progress"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 265.0
+offset_bottom = 75.0
+color = Color(1, 0, 0, 1)
+
 [node name="P1" type="Panel" parent="Progress"]
 layout_mode = 0
 offset_left = 4.0
@@ -322,6 +353,14 @@ offset_top = 225.0
 offset_right = 275.0
 offset_bottom = 546.0
 script = ExtResource("9_4ck7d")
+
+[node name="ColorRect" type="ColorRect" parent="GameState"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 264.0
+offset_bottom = 319.0
+color = Color(0.294118, 0.294118, 0.294118, 1)
 
 [node name="Score" type="Label" parent="GameState"]
 visible = false
@@ -368,6 +407,14 @@ offset_top = 108.0
 offset_right = 274.0
 offset_bottom = 217.0
 
+[node name="ColorRect" type="ColorRect" parent="Info"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 264.0
+offset_bottom = 108.0
+color = Color(0.282353, 0.282353, 0.282353, 1)
+
 [node name="LevelNo" type="Label" parent="Info"]
 layout_mode = 0
 offset_right = 265.0
@@ -400,12 +447,15 @@ offset_bottom = 640.0
 
 [node name="Text" type="Label" parent="GameOver"]
 layout_mode = 0
-offset_left = 397.0
-offset_top = 173.0
-offset_right = 714.0
-offset_bottom = 264.0
+offset_left = 370.0
+offset_top = 251.0
+offset_right = 733.0
+offset_bottom = 342.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "Test Failed"
+text = "TEST FAILED"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
 layout_mode = 0
@@ -417,33 +467,37 @@ color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="GameOver"]
 layout_mode = 0
-offset_left = 425.0
-offset_top = 375.0
-offset_right = 670.0
-offset_bottom = 471.0
-text = "back to menu"
+offset_left = 424.0
+offset_top = 372.0
+offset_right = 669.0
+offset_bottom = 468.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "RETURN"
 
 [node name="StartGame" type="Panel" parent="."]
 visible = false
 offset_left = 11.0
-offset_top = 11.0
+offset_top = 101.0
 offset_right = 1135.0
 offset_bottom = 640.0
 
 [node name="ColorRect" type="ColorRect" parent="StartGame"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 428.0
-offset_right = 246.0
-offset_bottom = 513.0
+offset_left = 433.0
+offset_top = 173.0
+offset_right = 667.0
+offset_bottom = 258.0
 color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="StartGame"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 424.0
-offset_right = 257.0
-offset_bottom = 520.0
+offset_left = 426.0
+offset_top = 169.0
+offset_right = 671.0
+offset_bottom = 265.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
 text = "Begin Test"
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]

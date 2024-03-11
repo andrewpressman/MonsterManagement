@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdt441cqsrc7a"]
+[gd_scene load_steps=3 format=3 uid="uid://cdt441cqsrc7a"]
 
 [ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
+[ext_resource type="FontFile" uid="uid://wxfjcuxpq144" path="res://Assets/Fonts/consolab.ttf" id="2_awwh4"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jo4rk")
@@ -8,6 +9,13 @@ script = ExtResource("1_jo4rk")
 [node name="MainMenu" type="Panel" parent="."]
 offset_right = 1152.0
 offset_bottom = 645.0
+
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+offset_left = -35.0
+offset_top = -11.0
+offset_right = 1168.0
+offset_bottom = 667.0
+color = Color(0, 0, 0, 1)
 
 [node name="Title" type="Panel" parent="MainMenu"]
 layout_mode = 0
@@ -20,6 +28,7 @@ offset_bottom = 162.0
 layout_mode = 0
 offset_right = 1073.0
 offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("2_awwh4")
 theme_override_font_sizes/font_size = 81
 text = "Monster Management"
 horizontal_alignment = 1
@@ -32,6 +41,8 @@ offset_left = 51.0
 offset_top = 181.0
 offset_right = 477.0
 offset_bottom = 265.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
 text = "Continue"
 
 [node name="New Game" type="Button" parent="MainMenu"]
@@ -40,6 +51,8 @@ offset_left = 51.0
 offset_top = 282.0
 offset_right = 477.0
 offset_bottom = 366.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
 text = "New Game"
 
 [node name="Options" type="Button" parent="MainMenu"]
@@ -48,6 +61,8 @@ offset_left = 49.0
 offset_top = 378.0
 offset_right = 475.0
 offset_bottom = 461.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
 text = "Options (COMING SOON)"
 
 [node name="Quit" type="Button" parent="MainMenu"]
@@ -56,6 +71,8 @@ offset_left = 49.0
 offset_top = 475.0
 offset_right = 359.0
 offset_bottom = 558.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 31
 text = "Quit"
 
 [node name="Options" type="Panel" parent="."]
