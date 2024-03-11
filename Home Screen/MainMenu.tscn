@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdt441cqsrc7a"]
 
 [ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
-[ext_resource type="FontFile" uid="uid://dx3mj1nmob2qj" path="res://Assets/Fonts/display-free-tfb.ttf" id="2_pvjwm"]
+[ext_resource type="FontFile" uid="uid://cv5f32m7wk82g" path="res://Assets/Fonts/bitwise.ttf" id="2_uwmcg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jo4rk")
@@ -30,8 +30,8 @@ layout_mode = 0
 offset_right = 1073.0
 offset_bottom = 137.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("2_pvjwm")
-theme_override_font_sizes/font_size = 81
+theme_override_fonts/font = ExtResource("2_uwmcg")
+theme_override_font_sizes/font_size = 100
 text = "Monster Management"
 horizontal_alignment = 1
 vertical_alignment = 1
