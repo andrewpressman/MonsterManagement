@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=13 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Clock.gd" id="2_kakbt"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
 [ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
+[ext_resource type="FontFile" uid="uid://wxfjcuxpq144" path="res://Assets/Fonts/consolab.ttf" id="10_wvci8"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
 
@@ -58,6 +59,8 @@ offset_left = 794.0
 offset_top = 178.0
 offset_right = 1123.0
 offset_bottom = 232.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Agitate all subjects"
 metadata/_edit_use_anchors_ = true
 
@@ -68,6 +71,8 @@ offset_left = 793.0
 offset_top = 114.0
 offset_right = 1125.0
 offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Power On"
 metadata/_edit_use_anchors_ = true
 
@@ -76,6 +81,8 @@ offset_left = 793.0
 offset_top = 114.0
 offset_right = 1125.0
 offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Power Off"
 metadata/_edit_use_anchors_ = true
 
@@ -87,6 +94,8 @@ offset_left = 801.0
 offset_top = 242.0
 offset_right = 889.0
 offset_bottom = 275.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Calm"
 metadata/_edit_use_anchors_ = true
 
@@ -95,6 +104,8 @@ offset_left = 799.0
 offset_top = 273.0
 offset_right = 893.0
 offset_bottom = 360.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Ping
 subject
 1"
@@ -108,6 +119,8 @@ offset_left = 915.0
 offset_top = 243.0
 offset_right = 1003.0
 offset_bottom = 276.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Calm"
 metadata/_edit_use_anchors_ = true
 
@@ -116,6 +129,8 @@ offset_left = 913.0
 offset_top = 274.0
 offset_right = 1007.0
 offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Ping
 subject
 2"
@@ -129,6 +144,8 @@ offset_left = 1028.0
 offset_top = 243.0
 offset_right = 1116.0
 offset_bottom = 276.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Calm"
 metadata/_edit_use_anchors_ = true
 
@@ -137,6 +154,8 @@ offset_left = 1026.0
 offset_top = 274.0
 offset_right = 1120.0
 offset_bottom = 361.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Ping
 subject
 3"
@@ -149,6 +168,8 @@ offset_left = 799.0
 offset_top = 373.0
 offset_right = 1030.0
 offset_bottom = 426.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Shock Anomaly lvl 1"
 metadata/_edit_use_anchors_ = true
 
@@ -157,6 +178,8 @@ offset_left = 799.0
 offset_top = 432.0
 offset_right = 1030.0
 offset_bottom = 485.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Shock Anomaly lvl 2"
 metadata/_edit_use_anchors_ = true
 
@@ -165,6 +188,8 @@ offset_left = 799.0
 offset_top = 490.0
 offset_right = 1030.0
 offset_bottom = 543.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Shock Anomaly lvl 3"
 metadata/_edit_use_anchors_ = true
 
@@ -173,6 +198,8 @@ offset_left = 1037.0
 offset_top = 374.0
 offset_right = 1116.0
 offset_bottom = 544.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Calm
 Anomaly"
 metadata/_edit_use_anchors_ = true
@@ -187,6 +214,8 @@ offset_top = 450.0
 offset_right = 340.0
 offset_bottom = 516.0
 theme = SubResource("Theme_ks27t")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Execute"
 metadata/_edit_use_anchors_ = true
 
@@ -360,7 +389,7 @@ offset_left = 2.0
 offset_top = 2.0
 offset_right = 264.0
 offset_bottom = 319.0
-color = Color(0.294118, 0.294118, 0.294118, 1)
+color = Color(0.639216, 0.623529, 0, 1)
 
 [node name="Score" type="Label" parent="GameState"]
 visible = false
@@ -381,11 +410,14 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Objective" type="Label" parent="GameState"]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 11.0
-offset_right = 240.0
-offset_bottom = 50.0
-text = "Secondary test parameters:"
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 324.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_wvci8")
+theme_override_font_sizes/font_size = 27
+text = "OBJECTIVE:"
 
 [node name="CurrObj" type="Label" parent="GameState"]
 layout_mode = 0
@@ -393,6 +425,8 @@ offset_left = 14.0
 offset_top = 44.0
 offset_right = 212.0
 offset_bottom = 93.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 
 [node name="ObjStatus" type="ColorRect" parent="GameState"]
 layout_mode = 0
@@ -413,12 +447,14 @@ offset_left = 2.0
 offset_top = 1.0
 offset_right = 264.0
 offset_bottom = 108.0
-color = Color(0.282353, 0.282353, 0.282353, 1)
+color = Color(0.639216, 0.623529, 0, 1)
 
 [node name="LevelNo" type="Label" parent="Info"]
 layout_mode = 0
 offset_right = 265.0
 offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
 text = "Level:"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -429,6 +465,8 @@ offset_left = 2.0
 offset_top = 55.0
 offset_right = 267.0
 offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
 text = "Test:"
 horizontal_alignment = 1
 vertical_alignment = 1

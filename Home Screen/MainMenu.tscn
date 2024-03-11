@@ -89,7 +89,6 @@ offset_bottom = 626.0
 text = "Purge SaveGame"
 
 [node name="Debug" type="Panel" parent="."]
-visible = false
 offset_left = 621.0
 offset_top = 179.0
 offset_right = 856.0
