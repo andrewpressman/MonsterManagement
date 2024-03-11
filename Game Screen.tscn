@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=12 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Clock.gd" id="2_kakbt"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
 [ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
-[ext_resource type="FontFile" uid="uid://wxfjcuxpq144" path="res://Assets/Fonts/consolab.ttf" id="10_wvci8"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
 
@@ -415,7 +414,6 @@ offset_top = 7.0
 offset_right = 324.0
 offset_bottom = 42.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_wvci8")
 theme_override_font_sizes/font_size = 27
 text = "OBJECTIVE:"
 

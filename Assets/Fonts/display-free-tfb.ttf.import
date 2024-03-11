@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ckd1wo4av8fsh"
-path="res://.godot/imported/consolai.ttf-dc4d5454315a47c4e65a96e412984cf6.fontdata"
+uid="uid://dx3mj1nmob2qj"
+path="res://.godot/imported/display-free-tfb.ttf-4b6f4bbebf046de700a8817d1a7bea73.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/consolai.ttf"
-dest_files=["res://.godot/imported/consolai.ttf-dc4d5454315a47c4e65a96e412984cf6.fontdata"]
+source_file="res://Assets/Fonts/display-free-tfb.ttf"
+dest_files=["res://.godot/imported/display-free-tfb.ttf-4b6f4bbebf046de700a8817d1a7bea73.fontdata"]
 
 [params]
 

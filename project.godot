@@ -28,4 +28,4 @@ gdscript/warnings/integer_division=0
 
 [gui]
 
-theme/custom_font="res://Assets/Fonts/consola.ttf"
+theme/custom_font="res://Assets/Fonts/modeseven.TTF"

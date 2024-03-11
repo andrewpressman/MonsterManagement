@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bkt1tnbs3m7dd"
-path="res://.godot/imported/consolaz.ttf-4ac4bf183c8dc13935ba66e96427a36f.fontdata"
+uid="uid://doi13s3itttyk"
+path="res://.godot/imported/modeseven.TTF-3adf4111c3ce6046e92fa5c907516612.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/consolaz.ttf"
-dest_files=["res://.godot/imported/consolaz.ttf-4ac4bf183c8dc13935ba66e96427a36f.fontdata"]
+source_file="res://Assets/Fonts/modeseven.TTF"
+dest_files=["res://.godot/imported/modeseven.TTF-3adf4111c3ce6046e92fa5c907516612.fontdata"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://wxfjcuxpq144"
-path="res://.godot/imported/consolab.ttf-d2017f918e7586611385b44a8c1091f5.fontdata"
+uid="uid://cv5f32m7wk82g"
+path="res://.godot/imported/bitwise.ttf-056045661586a151897c2bb21eb6c1a2.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/consolab.ttf"
-dest_files=["res://.godot/imported/consolab.ttf-d2017f918e7586611385b44a8c1091f5.fontdata"]
+source_file="res://Assets/Fonts/bitwise.ttf"
+dest_files=["res://.godot/imported/bitwise.ttf-056045661586a151897c2bb21eb6c1a2.fontdata"]
 
 [params]
 

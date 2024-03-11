@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cdabjkonyaj5d"
-path="res://.godot/imported/consola.ttf-98dac451bfca166d572d15a8b9ddc7a1.fontdata"
+uid="uid://cjinnl4kb80xv"
+path="res://.godot/imported/TermReg.ttf-2fd50afce69b9b36b6aa8a2dbddab14d.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/consola.ttf"
-dest_files=["res://.godot/imported/consola.ttf-98dac451bfca166d572d15a8b9ddc7a1.fontdata"]
+source_file="res://Assets/Fonts/TermReg.ttf"
+dest_files=["res://.godot/imported/TermReg.ttf-2fd50afce69b9b36b6aa8a2dbddab14d.fontdata"]
 
 [params]
 
