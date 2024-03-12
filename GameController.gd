@@ -121,21 +121,17 @@ func clamp_values():
 
 #updates characters values and indicator color		
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
-	
-	match GlobalVariables.CurrentStage:
-		1:
-			Objective.GetObjective(GlobalVariables.Level1Objective)
-		2:
-			Objective.GetObjective(GlobalVariables.Level2Objective)
-		3:
-			Objective.GetObjective(GlobalVariables.Level3Objective)
-	
+
+	Objective.GetObjective() #Check Objective
+
+	#Update character values
 	Character1 += char1
 	Character2 += char2
 	Character3 += char3
 	Monster += monster
 	clamp_values()
 	
+	#Update colors
 	character1_node.update_panel_color(Character1)
 	character2_node.update_panel_color(Character2)
 	character3_node.update_panel_color(Character3)
@@ -206,17 +202,17 @@ func BackToMenu():
 func MarkComplete():
 	match GlobalVariables.CurrentStage:
 		1:
-			if Objective.GetObjective(GlobalVariables.Level1Objective):
+			if Objective.GetObjective():
 				GlobalVariables.Level1Status = 2
 			else:
 				GlobalVariables.Level1Status = 1
 		2:
-			if Objective.GetObjective(GlobalVariables.Level2Objective):
+			if Objective.GetObjective():
 				GlobalVariables.Level2Status = 2
 			else: 
 				GlobalVariables.Level2Status = 1
 		3:
-			if Objective.GetObjective(GlobalVariables.Level3Objective):
+			if Objective.GetObjective():
 				GlobalVariables.Level3Status = 2
 			else:
 				GlobalVariables.Level3Status = 1

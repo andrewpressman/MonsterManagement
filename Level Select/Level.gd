@@ -35,9 +35,9 @@ func hideAll():
 	
 func MarkComplete(option: int):
 	if option == 1:
-		Status.modulate = Color(0, 1, 0) # green
+		Status.modulate = Color(0, .5, 0) # green
 	if option == 2:
-		Status.modulate = Color(1, 1, 0) # yellow
+		Status.modulate = Color(.5, .5, 0) # yellow
 	
 func MarkIncomplete():
-	Status.modulate = Color(1, 0, 0) # Red
+	Status.modulate = Color(.5, 0, 0) # Red

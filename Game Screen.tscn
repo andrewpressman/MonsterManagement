@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=13 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Clock.gd" id="2_kakbt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://djqscuy7ruiw7" path="res://Assets/Images/monster-cartoon-icon.png" id="9_0keos"]
 [ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
 [ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
+[ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="10_2mwke"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
@@ -43,14 +44,6 @@ offset_bottom = 637.0
 script = ExtResource("3_aqjdg")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Actions"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 352.0
-offset_bottom = 531.0
-color = Color(0.639216, 0.623529, 0, 1)
-
 [node name="Environment" type="Node" parent="Actions"]
 
 [node name="PingAll" type="Button" parent="Actions/Environment"]
@@ -58,9 +51,9 @@ offset_left = 794.0
 offset_top = 178.0
 offset_right = 1123.0
 offset_bottom = 232.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Agitate all subjects"
+text = "Agitate All Subjects"
 metadata/_edit_use_anchors_ = true
 
 [node name="Power" type="Node" parent="Actions/Environment"]
@@ -70,7 +63,7 @@ offset_left = 793.0
 offset_top = 114.0
 offset_right = 1125.0
 offset_bottom = 167.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Power On"
 metadata/_edit_use_anchors_ = true
@@ -80,7 +73,7 @@ offset_left = 793.0
 offset_top = 114.0
 offset_right = 1125.0
 offset_bottom = 167.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Power Off"
 metadata/_edit_use_anchors_ = true
@@ -93,7 +86,7 @@ offset_left = 801.0
 offset_top = 242.0
 offset_right = 889.0
 offset_bottom = 275.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Calm"
 metadata/_edit_use_anchors_ = true
@@ -103,7 +96,7 @@ offset_left = 799.0
 offset_top = 273.0
 offset_right = 893.0
 offset_bottom = 360.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Ping
 subject
@@ -118,7 +111,7 @@ offset_left = 915.0
 offset_top = 243.0
 offset_right = 1003.0
 offset_bottom = 276.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Calm"
 metadata/_edit_use_anchors_ = true
@@ -128,7 +121,7 @@ offset_left = 913.0
 offset_top = 274.0
 offset_right = 1007.0
 offset_bottom = 361.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Ping
 subject
@@ -143,7 +136,7 @@ offset_left = 1028.0
 offset_top = 243.0
 offset_right = 1116.0
 offset_bottom = 276.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Calm"
 metadata/_edit_use_anchors_ = true
@@ -153,7 +146,7 @@ offset_left = 1026.0
 offset_top = 274.0
 offset_right = 1120.0
 offset_bottom = 361.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Ping
 subject
@@ -163,44 +156,47 @@ metadata/_edit_use_anchors_ = true
 [node name="Monster" type="Node" parent="Actions"]
 
 [node name="Agitate1" type="Button" parent="Actions/Monster"]
-offset_left = 799.0
-offset_top = 373.0
-offset_right = 1030.0
-offset_bottom = 426.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 795.0
+offset_top = 375.0
+offset_right = 1031.0
+offset_bottom = 428.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Shock Anomaly lvl 1"
+text = "SHOCK LEVEL 2"
 metadata/_edit_use_anchors_ = true
 
 [node name="Agitate2" type="Button" parent="Actions/Monster"]
-offset_left = 799.0
-offset_top = 432.0
-offset_right = 1030.0
-offset_bottom = 485.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 795.0
+offset_top = 433.0
+offset_right = 1031.0
+offset_bottom = 486.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Shock Anomaly lvl 2"
+text = "SHOCK LEVEL 2"
 metadata/_edit_use_anchors_ = true
 
 [node name="Agitate3" type="Button" parent="Actions/Monster"]
-offset_left = 799.0
-offset_top = 490.0
+anchors_preset = -1
+anchor_right = 0.000868056
+offset_left = 794.0
+offset_top = 491.0
 offset_right = 1030.0
-offset_bottom = 543.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Shock Anomaly lvl 3"
+text = "SHOCK LEVEL 3"
 metadata/_edit_use_anchors_ = true
 
 [node name="Calm" type="Button" parent="Actions/Monster"]
-offset_left = 1037.0
-offset_top = 374.0
-offset_right = 1116.0
-offset_bottom = 544.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+anchors_preset = -1
+anchor_right = 0.0112847
+offset_left = 1034.0
+offset_top = 375.0
+offset_right = 1113.0
+offset_bottom = 545.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Calm
-Anomaly"
+text = "CALM"
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Actions/Monster"]
@@ -213,7 +209,7 @@ offset_top = 450.0
 offset_right = 340.0
 offset_bottom = 516.0
 theme = SubResource("Theme_ks27t")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Execute"
 metadata/_edit_use_anchors_ = true
@@ -227,14 +223,6 @@ offset_top = 104.0
 offset_right = 771.0
 offset_bottom = 633.0
 metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect" type="ColorRect" parent="HealthMonitor"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 490.0
-offset_bottom = 527.0
-color = Color(0.639216, 0.623529, 0, 1)
 
 [node name="Character1" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
@@ -258,6 +246,12 @@ offset_right = 440.0
 offset_bottom = 83.0
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character1/Status"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 337.0
+offset_bottom = 70.0
+
 [node name="Character2" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
 offset_left = 15.0
@@ -279,6 +273,12 @@ offset_top = 14.0
 offset_right = 440.0
 offset_bottom = 83.0
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character2/Status"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 337.0
+offset_bottom = 70.0
 
 [node name="Character3" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
@@ -302,6 +302,12 @@ offset_right = 440.0
 offset_bottom = 83.0
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character3/Status"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 337.0
+offset_bottom = 70.0
+
 [node name="Monster" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
 offset_left = 15.0
@@ -324,6 +330,12 @@ offset_right = 445.0
 offset_bottom = 163.0
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect" type="ColorRect" parent="HealthMonitor/Monster/Status"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 337.0
+offset_bottom = 147.0
+
 [node name="Progress" type="Panel" parent="."]
 offset_left = 8.0
 offset_top = 555.0
@@ -332,20 +344,18 @@ offset_bottom = 632.0
 script = ExtResource("10_7574l")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="Progress"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 265.0
-offset_bottom = 75.0
-color = Color(1, 0, 0, 1)
-
 [node name="P1" type="Panel" parent="Progress"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 8.0
 offset_right = 52.0
 offset_bottom = 69.0
+
+[node name="ColorRect" type="ColorRect" parent="Progress/P1"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 61.0
 
 [node name="P2" type="Panel" parent="Progress"]
 layout_mode = 0
@@ -354,12 +364,24 @@ offset_top = 8.0
 offset_right = 104.0
 offset_bottom = 69.0
 
+[node name="ColorRect" type="ColorRect" parent="Progress/P2"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 61.0
+
 [node name="P3" type="Panel" parent="Progress"]
 layout_mode = 0
 offset_left = 109.0
 offset_top = 8.0
 offset_right = 157.0
 offset_bottom = 69.0
+
+[node name="ColorRect" type="ColorRect" parent="Progress/P3"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 61.0
 
 [node name="P4" type="Panel" parent="Progress"]
 layout_mode = 0
@@ -368,6 +390,12 @@ offset_top = 8.0
 offset_right = 210.0
 offset_bottom = 69.0
 
+[node name="ColorRect" type="ColorRect" parent="Progress/P4"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 61.0
+
 [node name="P5" type="Panel" parent="Progress"]
 layout_mode = 0
 offset_left = 214.0
@@ -375,20 +403,18 @@ offset_top = 8.0
 offset_right = 262.0
 offset_bottom = 69.0
 
+[node name="ColorRect" type="ColorRect" parent="Progress/P5"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 61.0
+
 [node name="GameState" type="Panel" parent="."]
 offset_left = 8.0
 offset_top = 225.0
 offset_right = 275.0
 offset_bottom = 546.0
 script = ExtResource("9_4ck7d")
-
-[node name="ColorRect" type="ColorRect" parent="GameState"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 264.0
-offset_bottom = 319.0
-color = Color(0.639216, 0.623529, 0, 1)
 
 [node name="Score" type="Label" parent="GameState"]
 visible = false
@@ -413,7 +439,8 @@ offset_left = 12.0
 offset_top = 7.0
 offset_right = 324.0
 offset_bottom = 42.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("10_2mwke")
 theme_override_font_sizes/font_size = 27
 text = "OBJECTIVE:"
 
@@ -423,7 +450,7 @@ offset_left = 14.0
 offset_top = 44.0
 offset_right = 212.0
 offset_bottom = 93.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 
 [node name="ObjStatus" type="ColorRect" parent="GameState"]
@@ -439,19 +466,11 @@ offset_top = 108.0
 offset_right = 274.0
 offset_bottom = 217.0
 
-[node name="ColorRect" type="ColorRect" parent="Info"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 264.0
-offset_bottom = 108.0
-color = Color(0.639216, 0.623529, 0, 1)
-
 [node name="LevelNo" type="Label" parent="Info"]
 layout_mode = 0
 offset_right = 265.0
 offset_bottom = 51.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Level:"
 horizontal_alignment = 1
@@ -463,7 +482,7 @@ offset_left = 2.0
 offset_top = 55.0
 offset_right = 267.0
 offset_bottom = 106.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "Test:"
 horizontal_alignment = 1
@@ -483,9 +502,9 @@ offset_bottom = 640.0
 
 [node name="Text" type="Label" parent="GameOver"]
 layout_mode = 0
-offset_left = 370.0
+offset_left = 350.0
 offset_top = 251.0
-offset_right = 733.0
+offset_right = 746.0
 offset_bottom = 342.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 60

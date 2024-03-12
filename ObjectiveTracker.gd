@@ -30,19 +30,16 @@ func GetCurrentLevel():
 
 #Checks which stage is active and sets secondary objective
 func GetStage(o1 : int, o2 : int, o3 : int):
-	GlobalVariables.Level1Objective = o1
-	GlobalVariables.Level2Objective = o2
-	GlobalVariables.Level3Objective = o3
 	match GlobalVariables.CurrentStage:
 		1:
-			SetObjectiveText(GlobalVariables.Level1Objective)
-			GetObjective(GlobalVariables.Level1Objective)
+			SetObjectiveText(o1)
+			Objective = o1
 		2:
-			SetObjectiveText(GlobalVariables.Level2Objective)
-			GetObjective(GlobalVariables.Level2Objective)
+			SetObjectiveText(o2)
+			Objective = o2
 		3:
-			SetObjectiveText(GlobalVariables.Level3Objective)
-			GetObjective(GlobalVariables.Level3Objective)
+			SetObjectiveText(o3)
+			Objective = o3
 
 #Set's the text of the secondary objective
 func SetObjectiveText(obj : int):
@@ -78,8 +75,8 @@ func SetObjectiveText(obj : int):
 	CurrObj.text = SecondaryObjectiveTxt
 
 #function to check if the ojbective conditions are met or not
-func GetObjective(obj : int):
-	match obj:
+func GetObjective():
+	match Objective:
 		1:
 			#kill only char 1
 			return OneDead(1)
@@ -113,17 +110,17 @@ func GetObjective(obj : int):
 func AllAlive(type : bool):
 	if type:
 		if GameController.Character1 < GlobalVariables.MaxState && GameController.Character2 < GlobalVariables.MaxState && GameController.Character3 < GlobalVariables.MaxState && GameController.Monster < GlobalVariables.MaxState:
-			objColor.modulate = Color(0,1,0)
+			objColor.modulate = Color(0,.5,0)
 			return true
 		else:
-			objColor.modulate = Color(1,0,0)
+			objColor.modulate = Color(.5,0,0)
 			return false
 	else:
 		if (GameController.Character1 < GlobalVariables.MaxState && GameController.Character2 < GlobalVariables.MaxState && GameController.Character3 < GlobalVariables.MaxState) && GameController.Monster >= GlobalVariables.MaxState:
-			objColor.modulate = Color(0,1,0)
+			objColor.modulate = Color(0,.5,0)
 			return true
 		else:
-			objColor.modulate = Color(1,0,0)
+			objColor.modulate = Color(.5,0,0)
 			return false
 
 #leave only 1 alive
@@ -131,24 +128,24 @@ func OneAlive(char : int):
 	match char:
 		1:
 			if GameController.Character1 < GlobalVariables.MaxState && (GameController.Character2 >= GlobalVariables.MaxState && GameController.Character3 >= GlobalVariables.MaxState):
-				objColor.modulate = Color(0,1,0)
+				objColor.modulate = Color(0,.5,0)
 				return true
 			else:
-				objColor.modulate = Color(1,0,0)
+				objColor.modulate = Color(.5,0,0)
 				return false
 		2:
 			if GameController.Character2 < GlobalVariables.MaxState && (GameController.Character1 >= GlobalVariables.MaxState && GameController.Character3 >= GlobalVariables.MaxState):
-				objColor.modulate = Color(0,1,0)
+				objColor.modulate = Color(0,.5,0)
 				return true
 			else:
-				objColor.modulate = Color(1,0,0)
+				objColor.modulate = Color(.5,0,0)
 				return false
 		3:
 			if GameController.Character3 < GlobalVariables.MaxState && (GameController.Character1 >= GlobalVariables.MaxState && GameController.Character2 >= GlobalVariables.MaxState):
-				objColor.modulate = Color(0,1,0)
+				objColor.modulate = Color(0,.5,0)
 				return true
 			else:
-				objColor.modulate = Color(1,0,0)
+				objColor.modulate = Color(.5,0,0)
 				return false
 
 #kill only 1
@@ -156,22 +153,22 @@ func OneDead(char : int):
 	match char:
 		1:
 			if GameController.Character1 >= GlobalVariables.MaxState && (GameController.Character2 < GlobalVariables.MaxState && GameController.Character3 < GlobalVariables.MaxState):
-				objColor.modulate = Color(0,1,0)
+				objColor.modulate = Color(0,.5,0)
 				return true
 			else:
-				objColor.modulate = Color(1,0,0)
+				objColor.modulate = Color(.5,0,0)
 				return false
 		2:
 			if GameController.Character2 >= GlobalVariables.MaxState && (GameController.Character1 < GlobalVariables.MaxState && GameController.Character3 < GlobalVariables.MaxState):
-				objColor.modulate = Color(0,1,0)
+				objColor.modulate = Color(0,.5,0)
 				return true
 			else:
-				objColor.modulate = Color(1,0,0)
+				objColor.modulate = Color(.5,0,0)
 				return false
 		3:
 			if GameController.Character3 >= GlobalVariables.MaxState && (GameController.Character1 < GlobalVariables.MaxState && GameController.Character2 < GlobalVariables.MaxState):
-				objColor.modulate = Color(0,1,0)
+				objColor.modulate = Color(0,.5,0)
 				return true
 			else:
-				objColor.modulate = Color(1,0,0)
+				objColor.modulate = Color(.5,0,0)
 				return false

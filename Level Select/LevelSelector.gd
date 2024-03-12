@@ -140,17 +140,17 @@ func _on_begin_button_pressed():
 	if selectedButton == Level1Button:
 		GlobalVariables.CurrentStage = 1
 		GetLevel()
-		GlobalVariables.TargetScore = 1000
+		GlobalVariables.TargetScore = 2000
 		
 	if selectedButton == Level2Button:
 		GlobalVariables.CurrentStage = 2
 		GetLevel()
-		GlobalVariables.TargetScore = 1000
+		GlobalVariables.TargetScore = 2000
 		
 	if selectedButton == Level3Button:
 		GlobalVariables.CurrentStage = 3
 		GetLevel()
-		GlobalVariables.TargetScore = 1000
+		GlobalVariables.TargetScore = 2000
 	# Reset the button selection
 	unselectButtions(true)
 	StartGame()
@@ -171,7 +171,7 @@ func GetLevel():
 	elif GlobalVariables.CurrentLevel == 5:
 		setDifficulty(10,50,80,5,-1) #TODO: make hardest
 
-#sets game difficulty
+#sets game difficulty (yellow, red, black, increaseRate, DecreaseRate)
 func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
 	GlobalVariables.YellowThreshold = yellow
 	GlobalVariables.RedThreshold = red
@@ -255,11 +255,8 @@ func Save():
 		"TargetScore" : GlobalVariables.TargetScore,
 		"CurrentLevel" : GlobalVariables.CurrentLevel,
 		"Level1Status" : GlobalVariables.Level1Status,
-		"Level1Objective" : GlobalVariables.Level1Objective,
 		"Level2Status" : GlobalVariables.Level2Status,
-		"Level2Objective" : GlobalVariables.Level2Objective,
 		"Level3Status" : GlobalVariables.Level3Status,
-		"Level3Objective" : GlobalVariables.Level3Objective,
 		"GameStarted" : GlobalVariables.GameStarted
 	}
 	var json_str = JSON.stringify(save_data)

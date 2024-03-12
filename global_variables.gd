@@ -24,11 +24,6 @@ var Level1Status : int
 var Level2Status : int
 var Level3Status : int
 
-#Level Objectives, 1 - 9
-var Level1Objective : int 
-var Level2Objective : int
-var Level3Objective : int
-
 #GameisOn
 var GameStarted : int = 0
 #Track if a level message has been plyed yet

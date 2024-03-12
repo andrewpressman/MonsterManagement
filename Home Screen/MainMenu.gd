@@ -63,16 +63,10 @@ func LoadGame():
 		GlobalVariables.CurrentLevel = save_data["CurrentLevel"]
 	if "Level1Status" in save_data:
 		GlobalVariables.Level1Status = save_data["Level1Status"]
-	if "Level1Objective" in save_data:
-		GlobalVariables.Level1Objective = save_data["Level1Objective"]
 	if "Level2Status" in save_data:
 		GlobalVariables.Level2Status = save_data["Level2Status"]
-	if "Level2Objective" in save_data:
-		GlobalVariables.Level2Objective = save_data["Level2Objective"]
 	if "Level3Status" in save_data:
 		GlobalVariables.Level3Status = save_data["Level3Status"]
-	if "Level3Objective" in save_data:
-		GlobalVariables.Level3Objective = save_data["Level3Objective"]
 	if "GameStarted" in save_data:
 		GlobalVariables.GameStarted = save_data["GameStarted"]
 

@@ -25,8 +25,8 @@ func update_panel_color(character_value: int):
 	if character_value >= MaxState:
 		characterPanel.modulate =  Color(0, 0, 0) # Black, character is dead
 	elif character_value >= RedThreshold:
-		characterPanel.modulate = Color(1, 0, 0) # Red
+		characterPanel.modulate = Color(.5, 0, 0) # Red
 	elif character_value >= YellowThreshold:
-		characterPanel.modulate = Color(1, 1, 0) # Yellow
+		characterPanel.modulate = Color(.5, .5, 0) # Yellow
 	elif character_value >= MinState:
-		characterPanel.modulate = Color(0, 1, 0) # green
+		characterPanel.modulate = Color(0, .5, 0) # green

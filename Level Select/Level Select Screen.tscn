@@ -10,26 +10,27 @@
 script = ExtResource("1_t3wki")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -29.0
-offset_top = -68.0
-offset_right = 1244.0
-offset_bottom = 699.0
+offset_left = -36.0
+offset_top = -67.0
+offset_right = 1237.0
+offset_bottom = 700.0
 color = Color(0, 0, 0, 1)
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 934.0
-offset_top = 8.0
-offset_right = 1140.0
-offset_bottom = 67.0
+offset_left = 925.0
+offset_top = 6.0
+offset_right = 1150.0
+offset_bottom = 65.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "Return to Main Menu"
 
 [node name="TempScore" type="Panel" parent="."]
+visible = false
 offset_left = 201.0
 offset_top = 9.0
-offset_right = 924.0
-offset_bottom = 94.0
+offset_right = 917.0
+offset_bottom = 93.0
 
 [node name="Score" type="Label" parent="TempScore"]
 visible = false
@@ -107,6 +108,11 @@ offset_top = 128.0
 offset_right = 1119.0
 offset_bottom = 225.0
 
+[node name="ColorRect" type="ColorRect" parent="Cases/Level1/Status"]
+layout_mode = 0
+offset_right = 144.0
+offset_bottom = 97.0
+
 [node name="Level2" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
 
@@ -163,6 +169,13 @@ offset_top = 282.0
 offset_right = 1121.0
 offset_bottom = 381.0
 
+[node name="ColorRect" type="ColorRect" parent="Cases/Level2/Status"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 148.0
+offset_bottom = 97.0
+
 [node name="Level3" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
 
@@ -217,18 +230,23 @@ offset_top = 433.0
 offset_right = 1123.0
 offset_bottom = 531.0
 
+[node name="ColorRect" type="ColorRect" parent="Cases/Level3/Status"]
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 97.0
+
 [node name="Level Tracker" type="Panel" parent="."]
-offset_left = 17.0
+offset_left = 7.0
 offset_top = 12.0
-offset_right = 186.0
+offset_right = 201.0
 offset_bottom = 90.0
 
 [node name="Label" type="Label" parent="Level Tracker"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 15.0
+offset_left = 6.0
+offset_top = 16.0
 offset_right = 155.0
-offset_bottom = 59.0
+offset_bottom = 60.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "Current Case:"

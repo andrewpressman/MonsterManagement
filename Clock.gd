@@ -1,25 +1,15 @@
 extends Timer
 
 var GameController: Node2D
-var ObjectiveTracker : Panel
 var IncreaseRate : int
 var count : int
-var ObjectiveCheck : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#declare global variables
-	ObjectiveTracker = $/root/Node2D/GameState
 	IncreaseRate = GlobalVariables.IncreaseRate
 	GameController = get_parent()
 	count = 0
-	match GlobalVariables.CurrentStage:
-		1: 
-			ObjectiveCheck = GlobalVariables.Level1Objective
-		2: 
-			ObjectiveCheck = GlobalVariables.Level2Objective
-		3: 
-			ObjectiveCheck = GlobalVariables.Level3Objective
 
 func _on_timer_timeout():	
 	# Generate a random number between 1 and 5
@@ -45,7 +35,6 @@ func _on_timer_timeout():
 			GameController.UpdateStatus(0,0,0,IncreaseRate * 1.5)
 	
 	IncreaseDifficulty()
-	ObjectiveTracker.GetObjective(ObjectiveCheck)
 	
 #starts clock	
 func Start():
