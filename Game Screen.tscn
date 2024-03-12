@@ -162,7 +162,7 @@ offset_right = 1031.0
 offset_bottom = 428.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "SHOCK LEVEL 2"
+text = "SHOCK LEVEL 1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Agitate2" type="Button" parent="Actions/Monster"]
@@ -448,10 +448,12 @@ text = "OBJECTIVE:"
 layout_mode = 0
 offset_left = 14.0
 offset_top = 44.0
-offset_right = 212.0
-offset_bottom = 93.0
+offset_right = 254.0
+offset_bottom = 132.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("10_2mwke")
+theme_override_font_sizes/font_size = 21
+autowrap_mode = 3
 
 [node name="ObjStatus" type="ColorRect" parent="GameState"]
 layout_mode = 0

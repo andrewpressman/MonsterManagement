@@ -70,6 +70,11 @@ func _ready():
 	#audio
 	EffectsPlayer = $Sounds/EffectsPlayer
 	
+	if GlobalVariables.CurrentLevel == 1:
+		$GameState/Objective.visible = false
+	else:
+		$GameState/Objective.visible = true	
+ 	
 	#Level tracker
 	LevelNo = $Info/LevelNo
 	TestNo = $Info/TestNo

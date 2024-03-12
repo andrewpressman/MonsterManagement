@@ -70,7 +70,7 @@ func SetObjectiveText(obj : int):
 			SecondaryObjectiveTxt = "-Eliminate Subject 1\n-Eliminate Subject 2"
 		9:
 			#Just complete test
-			SecondaryObjectiveTxt = "-Complete experiemnt"
+			SecondaryObjectiveTxt = ""
 	
 	CurrObj.text = SecondaryObjectiveTxt
 

@@ -112,6 +112,7 @@ theme_override_font_sizes/font_size = 25
 text = "Dialouge Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/LabelDialouge"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 10.0
 offset_right = 543.0
@@ -127,6 +128,7 @@ theme_override_font_sizes/font_size = 25
 text = "Actions Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/LabelActions"]
+layout_mode = 0
 offset_left = -7.0
 offset_top = 15.0
 offset_right = 541.0
@@ -142,6 +144,7 @@ theme_override_font_sizes/font_size = 25
 text = "Ambiance Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/LabelAmbients"]
+layout_mode = 0
 offset_left = -4.0
 offset_top = 10.0
 offset_right = 553.0

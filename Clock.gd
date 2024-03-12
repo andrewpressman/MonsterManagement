@@ -34,6 +34,7 @@ func _on_timer_timeout():
 		5:
 			GameController.UpdateStatus(0,0,0,IncreaseRate * 1.5)
 	
+	GameController.UpdateStatus(0,0,0,0)
 	IncreaseDifficulty()
 	
 #starts clock	
