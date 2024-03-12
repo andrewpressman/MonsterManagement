@@ -30,6 +30,9 @@ func StartNewGame():
 func ContinueGame():
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
+func OptionsMenu(): 
+	$OptionsMenu.visible = !$OptionsMenu.visible
+
 func QuitGame():
 	get_tree().quit()
 

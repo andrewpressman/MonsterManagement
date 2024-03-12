@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdt441cqsrc7a"]
+[gd_scene load_steps=4 format=3 uid="uid://cdt441cqsrc7a"]
 
 [ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
 [ext_resource type="FontFile" uid="uid://cv5f32m7wk82g" path="res://Assets/Fonts/bitwise.ttf" id="2_uwmcg"]
+[ext_resource type="Script" path="res://Home Screen/Options.gd" id="3_71vsw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jo4rk")
@@ -65,7 +66,7 @@ offset_right = 475.0
 offset_bottom = 461.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
-text = "Options (COMING SOON)"
+text = "Options (no works)"
 
 [node name="Quit" type="Button" parent="MainMenu"]
 layout_mode = 0
@@ -77,10 +78,74 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Quit"
 
-[node name="Options" type="Panel" parent="."]
+[node name="OptionsMenu" type="Panel" parent="."]
 visible = false
-offset_right = 1150.0
-offset_bottom = 645.0
+offset_left = 491.0
+offset_top = 172.0
+offset_right = 1107.0
+offset_bottom = 636.0
+script = ExtResource("3_71vsw")
+
+[node name="LabelGlobal" type="Label" parent="OptionsMenu"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 260.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 25
+text = "Global Volume:"
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/LabelGlobal"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 10.0
+offset_right = 539.0
+offset_bottom = 98.0
+
+[node name="LabelDialouge" type="Label" parent="OptionsMenu"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 114.0
+offset_right = 339.0
+offset_bottom = 171.0
+theme_override_font_sizes/font_size = 25
+text = "Dialouge Volume:"
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/LabelDialouge"]
+offset_left = -4.0
+offset_top = 10.0
+offset_right = 543.0
+offset_bottom = 98.0
+
+[node name="LabelActions" type="Label" parent="OptionsMenu"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 218.0
+offset_right = 338.0
+offset_bottom = 275.0
+theme_override_font_sizes/font_size = 25
+text = "Actions Volume:"
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/LabelActions"]
+offset_left = -7.0
+offset_top = 15.0
+offset_right = 541.0
+offset_bottom = 103.0
+
+[node name="LabelAmbients" type="Label" parent="OptionsMenu"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 326.0
+offset_right = 332.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 25
+text = "Ambiance Volume:"
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/LabelAmbients"]
+offset_left = -4.0
+offset_top = 10.0
+offset_right = 553.0
+offset_bottom = 98.0
 
 [node name="PurgeSave" type="Button" parent="."]
 visible = false
@@ -149,6 +214,7 @@ text = "5"
 
 [connection signal="pressed" from="MainMenu/Continue" to="." method="ContinueGame"]
 [connection signal="pressed" from="MainMenu/New Game" to="." method="StartNewGame"]
+[connection signal="pressed" from="MainMenu/Options" to="." method="OptionsMenu"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="QuitGame"]
 [connection signal="pressed" from="PurgeSave" to="." method="ClearDir"]
 [connection signal="pressed" from="Debug/Button" to="." method="Debug1"]
