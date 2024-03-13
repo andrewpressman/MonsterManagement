@@ -224,6 +224,7 @@ func MarkComplete():
 			
 #end game
 func EndGame():
+	$Clock.Stop()
 	if PassFail:
 		MarkComplete()
 		EndState.text = "Test Passed"

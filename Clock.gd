@@ -40,6 +40,9 @@ func _on_timer_timeout():
 #starts clock	
 func Start():
 	start()
+	
+func Stop():
+	stop()
 
 #Every 30 cycles (+ scale of current level) of he clock, difficulty increases by 2
 func IncreaseDifficulty():

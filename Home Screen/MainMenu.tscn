@@ -11,7 +11,7 @@ script = ExtResource("1_jo4rk")
 offset_right = 1152.0
 offset_bottom = 645.0
 
-[node name="ColorRect" type="ColorRect" parent="MainMenu"]
+[node name="Background" type="ColorRect" parent="MainMenu"]
 layout_mode = 0
 offset_left = -35.0
 offset_top = -11.0

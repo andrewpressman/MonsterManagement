@@ -59,12 +59,12 @@ func _ready():
 	else:
 		NextLevel.hide()
 	
-	#testing
-	LastScore = $TempScore/Score
-	if GlobalVariables.Score == null:
-		GlobalVariables.Score = 0
-	var score = GlobalVariables.Score
-	LastScore.text = "Last score: " + str(score)
+	#Save for endless mode
+	#LastScore = $TempScore/Score
+	#if GlobalVariables.Score == null:
+	#	GlobalVariables.Score = 0
+	#var score = GlobalVariables.Score
+	#LastScore.text = "Last score: " + str(score)
 
 func SetLevel():
 	CurrentLevel.text = "Current Case: " + str(GlobalVariables.CurrentLevel)

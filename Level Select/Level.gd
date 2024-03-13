@@ -32,12 +32,12 @@ func hideAll():
 	SmallInfo.hide()
 	BigInfo.hide()
 	Status.hide()
-	
+
 func MarkComplete(option: int):
 	if option == 1:
-		Status.modulate = Color(0, .5, 0) # green
-	if option == 2:
 		Status.modulate = Color(.5, .5, 0) # yellow
+	if option == 2:
+		Status.modulate = Color(0, .5, 0) # green
 	
 func MarkIncomplete():
 	Status.modulate = Color(.5, 0, 0) # Red
