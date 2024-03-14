@@ -7,20 +7,34 @@ var GlobalSlider : HSlider
 var DialogueSlider : HSlider
 var ActionsSlider : HSlider
 var AmbienceSlider : HSlider
-
+var DisplayMode : OptionButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalSlider = $LabelGlobal/HSlider
-	DialogueSlider = $LabelDialouge/HSlider
-	ActionsSlider = $LabelActions/HSlider
-	AmbienceSlider = $LabelAmbients/HSlider
+	$Sound.visible = false
+	$Video.visible = true
+	GlobalSlider = $Sound/LabelGlobal/HSlider
+	DialogueSlider = $Sound/LabelDialouge/HSlider
+	ActionsSlider = $Sound/LabelActions/HSlider
+	AmbienceSlider = $Sound/LabelAmbients/HSlider
+	
+	DisplayMode = $Video/DisplayMode
+
+func Video():
+	$Sound.visible = false
+	$Video.visible = true
+	
+func Sound():
+	$Sound.visible = true
+	$Video.visible = false
 
 func UpdateSettings():
 	GlobalSlider.value = GlobalVariables.GlobalAudio
 	DialogueSlider.value = GlobalVariables.Dialogue
 	ActionsSlider.value = GlobalVariables.Actions
 	AmbienceSlider.value = GlobalVariables.Ambience
+	DisplayMode.selected = GlobalVariables.DisplayMode
+	OnDisplayModeSelected(GlobalVariables.DisplayMode)
 
 func OnGlobalVolumeChanged(value : float):
 	GlobalVariables.GlobalAudio = value
@@ -33,3 +47,12 @@ func OnActionsVolumeChanged(value : float):
 	
 func OnAmbienceVolumeChanged(value : float):
 	GlobalVariables.Ambience = value
+
+func OnDisplayModeSelected(index):
+	GlobalVariables.DisplayMode = index
+	match index:
+		0: #FullScreen
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		1: #Windowed
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			

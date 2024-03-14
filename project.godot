@@ -26,6 +26,10 @@ gdscript/warnings/unassigned_variable=2
 gdscript/warnings/unassigned_variable_op_assign=2
 gdscript/warnings/integer_division=0
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [gui]
 
 theme/custom_font="res://Assets/Fonts/modeseven.TTF"

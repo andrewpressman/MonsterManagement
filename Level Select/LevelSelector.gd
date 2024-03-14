@@ -261,7 +261,8 @@ func Save():
 		"GlobalVolume" : GlobalVariables.GlobalAudio,
 		"DialogueVolume" : GlobalVariables.Dialogue,
 		"ActionsVolume" : GlobalVariables.Actions,
-		"AmbienceVolume" : GlobalVariables.Ambience
+		"AmbienceVolume" : GlobalVariables.Ambience,
+		"DisplayMode" : GlobalVariables.DisplayMode
 	}
 	var json_str = JSON.stringify(save_data)
 	save_game.store_line(json_str)

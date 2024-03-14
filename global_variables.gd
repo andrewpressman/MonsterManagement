@@ -35,3 +35,6 @@ var GlobalAudio : float = 1
 var Dialogue : float = 1
 var Actions : float = 1
 var Ambience : float = 1
+
+#video settings
+var DisplayMode : int = 1

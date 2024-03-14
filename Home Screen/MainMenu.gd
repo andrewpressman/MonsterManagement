@@ -82,6 +82,8 @@ func LoadGame():
 		GlobalVariables.Actions = save_data["ActionsVolume"]
 	if "AmbienceVolume" in save_data:
 		GlobalVariables.Ambience = save_data["AmbienceVolume"]
+	if "DisplayMode" in save_data:
+		GlobalVariables.DisplayMode = save_data["DisplayMode"]
 
 func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	if not FileAccess.file_exists("user://savegame.save"):
