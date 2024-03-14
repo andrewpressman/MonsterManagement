@@ -13,6 +13,8 @@ func _ready():
 	NewGame = $MainMenu/NewGame
 	Options = $MainMenu/Options
 	Quit = $MainMenu/Quit
+	$OptionsMenu.UpdateSettings()
+	$OptionsMenu.visible = false
 	if GlobalVariables.GameStarted == 1 && GlobalVariables.CurrentLevel <= 5 :
 		Continue.show()
 	else:
@@ -72,6 +74,14 @@ func LoadGame():
 		GlobalVariables.Level3Status = save_data["Level3Status"]
 	if "GameStarted" in save_data:
 		GlobalVariables.GameStarted = save_data["GameStarted"]
+	if "GlobalVolume" in save_data:
+		GlobalVariables.GlobalAudio = save_data["GlobalVolume"]
+	if "DialogueVolume" in save_data:
+		GlobalVariables.Dialogue = save_data["DialogueVolume"]
+	if "ActionsVolume" in save_data:
+		GlobalVariables.Actions = save_data["ActionsVolume"]
+	if "AmbienceVolume" in save_data:
+		GlobalVariables.Ambience = save_data["AmbienceVolume"]
 
 func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	if not FileAccess.file_exists("user://savegame.save"):

@@ -257,7 +257,11 @@ func Save():
 		"Level1Status" : GlobalVariables.Level1Status,
 		"Level2Status" : GlobalVariables.Level2Status,
 		"Level3Status" : GlobalVariables.Level3Status,
-		"GameStarted" : GlobalVariables.GameStarted
+		"GameStarted" : GlobalVariables.GameStarted,
+		"GlobalVolume" : GlobalVariables.GlobalAudio,
+		"DialogueVolume" : GlobalVariables.Dialogue,
+		"ActionsVolume" : GlobalVariables.Actions,
+		"AmbienceVolume" : GlobalVariables.Ambience
 	}
 	var json_str = JSON.stringify(save_data)
 	save_game.store_line(json_str)

@@ -28,3 +28,10 @@ var Level3Status : int
 var GameStarted : int = 0
 #Track if a level message has been plyed yet
 var MessagePlayed : bool = false
+
+
+#Audio settings
+var GlobalAudio : float = 1
+var Dialogue : float = 1
+var Actions : float = 1
+var Ambience : float = 1

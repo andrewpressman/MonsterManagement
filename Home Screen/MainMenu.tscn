@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdt441cqsrc7a"]
+[gd_scene load_steps=5 format=3 uid="uid://cdt441cqsrc7a"]
 
 [ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
 [ext_resource type="FontFile" uid="uid://cv5f32m7wk82g" path="res://Assets/Fonts/bitwise.ttf" id="2_uwmcg"]
 [ext_resource type="Script" path="res://Home Screen/Options.gd" id="3_71vsw"]
+[ext_resource type="Script" path="res://Home Screen/Volume.gd" id="4_byofg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jo4rk")
@@ -66,7 +67,7 @@ offset_right = 475.0
 offset_bottom = 461.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
-text = "Options (no works)"
+text = "Options"
 
 [node name="Quit" type="Button" parent="MainMenu"]
 layout_mode = 0
@@ -79,7 +80,6 @@ theme_override_font_sizes/font_size = 31
 text = "Quit"
 
 [node name="OptionsMenu" type="Panel" parent="."]
-visible = false
 offset_left = 491.0
 offset_top = 172.0
 offset_right = 1107.0
@@ -99,8 +99,20 @@ text = "Global Volume:"
 layout_mode = 0
 offset_left = -4.0
 offset_top = 10.0
-offset_right = 539.0
+offset_right = 463.0
 offset_bottom = 98.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_byofg")
+bus_name = "Master"
+
+[node name="Label" type="Label" parent="OptionsMenu/LabelGlobal/HSlider"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 35.0
+offset_right = 589.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
 
 [node name="LabelDialouge" type="Label" parent="OptionsMenu"]
 layout_mode = 0
@@ -113,10 +125,21 @@ text = "Dialouge Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/LabelDialouge"]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 10.0
-offset_right = 543.0
-offset_bottom = 98.0
+offset_left = 5.0
+offset_top = 23.0
+offset_right = 472.0
+offset_bottom = 111.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_byofg")
+bus_name = "Dialogue"
+
+[node name="Label" type="Label" parent="OptionsMenu/LabelDialouge/HSlider"]
+offset_left = 489.0
+offset_top = 35.0
+offset_right = 589.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
 
 [node name="LabelActions" type="Label" parent="OptionsMenu"]
 layout_mode = 0
@@ -125,37 +148,57 @@ offset_top = 218.0
 offset_right = 338.0
 offset_bottom = 275.0
 theme_override_font_sizes/font_size = 25
-text = "Actions Volume:"
+text = "Effects Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/LabelActions"]
-layout_mode = 0
-offset_left = -7.0
-offset_top = 15.0
-offset_right = 541.0
-offset_bottom = 103.0
+offset_left = 4.0
+offset_top = 21.0
+offset_right = 471.0
+offset_bottom = 109.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_byofg")
+bus_name = "Actions"
+
+[node name="Label" type="Label" parent="OptionsMenu/LabelActions/HSlider"]
+offset_left = 489.0
+offset_top = 35.0
+offset_right = 589.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
 
 [node name="LabelAmbients" type="Label" parent="OptionsMenu"]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 326.0
-offset_right = 332.0
-offset_bottom = 383.0
+offset_left = 6.0
+offset_top = 327.0
+offset_right = 336.0
+offset_bottom = 384.0
 theme_override_font_sizes/font_size = 25
 text = "Ambiance Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/LabelAmbients"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = 10.0
-offset_right = 553.0
-offset_bottom = 98.0
+offset_left = 8.0
+offset_top = 23.0
+offset_right = 481.0
+offset_bottom = 111.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_byofg")
+bus_name = "Ambience"
+
+[node name="Label" type="Label" parent="OptionsMenu/LabelAmbients/HSlider"]
+offset_left = 489.0
+offset_top = 35.0
+offset_right = 589.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 20
 
 [node name="PurgeSave" type="Button" parent="."]
 visible = false
-offset_left = 956.0
-offset_top = 562.0
-offset_right = 1127.0
-offset_bottom = 626.0
+offset_left = 305.0
+offset_top = 570.0
+offset_right = 476.0
+offset_bottom = 634.0
 text = "Purge SaveGame"
 
 [node name="Debug" type="Panel" parent="."]
@@ -219,6 +262,14 @@ text = "5"
 [connection signal="pressed" from="MainMenu/New Game" to="." method="StartNewGame"]
 [connection signal="pressed" from="MainMenu/Options" to="." method="OptionsMenu"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="QuitGame"]
+[connection signal="value_changed" from="OptionsMenu/LabelGlobal/HSlider" to="OptionsMenu" method="OnGlobalVolumeChanged"]
+[connection signal="value_changed" from="OptionsMenu/LabelGlobal/HSlider" to="OptionsMenu/LabelGlobal/HSlider" method="onValueChanged"]
+[connection signal="value_changed" from="OptionsMenu/LabelDialouge/HSlider" to="OptionsMenu" method="OnDialogueVolumeChanged"]
+[connection signal="value_changed" from="OptionsMenu/LabelDialouge/HSlider" to="OptionsMenu/LabelDialouge/HSlider" method="onValueChanged"]
+[connection signal="value_changed" from="OptionsMenu/LabelActions/HSlider" to="OptionsMenu" method="OnActionsVolumeChanged"]
+[connection signal="value_changed" from="OptionsMenu/LabelActions/HSlider" to="OptionsMenu/LabelActions/HSlider" method="onValueChanged"]
+[connection signal="value_changed" from="OptionsMenu/LabelAmbients/HSlider" to="OptionsMenu" method="OnAmbienceVolumeChanged"]
+[connection signal="value_changed" from="OptionsMenu/LabelAmbients/HSlider" to="OptionsMenu/LabelAmbients/HSlider" method="onValueChanged"]
 [connection signal="pressed" from="PurgeSave" to="." method="ClearDir"]
 [connection signal="pressed" from="Debug/Button" to="." method="Debug1"]
 [connection signal="pressed" from="Debug/Button2" to="." method="Debug2"]

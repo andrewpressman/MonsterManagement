@@ -493,6 +493,7 @@ vertical_alignment = 1
 [node name="Sounds" type="Node" parent="."]
 
 [node name="EffectsPlayer" type="AudioStreamPlayer2D" parent="Sounds"]
+bus = &"Actions"
 script = ExtResource("9_3vj8r")
 
 [node name="GameOver" type="Panel" parent="."]
