@@ -16,8 +16,17 @@ func _ready():
 	BigInfo = $BigInfo
 	Status = $Status
 	Select = $select
+	Select.hide()
+	SmallInfo.hide()
+	Status.hide()
 	BigInfo.hide()
 
+func Startup():
+	Select.show()
+	await get_tree().create_timer(.1).timeout
+	SmallInfo.show()
+	await get_tree().create_timer(.1).timeout
+	Status.show()
 func hideBig():
 	BigInfo.hide()
 	

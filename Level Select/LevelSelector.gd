@@ -45,9 +45,16 @@ func _ready():
 	executeButton = $Begin
 	selectedButton = null
 	executeButton.disabled = true
-		
+	
+	$"Level Tracker".visible = false
+	$Exit.visible = false
+	$StatusGuide.visible = false
+	$Cases.visible = false
+	$MessagePanel.visible = false
+	$Begin.visible = false
+	$DecryptedData.visible = false
+	
 	SetStatus()
-	SetLevel()
 
 	NextLevel = $NextLevel
 	if AllComplete:
@@ -65,15 +72,38 @@ func _ready():
 	#	GlobalVariables.Score = 0
 	#var score = GlobalVariables.Score
 	#LastScore.text = "Last score: " + str(score)
+	Startup()
+
+func Startup():
+	$"Level Tracker".visible = true
+	$Exit.visible = true
+	$StatusGuide.visible = true
+	await get_tree().create_timer(.3).timeout
+	$Cases.visible = true
+	await get_tree().create_timer(.3).timeout
+	SetLevel()
+	await get_tree().create_timer(.3).timeout
+	$MessagePanel.visible = true
+	await get_tree().create_timer(.3).timeout
+	$Begin.visible = true
+	await get_tree().create_timer(.3).timeout
+	if GlobalVariables.CurrentLevel > 1:
+		$DecryptedData.visible = true
+	else:
+		$DecryptedData.visible = false
 
 func SetLevel():
+	
 	CurrentLevel.text = "Current Case: " + str(GlobalVariables.CurrentLevel)
 	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
 		#Level 1 and 3 are hidden and thus marked as fully complete
 		GlobalVariables.Level2Status = 2
 		GlobalVariables.Level3Status = 2
-		Level2.hideAll()
-		Level3.hideAll()
+		Level1.Startup()
+	else:
+		Level1.Startup()
+		Level2.Startup()
+		Level3.Startup()
 
 #markes a level complete
 func SetStatus():
@@ -166,7 +196,7 @@ func GetLevel():
 		setDifficulty(10,60,120,5,-1) #main difficluty
 	
 	elif GlobalVariables.CurrentLevel == 4:
-		setDifficulty(10,40,100,5,-1) #TODO: make harder
+		setDifficulty(10,40,100,7,-1) #TODO: make hardest
 	
 	elif GlobalVariables.CurrentLevel == 5:
 		setDifficulty(5,50,80,7,-1) #TODO: make hardest

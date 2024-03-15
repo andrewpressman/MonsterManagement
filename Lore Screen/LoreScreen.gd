@@ -6,7 +6,17 @@ var Return : Button
 func _ready():
 	Return = $Return
 	SearchLogs()
-
+	$AudioTrack1.visible = false
+	$AudioTrack2.visible = false
+	$AudioTrack3.visible = false
+	$AudioTrack4.visible = false
+	$AudioTrack5.visible = false
+	$AudioTrack6.visible = false
+	$AudioTrack7.visible = false
+	$AudioTrack8.visible = false
+	$AudioTrack9.visible = false
+	startup()	
+	
 func SearchLogs():
 	var count = 0
 	for i in GlobalVariables.UnlockedLogs:
@@ -15,6 +25,27 @@ func SearchLogs():
 		else:
 			Unlock(count, false)
 		count += 1
+
+func startup():
+	$AudioTrack1.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack2.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack3.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack4.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack5.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack6.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack7.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack8.visible = true
+	await get_tree().create_timer(.2).timeout
+	$AudioTrack9.visible = true
+
+
 
 func Unlock(log : int, check :bool):
 	match log:

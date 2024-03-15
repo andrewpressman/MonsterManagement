@@ -19,6 +19,14 @@ func _ready():
 	MaxState= GlobalVariables.MaxState
 	FlashingState = GlobalVariables.MaxState - (3 * GlobalVariables.IncreaseRate)
 	characterPanel = $Status
+	$Sprite2D.visible = false
+	$Status.visible = false
+
+	
+func Startup():
+	$Sprite2D.visible = true
+	await get_tree().create_timer(.2).timeout
+	$Status.visible = true
 
 # Function to update the color of the character panel
 func update_panel_color(character_value: int):

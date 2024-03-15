@@ -112,7 +112,6 @@ offset_bottom = 224.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "o"
-metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level1"]
 offset_left = 145.0
@@ -176,14 +175,12 @@ offset_bottom = 377.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "o"
-metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level2"]
 offset_left = 145.0
 offset_top = 278.0
 offset_right = 768.0
 offset_bottom = 377.0
-metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level2/MiniInfo"]
 layout_mode = 0
@@ -194,7 +191,6 @@ theme_override_font_sizes/font_size = 19
 text = "Experiment 2"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="BigInfo" type="Panel" parent="Cases/Level2"]
 visible = false
@@ -240,7 +236,6 @@ offset_bottom = 527.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "o"
-metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level3"]
 offset_left = 145.0
@@ -377,7 +372,7 @@ text = "All Tests passed, Proceed to next shift"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="DecryptedData" type="Button" parent="."]
 offset_left = 13.0
 offset_top = 597.0
 offset_right = 171.0
@@ -393,4 +388,4 @@ text = "Decrypted Data"
 [connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
 [connection signal="pressed" from="MessagePanel/Button" to="MessagePanel" method="PlayMessage"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="Reset"]
-[connection signal="pressed" from="Button" to="." method="GoToLore"]
+[connection signal="pressed" from="DecryptedData" to="." method="GoToLore"]

@@ -9,10 +9,19 @@ var SecondaryObjectiveTxt : String
 
 func _ready():
 	objColor = $ObjStatus
-	objColor.show()
 	GameController = get_parent()
 	CurrObj = $CurrObj
 	GetCurrentLevel()
+	
+	$Objective.visible = false
+	objColor.hide()
+	CurrObj.hide()
+
+func Startup():
+	$Objective.visible = true
+	await get_tree().create_timer(.1).timeout
+	objColor.show()
+	CurrObj.show()
 
 #Sets/Stores all secondary objectives for each level (1 - 15)
 func GetCurrentLevel():

@@ -33,9 +33,13 @@ var DecreaseRate : int
 
 func _ready():
 	Agitate1Button = $Monster/Agitate1
+	Agitate1Button.hide()
 	Agitate2Button = $Monster/Agitate2
+	Agitate2Button.hide()
 	Agitate3Button = $Monster/Agitate3
+	Agitate3Button.hide()
 	CalmButton = $Monster/Calm
+	CalmButton.hide()
 	CalmClock = $Monster/Timer
 	
 	ExecuteClock = $ResetClock
@@ -60,7 +64,48 @@ func _ready():
 	# Initially, no button is selected
 	selectedButton = null
 	
+	Agitate1Button.hide()
+	Agitate2Button.hide()
+	Agitate3Button.hide()
+	CalmButton.hide()
+	Char1Trigger.hide()
+	Char1Type.hide()
+	Char2Trigger.hide()
+	Char2Type.hide()
+	Char3Trigger.hide()
+	Char3Type.hide()
+	AllCharTrigger.hide()	
 	PowerOnButton.hide()
+	PowerOffButton.hide()
+	executeButton.hide()
+
+func Startup():
+	PowerOffButton.show()
+	await get_tree().create_timer(.1).timeout
+	AllCharTrigger.show()
+	await get_tree().create_timer(.1).timeout
+	Char1Type.show()
+	await get_tree().create_timer(.1).timeout
+	Char2Type.show()
+	await get_tree().create_timer(.1).timeout
+	Char3Type.show()
+	await get_tree().create_timer(.1).timeout
+	Char1Trigger.show()
+	await get_tree().create_timer(.1).timeout
+	Char2Trigger.show()
+	await get_tree().create_timer(.1).timeout
+	Char3Trigger.show()		
+	await get_tree().create_timer(.1).timeout
+	Agitate1Button.show()
+	await get_tree().create_timer(.1).timeout
+	Agitate2Button.show()
+	await get_tree().create_timer(.1).timeout
+	Agitate3Button.show()
+	await get_tree().create_timer(.1).timeout
+	CalmButton.show()
+	await get_tree().create_timer(.1).timeout
+	executeButton.show()
+	
 
 # Function to update the button selection and visuals
 func update_button_selection(button: Button):

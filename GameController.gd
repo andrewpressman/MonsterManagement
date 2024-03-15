@@ -75,6 +75,17 @@ func _ready():
 	else:
 		$GameState/Objective.visible = true	
  	
+	#hide all for startup
+	$Message.visible = false
+	$Actions.visible = false
+	$HealthMonitor.visible = false
+	$Progress.visible = false
+	$GameState.visible = false
+	$Info.visible = false
+	$quit.visible = false
+	
+	Startup()
+	
 	#Level tracker
 	LevelNo = $Info/LevelNo
 	TestNo = $Info/TestNo
@@ -102,6 +113,34 @@ func _ready():
 	character2_node.update_panel_color(Character2)
 	character3_node.update_panel_color(Character3)
 	monster_node.update_panel_color(Monster)
+
+func Startup():
+	#logo.show
+	$Message.visible = true
+	await get_tree().create_timer(.1).timeout
+	$Info.visible = true
+	await get_tree().create_timer(.1).timeout
+	$HealthMonitor.visible = true
+	await get_tree().create_timer(.1).timeout
+	$HealthMonitor/Character1.Startup()
+	await get_tree().create_timer(.1).timeout
+	$HealthMonitor/Character2.Startup()
+	await get_tree().create_timer(.1).timeout
+	$HealthMonitor/Character3.Startup()
+	await get_tree().create_timer(.1).timeout
+	$HealthMonitor/Monster.Startup()
+	await get_tree().create_timer(.1).timeout
+	$Actions.visible = true
+	await get_tree().create_timer(.1).timeout
+	$Actions.Startup()
+	await get_tree().create_timer(.1).timeout
+	$GameState.visible = true
+	await get_tree().create_timer(.1).timeout
+	$GameState.Startup()
+	await get_tree().create_timer(.1).timeout
+	$Progress.visible = true
+	await get_tree().create_timer(.1).timeout
+	$quit.visible = true
 
 #prevents values from going outside of set limits
 func clamp_values():
