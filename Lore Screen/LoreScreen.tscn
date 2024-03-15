@@ -1,8 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://6mmubadtcavy"]
+[gd_scene load_steps=7 format=3 uid="uid://6mmubadtcavy"]
 
 [ext_resource type="Script" path="res://Lore Screen/LoreScreen.gd" id="1_5jo4d"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="1_6sl5u"]
 [ext_resource type="Script" path="res://Lore Screen/LogControl.gd" id="1_ogcst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66wy3"]
+bg_color = Color(0, 0.5, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv44p"]
+bg_color = Color(0.5, 0.5, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mpt8"]
+bg_color = Color(0.5, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5jo4d")
@@ -76,8 +97,10 @@ offset_left = 108.0
 offset_top = 5.0
 offset_right = 142.0
 offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
 text = "▶"
 
 [node name="Pause" type="Button" parent="AudioTrack1"]
@@ -88,6 +111,7 @@ offset_right = 98.0
 offset_bottom = 41.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
 text = "||"
 
 [node name="Restart" type="Button" parent="AudioTrack1"]
@@ -96,8 +120,10 @@ offset_left = 18.0
 offset_top = 5.0
 offset_right = 55.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
 text = "<|"
 
 [node name="Label" type="Label" parent="AudioTrack1"]
@@ -125,7 +151,599 @@ text = "LOCKED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioTrack2" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 121.0
+offset_right = 1137.0
+offset_bottom = 166.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack2"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack2"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack2"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack2"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack2"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile2.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack2"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack2/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTrack3" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 171.0
+offset_right = 1137.0
+offset_bottom = 216.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack3"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack3"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack3"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack3"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack3"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile3.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack3"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack3/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTrack4" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 221.0
+offset_right = 1137.0
+offset_bottom = 266.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack4"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack4"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack4"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack4"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack4"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile4.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack4"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack4/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTrack5" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 271.0
+offset_right = 1137.0
+offset_bottom = 316.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack5"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack5"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack5"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack5"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack5"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile5.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack5"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack5/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTrack6" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 321.0
+offset_right = 1137.0
+offset_bottom = 366.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack6"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack6"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack6"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack6"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack6"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile6.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack6"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack6/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTrack7" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 371.0
+offset_right = 1137.0
+offset_bottom = 416.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack7"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack7"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack7"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack7"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack7"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile7.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack7"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack7/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTrack8" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 421.0
+offset_right = 1137.0
+offset_bottom = 466.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack8"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack8"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack8"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack8"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack8"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile8.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack8"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack8/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioTrack9" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 471.0
+offset_right = 1137.0
+offset_bottom = 516.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack9"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack9"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack9"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack9"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+focus_mode = 0
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack9"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile9.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack9"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack9/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Return" to="." method="Back"]
 [connection signal="pressed" from="AudioTrack1/Play" to="AudioTrack1" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack1/Pause" to="AudioTrack1" method="_on_PauseButton_pressed"]
 [connection signal="pressed" from="AudioTrack1/Restart" to="AudioTrack1" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack2/Play" to="AudioTrack2" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack2/Pause" to="AudioTrack2" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack2/Restart" to="AudioTrack2" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack3/Play" to="AudioTrack3" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack3/Pause" to="AudioTrack3" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack3/Restart" to="AudioTrack3" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack4/Play" to="AudioTrack4" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack4/Pause" to="AudioTrack4" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack4/Restart" to="AudioTrack4" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack5/Play" to="AudioTrack5" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack5/Pause" to="AudioTrack5" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack5/Restart" to="AudioTrack5" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack6/Play" to="AudioTrack6" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack6/Pause" to="AudioTrack6" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack6/Restart" to="AudioTrack6" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack7/Play" to="AudioTrack7" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack7/Pause" to="AudioTrack7" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack7/Restart" to="AudioTrack7" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack8/Play" to="AudioTrack8" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack8/Pause" to="AudioTrack8" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack8/Restart" to="AudioTrack8" method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="AudioTrack9/Play" to="AudioTrack9" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack9/Pause" to="AudioTrack9" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack9/Restart" to="AudioTrack9" method="_on_RestartButton_pressed"]

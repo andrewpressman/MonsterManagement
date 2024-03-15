@@ -26,21 +26,61 @@ func Unlock(log : int, check :bool):
 				print("locked")
 				$AudioTrack1.Lock()
 		1:
-			print("log 2")
+			if check:
+				$AudioTrack2.Unlock()
+				print("log 2")
+			else:
+				print("locked")
+				$AudioTrack2.Lock()
 		2:
-			print("log 3")
+			if check:
+				$AudioTrack3.Unlock()
+				print("log 3")
+			else:
+				print("locked")
+				$AudioTrack3.Lock()
 		3:
-			print("log 4")
+			if check:
+				$AudioTrack4.Unlock()
+				print("log 4")
+			else:
+				print("locked")
+				$AudioTrack4.Lock()
 		4:
-			print("log 5")
+			if check:
+				$AudioTrack5.Unlock()
+				print("log 5")
+			else:
+				print("locked")
+				$AudioTrack5.Lock()
 		5:
-			print("log 6")
+			if check:
+				$AudioTrack6.Unlock()
+				print("log 6")
+			else:
+				print("locked")
+				$AudioTrack6.Lock()
 		6:
-			print("log 7")
+			if check:
+				$AudioTrack7.Unlock()
+				print("log 7")
+			else:
+				print("locked")
+				$AudioTrack7.Lock()
 		7:
-			print("log 8")
+			if check:
+				$AudioTrack8.Unlock()
+				print("log 8")
+			else:
+				print("locked")
+				$AudioTrack8.Lock()
 		8:
-			print("log 9")
+			if check:
+				$AudioTrack9.Unlock()
+				print("log 9")
+			else:
+				print("locked")
+				$AudioTrack9.Lock()
 
 		
 	
