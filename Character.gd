@@ -17,7 +17,7 @@ func _ready():
 	YellowThreshold= GlobalVariables.YellowThreshold
 	RedThreshold= GlobalVariables.RedThreshold
 	MaxState= GlobalVariables.MaxState
-	FlashingState = RedThreshold + ((MaxState - RedThreshold) * 3/4)
+	FlashingState = GlobalVariables.MaxState - (3 * GlobalVariables.IncreaseRate)
 	characterPanel = $Status
 
 # Function to update the color of the character panel

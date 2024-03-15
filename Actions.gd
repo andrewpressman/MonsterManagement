@@ -118,17 +118,17 @@ func _on_execute_button_pressed():
 		TickPower()
 	elif selectedButton == Agitate2Button:
 		# increase all leveles at medium rate
-		GameController.UpdateStatus(1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate,1.5 * IncreaseRate)
+		GameController.UpdateStatus(2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate)
 		GameController.PlaySound(5)
 		TickPower()
 	elif selectedButton == Agitate3Button:
 		# increase all leveles at max rate
-		GameController.UpdateStatus(2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate,2 * IncreaseRate)
+		GameController.UpdateStatus(3 * IncreaseRate,3 * IncreaseRate,3 * IncreaseRate,3 * IncreaseRate)
 		GameController.PlaySound(6)
 		TickPower()
 	elif selectedButton == CalmButton:
 		# decrease all levels
-		GameController.UpdateStatus(DecreaseRate * 3,DecreaseRate * 3,DecreaseRate * 3,DecreaseRate * 3)
+		GameController.UpdateStatus(DecreaseRate * 2,DecreaseRate * 2,DecreaseRate * 2,DecreaseRate * 2)
 		GameController.PlaySound(8)
 		TickPower()
 		CalmLockout()
