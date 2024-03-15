@@ -1,5 +1,8 @@
 extends Node
 
+@export
+var Stage : int
+
 var Select : Button
 var SmallInfo : Panel
 var BigInfo : Panel
@@ -38,6 +41,15 @@ func MarkComplete(option: int):
 		Status.modulate = Color(.5, .5, 0) # yellow
 	if option == 2:
 		Status.modulate = Color(0, .5, 0) # green
+		UpdateLogs()
+
+#Update which logs are unlocked
+func UpdateLogs():
+	var Level = GlobalVariables.CurrentLevel
+	var index : int
+	if Level > 1:
+		index = ((3 * Level) + Stage) - 7
+		GlobalVariables.UnlockedLogs[index] = 1
 	
 func MarkIncomplete():
 	Status.modulate = Color(.5, 0, 0) # Red

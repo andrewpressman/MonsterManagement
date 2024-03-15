@@ -1,0 +1,131 @@
+[gd_scene load_steps=4 format=3 uid="uid://6mmubadtcavy"]
+
+[ext_resource type="Script" path="res://Lore Screen/LoreScreen.gd" id="1_5jo4d"]
+[ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="1_6sl5u"]
+[ext_resource type="Script" path="res://Lore Screen/LogControl.gd" id="1_ogcst"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5jo4d")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -158.0
+offset_top = -67.0
+offset_right = 1263.0
+offset_bottom = 745.0
+color = Color(0, 0, 0, 1)
+
+[node name="Header" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 11.0
+offset_right = 1135.0
+offset_bottom = 65.0
+
+[node name="Label" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 172.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 20
+text = "CONTROLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 11.0
+offset_right = 585.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 20
+text = "FILE NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 10.0
+offset_right = 1081.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 20
+text = "STATUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Return" type="Button" parent="."]
+offset_left = 973.0
+offset_top = 566.0
+offset_right = 1142.0
+offset_bottom = 636.0
+text = "return"
+
+[node name="AudioTrack1" type="Panel" parent="."]
+offset_left = 22.0
+offset_top = 71.0
+offset_right = 1137.0
+offset_bottom = 116.0
+script = ExtResource("1_ogcst")
+
+[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack1"]
+bus = &"Dialogue"
+
+[node name="Play" type="Button" parent="AudioTrack1"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+text = "▶"
+
+[node name="Pause" type="Button" parent="AudioTrack1"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 98.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 20
+text = "||"
+
+[node name="Restart" type="Button" parent="AudioTrack1"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_6sl5u")
+theme_override_font_sizes/font_size = 25
+text = "<|"
+
+[node name="Label" type="Label" parent="AudioTrack1"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 3.0
+offset_right = 671.0
+offset_bottom = 39.0
+text = "AudioLogFile1.wav"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Panel" parent="AudioTrack1"]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 2.0
+offset_right = 1108.0
+offset_bottom = 42.0
+
+[node name="Label" type="Label" parent="AudioTrack1/Status"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 39.0
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Return" to="." method="Back"]
+[connection signal="pressed" from="AudioTrack1/Play" to="AudioTrack1" method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="AudioTrack1/Pause" to="AudioTrack1" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack1/Restart" to="AudioTrack1" method="_on_RestartButton_pressed"]

@@ -84,12 +84,16 @@ func LoadGame():
 		GlobalVariables.Ambience = save_data["AmbienceVolume"]
 	if "DisplayMode" in save_data:
 		GlobalVariables.DisplayMode = save_data["DisplayMode"]
+	if "UnlockedLogs" in save_data:
+		GlobalVariables.UnlockedLogs = save_data["UnlockedLogs"]
 
 func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	if not FileAccess.file_exists("user://savegame.save"):
 		return #no save game detected.
 	var file_to_remove = "user://savegame.save"
 	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
+	
+	GlobalVariables.UnlockedLogs = [0,0,0,0,0,0,0,0,0]
 
 func Debug1():
 	GlobalVariables.GameStarted = 1

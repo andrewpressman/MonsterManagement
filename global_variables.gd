@@ -23,6 +23,7 @@ var CurrentLevel : int #track which of the 5 levels the player is curerntly on
 var Level1Status : int 
 var Level2Status : int
 var Level3Status : int
+var UnlockedLogs = [0,0,0,0,0,0,0,0,0]
 
 #GameisOn
 var GameStarted : int = 0
@@ -38,3 +39,4 @@ var Ambience : float = 1
 
 #video settings
 var DisplayMode : int = 1
+

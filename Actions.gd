@@ -184,21 +184,25 @@ func TickPower():
 func CalmLockout():
 	CalmClock.start()
 	CalmButton.disabled = true
+	CalmButton.focus_mode = Control.FOCUS_NONE
 
 #re-enables calm button
 func On_Calm_Timeout():
 	CalmButton.disabled = false
+	CalmButton.focus_mode = Control.FOCUS_ALL
 
 #execute button timer
 func start_Clock():
 	ExecuteClock.start()
 	executeButton.modulate = Color(1, 1, 1)
 	executeButton.disabled = true
+	executeButton.focus_mode = Control.FOCUS_NONE
 
 #execute timer clock
 func _on_clock_timeout():
 	executeButton.modulate = Color(0, 1, 0)
 	executeButton.disabled = false
+	executeButton.focus_mode = Control.FOCUS_ALL
 
 #return false is Power is OFF, return true is Power is ON
 func CheckPower():

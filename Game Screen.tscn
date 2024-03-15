@@ -30,19 +30,17 @@ autostart = true
 script = ExtResource("2_kakbt")
 
 [node name="Message" type="Panel" parent="."]
-offset_left = 9.0
+offset_left = 176.0
 offset_top = 11.0
-offset_right = 1141.0
+offset_right = 940.0
 offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
 
 [node name="Actions" type="Panel" parent="."]
 offset_left = 781.0
 offset_top = 104.0
-offset_right = 1135.0
+offset_right = 1136.0
 offset_bottom = 637.0
 script = ExtResource("3_aqjdg")
-metadata/_edit_use_anchors_ = true
 
 [node name="Environment" type="Node" parent="Actions"]
 
@@ -222,7 +220,6 @@ offset_left = 279.0
 offset_top = 104.0
 offset_right = 771.0
 offset_bottom = 633.0
-metadata/_edit_use_anchors_ = true
 
 [node name="Character1" type="Panel" parent="HealthMonitor"]
 layout_mode = 0
@@ -342,7 +339,6 @@ offset_top = 555.0
 offset_right = 275.0
 offset_bottom = 632.0
 script = ExtResource("10_7574l")
-metadata/_edit_use_anchors_ = true
 
 [node name="P1" type="Panel" parent="Progress"]
 layout_mode = 0
@@ -558,6 +554,14 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Begin Test"
 
+[node name="quit" type="Button" parent="."]
+offset_left = 951.0
+offset_top = 23.0
+offset_right = 1125.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 15
+text = "Abandon Experiment"
+
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
 [connection signal="pressed" from="Actions/Environment/PingAll" to="Actions" method="_on_AllCharTrigger_pressed"]
 [connection signal="pressed" from="Actions/Environment/Power/PowerOn" to="Actions" method="_on_PowerOn_pressed"]
@@ -577,3 +581,4 @@ text = "Begin Test"
 [connection signal="timeout" from="Actions/ResetClock" to="Actions" method="_on_clock_timeout"]
 [connection signal="pressed" from="GameOver/Button" to="." method="BackToMenu"]
 [connection signal="pressed" from="StartGame/Button" to="." method="StartGame"]
+[connection signal="pressed" from="quit" to="." method="BackToMenu"]

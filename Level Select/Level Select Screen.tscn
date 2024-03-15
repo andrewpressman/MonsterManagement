@@ -1,19 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=7 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
 [ext_resource type="Script" path="res://Level Select/Cases.gd" id="2_oikne"]
 [ext_resource type="Script" path="res://Level Select/Message Controller.gd" id="4_32hnr"]
-[ext_resource type="Script" path="res://Level Select/LogPlayer.gd" id="4_qolbh"]
+[ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="4_qolbh"]
+[ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="6_d2t0v"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t3wki")
 
 [node name="Background" type="ColorRect" parent="."]
-offset_left = -36.0
-offset_top = -67.0
-offset_right = 1237.0
-offset_bottom = 700.0
+offset_left = -67.0
+offset_top = -63.0
+offset_right = 1206.0
+offset_bottom = 704.0
 color = Color(0, 0, 0, 1)
 
 [node name="Exit" type="Button" parent="."]
@@ -95,12 +96,13 @@ color = Color(0, 0.5, 0, 1)
 [node name="Cases" type="Panel" parent="."]
 offset_left = 10.0
 offset_top = 96.0
-offset_right = 954.0
+offset_right = 942.0
 offset_bottom = 557.0
 script = ExtResource("2_oikne")
 
 [node name="Level1" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
+Stage = 1
 
 [node name="select" type="Button" parent="Cases/Level1"]
 offset_left = 26.0
@@ -164,6 +166,7 @@ offset_bottom = 97.0
 
 [node name="Level2" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
+Stage = 2
 
 [node name="select" type="Button" parent="Cases/Level2"]
 offset_left = 26.0
@@ -227,6 +230,7 @@ offset_bottom = 97.0
 
 [node name="Level3" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
+Stage = 3
 
 [node name="select" type="Button" parent="Cases/Level3"]
 offset_left = 26.0
@@ -342,6 +346,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LogPlayer" type="AudioStreamPlayer2D" parent="MessagePanel"]
+bus = &"Dialogue"
 script = ExtResource("4_qolbh")
 
 [node name="NextLevel" type="Panel" parent="."]
@@ -372,6 +377,15 @@ text = "All Tests passed, Proceed to next shift"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Button" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 597.0
+offset_right = 171.0
+offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("6_d2t0v")
+theme_override_font_sizes/font_size = 20
+text = "Decrypted Data"
+
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
@@ -379,3 +393,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
 [connection signal="pressed" from="MessagePanel/Button" to="MessagePanel" method="PlayMessage"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="Reset"]
+[connection signal="pressed" from="Button" to="." method="GoToLore"]

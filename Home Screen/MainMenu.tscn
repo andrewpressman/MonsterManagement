@@ -80,6 +80,7 @@ theme_override_font_sizes/font_size = 31
 text = "Quit"
 
 [node name="OptionsMenu" type="Panel" parent="."]
+visible = false
 offset_left = 491.0
 offset_top = 133.0
 offset_right = 1107.0
@@ -181,6 +182,7 @@ script = ExtResource("4_byofg")
 bus_name = "Dialogue"
 
 [node name="Label" type="Label" parent="OptionsMenu/Sound/LabelDialouge/HSlider"]
+layout_mode = 0
 offset_left = 489.0
 offset_top = 35.0
 offset_right = 589.0
@@ -196,6 +198,7 @@ theme_override_font_sizes/font_size = 25
 text = "Effects Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/Sound/LabelActions"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 21.0
 offset_right = 471.0
@@ -206,6 +209,7 @@ script = ExtResource("4_byofg")
 bus_name = "Actions"
 
 [node name="Label" type="Label" parent="OptionsMenu/Sound/LabelActions/HSlider"]
+layout_mode = 0
 offset_left = 489.0
 offset_top = 35.0
 offset_right = 589.0
@@ -221,6 +225,7 @@ theme_override_font_sizes/font_size = 25
 text = "Ambiance Volume:"
 
 [node name="HSlider" type="HSlider" parent="OptionsMenu/Sound/LabelAmbients"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 15.0
 offset_right = 474.0
@@ -231,6 +236,7 @@ script = ExtResource("4_byofg")
 bus_name = "Ambience"
 
 [node name="Label" type="Label" parent="OptionsMenu/Sound/LabelAmbients/HSlider"]
+layout_mode = 0
 offset_left = 486.0
 offset_top = 28.0
 offset_right = 586.0

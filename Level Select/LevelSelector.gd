@@ -234,6 +234,9 @@ func hideBig():
 		Level2.hideBig()
 		Level3.hideBig()
 
+func GoToLore():
+	get_tree().change_scene_to_file("res://Lore Screen/LoreScreen.tscn")
+
 func ReturnToMenu():
 	get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
 
@@ -262,7 +265,8 @@ func Save():
 		"DialogueVolume" : GlobalVariables.Dialogue,
 		"ActionsVolume" : GlobalVariables.Actions,
 		"AmbienceVolume" : GlobalVariables.Ambience,
-		"DisplayMode" : GlobalVariables.DisplayMode
+		"DisplayMode" : GlobalVariables.DisplayMode,
+		"UnlockedLogs" : GlobalVariables.UnlockedLogs
 	}
 	var json_str = JSON.stringify(save_data)
 	save_game.store_line(json_str)
