@@ -26,7 +26,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Clock" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 script = ExtResource("2_kakbt")
 
 [node name="Message" type="Panel" parent="."]
