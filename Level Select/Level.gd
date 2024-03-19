@@ -21,6 +21,7 @@ func _ready():
 	Status.hide()
 	BigInfo.hide()
 
+#Startup Animation
 func Startup():
 	Select.show()
 	await get_tree().create_timer(.1).timeout

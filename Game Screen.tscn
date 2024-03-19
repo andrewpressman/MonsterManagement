@@ -491,6 +491,9 @@ vertical_alignment = 1
 bus = &"Actions"
 script = ExtResource("9_3vj8r")
 
+[node name="TutorialPlayer" type="AudioStreamPlayer2D" parent="Sounds"]
+bus = &"Dialogue"
+
 [node name="GameOver" type="Panel" parent="."]
 visible = false
 offset_left = 11.0

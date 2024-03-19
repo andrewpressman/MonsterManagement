@@ -38,6 +38,7 @@ func OptionsMenu():
 func QuitGame():
 	get_tree().quit()
 
+#Load game from saveFile
 func LoadGame():
 	if not FileAccess.file_exists("user://savegame.save"):
 		return #no save game detected.
@@ -106,6 +107,7 @@ func Debug2():
 func Debug3():
 	GlobalVariables.GameStarted = 1
 	GlobalVariables.CurrentLevel = 3
+	GlobalVariables.UnlockedLogs = [1,1,1,1,1,1,1,1,1]
 	
 func Debug4():
 	GlobalVariables.GameStarted = 1

@@ -23,6 +23,8 @@ var CurrentLevel : int #track which of the 5 levels the player is curerntly on
 var Level1Status : int 
 var Level2Status : int
 var Level3Status : int
+
+#Track which logs have been unlocked
 var UnlockedLogs = [0,0,0,0,0,0,0,0,0]
 
 #GameisOn

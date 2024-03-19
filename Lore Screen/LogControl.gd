@@ -6,6 +6,7 @@ var Restart : Button
 var Player : AudioStreamPlayer2D
 var Status : Panel
 var StatusLabel : Label
+var FileName : Label
 var Timestamp
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +17,7 @@ func _ready():
 	Pause = $Pause
 	Restart = $Restart
 	StatusLabel = $Status/Label
+	FileName = $Label
 	Timestamp = Player.get_playback_position()
 
 func _on_PlayButton_pressed():
@@ -41,7 +43,7 @@ func Lock():
 	Status.modulate = Color(1, 0, 0) # Red
 	StatusLabel.text = "LOCKED"
 	
-func Unlock():
+func Unlock(name : String):
 	Play.disabled = true
 	Play.focus_mode = Control.FOCUS_ALL
 	Pause.disabled = true
@@ -50,3 +52,4 @@ func Unlock():
 	Restart.focus_mode = Control.FOCUS_ALL
 	Status.modulate = Color(0, 1, 0) # Red
 	StatusLabel.text = "UNLOCKED"
+	FileName.text = name

@@ -19,6 +19,7 @@ func _ready():
 	p4.modulate = Color(0,0,0)
 	p5.modulate = Color(0,0,0)
 
+#fill 1 progress bad whenever 1/5 of the targetScore is reached
 func UpdateScore():
 	var interval = GlobalVariables.TargetScore / 5
 	if GlobalVariables.Score > interval:

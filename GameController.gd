@@ -19,6 +19,7 @@ var Monster : int
 
 #Audio Settings
 var EffectsPlayer : AudioStreamPlayer2D
+var Tutorial : AudioStreamPlayer2D
 
 #info panel
 var LevelNo
@@ -69,6 +70,7 @@ func _ready():
 	
 	#audio
 	EffectsPlayer = $Sounds/EffectsPlayer
+	Tutorial = $Sounds/TutorialPlayer
 	
 	if GlobalVariables.CurrentLevel == 1:
 		$GameState/Objective.visible = false
@@ -114,6 +116,7 @@ func _ready():
 	character3_node.update_panel_color(Character3)
 	monster_node.update_panel_color(Monster)
 
+#startup animation
 func Startup():
 	#logo.show
 	$Message.visible = true
@@ -189,7 +192,12 @@ func PlaySound(sound : int):
 #stars game, resets score
 func StartGame():
 	StartPanel.hide()
-	$Clock.Start()
+	if GlobalVariables.CurrentLevel == 1:
+		Tutorial.play()
+		await get_tree().create_timer(10).timeout #Wait some time before starting clock to let tutorial play
+		$Clock.Start()
+	else:
+		$Clock.Start()
 
 #Updates score, checks for completion
 func UpdateScore():

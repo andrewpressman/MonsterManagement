@@ -11,10 +11,12 @@ func _ready():
 	LogPlayer = $LogPlayer
 	MessagePlayed()
 
+#play Current Level message
 func PlayMessage():
 	GlobalVariables.MessagePlayed = true;
 	LogPlayer.play_message(GlobalVariables.CurrentLevel)
 	MessagePlayed()
+	#TODO: add condition for bonus log when objective is completed with all logs unlocked
 
 func MessagePlayed():
 	if GlobalVariables.MessagePlayed:

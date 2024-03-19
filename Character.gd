@@ -22,7 +22,7 @@ func _ready():
 	$Sprite2D.visible = false
 	$Status.visible = false
 
-	
+#Startup animation
 func Startup():
 	$Sprite2D.visible = true
 	await get_tree().create_timer(.2).timeout
@@ -47,7 +47,7 @@ func update_panel_color(character_value: int):
 	elif character_value >= MinState:
 		characterPanel.modulate = Color(0, .5, 0) # green
 
-
+#allows color panel to flash indicating status is near max value
 func flash():
 	characterPanel.modulate = Color(1, 0, 0) # light Red
 	await get_tree().create_timer(.5).timeout

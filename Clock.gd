@@ -40,7 +40,8 @@ func _on_timer_timeout():
 #starts clock	
 func Start():
 	start()
-	
+
+#stops clock
 func Stop():
 	stop()
 

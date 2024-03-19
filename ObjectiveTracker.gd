@@ -17,6 +17,7 @@ func _ready():
 	objColor.hide()
 	CurrObj.hide()
 
+#startup animation
 func Startup():
 	$Objective.visible = true
 	await get_tree().create_timer(.1).timeout

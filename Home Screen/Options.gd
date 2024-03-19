@@ -28,6 +28,7 @@ func Sound():
 	$Sound.visible = true
 	$Video.visible = false
 
+#Saves settings to global variables
 func UpdateSettings():
 	GlobalSlider.value = GlobalVariables.GlobalAudio
 	DialogueSlider.value = GlobalVariables.Dialogue
