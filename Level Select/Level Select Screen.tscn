@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=8 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
@@ -6,6 +6,14 @@
 [ext_resource type="Script" path="res://Level Select/Message Controller.gd" id="4_32hnr"]
 [ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="4_qolbh"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="6_d2t0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpdr1"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t3wki")
@@ -319,10 +327,10 @@ script = ExtResource("4_32hnr")
 
 [node name="Button" type="Button" parent="MessagePanel"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 113.0
-offset_right = 161.0
-offset_bottom = 173.0
+offset_left = 12.0
+offset_top = 69.0
+offset_right = 163.0
+offset_bottom = 129.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "PLAY"
@@ -343,6 +351,17 @@ vertical_alignment = 1
 [node name="LogPlayer" type="AudioStreamPlayer2D" parent="MessagePanel"]
 bus = &"Dialogue"
 script = ExtResource("4_qolbh")
+
+[node name="FinalMessage" type="Button" parent="MessagePanel"]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 164.0
+offset_right = 168.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dpdr1")
+text = "Final Transmtion"
 
 [node name="NextLevel" type="Panel" parent="."]
 offset_left = 234.0

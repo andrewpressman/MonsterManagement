@@ -120,7 +120,7 @@ func Unlock(log : int, check :bool):
 				$AudioTrack8.Lock()
 		8:
 			if check:
-				$AudioTrack9.Unlock("AudioLog9.wav")
+				$AudioTrack9.Unlock("AudioLog9.mp3")
 				print("log 9")
 			else:
 				print("locked")
