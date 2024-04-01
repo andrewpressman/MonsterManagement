@@ -141,9 +141,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="BigInfo" type="Panel" parent="Cases/Level1"]
 visible = false
-offset_left = 337.0
+offset_left = 137.0
 offset_top = 129.0
-offset_right = 960.0
+offset_right = 760.0
 offset_bottom = 538.0
 
 [node name="Label" type="Label" parent="Cases/Level1/BigInfo"]
@@ -202,9 +202,9 @@ vertical_alignment = 1
 
 [node name="BigInfo" type="Panel" parent="Cases/Level2"]
 visible = false
-offset_left = 337.0
+offset_left = 137.0
 offset_top = 129.0
-offset_right = 960.0
+offset_right = 760.0
 offset_bottom = 538.0
 
 [node name="Label" type="Label" parent="Cases/Level2/BigInfo"]
@@ -263,9 +263,9 @@ vertical_alignment = 1
 
 [node name="BigInfo" type="Panel" parent="Cases/Level3"]
 visible = false
-offset_left = 337.0
+offset_left = 137.0
 offset_top = 129.0
-offset_right = 960.0
+offset_right = 760.0
 offset_bottom = 538.0
 
 [node name="Label" type="Label" parent="Cases/Level3/BigInfo"]
