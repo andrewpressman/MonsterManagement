@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=14 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="Script" path="res://Clock.gd" id="2_kakbt"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="10_2mwke"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
+[ext_resource type="AudioStream" uid="uid://do0incd5ha8i6" path="res://Assets/Audio Files/SupervisorLogs/Tutorial.wav" id="12_ps3hh"]
 
 [sub_resource type="Theme" id="Theme_ks27t"]
 
@@ -492,6 +493,7 @@ bus = &"Actions"
 script = ExtResource("9_3vj8r")
 
 [node name="TutorialPlayer" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("12_ps3hh")
 bus = &"Dialogue"
 
 [node name="GameOver" type="Panel" parent="."]

@@ -194,7 +194,7 @@ func StartGame():
 	StartPanel.hide()
 	if GlobalVariables.CurrentLevel == 1:
 		Tutorial.play()
-		await get_tree().create_timer(10).timeout #Wait some time before starting clock to let tutorial play
+		await get_tree().create_timer(120).timeout #Wait some time before starting clock to let tutorial play
 		$Clock.Start()
 	else:
 		$Clock.Start()
