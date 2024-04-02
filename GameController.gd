@@ -45,6 +45,9 @@ var ScoreTag : Label
 #ObjectivePanel
 var Objective : Panel
 
+#Execute buttion
+var Execute : Button
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get references to character and monster nodes in the HealthMonitor panel
@@ -86,7 +89,13 @@ func _ready():
 	$Info.visible = false
 	$quit.visible = false
 	
+	#Disable execute buttion before game starts
+	Execute = $Actions/Execute
+	Execute.disabled = true
+	
 	Startup()
+	if GlobalVariables.CurrentLevel == 1:
+		Tutorial.play()
 	
 	#Level tracker
 	LevelNo = $Info/LevelNo
@@ -192,12 +201,8 @@ func PlaySound(sound : int):
 #stars game, resets score
 func StartGame():
 	StartPanel.hide()
-	if GlobalVariables.CurrentLevel == 1:
-		Tutorial.play()
-		await get_tree().create_timer(120).timeout #Wait some time before starting clock to let tutorial play
-		$Clock.Start()
-	else:
-		$Clock.Start()
+	Execute.disabled = false
+	$Clock.Start()
 
 #Updates score, checks for completion
 func UpdateScore():

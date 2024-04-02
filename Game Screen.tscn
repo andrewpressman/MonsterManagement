@@ -30,7 +30,7 @@ wait_time = 2.0
 script = ExtResource("2_kakbt")
 
 [node name="Message" type="Panel" parent="."]
-offset_left = 176.0
+offset_left = 281.0
 offset_top = 11.0
 offset_right = 940.0
 offset_bottom = 96.0
@@ -534,26 +534,25 @@ theme_override_font_sizes/font_size = 31
 text = "RETURN"
 
 [node name="StartGame" type="Panel" parent="."]
-visible = false
-offset_left = 11.0
-offset_top = 101.0
-offset_right = 1135.0
-offset_bottom = 640.0
+offset_left = 12.0
+offset_top = 5.0
+offset_right = 265.0
+offset_bottom = 107.0
 
 [node name="ColorRect" type="ColorRect" parent="StartGame"]
 layout_mode = 0
-offset_left = 433.0
-offset_top = 173.0
-offset_right = 667.0
-offset_bottom = 258.0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 246.0
+offset_bottom = 92.0
 color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="StartGame"]
 layout_mode = 0
-offset_left = 426.0
-offset_top = 169.0
-offset_right = 671.0
-offset_bottom = 265.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 250.0
+offset_bottom = 99.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Begin Test"
