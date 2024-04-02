@@ -17,7 +17,7 @@ func play_message(parameter_value: int):
 			play()
 		4:
 			#Level 4 static
-			#stream = preload("")
+			stream = preload("res://Assets/Audio Files/MachineVoice/StaticSound.wav")
 			play()
 		5:
 			#Level 5 robotic message
@@ -31,5 +31,3 @@ func play_message(parameter_value: int):
 			#Level 5 fail passed
 			stream = preload("res://Assets/Audio Files/MachineVoice/ObjectiveFailed.wav")
 			play()
-
-		# Add more cases as needed
