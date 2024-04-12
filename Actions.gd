@@ -191,21 +191,21 @@ func _on_execute_button_pressed():
 	elif selectedButton == Char1Trigger:
 		GameController.PlaySound(7)
 		if $Environment/Char1Ping.CheckType():
-			GameController.UpdateStatus(IncreaseRate * 4,0,0,0)
+			GameController.UpdateStatus(IncreaseRate * 5,0,0,0)
 		else:
-			GameController.UpdateStatus(DecreaseRate * 3,0,0,0)		
+			GameController.UpdateStatus(DecreaseRate * 5,0,0,0)		
 	elif selectedButton == Char2Trigger:
 		GameController.PlaySound(7)
 		if $Environment/Char2Ping.CheckType():
-			GameController.UpdateStatus(0,IncreaseRate * 4,0,0)
+			GameController.UpdateStatus(0,IncreaseRate * 5,0,0)
 		else:
-			GameController.UpdateStatus(0,DecreaseRate * 3,0,0)	
+			GameController.UpdateStatus(0,DecreaseRate * 5,0,0)	
 	elif selectedButton == Char3Trigger:
 		GameController.PlaySound(7)
 		if $Environment/Char3Ping.CheckType():
-			GameController.UpdateStatus(0,0,IncreaseRate * 4,0)
+			GameController.UpdateStatus(0,0,IncreaseRate * 5,0)
 		else:
-			GameController.UpdateStatus(0,0,DecreaseRate * 3,0)
+			GameController.UpdateStatus(0,0,DecreaseRate * 5,0)
 	elif(selectedButton == AllCharTrigger):
 		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,0)
 		GameController.PlaySound(1)
