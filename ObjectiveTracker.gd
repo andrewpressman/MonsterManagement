@@ -14,14 +14,14 @@ func _ready():
 	GetCurrentLevel()
 	
 	$Objective.visible = false
-	objColor.hide()
+	$ObjStatus.visible = false
 	CurrObj.hide()
+	
 
 #startup animation
 func Startup():
 	$Objective.visible = true
 	await get_tree().create_timer(.1).timeout
-	objColor.show()
 	CurrObj.show()
 
 #Sets/Stores all secondary objectives for each level (1 - 15)
@@ -89,31 +89,39 @@ func GetObjective():
 	match Objective:
 		1:
 			#kill only char 1
+			$ObjStatus.visible = true
 			return OneDead(1)
 		2:
 			#kill only char 2
+			$ObjStatus.visible = true
 			return OneDead(2)
 		3:
 			#kill only char 3
+			$ObjStatus.visible = true
 			return OneDead(3)
 		4:
 			#don't let any die
+			$ObjStatus.visible = true
 			return AllAlive(true)
 		5:
 			#release the creature without killing
+			$ObjStatus.visible = true
 			return AllAlive(false)
 		6:
 			#Leave only char 1 alive
+			$ObjStatus.visible = true
 			return OneAlive(1)
 		7:
 			#Leave only char 2 alive
+			$ObjStatus.visible = true
 			return OneAlive(2)
 		8:
 			#Leave only char 3 alive
+			$ObjStatus.visible = true
 			return OneAlive(3)
 		9:
 			#Just complete test
-			objColor.hide() #do not show status indicator when not needed
+			$ObjStatus.visible = false #do not show status indicator when not needed
 			return true
 
 #ALl characters alive, True: keep all green, False: get monster to escape without killing

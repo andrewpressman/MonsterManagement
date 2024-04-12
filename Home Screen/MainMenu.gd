@@ -15,6 +15,7 @@ func _ready():
 	Quit = $MainMenu/Quit
 	$OptionsMenu.UpdateSettings()
 	$OptionsMenu.visible = false
+	$close.visible = false
 	if GlobalVariables.GameStarted == 1 && GlobalVariables.CurrentLevel <= 5 :
 		Continue.show()
 	else:
@@ -34,6 +35,7 @@ func ContinueGame():
 
 func OptionsMenu(): 
 	$OptionsMenu.visible = !$OptionsMenu.visible
+	$close.visible = !$close.visible
 
 func QuitGame():
 	get_tree().quit()
@@ -107,7 +109,6 @@ func Debug2():
 func Debug3():
 	GlobalVariables.GameStarted = 1
 	GlobalVariables.CurrentLevel = 3
-	GlobalVariables.UnlockedLogs = [1,1,1,1,1,1,1,1,1]
 	
 func Debug4():
 	GlobalVariables.GameStarted = 1

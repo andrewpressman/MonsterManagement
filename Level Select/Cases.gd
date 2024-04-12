@@ -24,7 +24,7 @@ func SetCreature(testNo : int):
 	#Level 3-4: Anomaly + number + name
 	#Level 5: REDACTED
 	if GlobalVariables.CurrentLevel < 5:
-		FinalString = FinalString + " Aonomaly " + str(GlobalVariables.CurrentLevel) + "0" + str(testNo)
+		FinalString = FinalString + " Anomaly " + str(GlobalVariables.CurrentLevel) + "0" + str(testNo)
 		if GlobalVariables.CurrentLevel > 2:
 			FinalString = FinalString + " : " + Lore.CreatureTypes[testNo - 1]
 	else:

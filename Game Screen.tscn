@@ -30,10 +30,10 @@ wait_time = 2.0
 script = ExtResource("2_kakbt")
 
 [node name="Message" type="Panel" parent="."]
-offset_left = 281.0
-offset_top = 11.0
-offset_right = 940.0
-offset_bottom = 96.0
+offset_left = 185.0
+offset_top = 14.0
+offset_right = 850.0
+offset_bottom = 99.0
 
 [node name="Actions" type="Panel" parent="."]
 offset_left = 781.0
@@ -96,8 +96,7 @@ offset_right = 893.0
 offset_bottom = 360.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Ping
-subject
+text = "Subject
 1"
 metadata/_edit_use_anchors_ = true
 
@@ -121,8 +120,7 @@ offset_right = 1007.0
 offset_bottom = 361.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Ping
-subject
+text = "Subject
 2"
 metadata/_edit_use_anchors_ = true
 
@@ -146,8 +144,7 @@ offset_right = 1120.0
 offset_bottom = 361.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Ping
-subject
+text = "Subject
 3"
 metadata/_edit_use_anchors_ = true
 
@@ -534,25 +531,25 @@ theme_override_font_sizes/font_size = 31
 text = "RETURN"
 
 [node name="StartGame" type="Panel" parent="."]
-offset_left = 12.0
-offset_top = 5.0
-offset_right = 265.0
-offset_bottom = 107.0
+offset_left = 285.0
+offset_top = 110.0
+offset_right = 776.0
+offset_bottom = 637.0
 
 [node name="ColorRect" type="ColorRect" parent="StartGame"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 7.0
-offset_right = 246.0
-offset_bottom = 92.0
+offset_left = 151.0
+offset_top = 201.0
+offset_right = 385.0
+offset_bottom = 286.0
 color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="StartGame"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 3.0
-offset_right = 250.0
-offset_bottom = 99.0
+offset_left = 150.0
+offset_top = 196.0
+offset_right = 395.0
+offset_bottom = 292.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "Begin Test"

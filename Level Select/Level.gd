@@ -57,7 +57,7 @@ func MarkComplete(option: int):
 func UpdateLogs():
 	var Level = GlobalVariables.CurrentLevel
 	var index : int
-	if Level > 1:
+	if Level > 1 && Level < 5:
 		index = ((3 * Level) + Stage) - 7
 		GlobalVariables.UnlockedLogs[index] = 1
 	

@@ -277,6 +277,9 @@ func MarkComplete():
 #end game
 func EndGame():
 	$Clock.Stop()
+	if(Monster >= MaxState && GlobalVariables.CurrentLevel == 5):
+		#Go to end screen?
+		PassFail = true
 	if PassFail:
 		MarkComplete()
 		EndState.text = "Test Passed"
