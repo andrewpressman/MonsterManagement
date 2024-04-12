@@ -12,11 +12,11 @@ func _ready():
 	count = 0
 
 func _on_timer_timeout():	
-	# Generate a random number between 1 and 5
-	var MonsterTrack = randi_range(1,5)
+	# Generate a random number between 1 and 4
+	var MonsterTrack = randi_range(1,4)
 	
 	# Generate a random number between 1 and 10
-	var CharacterTrack = randi_range(1,10)
+	var CharacterTrack = randi_range(1,7)
 	
 	# 3/10 chance one of the characters gets pinged
 	match CharacterTrack:
@@ -47,7 +47,7 @@ func Stop():
 
 #Every 30 cycles (+ scale of current level) of he clock, difficulty increases by 2
 func IncreaseDifficulty():
-	if count > 30 + GetLevel():
+	if count > 10 + GetLevel():
 		GlobalVariables.IncreaseRate = GlobalVariables.IncreaseRate * 2
 		count = 0
 	else:
@@ -63,10 +63,10 @@ func GetLevel():
 		return 15
 	
 	elif GlobalVariables.CurrentLevel == 3:
-		return 10
+		return 5
 	
 	elif GlobalVariables.CurrentLevel == 4:
-		return 5
+		return 0
 	
 	else:
 		return 0
