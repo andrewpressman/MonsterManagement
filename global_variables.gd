@@ -14,6 +14,7 @@ var DecreaseRate : int #determines how much to decrease a character value(variab
 var Score : int = 0 #starting score
 var TargetScore : int #Score needed to win
 var PowerState : bool #track if power is On (true) or Off (false)
+var HighScore : int = 0 #Tracks a user's high score
 
 #meta variables
 var CurrentStage : int #track which set of 3 levels the player is at

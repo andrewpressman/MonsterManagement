@@ -100,8 +100,14 @@ func _ready():
 	#Level tracker
 	LevelNo = $Info/LevelNo
 	TestNo = $Info/TestNo
-	LevelNo.text = "Level: " + str(GlobalVariables.CurrentLevel)
-	TestNo.text = "Test: " + str(GlobalVariables.CurrentStage)
+	if(GlobalVariables.CurrentLevel < 6):
+		LevelNo.text = "Shift: " + str(GlobalVariables.CurrentLevel)
+		TestNo.text = "Test: " + str(GlobalVariables.CurrentStage)
+	else:
+		LevelNo.text = "Shift: ENDLESS"
+		TestNo.text = "Test: ENDLESS"
+		$GameState/Score.visible = true
+		$GameState/Score.text = "Score: " + str(GlobalVariables.Score)
 	
 	#declare global variables
 	MinState = GlobalVariables.MinState
@@ -116,8 +122,6 @@ func _ready():
 	Reset()
 	#Scoreboard
 	GlobalVariables.Score = 0
-	ScoreTag = $GameState/Score
-	ScoreTag.text = str(GlobalVariables.Score)
 
 	# Call the update_panel_color function for each character and the monster
 	character1_node.update_panel_color(Character1)
@@ -206,11 +210,13 @@ func StartGame():
 
 #Updates score, checks for completion
 func UpdateScore():
-	$Progress.UpdateScore()
-	$GameState/Score.text = str(GlobalVariables.Score)
+	if GlobalVariables.CurrentLevel < 6:
+		$Progress.UpdateScore()
+	$GameState/Score.text = "Score: " + str(GlobalVariables.Score)
 	if GlobalVariables.Score >= GlobalVariables.TargetScore:
 		PassFail = true
-		EndGame()
+		if GlobalVariables.CurrentLevel < 6:
+			EndGame()
 	elif GlobalVariables.Score >= 0:
 		if GlobalVariables.PowerState:
 			GlobalVariables.Score += CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)
@@ -218,6 +224,8 @@ func UpdateScore():
 			GlobalVariables.Score += (CalcScore(Character1) + CalcScore(Character2) + CalcScore(Character3) + CalcScore(Monster)) * 1.5
 	
 	if CheckStatus():
+		if GlobalVariables.Score > GlobalVariables.HighScore:
+			GlobalVariables.HighScore = GlobalVariables.Score
 		GlobalVariables.Score = -1
 		EndGame()
 

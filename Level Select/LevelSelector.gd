@@ -20,8 +20,8 @@ var NextLevel : Panel
 var Continue : Button
 var AllComplete : bool
 
-#testing
-var LastScore : Label
+#Endless Mode
+var HighScore : Label
 
 #LevelControls
 var CurrentLevel : Label
@@ -59,20 +59,25 @@ func _ready():
 	NextLevel = $NextLevel
 	if AllComplete:
 		if GlobalVariables.CurrentLevel >= 5:
-			$NextLevel/Label.text = "A winner is you."
+			$NextLevel/Label.text = "All Shifts Complete, Endless Mode Unlocked"
 			GlobalVariables.CurrentLevel += 1
+			GlobalVariables.GameStarted = 2
 			$NextLevel/Continue.hide()
 		NextLevel.show()
 	else:
 		NextLevel.hide()
 	
 	#Save for endless mode
-	#LastScore = $TempScore/Score
-	#if GlobalVariables.Score == null:
-	#	GlobalVariables.Score = 0
-	#var score = GlobalVariables.Score
-	#LastScore.text = "Last score: " + str(score)
+	HighScore = $HighScore/Label
+	if GlobalVariables.Score == null:
+		GlobalVariables.Score = 0
+	var score = GlobalVariables.Score
+	HighScore.text = "High Score: " + str(GlobalVariables.HighScore)
 	Startup()
+	if GlobalVariables.CurrentLevel > 5:
+		$HighScore.visible = true
+	else:
+		$HighScore.visible = false
 
 func Startup():
 	$"Level Tracker".visible = true
@@ -93,9 +98,11 @@ func Startup():
 		$DecryptedData.visible = false
 
 func SetLevel():
-	
-	CurrentLevel.text = "Current Case: " + str(GlobalVariables.CurrentLevel)
-	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+	if GlobalVariables.CurrentLevel > 5:
+		CurrentLevel.text = "Current Shift: " + "##"
+	else:
+		CurrentLevel.text = "Current Shift: " + str(GlobalVariables.CurrentLevel) 
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel >= 5:
 		#Level 1 and 3 are hidden and thus marked as fully complete
 		GlobalVariables.Level2Status = 2
 		GlobalVariables.Level3Status = 2
@@ -198,7 +205,7 @@ func GetLevel():
 	elif GlobalVariables.CurrentLevel == 4:
 		setDifficulty(10,40,100,4,-1)
 	
-	elif GlobalVariables.CurrentLevel == 5:
+	elif GlobalVariables.CurrentLevel >= 5:
 		setDifficulty(5,20,100,4,-1)
 
 #sets game difficulty (yellow, red, black, increaseRate, DecreaseRate)
@@ -297,7 +304,8 @@ func Save():
 		"ActionsVolume" : GlobalVariables.Actions,
 		"AmbienceVolume" : GlobalVariables.Ambience,
 		"DisplayMode" : GlobalVariables.DisplayMode,
-		"UnlockedLogs" : GlobalVariables.UnlockedLogs
+		"UnlockedLogs" : GlobalVariables.UnlockedLogs,
+		"HighScore" : GlobalVariables.HighScore
 	}
 	var json_str = JSON.stringify(save_data)
 	save_game.store_line(json_str)

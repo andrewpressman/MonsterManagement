@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=11 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Level Select/Message Controller.gd" id="4_32hnr"]
 [ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="4_qolbh"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="6_d2t0v"]
+[ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfpde"]
 bg_color = Color(0, 0, 0, 1)
@@ -322,7 +323,7 @@ offset_bottom = 97.0
 [node name="Level Tracker" type="Panel" parent="."]
 offset_left = 7.0
 offset_top = 12.0
-offset_right = 201.0
+offset_right = 217.0
 offset_bottom = 90.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
@@ -335,7 +336,7 @@ offset_right = 155.0
 offset_bottom = 60.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
-text = "Current Case:"
+text = "Current Shift:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -435,6 +436,24 @@ theme_override_fonts/font = ExtResource("6_d2t0v")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_lfpde")
 text = "Decrypted Data"
+
+[node name="HighScore" type="Panel" parent="."]
+offset_left = 263.0
+offset_top = 11.0
+offset_right = 830.0
+offset_bottom = 85.0
+theme = ExtResource("2_kdt5u")
+
+[node name="Label" type="Label" parent="HighScore"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 21.0
+offset_right = 209.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("9_dogq0")
+theme_override_font_sizes/font_size = 30
+text = "High Score:"
 
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]

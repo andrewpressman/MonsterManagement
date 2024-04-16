@@ -4,6 +4,7 @@ var Continue : Button
 var NewGame : Button
 var Options : Button
 var Quit : Button
+var LevelSelect : Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,12 +13,17 @@ func _ready():
 	Continue = $MainMenu/Continue
 	NewGame = $MainMenu/NewGame
 	Options = $MainMenu/Options
+	LevelSelect = $MainMenu/LevelSelect
 	Quit = $MainMenu/Quit
 	$OptionsMenu.UpdateSettings()
 	$OptionsMenu.visible = false
+	$LevelSelectPanel.visible = false
+	$MainMenu/LevelSelect.visible = false
 	$close.visible = false
-	if GlobalVariables.GameStarted == 1 && GlobalVariables.CurrentLevel <= 5 :
+	if GlobalVariables.GameStarted > 0:
 		Continue.show()
+		if GlobalVariables.GameStarted > 1:
+			$MainMenu/LevelSelect.visible = true
 	else:
 		Continue.hide()
 
@@ -36,6 +42,13 @@ func ContinueGame():
 func OptionsMenu(): 
 	$OptionsMenu.visible = !$OptionsMenu.visible
 	$close.visible = !$close.visible
+	$LevelSelectPanel.visible = false
+
+func ShowLevelSelect(): 
+	if GlobalVariables.GameStarted > 1:
+			$LevelSelectPanel.visible = !$LevelSelectPanel.visible
+	$OptionsMenu.visible = false
+	$close.visible = false
 
 func QuitGame():
 	get_tree().quit()
@@ -89,31 +102,33 @@ func LoadGame():
 		GlobalVariables.DisplayMode = save_data["DisplayMode"]
 	if "UnlockedLogs" in save_data:
 		GlobalVariables.UnlockedLogs = save_data["UnlockedLogs"]
+	if "HighScore" in save_data:
+		GlobalVariables.HighScore = save_data["HighScore"]
 
 func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	if not FileAccess.file_exists("user://savegame.save"):
 		return #no save game detected.
 	var file_to_remove = "user://savegame.save"
 	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
-	
-	GlobalVariables.UnlockedLogs = [0,0,0,0,0,0,0,0,0]
+	#GlobalVariables.UnlockedLogs = [0,0,0,0,0,0,0,0,0]
+
+func UnlockAll(): #TODO: REMOVE FOR FINAL RELEASE
+		GlobalVariables.GameStarted = 2
 
 func Debug1():
-	GlobalVariables.GameStarted = 1
 	GlobalVariables.CurrentLevel = 1
 	
 func Debug2():
-	GlobalVariables.GameStarted = 1
 	GlobalVariables.CurrentLevel = 2
 	
 func Debug3():
-	GlobalVariables.GameStarted = 1
 	GlobalVariables.CurrentLevel = 3
 	
 func Debug4():
-	GlobalVariables.GameStarted = 1
 	GlobalVariables.CurrentLevel = 4
 	
 func Debug5():
-	GlobalVariables.GameStarted = 1
 	GlobalVariables.CurrentLevel = 5
+
+func EndlessMode():
+	GlobalVariables.CurrentLevel = 6

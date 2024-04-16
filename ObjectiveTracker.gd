@@ -37,6 +37,8 @@ func GetCurrentLevel():
 			GetStage(4,4,4) #preserve all
 		5:
 			GetStage(5,5,5) #release the creatures
+		6:
+			GetStage(10,10,10) #release the creatures	
 
 #Checks which stage is active and sets secondary objective
 func GetStage(o1 : int, o2 : int, o3 : int):
@@ -81,6 +83,9 @@ func SetObjectiveText(obj : int):
 		9:
 			#Just complete test
 			SecondaryObjectiveTxt = ""
+		10:
+			#Just complete test
+			SecondaryObjectiveTxt = "SURVIVE"
 	
 	CurrObj.text = SecondaryObjectiveTxt
 
@@ -122,6 +127,8 @@ func GetObjective():
 		9:
 			#Just complete test
 			$ObjStatus.visible = false #do not show status indicator when not needed
+			return true
+		10:
 			return true
 
 #ALl characters alive, True: keep all green, False: get monster to escape without killing

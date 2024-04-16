@@ -76,6 +76,11 @@ func SetNames(testNo : int):
 		FinalString = FinalString + "-" + Lore.ScientistNames[0] + "\n"
 		FinalString = FinalString + "-" + Lore.ScientistNames[1] + "\n"
 		FinalString = FinalString + "-" + Lore.ScientistNames[2] + "\n"
+		
+	else:
+		FinalString = FinalString + "UNAVILABLE" + "\n"
+		FinalString = FinalString + "UNAVILABLE" + "\n"
+		FinalString = FinalString + "UNAVILABLE" + "\n"
 	
 	return FinalString
 
