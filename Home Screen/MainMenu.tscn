@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdt441cqsrc7a"]
+[gd_scene load_steps=6 format=3 uid="uid://cdt441cqsrc7a"]
 
 [ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
 [ext_resource type="FontFile" uid="uid://cv5f32m7wk82g" path="res://Assets/Fonts/bitwise.ttf" id="2_uwmcg"]
 [ext_resource type="Script" path="res://Home Screen/Options.gd" id="3_71vsw"]
+[ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="3_7772i"]
 [ext_resource type="Script" path="res://Home Screen/Volume.gd" id="4_byofg"]
 
 [node name="Node2D" type="Node2D"]
@@ -44,19 +45,17 @@ offset_left = 34.0
 offset_top = 256.0
 offset_right = 460.0
 offset_bottom = 340.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 31
+theme = ExtResource("3_7772i")
 text = "Continue"
 
 [node name="LevelSelect" type="Button" parent="MainMenu"]
 visible = false
 layout_mode = 0
 offset_left = 36.0
-offset_top = 167.0
+offset_top = 160.0
 offset_right = 462.0
-offset_bottom = 251.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 31
+offset_bottom = 244.0
+theme = ExtResource("3_7772i")
 text = "Level Select"
 
 [node name="New Game" type="Button" parent="MainMenu"]
@@ -65,8 +64,7 @@ offset_left = 34.0
 offset_top = 353.0
 offset_right = 460.0
 offset_bottom = 437.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 31
+theme = ExtResource("3_7772i")
 text = "New Game"
 
 [node name="Options" type="Button" parent="MainMenu"]
@@ -75,8 +73,7 @@ offset_left = 32.0
 offset_top = 449.0
 offset_right = 458.0
 offset_bottom = 532.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 31
+theme = ExtResource("3_7772i")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MainMenu"]
@@ -85,8 +82,7 @@ offset_left = 32.0
 offset_top = 546.0
 offset_right = 342.0
 offset_bottom = 629.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 31
+theme = ExtResource("3_7772i")
 text = "Quit"
 
 [node name="OptionsMenu" type="Panel" parent="."]

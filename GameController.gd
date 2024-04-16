@@ -287,5 +287,6 @@ func EndGame():
 	else:
 		EndState.text = "Test Failed"
 		GameOver.modulate = Color(1, 0, 0)
-	
+		 
+	$Actions.HideButtons() #Fix for issue of buttons being drawn in wrong hierarchy
 	GameOver.show()

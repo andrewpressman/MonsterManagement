@@ -52,6 +52,28 @@ text = "CONTROLS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label4" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 1.0
+offset_right = 388.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 31
+text = "│"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 2.0
+offset_right = 871.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 31
+text = "│"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label2" type="Label" parent="Header"]
 layout_mode = 0
 offset_left = 431.0

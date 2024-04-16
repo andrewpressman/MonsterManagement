@@ -1,19 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=10 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
+[ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="2_kdt5u"]
 [ext_resource type="Script" path="res://Level Select/Cases.gd" id="2_oikne"]
+[ext_resource type="StyleBox" uid="uid://d0tdyn21bnng" path="res://Assets/Style Boxes/UI Panel.tres" id="3_cwr43"]
 [ext_resource type="Script" path="res://Level Select/Message Controller.gd" id="4_32hnr"]
 [ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="4_qolbh"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="6_d2t0v"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpdr1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfpde"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t3wki")
@@ -26,12 +28,12 @@ offset_bottom = 704.0
 color = Color(0, 0, 0, 1)
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 909.0
-offset_top = 15.0
-offset_right = 1134.0
-offset_bottom = 74.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 19
+offset_left = 899.0
+offset_top = 14.0
+offset_right = 1143.0
+offset_bottom = 73.0
+theme = ExtResource("2_kdt5u")
+theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
 
 [node name="StatusGuide" type="Panel" parent="."]
@@ -39,13 +41,15 @@ offset_left = 957.0
 offset_top = 88.0
 offset_right = 1145.0
 offset_bottom = 314.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="StatusGuide"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 72.0
-offset_right = 178.0
-offset_bottom = 105.0
+offset_left = 76.0
+offset_top = 67.0
+offset_right = 172.0
+offset_bottom = 100.0
 text = "Incomplete"
 
 [node name="Label2" type="Label" parent="StatusGuide"]
@@ -106,6 +110,8 @@ offset_left = 10.0
 offset_top = 96.0
 offset_right = 942.0
 offset_bottom = 557.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 script = ExtResource("2_oikne")
 
 [node name="Level1" type="Node" parent="Cases"]
@@ -117,8 +123,9 @@ offset_left = 26.0
 offset_top = 124.0
 offset_right = 133.0
 offset_bottom = 224.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 19
+theme = ExtResource("2_kdt5u")
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
 text = "o"
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level1"]
@@ -126,7 +133,8 @@ offset_left = 145.0
 offset_top = 125.0
 offset_right = 768.0
 offset_bottom = 224.0
-metadata/_edit_use_anchors_ = true
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level1/MiniInfo"]
 layout_mode = 0
@@ -145,6 +153,8 @@ offset_left = 137.0
 offset_top = 129.0
 offset_right = 760.0
 offset_bottom = 538.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level1/BigInfo"]
 layout_mode = 0
@@ -159,17 +169,19 @@ Anomaly Classification:
 Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level1"]
-offset_left = 781.0
+offset_left = 778.0
 offset_top = 124.0
 offset_right = 930.0
-offset_bottom = 221.0
+offset_bottom = 224.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="ColorRect" type="ColorRect" parent="Cases/Level1/Status"]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 1.0
 offset_top = 1.0
-offset_right = 148.0
-offset_bottom = 97.0
+offset_right = 151.0
+offset_bottom = 99.0
 
 [node name="Level2" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
@@ -180,8 +192,9 @@ offset_left = 26.0
 offset_top = 277.0
 offset_right = 133.0
 offset_bottom = 377.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 19
+theme = ExtResource("2_kdt5u")
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
 text = "o"
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level2"]
@@ -189,6 +202,8 @@ offset_left = 145.0
 offset_top = 278.0
 offset_right = 768.0
 offset_bottom = 377.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level2/MiniInfo"]
 layout_mode = 0
@@ -206,6 +221,8 @@ offset_left = 137.0
 offset_top = 129.0
 offset_right = 760.0
 offset_bottom = 538.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level2/BigInfo"]
 layout_mode = 0
@@ -224,13 +241,15 @@ offset_left = 775.0
 offset_top = 278.0
 offset_right = 932.0
 offset_bottom = 377.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="ColorRect" type="ColorRect" parent="Cases/Level2/Status"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 3.0
-offset_right = 148.0
-offset_bottom = 97.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 156.0
+offset_bottom = 98.0
 
 [node name="Level3" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
@@ -241,8 +260,9 @@ offset_left = 26.0
 offset_top = 427.0
 offset_right = 133.0
 offset_bottom = 527.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 19
+theme = ExtResource("2_kdt5u")
+theme_override_font_sizes/font_size = 20
+toggle_mode = true
 text = "o"
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level3"]
@@ -250,6 +270,8 @@ offset_left = 145.0
 offset_top = 428.0
 offset_right = 768.0
 offset_bottom = 527.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level3/MiniInfo"]
 layout_mode = 0
@@ -267,6 +289,8 @@ offset_left = 137.0
 offset_top = 129.0
 offset_right = 760.0
 offset_bottom = 538.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level3/BigInfo"]
 layout_mode = 0
@@ -281,14 +305,18 @@ Anomaly Classification:
 Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level3"]
-offset_left = 777.0
+offset_left = 774.0
 offset_top = 429.0
-offset_right = 934.0
+offset_right = 931.0
 offset_bottom = 527.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="ColorRect" type="ColorRect" parent="Cases/Level3/Status"]
 layout_mode = 0
-offset_right = 148.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 156.0
 offset_bottom = 97.0
 
 [node name="Level Tracker" type="Panel" parent="."]
@@ -296,6 +324,8 @@ offset_left = 7.0
 offset_top = 12.0
 offset_right = 201.0
 offset_bottom = 90.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Level Tracker"]
 layout_mode = 0
@@ -314,15 +344,17 @@ offset_left = 912.0
 offset_top = 566.0
 offset_right = 1144.0
 offset_bottom = 640.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 26
+theme = ExtResource("2_kdt5u")
+theme_override_font_sizes/font_size = 24
 text = "INITALIZE TEST"
 
 [node name="MessagePanel" type="Panel" parent="."]
-offset_left = 969.0
-offset_top = 330.0
-offset_right = 1143.0
-offset_bottom = 548.0
+offset_left = 960.0
+offset_top = 329.0
+offset_right = 1134.0
+offset_bottom = 547.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 script = ExtResource("4_32hnr")
 
 [node name="Button" type="Button" parent="MessagePanel"]
@@ -331,15 +363,15 @@ offset_left = 12.0
 offset_top = 69.0
 offset_right = 163.0
 offset_bottom = 129.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 19
+theme = ExtResource("2_kdt5u")
+theme_override_font_sizes/font_size = 20
 text = "PLAY"
 
 [node name="Label" type="Label" parent="MessagePanel"]
 layout_mode = 0
-offset_left = 13.0
+offset_left = 17.0
 offset_top = 3.0
-offset_right = 155.0
+offset_right = 159.0
 offset_bottom = 76.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
@@ -355,19 +387,22 @@ script = ExtResource("4_qolbh")
 [node name="FinalMessage" type="Button" parent="MessagePanel"]
 visible = false
 layout_mode = 0
-offset_left = 6.0
-offset_top = 164.0
-offset_right = 168.0
-offset_bottom = 212.0
+offset_left = 9.0
+offset_top = 147.0
+offset_right = 171.0
+offset_bottom = 195.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_dpdr1")
-text = "Final Transmtion"
+theme_override_font_sizes/font_size = 23
+text = "Final
+Transmtion"
 
 [node name="NextLevel" type="Panel" parent="."]
 offset_left = 234.0
 offset_top = 569.0
 offset_right = 896.0
 offset_bottom = 638.0
+theme = ExtResource("2_kdt5u")
+theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Continue" type="Button" parent="NextLevel"]
 layout_mode = 0
@@ -375,16 +410,16 @@ offset_left = 523.0
 offset_top = 12.0
 offset_right = 646.0
 offset_bottom = 59.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 19
+theme = ExtResource("2_kdt5u")
+theme_override_font_sizes/font_size = 20
 text = "PROCEED"
 
 [node name="Label" type="Label" parent="NextLevel"]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 10.0
-offset_right = 508.0
-offset_bottom = 70.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 507.0
+offset_bottom = 64.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "All Tests passed, Proceed to next shift"
@@ -398,6 +433,7 @@ offset_right = 171.0
 offset_bottom = 639.0
 theme_override_fonts/font = ExtResource("6_d2t0v")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_lfpde")
 text = "Decrypted Data"
 
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]

@@ -130,7 +130,7 @@ func SetStatus():
 func update_button_selection(button: Button):
 	executeButton.disabled = false
 	selectedButton = button
-	selectedButton.modulate = Color(0, 1, 0)  # Set selected button to green
+	selectedButton.button_pressed = true
 	unselectButtions(false)
 
 #unselects all buttons
@@ -142,7 +142,7 @@ func unselectButtions(clear:bool):
 	ShowSmall()
 	for button in [Level1Button, Level2Button, Level3Button]:
 		if button != selectedButton:
-			button.modulate = Color(1, 1, 1)  # Reset color
+			button.button_pressed = false
 
 func _on_Level1_pressed():
 	if selectedButton == Level1Button:

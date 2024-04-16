@@ -63,7 +63,9 @@ func _ready():
 	GameController = get_parent()
 	# Initially, no button is selected
 	selectedButton = null
+	HideButtons()
 	
+func HideButtons(): #Hides all buttons, workaround for buttons being drawn over game over screen
 	Agitate1Button.hide()
 	Agitate2Button.hide()
 	Agitate3Button.hide()
@@ -110,8 +112,9 @@ func Startup():
 # Function to update the button selection and visuals
 func update_button_selection(button: Button):
 	selectedButton = button
-	selectedButton.modulate = Color(0, 1, 0)  # Set selected button to green
+	selectedButton.button_pressed = true
 	unselectButtions(false)
+	
 
 #unselets all control buttons
 func unselectButtions(clear:bool):
@@ -119,7 +122,7 @@ func unselectButtions(clear:bool):
 		selectedButton = null
 	for button in [Agitate1Button, Agitate2Button, Agitate3Button, CalmButton, PowerOnButton, PowerOffButton, Char1Trigger, Char2Trigger, Char3Trigger, AllCharTrigger]:
 		if button != selectedButton:
-			button.modulate = Color(1, 1, 1)  # Reset color
+			button.button_pressed = false
 
 func _on_PowerOn_pressed():
 	GlobalVariables.PowerState = true
