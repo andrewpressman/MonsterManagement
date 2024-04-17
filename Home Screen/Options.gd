@@ -1,8 +1,5 @@
 extends Panel
 
-@export var bus_name : String
-var bus_index : int
-
 var GlobalSlider : HSlider
 var DialogueSlider : HSlider
 var ActionsSlider : HSlider
@@ -56,4 +53,11 @@ func OnDisplayModeSelected(index):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		1: #Windowed
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			
+func OnSubtitlesSelected(index):
+	match index:
+		0: #Off
+			GlobalVariables.Subtitles = false
+		1: #On
+			GlobalVariables.Subtitles = true
 			

@@ -10,6 +10,8 @@ func _ready():
 	label = $Label
 	LogPlayer = $LogPlayer
 	MessagePlayed()
+	$Alert.visible = false
+	$Background.visible = false
 
 #play Current Level message
 func PlayMessage():
@@ -19,7 +21,18 @@ func PlayMessage():
 	#TODO: add condition for bonus log when objective is completed with all logs unlocked
 
 func MessagePlayed():
-	if GlobalVariables.MessagePlayed:
+	if GlobalVariables.MessagePlayed || GlobalVariables.GameStarted == 2:
 		label.text = "Replay Message"
 	else:
 		label.text = "New message \navailable"
+		Flash()
+
+func Flash():
+	for n in 20:
+		if GlobalVariables.MessagePlayed == false:
+			$Alert.visible = true
+			$Background.visible = true
+			await get_tree().create_timer(.5).timeout
+			$Alert.visible = false
+			$Background.visible = false
+			await get_tree().create_timer(.5).timeout

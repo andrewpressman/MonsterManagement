@@ -174,7 +174,6 @@ button_group = SubResource("ButtonGroup_mffdt")
 text = "Endless Mode"
 
 [node name="OptionsMenu" type="Panel" parent="."]
-visible = false
 offset_left = 484.0
 offset_top = 131.0
 offset_right = 1110.0
@@ -192,7 +191,6 @@ theme_override_font_sizes/font_size = 20
 text = "Video Settings"
 
 [node name="Video" type="Node2D" parent="OptionsMenu"]
-visible = false
 
 [node name="DisplayMode" type="OptionButton" parent="OptionsMenu/Video"]
 offset_left = 183.0
@@ -207,7 +205,7 @@ popup/item_0/id = 0
 popup/item_1/text = "Windowed"
 popup/item_1/id = 1
 
-[node name="Label" type="Label" parent="OptionsMenu/Video"]
+[node name="DisplayLabel" type="Label" parent="OptionsMenu/Video"]
 offset_left = 20.0
 offset_top = 113.0
 offset_right = 176.0
@@ -216,6 +214,32 @@ theme_override_font_sizes/font_size = 20
 text = "Display Mode:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SubtitlesLabel" type="Label" parent="OptionsMenu/Video"]
+visible = false
+offset_left = 22.0
+offset_top = 189.0
+offset_right = 178.0
+offset_bottom = 230.0
+theme_override_font_sizes/font_size = 20
+text = "Subtitles:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitles" type="OptionButton" parent="OptionsMenu/Video"]
+visible = false
+offset_left = 179.0
+offset_top = 180.0
+offset_right = 483.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 20
+item_count = 2
+selected = 0
+allow_reselect = true
+popup/item_0/text = "Off"
+popup/item_0/id = 0
+popup/item_1/text = "On"
+popup/item_1/id = 1
 
 [node name="SoundButton" type="Button" parent="OptionsMenu"]
 layout_mode = 0
@@ -228,6 +252,7 @@ theme_override_font_sizes/font_size = 20
 text = "Sound Settings"
 
 [node name="Sound" type="Node2D" parent="OptionsMenu"]
+visible = false
 
 [node name="LabelGlobal" type="Label" parent="OptionsMenu/Sound"]
 offset_left = 14.0
@@ -244,7 +269,7 @@ offset_top = 10.0
 offset_right = 405.0
 offset_bottom = 98.0
 max_value = 1.0
-step = 0.001
+step = 0.05
 script = ExtResource("4_byofg")
 bus_name = "Master"
 
@@ -271,7 +296,7 @@ offset_top = 23.0
 offset_right = 416.0
 offset_bottom = 111.0
 max_value = 1.0
-step = 0.001
+step = 0.05
 script = ExtResource("4_byofg")
 bus_name = "Dialogue"
 
@@ -298,7 +323,7 @@ offset_top = 21.0
 offset_right = 419.0
 offset_bottom = 109.0
 max_value = 1.0
-step = 0.001
+step = 0.05
 script = ExtResource("4_byofg")
 bus_name = "Actions"
 
@@ -325,7 +350,7 @@ offset_top = 15.0
 offset_right = 416.0
 offset_bottom = 103.0
 max_value = 1.0
-step = 0.001
+step = 0.05
 script = ExtResource("4_byofg")
 bus_name = "Ambience"
 
@@ -376,6 +401,7 @@ text = "close"
 [connection signal="pressed" from="LevelSelectPanel/Button6" to="." method="EndlessMode"]
 [connection signal="pressed" from="OptionsMenu/VideoButton" to="OptionsMenu" method="Video"]
 [connection signal="item_selected" from="OptionsMenu/Video/DisplayMode" to="OptionsMenu" method="OnDisplayModeSelected"]
+[connection signal="item_selected" from="OptionsMenu/Video/Subtitles" to="OptionsMenu" method="OnDisplayModeSelected"]
 [connection signal="pressed" from="OptionsMenu/SoundButton" to="OptionsMenu" method="Sound"]
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelGlobal/HSlider" to="OptionsMenu" method="OnGlobalVolumeChanged"]
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelGlobal/HSlider" to="OptionsMenu/Sound/LabelGlobal/HSlider" method="onValueChanged"]

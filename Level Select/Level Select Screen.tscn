@@ -352,11 +352,27 @@ text = "INITALIZE TEST"
 [node name="MessagePanel" type="Panel" parent="."]
 offset_left = 959.0
 offset_top = 348.0
-offset_right = 1133.0
-offset_bottom = 503.0
+offset_right = 1135.0
+offset_bottom = 564.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 script = ExtResource("4_32hnr")
+
+[node name="Alert" type="ColorRect" parent="MessagePanel"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 180.0
+offset_bottom = 217.0
+color = Color(1, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="MessagePanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 173.0
+offset_bottom = 212.0
+color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="MessagePanel"]
 layout_mode = 0
@@ -370,9 +386,9 @@ text = "PLAY"
 
 [node name="Label" type="Label" parent="MessagePanel"]
 layout_mode = 0
-offset_left = 17.0
+offset_left = 6.0
 offset_top = 3.0
-offset_right = 159.0
+offset_right = 166.0
 offset_bottom = 76.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
@@ -388,10 +404,10 @@ script = ExtResource("4_qolbh")
 [node name="FinalMessage" type="Button" parent="MessagePanel"]
 visible = false
 layout_mode = 0
-offset_left = 9.0
-offset_top = 147.0
-offset_right = 171.0
-offset_bottom = 195.0
+offset_left = 6.0
+offset_top = 140.0
+offset_right = 168.0
+offset_bottom = 204.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Final

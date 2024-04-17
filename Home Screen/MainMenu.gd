@@ -106,6 +106,8 @@ func LoadGame():
 		GlobalVariables.UnlockedLogs = save_data["UnlockedLogs"]
 	if "HighScore" in save_data:
 		GlobalVariables.HighScore = save_data["HighScore"]
+	if "Subtitles" in save_data:
+		GlobalVariables.Subtitles = save_data["Subtitles"]
 
 func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	if not FileAccess.file_exists("user://savegame.save"):
