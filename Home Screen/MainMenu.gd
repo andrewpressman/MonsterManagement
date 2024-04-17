@@ -22,8 +22,10 @@ func _ready():
 	$close.visible = false
 	if GlobalVariables.GameStarted > 0:
 		Continue.show()
+		Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 		if GlobalVariables.GameStarted > 1:
 			$MainMenu/LevelSelect.visible = true
+			Continue.text = "Continue Endless"
 	else:
 		Continue.hide()
 
@@ -117,18 +119,24 @@ func UnlockAll(): #TODO: REMOVE FOR FINAL RELEASE
 
 func Debug1():
 	GlobalVariables.CurrentLevel = 1
+	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug2():
 	GlobalVariables.CurrentLevel = 2
+	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug3():
 	GlobalVariables.CurrentLevel = 3
+	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug4():
 	GlobalVariables.CurrentLevel = 4
+	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug5():
 	GlobalVariables.CurrentLevel = 5
+	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 
 func EndlessMode():
 	GlobalVariables.CurrentLevel = 6
+	Continue.text = "Continue Endless"
