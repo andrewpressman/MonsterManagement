@@ -12,7 +12,7 @@ func _on_check_button_toggled(_button_pressed):
 	if PingType.is_pressed():
 		PingType.text = "Anger"
 	else:
-		PingType.text = "Calm"
+		PingType.text = " Calm"
 
 #return true for anger toggle, return false for calm toggle
 func CheckType():

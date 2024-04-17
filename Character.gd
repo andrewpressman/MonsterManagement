@@ -17,7 +17,7 @@ func _ready():
 	YellowThreshold= GlobalVariables.YellowThreshold
 	RedThreshold= GlobalVariables.RedThreshold
 	MaxState= GlobalVariables.MaxState
-	FlashingState = GlobalVariables.MaxState - (3 * GlobalVariables.IncreaseRate)
+	FlashingState = GlobalVariables.MaxState - (2 * GlobalVariables.IncreaseRate)
 	characterPanel = $Status
 	$Sprite2D.visible = false
 	$Status.visible = false

@@ -49,6 +49,7 @@ func Stop():
 func IncreaseDifficulty():
 	if count > 10 + GetLevel():
 		GlobalVariables.IncreaseRate = GlobalVariables.IncreaseRate * 2
+		GameController.UpdateStatus(0,0,0,IncreaseRate * 2) #Anger creature
 		count = 0
 	else:
 		count += 1

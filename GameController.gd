@@ -101,6 +101,7 @@ func _ready():
 	LevelNo = $Info/LevelNo
 	TestNo = $Info/TestNo
 	if(GlobalVariables.CurrentLevel < 6):
+		$GameState/Score.visible = false
 		LevelNo.text = "Shift: " + str(GlobalVariables.CurrentLevel)
 		TestNo.text = "Test: " + str(GlobalVariables.CurrentStage)
 	else:
@@ -183,12 +184,22 @@ func clamp_values():
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 
 	Objective.GetObjective() #Check Objective
-
 	#Update character values
 	Character1 += char1
 	Character2 += char2
 	Character3 += char3
 	Monster += monster
+	
+	if Monster >= GlobalVariables.RedThreshold: #Characters agitate alot faster when Monster is in red
+		Character1 += GlobalVariables.IncreaseRate / 2
+		Character2 += GlobalVariables.IncreaseRate / 2
+		Character3 += GlobalVariables.IncreaseRate / 2
+		
+	if Monster >= GlobalVariables.YellowThreshold: #Characters agitate slightly faster when Monster is in yellow
+		Character1 += (GlobalVariables.IncreaseRate / 4)
+		Character2 += (GlobalVariables.IncreaseRate / 4)
+		Character3 += (GlobalVariables.IncreaseRate / 4)
+	
 	clamp_values()
 	
 	#Update colors
