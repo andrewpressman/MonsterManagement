@@ -513,10 +513,10 @@ text = "OBJECTIVE:"
 
 [node name="CurrObj" type="Label" parent="GameState"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 28.0
-offset_right = 248.0
-offset_bottom = 116.0
+offset_left = 9.0
+offset_top = 38.0
+offset_right = 249.0
+offset_bottom = 126.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("10_2mwke")
 theme_override_font_sizes/font_size = 21
