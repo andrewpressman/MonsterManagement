@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=12 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Level Select/Message Controller.gd" id="4_32hnr"]
 [ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="4_qolbh"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="6_d2t0v"]
+[ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_anf0j"]
 [ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfpde"]
@@ -27,6 +28,13 @@ offset_top = -63.0
 offset_right = 1206.0
 offset_bottom = 704.0
 color = Color(0, 0, 0, 1)
+
+[node name="Subtitles" type="Panel" parent="."]
+visible = false
+offset_left = 185.0
+offset_top = 566.0
+offset_right = 904.0
+offset_bottom = 643.0
 
 [node name="Exit" type="Button" parent="."]
 offset_left = 899.0
@@ -413,11 +421,25 @@ theme_override_font_sizes/font_size = 23
 text = "Final
 Transmtion"
 
+[node name="Subtitle" type="Label" parent="MessagePanel"]
+visible = false
+layout_mode = 0
+offset_left = -777.0
+offset_top = 221.0
+offset_right = -57.0
+offset_bottom = 291.0
+theme_override_fonts/font = ExtResource("8_anf0j")
+theme_override_font_sizes/font_size = 25
+text = "THIS IS EXAMPLE TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="NextLevel" type="Panel" parent="."]
-offset_left = 234.0
-offset_top = 569.0
-offset_right = 896.0
-offset_bottom = 638.0
+offset_left = 230.0
+offset_top = 15.0
+offset_right = 892.0
+offset_bottom = 84.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 
