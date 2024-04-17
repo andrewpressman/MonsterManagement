@@ -41,7 +41,7 @@ theme = ExtResource("3_nnqoy")
 [node name="Actions" type="Panel" parent="."]
 offset_left = 781.0
 offset_top = 104.0
-offset_right = 1136.0
+offset_right = 1144.0
 offset_bottom = 637.0
 theme = ExtResource("3_nnqoy")
 script = ExtResource("3_aqjdg")
@@ -513,10 +513,10 @@ text = "OBJECTIVE:"
 
 [node name="CurrObj" type="Label" parent="GameState"]
 layout_mode = 0
-offset_left = 235.0
-offset_top = -141.0
-offset_right = 475.0
-offset_bottom = -53.0
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 248.0
+offset_bottom = 116.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("10_2mwke")
 theme_override_font_sizes/font_size = 21
@@ -614,6 +614,14 @@ offset_right = 1176.0
 offset_bottom = 666.0
 theme = ExtResource("3_nnqoy")
 
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 376.0
+offset_right = 662.0
+offset_bottom = 461.0
+color = Color(0, 0, 0, 1)
+
 [node name="Text" type="Label" parent="GameOver"]
 layout_mode = 0
 offset_left = 350.0
@@ -626,21 +634,13 @@ text = "TEST FAILED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="GameOver"]
-layout_mode = 0
-offset_left = 428.0
-offset_top = 376.0
-offset_right = 662.0
-offset_bottom = 461.0
-color = Color(0, 0, 0, 1)
-
 [node name="Button" type="Button" parent="GameOver"]
 layout_mode = 0
 offset_left = 424.0
 offset_top = 372.0
 offset_right = 669.0
 offset_bottom = 468.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme = ExtResource("3_nnqoy")
 theme_override_font_sizes/font_size = 31
 text = "RETURN"
 
