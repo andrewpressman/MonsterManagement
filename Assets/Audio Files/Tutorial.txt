@@ -1,0 +1,25 @@
+Now, this panel might look a bit overwhelming at first, but don’t worry, I’m gonna walk you through every bit of it, and you will be a pro in no time.
+Now I don’t know what they tell you in orientation these days.
+it's always changing and I can’t keep up. 
+But anyways, right there in the middle, that's the main status screen. 
+On that screen are 4 boxes. Top 3 are your subjects, bottom one is the experiment's anomaly.
+The box next to each icon represents their active status. 
+That box is green, your character is idle and not collecting data. 
+Turns yellow you are collecting some data, 
+Red will be your sweet spot where you will get all the results you need the fastest. 
+Keep an eye out, that box starts to flash, best to calm things down.
+Indicator turns black and the character is terminated.
+Try to keep them all active, but as long as you keep at least one active you will be fine.
+Your test progress is shown in the bottom left corner, that bar will fill up as data is automatically collected, it fills up, the test is complete. Nice and easy.
+That fourth box represents the anomaly present for this test. Anomaly data collection works exactly the same as your subjects.
+ Green is idle, Yellow and Red are collecting data, 
+although for some reason black is listed as Escaped, probably just a typo or something, best not to dwell on it. 
+Either way, you hit that and the tests fails on the spot, so avoid it best you can. 
+Now for the main meat and potatoes, your control panel over there on the right.
+Buttons are pretty self explanatory, select the command you want to run, then click execute, 
+nice and easy. 
+Don’t worry, first shift experiments are always fairly relaxed to help get you accustomed to the controls, so don’t be afraid to try out every one, and see what it does, better to learn now than later when threat levels go up.
+Each one will effect the anomaly and your subjects in different ways.
+Finally is your secondary objectives screen, but you won’t see those this shift, so I’ll explain them later. 
+Alright, let’s get you started, Click that begin test button to begin the experiment.
+Oh, and good luck rookie.

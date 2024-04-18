@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=13 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
@@ -10,6 +10,13 @@
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="6_d2t0v"]
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_anf0j"]
 [ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eaymd"]
+bg_color = Color(0.6, 0.6, 0.6, 0.415686)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfpde"]
 bg_color = Color(0, 0, 0, 1)
@@ -28,13 +35,6 @@ offset_top = -63.0
 offset_right = 1206.0
 offset_bottom = 704.0
 color = Color(0, 0, 0, 1)
-
-[node name="Subtitles" type="Panel" parent="."]
-visible = false
-offset_left = 185.0
-offset_top = 566.0
-offset_right = 904.0
-offset_bottom = 643.0
 
 [node name="Exit" type="Button" parent="."]
 offset_left = 899.0
@@ -146,7 +146,12 @@ theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level1/MiniInfo"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00160514
+anchor_top = 0.020202
+anchor_right = 0.00160514
+anchor_bottom = 0.020202
 offset_right = 626.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
@@ -409,6 +414,24 @@ vertical_alignment = 1
 bus = &"Dialogue"
 script = ExtResource("4_qolbh")
 
+[node name="Subtitles" type="Panel" parent="MessagePanel/LogPlayer"]
+visible = false
+offset_left = -782.0
+offset_top = 218.0
+offset_right = -55.0
+offset_bottom = 295.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eaymd")
+
+[node name="Label" type="Label" parent="MessagePanel/LogPlayer/Subtitles"]
+layout_mode = 0
+offset_right = 724.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("8_anf0j")
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="FinalMessage" type="Button" parent="MessagePanel"]
 visible = false
 layout_mode = 0
@@ -420,20 +443,6 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Final
 Transmtion"
-
-[node name="Subtitle" type="Label" parent="MessagePanel"]
-visible = false
-layout_mode = 0
-offset_left = -777.0
-offset_top = 221.0
-offset_right = -57.0
-offset_bottom = 291.0
-theme_override_fonts/font = ExtResource("8_anf0j")
-theme_override_font_sizes/font_size = 25
-text = "THIS IS EXAMPLE TEXT"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="NextLevel" type="Panel" parent="."]
 offset_left = 230.0

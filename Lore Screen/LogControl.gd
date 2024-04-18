@@ -18,20 +18,17 @@ func _ready():
 	Restart = $Restart
 	StatusLabel = $Status/Label
 	FileName = $Label
-	Timestamp = Player.get_playback_position()
+	$Text.visible = false
 
 func _on_PlayButton_pressed():
 	# Play the audio
 	Player.play(Timestamp)
+	$Text.visible = true
 
 func _on_PauseButton_pressed():
 	# Pause the audio
-	Timestamp = Player.get_playback_position()
 	Player.stop()
-
-func _on_RestartButton_pressed():
-	# Seek to the beginning and play the audio
-	Player.stop()
+	$Text.visible = false
 
 func Lock():
 	Play.disabled = true

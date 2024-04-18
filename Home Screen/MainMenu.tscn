@@ -216,7 +216,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SubtitlesLabel" type="Label" parent="OptionsMenu/Video"]
-visible = false
 offset_left = 22.0
 offset_top = 189.0
 offset_right = 178.0
@@ -227,14 +226,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Subtitles" type="OptionButton" parent="OptionsMenu/Video"]
-visible = false
 offset_left = 179.0
 offset_top = 180.0
 offset_right = 483.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 20
 item_count = 2
-selected = 0
 allow_reselect = true
 popup/item_0/text = "Off"
 popup/item_0/id = 0
@@ -401,7 +398,7 @@ text = "close"
 [connection signal="pressed" from="LevelSelectPanel/Button6" to="." method="EndlessMode"]
 [connection signal="pressed" from="OptionsMenu/VideoButton" to="OptionsMenu" method="Video"]
 [connection signal="item_selected" from="OptionsMenu/Video/DisplayMode" to="OptionsMenu" method="OnDisplayModeSelected"]
-[connection signal="item_selected" from="OptionsMenu/Video/Subtitles" to="OptionsMenu" method="OnDisplayModeSelected"]
+[connection signal="item_selected" from="OptionsMenu/Video/Subtitles" to="OptionsMenu" method="OnSubtitlesSelected"]
 [connection signal="pressed" from="OptionsMenu/SoundButton" to="OptionsMenu" method="Sound"]
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelGlobal/HSlider" to="OptionsMenu" method="OnGlobalVolumeChanged"]
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelGlobal/HSlider" to="OptionsMenu/Sound/LabelGlobal/HSlider" method="onValueChanged"]

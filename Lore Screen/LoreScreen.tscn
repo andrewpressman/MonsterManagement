@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Lore Screen/LoreScreen.gd" id="1_5jo4d"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="1_6sl5u"]
 [ext_resource type="Script" path="res://Lore Screen/LogControl.gd" id="1_ogcst"]
+[ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="4_lepwq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66wy3"]
 bg_color = Color(0, 0.5, 0, 1)
@@ -13,13 +14,6 @@ border_width_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv44p"]
 bg_color = Color(0.5, 0.5, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1mpt8"]
-bg_color = Color(0.5, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -36,10 +30,10 @@ offset_bottom = 745.0
 color = Color(0, 0, 0, 1)
 
 [node name="Header" type="Panel" parent="."]
-offset_left = 22.0
-offset_top = 11.0
-offset_right = 1135.0
-offset_bottom = 65.0
+offset_left = 25.0
+offset_top = 6.0
+offset_right = 1138.0
+offset_bottom = 60.0
 
 [node name="Label" type="Label" parent="Header"]
 layout_mode = 0
@@ -105,9 +99,9 @@ text = "return"
 
 [node name="AudioTrack1" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 71.0
+offset_top = 64.0
 offset_right = 1137.0
-offset_bottom = 116.0
+offset_bottom = 109.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack1"]
@@ -115,38 +109,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack1"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack1"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack1"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack1"]
 layout_mode = 0
@@ -157,6 +139,18 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack1"]
+visible = false
+offset_left = 6.0
+offset_top = 467.0
+offset_right = 934.0
+offset_bottom = 563.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "Nexus Corp, gateway to the future. Here at Nexus, we strive for excellence in all that we do. That is why our patented Nexus Link security system has been rated best in class for 5 years running for anomaly security. When you need protection, go to the experts, go to Nexus Security.
+"
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack1"]
 layout_mode = 0
@@ -175,9 +169,9 @@ vertical_alignment = 1
 
 [node name="AudioTrack2" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 121.0
+offset_top = 114.0
 offset_right = 1137.0
-offset_bottom = 166.0
+offset_bottom = 159.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack2"]
@@ -185,39 +179,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack2"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack2"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack2"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack2"]
 layout_mode = 0
@@ -228,6 +209,17 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack2"]
+visible = false
+offset_left = 8.0
+offset_top = 409.0
+offset_right = 936.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "My name is Miranda. Testing operator number 481 at Nexus Corp. If you are hearing this, I’m sorry, but you are a part of this now. Nexus has to be stopped, and I need your help. I’ve hidden these logs as junk data in your machine. You are part of this now, and my story needs to get out. Find them all, and bring Nexus into the light. "
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack2"]
 layout_mode = 0
@@ -246,9 +238,9 @@ vertical_alignment = 1
 
 [node name="AudioTrack3" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 171.0
+offset_top = 164.0
 offset_right = 1137.0
-offset_bottom = 216.0
+offset_bottom = 209.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack3"]
@@ -256,39 +248,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack3"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack3"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack3"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack3"]
 layout_mode = 0
@@ -299,6 +278,18 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack3"]
+visible = false
+offset_left = 3.0
+offset_top = 356.0
+offset_right = 931.0
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "The awakening changed a lot, the line between the living and dead started to blur. At first it was a fascinating, unexplainable phenomenon, there was so much to learn. It was incredible, they were harmless at first, just as confused at our world as we were of theirs. So we did what we do best, we started studying, learning, experimenting. Then, they tried to turn them into weapons.  
+"
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack3"]
 layout_mode = 0
@@ -317,9 +308,9 @@ vertical_alignment = 1
 
 [node name="AudioTrack4" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 221.0
+offset_top = 214.0
 offset_right = 1137.0
-offset_bottom = 266.0
+offset_bottom = 259.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack4"]
@@ -327,39 +318,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack4"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack4"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack4"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack4"]
 layout_mode = 0
@@ -370,6 +348,18 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack4"]
+visible = false
+offset_left = 7.0
+offset_top = 309.0
+offset_right = 935.0
+offset_bottom = 414.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "I don't have much time, listen to me carefully. The tests, something isn't right. Why does nexus put so much emphasis on saying the tests are simulations? It just felt odd, so I did some digging, and… I found something strange. Names. Names linked to the subjects in the tests. I don’t get it, Why go through the effort of naming fictional test subjects, unless… no. That makes no sense. 
+"
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack4"]
 layout_mode = 0
@@ -388,9 +378,9 @@ vertical_alignment = 1
 
 [node name="AudioTrack5" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 271.0
+offset_top = 264.0
 offset_right = 1137.0
-offset_bottom = 316.0
+offset_bottom = 309.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack5"]
@@ -398,39 +388,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack5"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack5"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack5"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack5"]
 layout_mode = 0
@@ -441,6 +418,17 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack5"]
+visible = false
+offset_left = 10.0
+offset_top = 244.0
+offset_right = 938.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "One more shift, they said. One final experiment. Not sure what they mean, but I’ll keep going. They promise a big paycheck, so here is hoping. I have been listening to the feeds, apparently the attacks are getting worse, Nexus claims to have a solution, but it seems like that solution involves working all its employees to death, the shifts are getting harder, and Nexus- well they seem to know something, but noone seems to be willing to say exactly what it is. Maybe if I keep digging"
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack5"]
 layout_mode = 0
@@ -459,9 +447,9 @@ vertical_alignment = 1
 
 [node name="AudioTrack6" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 321.0
+offset_top = 314.0
 offset_right = 1137.0
-offset_bottom = 366.0
+offset_bottom = 359.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack6"]
@@ -469,39 +457,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack6"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack6"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack6"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack6"]
 layout_mode = 0
@@ -528,11 +503,25 @@ text = "LOCKED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Text" type="Label" parent="AudioTrack6"]
+visible = false
+offset_left = 4.0
+offset_top = 217.0
+offset_right = 932.0
+offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "Four walls, no door. I toil away, a repeating score.
+The gate opens ajar, voices echo from afar,
+Trapped in a cage, submit to the rage
+"
+autowrap_mode = 3
+
 [node name="AudioTrack7" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 371.0
+offset_top = 364.0
 offset_right = 1137.0
-offset_bottom = 416.0
+offset_bottom = 409.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack7"]
@@ -540,39 +529,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack7"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack7"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack7"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack7"]
 layout_mode = 0
@@ -583,6 +559,18 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack7"]
+visible = false
+offset_left = 2.0
+offset_top = 162.0
+offset_right = 930.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "Listen to me carefully, the data deletion is about to begin. I don’t have much time. I- I kept digging, The experiments, they aren’t what Nexus says, they aren’t interested in security, its- something else. Supervisors are getting axed for asking questions, Testing operators are getting terminated left and right. I’m- going to dig up what I can, before it's too late.
+"
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack7"]
 layout_mode = 0
@@ -601,9 +589,9 @@ vertical_alignment = 1
 
 [node name="AudioTrack8" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 421.0
+offset_top = 414.0
 offset_right = 1137.0
-offset_bottom = 466.0
+offset_bottom = 459.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack8"]
@@ -611,39 +599,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack8"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack8"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack8"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack8"]
 layout_mode = 0
@@ -654,6 +629,17 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack8"]
+visible = false
+offset_left = 4.0
+offset_top = 117.0
+offset_right = 932.0
+offset_bottom = 222.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "I’ve been having… dreams. But not like a normal nightmare, it feels… different. Like the thoughts are not my own. I- I haven’t told anyone, because I need this job, but I- never mind. Its the same dream, over and over again, it wants something, something only I can provide, but. I don’t know what, or… I don’t want to know.  "
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack8"]
 layout_mode = 0
@@ -672,9 +658,9 @@ vertical_alignment = 1
 
 [node name="AudioTrack9" type="Panel" parent="."]
 offset_left = 22.0
-offset_top = 471.0
+offset_top = 464.0
 offset_right = 1137.0
-offset_bottom = 516.0
+offset_bottom = 509.0
 script = ExtResource("1_ogcst")
 
 [node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack9"]
@@ -682,39 +668,26 @@ bus = &"Dialogue"
 
 [node name="Play" type="Button" parent="AudioTrack9"]
 layout_mode = 0
-offset_left = 108.0
+offset_left = 158.0
 offset_top = 5.0
-offset_right = 142.0
+offset_right = 234.0
 offset_bottom = 41.0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
-text = "▶"
+text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack9"]
 layout_mode = 0
-offset_left = 65.0
-offset_top = 6.0
-offset_right = 98.0
-offset_bottom = 41.0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 67.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
-text = "||"
-
-[node name="Restart" type="Button" parent="AudioTrack9"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 5.0
-offset_right = 55.0
-offset_bottom = 41.0
-focus_mode = 0
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_6sl5u")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/focus = SubResource("StyleBoxFlat_1mpt8")
-text = "<|"
+text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack9"]
 layout_mode = 0
@@ -725,6 +698,17 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Text" type="Label" parent="AudioTrack9"]
+visible = false
+offset_left = 6.0
+offset_top = 67.0
+offset_right = 934.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "They found out. The data logs. It- it can’t find them. The final test, don’t- escape- subjects - let it out- Awakening- all along- HELP!"
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack9"]
 layout_mode = 0
@@ -744,28 +728,19 @@ vertical_alignment = 1
 [connection signal="pressed" from="Return" to="." method="Back"]
 [connection signal="pressed" from="AudioTrack1/Play" to="AudioTrack1" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack1/Pause" to="AudioTrack1" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack1/Restart" to="AudioTrack1" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack2/Play" to="AudioTrack2" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack2/Pause" to="AudioTrack2" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack2/Restart" to="AudioTrack2" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack3/Play" to="AudioTrack3" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack3/Pause" to="AudioTrack3" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack3/Restart" to="AudioTrack3" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack4/Play" to="AudioTrack4" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack4/Pause" to="AudioTrack4" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack4/Restart" to="AudioTrack4" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack5/Play" to="AudioTrack5" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack5/Pause" to="AudioTrack5" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack5/Restart" to="AudioTrack5" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack6/Play" to="AudioTrack6" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack6/Pause" to="AudioTrack6" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack6/Restart" to="AudioTrack6" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack7/Play" to="AudioTrack7" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack7/Pause" to="AudioTrack7" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack7/Restart" to="AudioTrack7" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack8/Play" to="AudioTrack8" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack8/Pause" to="AudioTrack8" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack8/Restart" to="AudioTrack8" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="AudioTrack9/Play" to="AudioTrack9" method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="AudioTrack9/Pause" to="AudioTrack9" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack9/Restart" to="AudioTrack9" method="_on_RestartButton_pressed"]

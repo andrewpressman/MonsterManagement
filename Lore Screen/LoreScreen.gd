@@ -107,8 +107,6 @@ func Unlock(log : int, check :bool):
 				$AudioTrack9.Unlock("AudioLog9.mp3")
 			else:
 				$AudioTrack9.Lock()
-
-		
 	
 func Back():
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")

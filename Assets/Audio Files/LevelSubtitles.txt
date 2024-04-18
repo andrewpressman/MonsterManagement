@@ -1,0 +1,65 @@
+Alright, let's see here.
+So, you’re the new rookie for Nexus experimental division?
+Well, let me pull the veil back now, working here isn’t sunshine and rainbows, 
+but as long as you keep your head down and don’t ask questions, 
+everything will be fine. I got a whole thing to read here, but 
+word of advice, keep a thick skin, and don’t think too hard about what you hear. 
+Trust me, it's better that way.
+Okay,
+Welcome to your new position at NEXUS LLC.
+You have been selected as the newest member of our experimental testing unit 
+as a simulation supervisor, where you will evaluate and analyze
+ fully theoretical situations. Each shift, you will be 
+given a list of 3 tests that you will need to complete. 
+Select each box to display more information about the experiment..
+Once all tests are complete, you may move onto your next shift.
+Thank you for choosing NEXUS LLC.
+Wow, I forgot how unhelpful that is. 
+Anyways, the name’s [REDACTED]
+Right, names aren’t allowed here. 
+Apparently something went down at another facility, they don’t exactly tell me much.
+Not like I use that name much anyways, I'm supervisor 866, you can call me Sixer.
+Now, I won’t keep you waiting, open your first test and get started,
+Nexus might not be the friendliest folks on the planet, 
+but at least they are nice and only give you one experiment for the first shift, 
+so read over the details, then click the Initialize test button to get started. 
+Once you've gotten started, I’ll give you more information once you’ve gotten started. 
+-----------------------------------------------------------------------------------
+Welcome back Rookie,
+Word from the higher ups have come down, threat levels are gonna be going up sooner than expected.
+You got 3 tests in front of you now, tackle them in any order you like, just get them done. 
+Corporate has also now requested all experiments implement secondary test parameters. 
+Between you and me, if you don’t get them done, it's not the end of the world. 
+Your panel will indicate if the parameter is met, but you can still complete your shift no matter what.
+If it helps I was snooping around and found some weird encrypted audio files on that machine they sent you. 
+Completing those objectives makes me look good, 
+so get them done and I can take some time to decrypt that data for you. 
+I don’t really know what it is, probably just junk from the last person
+to have that machine that they didn’t bother purging,
+but it might be something to check out in between tests if you need a break,
+it's your call.
+------------------------------------------------------------------------------------
+Hey rookie, 
+Looks like you are getting settled into things which is good, 
+but there has been something weird going on with the system recently.
+As far as I can tell, simulations are running as normal, 
+but some values and information points are being swapped out.
+A few of the people under me have had this issue, 
+but overall it hasn’t effected their work, and corporate doesnt seem to have a problem with it.
+So nothing to worry about right now, but I’ll do some digging and keep you posted. 
+If you notice anything weird, just- try to ignore it until I have more information.
+I will get to the bottom of this 
+and keep you informed if i find anything.
+------------------------------------------------------------------------------------
+static
+------------------------------------------------------------------------------------
+Greetings employee. Your department has served its purpose, 
+complete final test, then delete all job related data from your terminal.
+Failure to comply will result in criminal prosecution.
+Once all data has been cleared, your final paycheck will be deposited.
+Thank you for choosing NEXUS EXPERIMENTAL TESTING UNIT, 
+this will be your final communication.
+------------------------------------------------------------------------------------
+Experiment complete. Compensation processed, prepare for file deletion.
+------------------------------------------------------------------------------------
+Objective not completed. Complete the objective.
