@@ -2,7 +2,6 @@ extends Panel
 
 var Play : Button
 var Pause : Button
-var Restart : Button
 var Player : AudioStreamPlayer2D
 var Status : Panel
 var StatusLabel : Label
@@ -15,7 +14,6 @@ func _ready():
 	Player = $Log
 	Play = $Play
 	Pause = $Pause
-	Restart = $Restart
 	StatusLabel = $Status/Label
 	FileName = $Label
 	$Text.visible = false
@@ -26,7 +24,7 @@ func _on_PlayButton_pressed():
 	$Text.visible = true
 
 func _on_PauseButton_pressed():
-	# Pause the audio
+	# stop the audio
 	Player.stop()
 	$Text.visible = false
 
@@ -35,8 +33,6 @@ func Lock():
 	Play.focus_mode = Control.FOCUS_NONE
 	Pause.disabled = true
 	Pause.focus_mode = Control.FOCUS_NONE
-	Restart.disabled = true
-	Restart.focus_mode = Control.FOCUS_NONE
 	Status.modulate = Color(1, 0, 0) # Red
 	StatusLabel.text = "LOCKED"
 	
@@ -45,8 +41,6 @@ func Unlock(name : String):
 	Play.focus_mode = Control.FOCUS_ALL
 	Pause.disabled = true
 	Pause.focus_mode = Control.FOCUS_ALL
-	Restart.disabled = true
-	Restart.focus_mode = Control.FOCUS_ALL
 	Status.modulate = Color(0, 1, 0) # Red
 	StatusLabel.text = "UNLOCKED"
 	FileName.text = name

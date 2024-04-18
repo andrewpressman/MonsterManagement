@@ -127,6 +127,7 @@ func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 func UnlockAll(): #TODO: REMOVE FOR FINAL RELEASE
 		GlobalVariables.GameStarted = 2
 
+#Code for level switching post endgame
 func Debug1():
 	$beeper.play()
 	GlobalVariables.CurrentLevel = 1

@@ -27,6 +27,7 @@ func MessagePlayed():
 		label.text = "New message \navailable"
 		Flash()
 
+#Flash message box when new message is available
 func Flash():
 	for n in 20:
 		if GlobalVariables.MessagePlayed == false:
