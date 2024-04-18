@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdt441cqsrc7a"]
+[gd_scene load_steps=8 format=3 uid="uid://cdt441cqsrc7a"]
 
 [ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
+[ext_resource type="AudioStream" uid="uid://b2x4elq7qvpop" path="res://Assets/Audio Files/Other/ButtonBeep.wav" id="2_hb7u0"]
 [ext_resource type="FontFile" uid="uid://cv5f32m7wk82g" path="res://Assets/Fonts/bitwise.ttf" id="2_uwmcg"]
 [ext_resource type="Script" path="res://Home Screen/Options.gd" id="3_71vsw"]
 [ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="3_7772i"]
@@ -10,6 +11,10 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jo4rk")
+
+[node name="beeper" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hb7u0")
+bus = &"Ambience"
 
 [node name="MainMenu" type="Panel" parent="."]
 offset_right = 1152.0
@@ -174,6 +179,7 @@ button_group = SubResource("ButtonGroup_mffdt")
 text = "Endless Mode"
 
 [node name="OptionsMenu" type="Panel" parent="."]
+visible = false
 offset_left = 484.0
 offset_top = 131.0
 offset_right = 1110.0

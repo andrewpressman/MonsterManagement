@@ -115,6 +115,8 @@ func update_button_selection(button: Button):
 	selectedButton.button_pressed = true
 	unselectButtions(false)
 	
+func Beep():
+	GameController.Beep()
 
 #unselets all control buttons
 func unselectButtions(clear:bool):
@@ -125,35 +127,45 @@ func unselectButtions(clear:bool):
 			button.button_pressed = false
 
 func _on_PowerOn_pressed():
+	GameController.Beep()
 	GlobalVariables.PowerState = true
 	update_button_selection(PowerOnButton)
 
 func _on_PowerOff_pressed():
+	GameController.Beep()
 	GlobalVariables.PowerState = false
 	update_button_selection(PowerOffButton)
 
 func _on_Agitate1_pressed():
+	GameController.Beep()
 	update_button_selection(Agitate1Button)
 	
 func _on_Agitate2_pressed():
+	GameController.Beep()
 	update_button_selection(Agitate2Button)
 	
 func _on_Agitate3_pressed():
+	GameController.Beep()
 	update_button_selection(Agitate3Button)
 
 func _on_Calm_pressed():
+	GameController.Beep()
 	update_button_selection(CalmButton)
 	
 func _on_Char1Trigger_pressed():
+	GameController.Beep()
 	update_button_selection(Char1Trigger)
 
 func _on_Char2Trigger_pressed():
+	GameController.Beep()
 	update_button_selection(Char2Trigger)
 	
 func _on_Char3Trigger_pressed():
+	GameController.Beep()
 	update_button_selection(Char3Trigger)
 	
 func _on_AllCharTrigger_pressed():
+	GameController.Beep()
 	update_button_selection(AllCharTrigger)
 
 # Callback when the "Execute" button is pressed

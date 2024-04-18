@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=14 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
+[ext_resource type="AudioStream" uid="uid://b2x4elq7qvpop" path="res://Assets/Audio Files/Other/ButtonBeep.wav" id="2_c5t6j"]
 [ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="2_kdt5u"]
 [ext_resource type="Script" path="res://Level Select/Cases.gd" id="2_oikne"]
 [ext_resource type="StyleBox" uid="uid://d0tdyn21bnng" path="res://Assets/Style Boxes/UI Panel.tres" id="3_cwr43"]
@@ -28,6 +29,10 @@ border_color = Color(1, 1, 1, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_t3wki")
+
+[node name="beeper" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_c5t6j")
+bus = &"Ambience"
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -67.0
@@ -504,10 +509,19 @@ theme_override_font_sizes/font_size = 30
 text = "High Score:"
 
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
+[connection signal="pressed" from="Exit" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="Cases/Level1/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="Cases/Level3/select" to="." method="beep"]
 [connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
+[connection signal="pressed" from="Begin" to="." method="beep"]
+[connection signal="pressed" from="MessagePanel/Button" to="." method="beep"]
 [connection signal="pressed" from="MessagePanel/Button" to="MessagePanel" method="PlayMessage"]
+[connection signal="pressed" from="MessagePanel/FinalMessage" to="." method="beep"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="Reset"]
+[connection signal="pressed" from="NextLevel/Continue" to="." method="beep"]
 [connection signal="pressed" from="DecryptedData" to="." method="GoToLore"]
+[connection signal="pressed" from="DecryptedData" to="." method="beep"]

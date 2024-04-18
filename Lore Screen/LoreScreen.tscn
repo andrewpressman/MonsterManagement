@@ -142,6 +142,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack1"]
 visible = false
+layout_mode = 0
 offset_left = 6.0
 offset_top = 467.0
 offset_right = 934.0
@@ -212,6 +213,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack2"]
 visible = false
+layout_mode = 0
 offset_left = 8.0
 offset_top = 409.0
 offset_right = 936.0
@@ -281,6 +283,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack3"]
 visible = false
+layout_mode = 0
 offset_left = 3.0
 offset_top = 356.0
 offset_right = 931.0
@@ -351,6 +354,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack4"]
 visible = false
+layout_mode = 0
 offset_left = 7.0
 offset_top = 309.0
 offset_right = 935.0
@@ -421,6 +425,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack5"]
 visible = false
+layout_mode = 0
 offset_left = 10.0
 offset_top = 244.0
 offset_right = 938.0
@@ -505,6 +510,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack6"]
 visible = false
+layout_mode = 0
 offset_left = 4.0
 offset_top = 217.0
 offset_right = 932.0
@@ -562,6 +568,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack7"]
 visible = false
+layout_mode = 0
 offset_left = 2.0
 offset_top = 162.0
 offset_right = 930.0
@@ -632,6 +639,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack8"]
 visible = false
+layout_mode = 0
 offset_left = 4.0
 offset_top = 117.0
 offset_right = 932.0
@@ -701,6 +709,7 @@ vertical_alignment = 1
 
 [node name="Text" type="Label" parent="AudioTrack9"]
 visible = false
+layout_mode = 0
 offset_left = 6.0
 offset_top = 67.0
 offset_right = 934.0

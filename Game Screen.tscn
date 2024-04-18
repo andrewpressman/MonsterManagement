@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=18 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
+[ext_resource type="AudioStream" uid="uid://b2x4elq7qvpop" path="res://Assets/Audio Files/Other/ButtonBeep.wav" id="2_d8q78"]
 [ext_resource type="Script" path="res://Clock.gd" id="2_kakbt"]
 [ext_resource type="Script" path="res://Actions.gd" id="3_aqjdg"]
 [ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="3_nnqoy"]
 [ext_resource type="Script" path="res://Character.gd" id="3_o7a42"]
+[ext_resource type="AudioStream" uid="uid://c7ktuddrhqbmc" path="res://Assets/Audio Files/Other/Ambience.wav" id="3_rn3wx"]
 [ext_resource type="Script" path="res://CharacterPing.gd" id="5_1bmgd"]
 [ext_resource type="StyleBox" uid="uid://b8gsu8ytet5kr" path="res://Assets/Style Boxes/normal UI button.tres" id="6_ubtia"]
 [ext_resource type="Texture2D" uid="uid://bkucuu3ry52ye" path="res://Assets/Images/TestSubject.png" id="8_a8xxo"]
@@ -21,6 +23,11 @@ bg_color = Color(0.00392157, 0.00392157, 0.00392157, 0.792157)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_61weh")
 
+[node name="beeper" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_d8q78")
+volume_db = -10.0
+bus = &"Ambience"
+
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -27.0
 offset_top = -22.0
@@ -31,6 +38,11 @@ color = Color(0, 0, 0, 1)
 [node name="Clock" type="Timer" parent="."]
 wait_time = 2.0
 script = ExtResource("2_kakbt")
+
+[node name="AmbienceNoise" type="AudioStreamPlayer2D" parent="Clock"]
+stream = ExtResource("3_rn3wx")
+volume_db = -19.233
+bus = &"Ambience"
 
 [node name="Message" type="Panel" parent="."]
 offset_left = 197.0

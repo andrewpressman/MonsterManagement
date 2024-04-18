@@ -130,6 +130,9 @@ func _ready():
 	character3_node.update_panel_color(Character3)
 	monster_node.update_panel_color(Monster)
 
+func Beep():
+	$beeper.play()
+
 #startup animation
 func Startup():
 	#logo.show
@@ -216,6 +219,7 @@ func PlaySound(sound : int):
 #stars game, resets score
 func StartGame():
 	StartPanel.hide()
+	Beep()
 	Execute.disabled = false
 	$Clock.Start()
 
@@ -272,6 +276,8 @@ func Reset():
 
 #return to menu
 func BackToMenu():
+	Beep()
+	await get_tree().create_timer(.2).timeout
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 #Marks the level as complete with or without secondary objective

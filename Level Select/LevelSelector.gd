@@ -276,7 +276,11 @@ func GoToLore():
 	get_tree().change_scene_to_file("res://Lore Screen/LoreScreen.tscn")
 
 func ReturnToMenu():
+	await get_tree().create_timer(.2).timeout
 	get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
+
+func beep():
+	$beeper.play()
 
 #switch to game screen
 func StartGame():

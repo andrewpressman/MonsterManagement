@@ -36,23 +36,31 @@ func StartNewGame():
 	GlobalVariables.Level3Status = 0
 	GlobalVariables.CurrentLevel = 1
 	GlobalVariables.GameStarted = 1
+	$beeper.play()
+	await get_tree().create_timer(.2).timeout
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func ContinueGame():
+	$beeper.play()
+	await get_tree().create_timer(.2).timeout
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func OptionsMenu(): 
+	$beeper.play()
 	$OptionsMenu.visible = !$OptionsMenu.visible
 	$close.visible = !$close.visible
 	$LevelSelectPanel.visible = false
 
 func ShowLevelSelect(): 
+	$beeper.play()
 	if GlobalVariables.GameStarted > 1:
 			$LevelSelectPanel.visible = !$LevelSelectPanel.visible
 	$OptionsMenu.visible = false
 	$close.visible = false
 
 func QuitGame():
+	$beeper.play()
+	await get_tree().create_timer(.2).timeout
 	get_tree().quit()
 
 #Load game from saveFile
@@ -120,25 +128,31 @@ func UnlockAll(): #TODO: REMOVE FOR FINAL RELEASE
 		GlobalVariables.GameStarted = 2
 
 func Debug1():
+	$beeper.play()
 	GlobalVariables.CurrentLevel = 1
 	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug2():
+	$beeper.play()
 	GlobalVariables.CurrentLevel = 2
 	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug3():
+	$beeper.play()
 	GlobalVariables.CurrentLevel = 3
 	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug4():
+	$beeper.play()
 	GlobalVariables.CurrentLevel = 4
 	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 	
 func Debug5():
+	$beeper.play()
 	GlobalVariables.CurrentLevel = 5
 	Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
 
 func EndlessMode():
+	$beeper.play()
 	GlobalVariables.CurrentLevel = 6
 	Continue.text = "Continue Endless"

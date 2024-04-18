@@ -5,7 +5,6 @@ var Dialouge = []
 func _ready():
 	$Subtitles.visible = false
 	if GlobalVariables.Subtitles == true:
-		print("true")
 		var file = FileAccess.open("res://Assets/Audio Files/LevelSubtitles.txt", FileAccess.READ)
 		var content = file.get_as_text()
 		while !file.eof_reached():

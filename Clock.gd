@@ -12,6 +12,7 @@ func _ready():
 	count = 0
 
 func _on_timer_timeout():	
+	$AmbienceNoise.play()
 	# Generate a random number between 1 and 4
 	var MonsterTrack = randi_range(1,4)
 	
