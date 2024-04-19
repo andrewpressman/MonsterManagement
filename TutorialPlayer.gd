@@ -92,7 +92,9 @@ func Subtitles():
 	$TextPanel/Text.text = Dialouge[35]
 	await get_tree().create_timer(4).timeout
 	$TextPanel/Text.text = Dialouge[36]
+	await get_tree().create_timer(4).timeout
+	CycleMessages()
 	
 func CycleMessages():
-	$TextPanel/Text.text = " "
+	$TextPanel/Text.text = "Random messages will appear here"
 	
