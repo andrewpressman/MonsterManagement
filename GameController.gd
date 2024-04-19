@@ -19,7 +19,6 @@ var Monster : int
 
 #Audio Settings
 var EffectsPlayer : AudioStreamPlayer2D
-var Tutorial : AudioStreamPlayer2D
 
 #info panel
 var LevelNo
@@ -73,7 +72,6 @@ func _ready():
 	
 	#audio
 	EffectsPlayer = $Sounds/EffectsPlayer
-	Tutorial = $Sounds/TutorialPlayer
 	
 	if GlobalVariables.CurrentLevel == 1:
 		$GameState/Objective.visible = false
@@ -94,8 +92,6 @@ func _ready():
 	Execute.disabled = true
 	
 	Startup()
-	if GlobalVariables.CurrentLevel == 1:
-		Tutorial.play()
 	
 	#Level tracker
 	LevelNo = $Info/LevelNo
