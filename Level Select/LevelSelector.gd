@@ -54,15 +54,16 @@ func _ready():
 	$Begin.visible = false
 	$DecryptedData.visible = false
 	$HighScore.visible = false
+	$MessagePanel/FinalMessage.visible = false
 	
 	SetStatus()
 
 	NextLevel = $NextLevel
 	if AllComplete:
-		if GlobalVariables.CurrentLevel >= 5:
+		if GlobalVariables.CurrentLevel == 5:
 			$NextLevel/Label.text = "All Shifts Complete, Endless Mode Unlocked"
 			GlobalVariables.GameStarted = 2
-			$NextLevel/Continue.show()
+			$MessagePanel/FinalMessage.visible = true
 		NextLevel.show()
 	else:
 		NextLevel.hide()
@@ -78,6 +79,9 @@ func _ready():
 		$HighScore.visible = true
 	else:
 		$HighScore.visible = false
+
+func FinalMessage():
+	$MessagePanel/LogPlayer.play_message(6)
 
 func Startup():
 	$"Level Tracker".visible = true
