@@ -181,7 +181,7 @@ func clamp_values():
 
 #updates characters values and indicator color		
 func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
-
+	
 	Objective.GetObjective() #Check Objective
 	#Update character values
 	Character1 += char1
@@ -190,14 +190,14 @@ func UpdateStatus(char1:int, char2:int, char3:int, monster:int):
 	Monster += monster
 	
 	if Monster >= GlobalVariables.RedThreshold: #Characters agitate alot faster when Monster is in red
-		Character1 += GlobalVariables.IncreaseRate / 2
-		Character2 += GlobalVariables.IncreaseRate / 2
-		Character3 += GlobalVariables.IncreaseRate / 2
+		Character1 += GlobalVariables.IncreaseRate / 4
+		Character2 += GlobalVariables.IncreaseRate / 4
+		Character3 += GlobalVariables.IncreaseRate / 4
 		
 	if Monster >= GlobalVariables.YellowThreshold: #Characters agitate slightly faster when Monster is in yellow
-		Character1 += (GlobalVariables.IncreaseRate / 4)
-		Character2 += (GlobalVariables.IncreaseRate / 4)
-		Character3 += (GlobalVariables.IncreaseRate / 4)
+		Character1 += (GlobalVariables.IncreaseRate / 6)
+		Character2 += (GlobalVariables.IncreaseRate / 6)
+		Character3 += (GlobalVariables.IncreaseRate / 6)
 	
 	clamp_values()
 	
@@ -298,6 +298,7 @@ func MarkComplete():
 #end game
 func EndGame():
 	$Clock.Stop()
+	await get_tree().create_timer(3).timeout
 	if(Monster >= MaxState && GlobalVariables.CurrentLevel == 5):
 		#Go to end screen?
 		PassFail = true

@@ -9,7 +9,7 @@ Okay,
 Welcome to your new position at NEXUS LLC.
 You have been selected as the newest member of our experimental testing unit 
 as a simulation supervisor, where you will evaluate and analyze
- fully theoretical situations. Each shift, you will be 
+fully theoretical situations. Each shift, you will be 
 given a list of 3 tests that you will need to complete. 
 Select each box to display more information about the experiment..
 Once all tests are complete, you may move onto your next shift.
@@ -60,7 +60,7 @@ static
 Greetings employee. Your department has served its purpose, 
 complete final test, then delete all job related data from your terminal.
 Failure to comply will result in criminal prosecution.
-Once all data has been cleared, your final paycheck will be deposited.
+Once all data has been cleared, your final check will be deposited.
 Thank you for choosing NEXUS EXPERIMENTAL TESTING UNIT, 
 this will be your final communication.
 ------------------------------------------------------------------------------------

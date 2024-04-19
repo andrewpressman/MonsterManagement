@@ -31,17 +31,17 @@ func play_message(parameter_value: int):
 		4:
 			#Level 4 static
 			stream = preload("res://Assets/Audio Files/MachineVoice/StaticSound.wav")
-			DisplaySubtitles(41,51)
+			DisplaySubtitles(58,58)
 			play()
 		5:
 			#Level 5 robotic message
 			stream = preload("res://Assets/Audio Files/MachineVoice/Message5.wav")
-			DisplaySubtitles(57,57)
+			DisplaySubtitles(59,65)
 			play()
 		6:
 			#Level 5 success message
 			stream = preload("res://Assets/Audio Files/MachineVoice/ObjectiveComplete.wav")
-			DisplaySubtitles(66,68)
+			DisplaySubtitles(66,66)
 			play()
 		7:
 			#Level 5 fail passed
@@ -54,5 +54,4 @@ func DisplaySubtitles(first : int, last : int):
 	for line in range(first,last):
 		$Subtitles/Label.text = Dialouge[line]
 		await get_tree().create_timer(4.5).timeout
-	
-	$Subtitles.visible = false
+	$Subtitles/Label.text = " "

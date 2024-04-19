@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=22 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="AudioStream" uid="uid://b2x4elq7qvpop" path="res://Assets/Audio Files/Other/ButtonBeep.wav" id="2_d8q78"]
@@ -24,6 +24,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0.498039)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k77d0"]
 bg_color = Color(0.00392157, 0.00392157, 0.00392157, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxda3"]
+bg_color = Color(0, 0, 0, 0.843137)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_61weh")
@@ -725,13 +728,14 @@ offset_top = -11.0
 offset_right = 1176.0
 offset_bottom = 666.0
 theme = ExtResource("3_nnqoy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pxda3")
 
 [node name="ColorRect" type="ColorRect" parent="GameOver"]
 layout_mode = 0
-offset_left = 428.0
-offset_top = 376.0
-offset_right = 662.0
-offset_bottom = 461.0
+offset_left = 320.0
+offset_top = 249.0
+offset_right = 786.0
+offset_bottom = 490.0
 color = Color(0, 0, 0, 1)
 
 [node name="Text" type="Label" parent="GameOver"]

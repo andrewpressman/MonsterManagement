@@ -69,8 +69,8 @@ func SetObjectiveText(obj : int):
 			#don't let any die
 			SecondaryObjectiveTxt = "-Preserve all subjects"
 		5:
-			#release the creature without killing
-			SecondaryObjectiveTxt = "-Release the creature\n-preserve all subjects"
+			#release the creature
+			SecondaryObjectiveTxt = "-Release the creature"
 		6:
 			#Leave only char 1 alive
 			SecondaryObjectiveTxt = "-Eliminate Subject 2\n-Eliminate Subject 3"
@@ -141,7 +141,7 @@ func AllAlive(type : bool):
 			objColor.modulate = Color(.5,0,0)
 			return false
 	else:
-		if (GameController.Character1 < GlobalVariables.MaxState && GameController.Character2 < GlobalVariables.MaxState && GameController.Character3 < GlobalVariables.MaxState) && GameController.Monster >= GlobalVariables.MaxState:
+		if GameController.Monster >= GlobalVariables.MaxState:
 			objColor.modulate = Color(0,.5,0)
 			return true
 		else:

@@ -53,6 +53,7 @@ func _ready():
 	$MessagePanel.visible = false
 	$Begin.visible = false
 	$DecryptedData.visible = false
+	$HighScore.visible = false
 	
 	SetStatus()
 
@@ -60,9 +61,8 @@ func _ready():
 	if AllComplete:
 		if GlobalVariables.CurrentLevel >= 5:
 			$NextLevel/Label.text = "All Shifts Complete, Endless Mode Unlocked"
-			GlobalVariables.CurrentLevel += 1
 			GlobalVariables.GameStarted = 2
-			$NextLevel/Continue.hide()
+			$NextLevel/Continue.show()
 		NextLevel.show()
 	else:
 		NextLevel.hide()
@@ -194,19 +194,19 @@ func _on_begin_button_pressed():
 
 func GetLevel():
 	if GlobalVariables.CurrentLevel == 1:
-		setDifficulty(20,60,120,2,-2)
+		setDifficulty(200,600,1200,20,-20)
 	
 	elif GlobalVariables.CurrentLevel == 2:
-		setDifficulty(20,50,100,2,-1) 
+		setDifficulty(200,500,1000,20,-10) 
 	
 	elif GlobalVariables.CurrentLevel == 3:
-		setDifficulty(10,60,120,3,-1)
+		setDifficulty(100,600,1200,30,-10)
 	
 	elif GlobalVariables.CurrentLevel == 4:
-		setDifficulty(10,40,100,4,-1)
+		setDifficulty(100,400,1000,40,-10)
 	
 	elif GlobalVariables.CurrentLevel >= 5:
-		setDifficulty(5,20,100,4,-1)
+		setDifficulty(50,500,900,40,-10)
 
 #sets game difficulty (yellow, red, black, increaseRate, DecreaseRate)
 func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
@@ -229,7 +229,11 @@ func Reset():
 		GlobalVariables.CurrentLevel += 1
 	SetLevel()
 	NextLevel.hide()
-	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+	if GlobalVariables.CurrentLevel <= 4:
+		get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+	else:
+		GlobalVariables.CurrentLevel += 1
+		get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
 	
 #show selected bigInfo
 func showBig(button : int):
@@ -283,7 +287,8 @@ func beep():
 
 #switch to game screen
 func StartGame():
-	#pass in parameters for game
+	if GlobalVariables.CurrentLevel == 5:
+		GlobalVariables.TargetScore += 1000 * GlobalVariables.CurrentLevel
 	get_tree().change_scene_to_file("res://Game Screen.tscn")
 	
 func Save():

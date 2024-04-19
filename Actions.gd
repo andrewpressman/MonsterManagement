@@ -173,22 +173,22 @@ func _on_execute_button_pressed():
 		
 	if selectedButton == Agitate1Button:
 		# ncrease all leveles at lowest rate
-		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate, IncreaseRate * 2)
+		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate, IncreaseRate * 4)
 		GameController.PlaySound(4)
 		TickPower()
 	elif selectedButton == Agitate2Button:
 		# increase all leveles at medium rate
-		GameController.UpdateStatus(IncreaseRate * 3,IncreaseRate * 3,IncreaseRate * 3,IncreaseRate * 4)
+		GameController.UpdateStatus(IncreaseRate * 2,IncreaseRate * 2,IncreaseRate * 2,IncreaseRate * 5)
 		GameController.PlaySound(5)
 		TickPower()
 	elif selectedButton == Agitate3Button:
 		# increase all leveles at max rate
-		GameController.UpdateStatus(3 * IncreaseRate,5 * IncreaseRate,5 * IncreaseRate,6 * IncreaseRate)
+		GameController.UpdateStatus(IncreaseRate * 3,IncreaseRate * 3,IncreaseRate * 3, IncreaseRate * 10)
 		GameController.PlaySound(6)
 		TickPower()
 	elif selectedButton == CalmButton:
 		# decrease all levels
-		GameController.UpdateStatus(DecreaseRate * 30,DecreaseRate * 30,DecreaseRate * 30,DecreaseRate * 30)
+		GameController.UpdateStatus(DecreaseRate * 10,DecreaseRate * 10,DecreaseRate * 10,DecreaseRate * 20)
 		GameController.PlaySound(8)
 		TickPower()
 		CalmLockout()
@@ -208,19 +208,19 @@ func _on_execute_button_pressed():
 		if $Environment/Char1Ping.CheckType():
 			GameController.UpdateStatus(IncreaseRate * 5,0,0,0)
 		else:
-			GameController.UpdateStatus(DecreaseRate * 5,0,0,0)		
+			GameController.UpdateStatus(DecreaseRate * 7,0,0,0)		
 	elif selectedButton == Char2Trigger:
 		GameController.PlaySound(7)
 		if $Environment/Char2Ping.CheckType():
 			GameController.UpdateStatus(0,IncreaseRate * 5,0,0)
 		else:
-			GameController.UpdateStatus(0,DecreaseRate * 5,0,0)	
+			GameController.UpdateStatus(0,DecreaseRate * 7,0,0)	
 	elif selectedButton == Char3Trigger:
 		GameController.PlaySound(7)
 		if $Environment/Char3Ping.CheckType():
 			GameController.UpdateStatus(0,0,IncreaseRate * 5,0)
 		else:
-			GameController.UpdateStatus(0,0,DecreaseRate * 5,0)
+			GameController.UpdateStatus(0,0,DecreaseRate * 7,0)
 	elif(selectedButton == AllCharTrigger):
 		GameController.UpdateStatus(IncreaseRate,IncreaseRate,IncreaseRate,0)
 		GameController.PlaySound(1)
