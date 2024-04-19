@@ -9,7 +9,7 @@ func _ready():
 	#declare global variables
 	IncreaseRate = GlobalVariables.IncreaseRate
 	GameController = get_parent()
-	count = 0 #reset counter
+	count = 0 #reset countersubtit
 
 func _on_timer_timeout():	
 	$AmbienceNoise.play()

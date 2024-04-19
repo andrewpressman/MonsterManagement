@@ -5,7 +5,6 @@ var DialogueSlider : HSlider
 var ActionsSlider : HSlider
 var AmbienceSlider : HSlider
 var DisplayMode : OptionButton
-var Subtitles : OptionButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +16,6 @@ func _ready():
 	AmbienceSlider = $Sound/LabelAmbients/HSlider
 	
 	DisplayMode = $Video/DisplayMode
-	Subtitles = $Video/Subtitles
 
 func Video():
 	$Sound.visible = false
@@ -35,12 +33,6 @@ func UpdateSettings():
 	AmbienceSlider.value = GlobalVariables.Ambience
 	DisplayMode.selected = GlobalVariables.DisplayMode
 	OnDisplayModeSelected(GlobalVariables.DisplayMode)
-	if GlobalVariables.Subtitles:
-		Subtitles.selected = 1
-		OnSubtitlesSelected(1)
-	else:
-		Subtitles.selected = 0
-		OnSubtitlesSelected(0)
 
 func OnGlobalVolumeChanged(value : float):
 	GlobalVariables.GlobalAudio = value
@@ -61,11 +53,4 @@ func OnDisplayModeSelected(index):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		1: #Windowed
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			
-func OnSubtitlesSelected(index):
-	match index:
-		0: #Off
-			GlobalVariables.Subtitles = false
-		1: #On
-			GlobalVariables.Subtitles = true
 			

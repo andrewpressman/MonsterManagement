@@ -308,8 +308,7 @@ func Save():
 		"AmbienceVolume" : GlobalVariables.Ambience,
 		"DisplayMode" : GlobalVariables.DisplayMode,
 		"UnlockedLogs" : GlobalVariables.UnlockedLogs,
-		"HighScore" : GlobalVariables.HighScore,
-		"Subtitles" : GlobalVariables.Subtitles
+		"HighScore" : GlobalVariables.HighScore
 	}
 	var json_str = JSON.stringify(save_data)
 	save_game.store_line(json_str)
