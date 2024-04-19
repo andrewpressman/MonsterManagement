@@ -1,6 +1,7 @@
 extends Panel
 
 var Dialouge = []
+var Infobox : ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,24 @@ func _ready():
 		else:
 			CycleMessages()
 			
+func flashPanel(panel : int, time):
+	match panel:
+		1:
+			Infobox = $CharacterPanel
+		2:
+			Infobox = $ProgressPanel
+		3:
+			Infobox = $ControlPanel
+		4:
+			Infobox = $ObjectivePanel
+			
+	for n in time:
+		Infobox.show()
+		await get_tree().create_timer(.5).timeout
+		Infobox.hide()
+		await get_tree().create_timer(.5).timeout	
+			
+			
 
 func Subtitles():
 	await get_tree().create_timer(1).timeout
@@ -30,6 +49,7 @@ func Subtitles():
 	$TextPanel/Text.text = Dialouge[4]
 	await get_tree().create_timer(3).timeout
 	$TextPanel/Text.text = Dialouge[5]
+	flashPanel(1,15)
 	await get_tree().create_timer(5).timeout
 	$TextPanel/Text.text = Dialouge[6]
 	await get_tree().create_timer(3).timeout
@@ -50,12 +70,14 @@ func Subtitles():
 	$TextPanel/Text.text = Dialouge[14]
 	await get_tree().create_timer(6).timeout
 	$TextPanel/Text.text = Dialouge[15]
+	flashPanel(2,13)
 	await get_tree().create_timer(4).timeout
 	$TextPanel/Text.text = Dialouge[16]
 	await get_tree().create_timer(4).timeout
 	$TextPanel/Text.text = Dialouge[17]
 	await get_tree().create_timer(5).timeout
 	$TextPanel/Text.text = Dialouge[18]
+	flashPanel(1,17)
 	await get_tree().create_timer(4).timeout
 	$TextPanel/Text.text = Dialouge[19]
 	await get_tree().create_timer(5).timeout
@@ -70,6 +92,7 @@ func Subtitles():
 	$TextPanel/Text.text = Dialouge[24]
 	await get_tree().create_timer(4).timeout
 	$TextPanel/Text.text = Dialouge[25]
+	flashPanel(3,10)
 	await get_tree().create_timer(3).timeout
 	$TextPanel/Text.text = Dialouge[26]
 	await get_tree().create_timer(7).timeout
@@ -86,6 +109,7 @@ func Subtitles():
 	$TextPanel/Text.text = Dialouge[32]
 	await get_tree().create_timer(6).timeout
 	$TextPanel/Text.text = Dialouge[33]
+	flashPanel(4,8)
 	await get_tree().create_timer(8).timeout
 	$TextPanel/Text.text = Dialouge[34]
 	await get_tree().create_timer(7).timeout

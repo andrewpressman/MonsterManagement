@@ -25,6 +25,8 @@ func MessagePlayed():
 		label.text = "Replay Message"
 	else:
 		label.text = "New message \navailable"
+		await get_tree().create_timer(2).timeout
+		$NewMessageAlert.play()
 		Flash()
 
 #Flash message box when new message is available

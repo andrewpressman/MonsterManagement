@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=15 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="4_qolbh"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="6_d2t0v"]
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_anf0j"]
+[ext_resource type="AudioStream" uid="uid://dmjf0cqqpohd3" path="res://Assets/Audio Files/Other/NewMessage.wav" id="8_f6jyp"]
 [ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltro4"]
@@ -31,10 +32,10 @@ stream = ExtResource("2_c5t6j")
 bus = &"Ambience"
 
 [node name="Background" type="ColorRect" parent="."]
-offset_left = -67.0
-offset_top = -63.0
-offset_right = 1206.0
-offset_bottom = 704.0
+offset_left = -65.0
+offset_top = -61.0
+offset_right = 1208.0
+offset_bottom = 706.0
 color = Color(0, 0, 0, 1)
 
 [node name="Exit" type="Button" parent="."]
@@ -372,6 +373,10 @@ theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 script = ExtResource("4_32hnr")
 
+[node name="NewMessageAlert" type="AudioStreamPlayer2D" parent="MessagePanel"]
+stream = ExtResource("8_f6jyp")
+bus = &"Ambience"
+
 [node name="Alert" type="ColorRect" parent="MessagePanel"]
 layout_mode = 0
 offset_left = -6.0
@@ -423,6 +428,7 @@ offset_bottom = 295.0
 theme = ExtResource("2_kdt5u")
 
 [node name="Panel" type="Panel" parent="MessagePanel/LogPlayer/Subtitles"]
+layout_mode = 0
 offset_left = 99.0
 offset_top = 7.0
 offset_right = 728.0
@@ -511,14 +517,14 @@ theme_override_fonts/font = ExtResource("9_dogq0")
 theme_override_font_sizes/font_size = 30
 text = "High Score:"
 
-[connection signal="pressed" from="Exit" to="." method="beep"]
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
+[connection signal="pressed" from="Exit" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="beep"]
-[connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
-[connection signal="pressed" from="Cases/Level3/select" to="." method="beep"]
+[connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="Cases/Level3/select" to="." method="beep"]
 [connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
 [connection signal="pressed" from="Begin" to="." method="beep"]
 [connection signal="pressed" from="MessagePanel/Button" to="." method="beep"]

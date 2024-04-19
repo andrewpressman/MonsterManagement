@@ -179,6 +179,7 @@ button_group = SubResource("ButtonGroup_mffdt")
 text = "Endless Mode"
 
 [node name="OptionsMenu" type="Panel" parent="."]
+visible = false
 offset_left = 484.0
 offset_top = 131.0
 offset_right = 1110.0
@@ -196,6 +197,7 @@ theme_override_font_sizes/font_size = 20
 text = "Video Settings"
 
 [node name="Video" type="Node2D" parent="OptionsMenu"]
+visible = false
 
 [node name="DisplayMode" type="OptionButton" parent="OptionsMenu/Video"]
 offset_left = 183.0

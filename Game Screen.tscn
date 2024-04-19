@@ -57,6 +57,42 @@ offset_bottom = 98.0
 theme = ExtResource("3_nnqoy")
 script = ExtResource("6_uklxq")
 
+[node name="CharacterPanel" type="ColorRect" parent="Message"]
+visible = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 88.0
+offset_right = 591.0
+offset_bottom = 611.0
+color = Color(1, 0, 0, 1)
+
+[node name="ProgressPanel" type="ColorRect" parent="Message"]
+visible = false
+layout_mode = 0
+offset_left = -180.0
+offset_top = 525.0
+offset_right = 93.0
+offset_bottom = 624.0
+color = Color(1, 0, 0, 1)
+
+[node name="ObjectivePanel" type="ColorRect" parent="Message"]
+visible = false
+layout_mode = 0
+offset_left = -183.0
+offset_top = 208.0
+offset_right = 93.0
+offset_bottom = 496.0
+color = Color(1, 0, 0, 1)
+
+[node name="ControlPanel" type="ColorRect" parent="Message"]
+visible = false
+layout_mode = 0
+offset_left = 590.0
+offset_top = 85.0
+offset_right = 962.0
+offset_bottom = 629.0
+color = Color(1, 0, 0, 1)
+
 [node name="Tutorial" type="AudioStreamPlayer2D" parent="Message"]
 position = Vector2(-197, -13)
 stream = ExtResource("12_ps3hh")
@@ -303,9 +339,9 @@ wait_time = 2.0
 
 [node name="HealthMonitor" type="Panel" parent="."]
 offset_left = 281.0
-offset_top = 104.0
+offset_top = 108.0
 offset_right = 773.0
-offset_bottom = 613.0
+offset_bottom = 620.0
 theme = ExtResource("3_nnqoy")
 
 [node name="Character1" type="Panel" parent="HealthMonitor"]
