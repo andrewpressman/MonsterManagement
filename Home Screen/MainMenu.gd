@@ -11,7 +11,7 @@ var LevelSelect : Button
 func _ready():
 	LoadGame()
 	Continue = $MainMenu/Continue
-	NewGame = $MainMenu/NewGame
+	NewGame = $"MainMenu/New Game"
 	Options = $MainMenu/Options
 	LevelSelect = $MainMenu/LevelSelect
 	Quit = $MainMenu/Quit
@@ -37,12 +37,10 @@ func StartNewGame():
 	GlobalVariables.CurrentLevel = 1
 	GlobalVariables.GameStarted = 1
 	$beeper.play()
-	await get_tree().create_timer(.2).timeout
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func ContinueGame():
 	$beeper.play()
-	await get_tree().create_timer(.2).timeout
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 
 func OptionsMenu(): 
@@ -60,7 +58,6 @@ func ShowLevelSelect():
 
 func QuitGame():
 	$beeper.play()
-	await get_tree().create_timer(.2).timeout
 	get_tree().quit()
 
 #Load game from saveFile
