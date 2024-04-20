@@ -23,11 +23,14 @@ func _ready():
 	if GlobalVariables.GameStarted > 0:
 		Continue.show()
 		Continue.text = "Continue Shift " + str(GlobalVariables.CurrentLevel)
-		if GlobalVariables.GameStarted > 1:
-			$MainMenu/LevelSelect.visible = true
-			Continue.text = "Continue Endless"
 	else:
-		Continue.hide()
+		Continue.hide()	
+		
+	if GlobalVariables.GameStarted > 1:
+		print("HERE")
+		$MainMenu/LevelSelect.visible = true
+		Continue.text = "Continue Endless"
+
 
 func StartNewGame():
 	#clear Savegame

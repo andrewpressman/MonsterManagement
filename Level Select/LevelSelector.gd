@@ -198,19 +198,19 @@ func _on_begin_button_pressed():
 
 func GetLevel():
 	if GlobalVariables.CurrentLevel == 1:
-		setDifficulty(200,600,1200,20,-20)
+		setDifficulty(200,700,1200,15,-30)
 	
 	elif GlobalVariables.CurrentLevel == 2:
-		setDifficulty(200,500,1000,20,-10) 
+		setDifficulty(200,600,1000,20,-25) 
 	
 	elif GlobalVariables.CurrentLevel == 3:
-		setDifficulty(100,600,1200,30,-10)
+		setDifficulty(100,500,1200,25,-20)
 	
 	elif GlobalVariables.CurrentLevel == 4:
-		setDifficulty(100,400,1000,40,-10)
+		setDifficulty(100,500,1000,30,-15)
 	
 	elif GlobalVariables.CurrentLevel >= 5:
-		setDifficulty(50,500,900,40,-10)
+		setDifficulty(50,400,900,35,-10)
 
 #sets game difficulty (yellow, red, black, increaseRate, DecreaseRate)
 func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
@@ -229,14 +229,13 @@ func Reset():
 	GlobalVariables.Level3Status = 0
 	GlobalVariables.MessagePlayed = false
 	SetStatus()
-	if GlobalVariables.CurrentLevel < 5:
-		GlobalVariables.CurrentLevel += 1
+	GlobalVariables.CurrentLevel += 1
 	SetLevel()
 	NextLevel.hide()
-	if GlobalVariables.CurrentLevel <= 4:
+	if GlobalVariables.GameStarted != 2:
 		get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 	else:
-		GlobalVariables.CurrentLevel += 1
+		Save()
 		get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
 	
 #show selected bigInfo
