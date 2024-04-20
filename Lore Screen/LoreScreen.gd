@@ -1,10 +1,13 @@
 extends Node2D
 
 var Return : Button
-
+var Player : AudioStreamPlayer2D
+var panels = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Return = $Return
+	Player = $LogPlayer
+	panels = [$AudioTrack1/Subtitle, $AudioTrack2/Subtitle, $AudioTrack3/Subtitle, $AudioTrack4/Subtitle, $AudioTrack5/Subtitle,$AudioTrack6/Subtitle, $AudioTrack7/Subtitle, $AudioTrack8/Subtitle, $AudioTrack9/Subtitle]
 	$AudioTrack1.visible = false
 	$AudioTrack2.visible = false
 	$AudioTrack3.visible = false
@@ -26,7 +29,7 @@ func _ready():
 	startup()
 	await get_tree().create_timer(.5).timeout
 	SearchLogs()	
-	
+
 #Find which logs need to be unlocked
 func SearchLogs():
 	var count = 0
@@ -57,7 +60,6 @@ func startup():
 	$AudioTrack8.visible = true
 	await get_tree().create_timer(.2).timeout
 	$AudioTrack9.visible = true
-
 
 #Locks or Unlocks each audio log
 func Unlock(log : int, check :bool):
@@ -106,8 +108,26 @@ func Unlock(log : int, check :bool):
 			if check:
 				$AudioTrack9.Unlock("AudioLog9.mp3")
 			else:
-				$AudioTrack9.Lock()
+				$AudioTrack9.Lock()	
+
+func on_Play_pressed():
+	Player.play_message(GlobalVariables.CurrentLog)
+	Subtitle(GlobalVariables.CurrentLog)
+
+func Subtitle(index : int):
+	print(str(index))
+	var counter = 0
+	for panel in panels:
+		if counter == index:
+			panel.visible = true
+		else:
+			panel.visible = false
+		counter += 1
 	
+func hideAll():
+	for panel in panels:
+		panel.visible = false
+
 func Back():
 	get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 

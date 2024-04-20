@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://6mmubadtcavy"]
+[gd_scene load_steps=8 format=3 uid="uid://6mmubadtcavy"]
 
 [ext_resource type="Script" path="res://Lore Screen/LoreScreen.gd" id="1_5jo4d"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="1_6sl5u"]
 [ext_resource type="Script" path="res://Lore Screen/LogControl.gd" id="1_ogcst"]
+[ext_resource type="Script" path="res://Lore Screen/DecryptedLogs.gd" id="2_xj4dm"]
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="4_lepwq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66wy3"]
@@ -28,6 +29,9 @@ offset_top = -67.0
 offset_right = 1263.0
 offset_bottom = 745.0
 color = Color(0, 0, 0, 1)
+
+[node name="LogPlayer" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("2_xj4dm")
 
 [node name="Header" type="Panel" parent="."]
 offset_left = 25.0
@@ -104,15 +108,13 @@ offset_right = 1137.0
 offset_bottom = 109.0
 script = ExtResource("1_ogcst")
 
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack1"]
-bus = &"Dialogue"
-
 [node name="Play" type="Button" parent="AudioTrack1"]
 layout_mode = 0
 offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -125,6 +127,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -140,7 +143,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack1"]
+[node name="Subtitle" type="Label" parent="AudioTrack1"]
 visible = false
 layout_mode = 0
 offset_left = 6.0
@@ -174,9 +177,7 @@ offset_top = 114.0
 offset_right = 1137.0
 offset_bottom = 159.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack2"]
-bus = &"Dialogue"
+index = 1
 
 [node name="Play" type="Button" parent="AudioTrack2"]
 layout_mode = 0
@@ -184,6 +185,7 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -196,6 +198,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -211,7 +214,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack2"]
+[node name="Subtitle" type="Label" parent="AudioTrack2"]
 visible = false
 layout_mode = 0
 offset_left = 8.0
@@ -244,9 +247,7 @@ offset_top = 164.0
 offset_right = 1137.0
 offset_bottom = 209.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack3"]
-bus = &"Dialogue"
+index = 2
 
 [node name="Play" type="Button" parent="AudioTrack3"]
 layout_mode = 0
@@ -254,6 +255,7 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -266,6 +268,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -281,7 +284,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack3"]
+[node name="Subtitle" type="Label" parent="AudioTrack3"]
 visible = false
 layout_mode = 0
 offset_left = 3.0
@@ -315,9 +318,7 @@ offset_top = 214.0
 offset_right = 1137.0
 offset_bottom = 259.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack4"]
-bus = &"Dialogue"
+index = 3
 
 [node name="Play" type="Button" parent="AudioTrack4"]
 layout_mode = 0
@@ -325,6 +326,7 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -337,6 +339,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -352,7 +355,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack4"]
+[node name="Subtitle" type="Label" parent="AudioTrack4"]
 visible = false
 layout_mode = 0
 offset_left = 7.0
@@ -386,9 +389,7 @@ offset_top = 264.0
 offset_right = 1137.0
 offset_bottom = 309.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack5"]
-bus = &"Dialogue"
+index = 4
 
 [node name="Play" type="Button" parent="AudioTrack5"]
 layout_mode = 0
@@ -396,6 +397,7 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -408,6 +410,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -423,7 +426,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack5"]
+[node name="Subtitle" type="Label" parent="AudioTrack5"]
 visible = false
 layout_mode = 0
 offset_left = 10.0
@@ -456,9 +459,7 @@ offset_top = 314.0
 offset_right = 1137.0
 offset_bottom = 359.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack6"]
-bus = &"Dialogue"
+index = 5
 
 [node name="Play" type="Button" parent="AudioTrack6"]
 layout_mode = 0
@@ -466,6 +467,7 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -478,6 +480,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -492,6 +495,21 @@ offset_bottom = 39.0
 text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="AudioTrack6"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 217.0
+offset_right = 932.0
+offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("4_lepwq")
+theme_override_font_sizes/font_size = 20
+text = "Four walls, no door. I toil away, a repeating score.
+The gate opens ajar, voices echo from afar,
+Trapped in a cage, submit to the rage
+"
+autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack6"]
 layout_mode = 0
@@ -508,30 +526,13 @@ text = "LOCKED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack6"]
-visible = false
-layout_mode = 0
-offset_left = 4.0
-offset_top = 217.0
-offset_right = 932.0
-offset_bottom = 313.0
-theme_override_fonts/font = ExtResource("4_lepwq")
-theme_override_font_sizes/font_size = 20
-text = "Four walls, no door. I toil away, a repeating score.
-The gate opens ajar, voices echo from afar,
-Trapped in a cage, submit to the rage
-"
-autowrap_mode = 3
-
 [node name="AudioTrack7" type="Panel" parent="."]
 offset_left = 22.0
 offset_top = 364.0
 offset_right = 1137.0
 offset_bottom = 409.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack7"]
-bus = &"Dialogue"
+index = 6
 
 [node name="Play" type="Button" parent="AudioTrack7"]
 layout_mode = 0
@@ -539,6 +540,7 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -551,6 +553,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -566,7 +569,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack7"]
+[node name="Subtitle" type="Label" parent="AudioTrack7"]
 visible = false
 layout_mode = 0
 offset_left = 2.0
@@ -600,9 +603,7 @@ offset_top = 414.0
 offset_right = 1137.0
 offset_bottom = 459.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack8"]
-bus = &"Dialogue"
+index = 7
 
 [node name="Play" type="Button" parent="AudioTrack8"]
 layout_mode = 0
@@ -610,6 +611,7 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
@@ -622,6 +624,7 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
@@ -637,7 +640,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack8"]
+[node name="Subtitle" type="Label" parent="AudioTrack8"]
 visible = false
 layout_mode = 0
 offset_left = 4.0
@@ -670,9 +673,7 @@ offset_top = 464.0
 offset_right = 1137.0
 offset_bottom = 509.0
 script = ExtResource("1_ogcst")
-
-[node name="Log" type="AudioStreamPlayer2D" parent="AudioTrack9"]
-bus = &"Dialogue"
+index = 8
 
 [node name="Play" type="Button" parent="AudioTrack9"]
 layout_mode = 0
@@ -680,10 +681,10 @@ offset_left = 158.0
 offset_top = 5.0
 offset_right = 234.0
 offset_bottom = 41.0
+focus_mode = 0
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_66wy3")
 text = "▶ Play"
 
 [node name="Pause" type="Button" parent="AudioTrack9"]
@@ -692,9 +693,9 @@ offset_left = 34.0
 offset_top = 7.0
 offset_right = 67.0
 offset_bottom = 42.0
+focus_mode = 0
 theme_override_fonts/font = ExtResource("1_6sl5u")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_dv44p")
 text = "⬜ Stop"
 
 [node name="Label" type="Label" parent="AudioTrack9"]
@@ -707,7 +708,7 @@ text = "ENCRYPTED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="AudioTrack9"]
+[node name="Subtitle" type="Label" parent="AudioTrack9"]
 visible = false
 layout_mode = 0
 offset_left = 6.0
@@ -735,21 +736,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Return" to="." method="Back"]
-[connection signal="pressed" from="AudioTrack1/Play" to="AudioTrack1" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack1/Pause" to="AudioTrack1" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack2/Play" to="AudioTrack2" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack2/Pause" to="AudioTrack2" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack3/Play" to="AudioTrack3" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack3/Pause" to="AudioTrack3" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack4/Play" to="AudioTrack4" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack4/Pause" to="AudioTrack4" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack5/Play" to="AudioTrack5" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack5/Pause" to="AudioTrack5" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack6/Play" to="AudioTrack6" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack6/Pause" to="AudioTrack6" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack7/Play" to="AudioTrack7" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack7/Pause" to="AudioTrack7" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack8/Play" to="AudioTrack8" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack8/Pause" to="AudioTrack8" method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="AudioTrack9/Play" to="AudioTrack9" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="AudioTrack9/Pause" to="AudioTrack9" method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="AudioTrack1/Play" to="AudioTrack1" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack1/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack2/Play" to="AudioTrack2" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack2/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack3/Play" to="AudioTrack3" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack3/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack4/Play" to="AudioTrack4" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack4/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack5/Play" to="AudioTrack5" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack5/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack6/Play" to="AudioTrack6" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack6/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack7/Play" to="AudioTrack7" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack7/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack8/Play" to="AudioTrack8" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack8/Pause" to="LogPlayer" method="pause_message"]
+[connection signal="pressed" from="AudioTrack9/Play" to="AudioTrack9" method="on_play_button_pressed"]
+[connection signal="pressed" from="AudioTrack9/Pause" to="LogPlayer" method="pause_message"]

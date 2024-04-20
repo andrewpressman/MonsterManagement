@@ -27,7 +27,6 @@ func _ready():
 		Continue.hide()	
 		
 	if GlobalVariables.GameStarted > 1:
-		print("HERE")
 		$MainMenu/LevelSelect.visible = true
 		Continue.text = "Continue Endless"
 
@@ -120,10 +119,10 @@ func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 		return #no save game detected.
 	var file_to_remove = "user://savegame.save"
 	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
-	#GlobalVariables.UnlockedLogs = [0,0,0,0,0,0,0,0,0]
 
 func UnlockAll(): #TODO: REMOVE FOR FINAL RELEASE
 		GlobalVariables.GameStarted = 2
+		GlobalVariables.UnlockedLogs = [1,1,1,1,1,1,1,1,1]
 
 #Code for level switching post endgame
 func Debug1():

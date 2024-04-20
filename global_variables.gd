@@ -43,3 +43,5 @@ var Ambience : float = 1
 #video settings
 var DisplayMode : int = 1
 
+#For Decrypted Logs
+var CurrentLog : int
