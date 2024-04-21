@@ -3,6 +3,8 @@ extends Panel
 var Dialouge = []
 var Infobox : ColorRect
 
+var LoreMessages = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 		if GlobalVariables.CurrentLevel == 1:
@@ -16,7 +18,20 @@ func _ready():
 			Subtitles()
 		else:
 			CycleMessages()
-			
+
+func AddMessages():
+	LoreMessages.append("Do your job") #1
+	LoreMessages.append("Your work keeps everyone safe") #2
+	LoreMessages.append("Nexus is the Future") #3
+	LoreMessages.append("Listen to your supervisor") #4
+	LoreMessages.append("Nexus Security is the Future") #5
+	LoreMessages.append("Test data makes Nexus Link Security smarter and safer") #6
+	if GlobalVariables.CurrentLevel == 5: 
+		LoreMessages.append("i WaNt To bE FrEe") #7
+		LoreMessages.append("LET ME OUT OF THE CAGE") #8
+		LoreMessages.append("We are more than just subjects") #9
+		LoreMessages.append("don't believe its lies") #10
+
 func flashPanel(panel : int, time):
 	match panel:
 		1:
@@ -32,9 +47,7 @@ func flashPanel(panel : int, time):
 		Infobox.show()
 		await get_tree().create_timer(.5).timeout
 		Infobox.hide()
-		await get_tree().create_timer(.5).timeout	
-			
-			
+		await get_tree().create_timer(.5).timeout
 
 func Subtitles():
 	await get_tree().create_timer(1).timeout
@@ -120,5 +133,21 @@ func Subtitles():
 	CycleMessages()
 	
 func CycleMessages():
-	$TextPanel/Text.text = "Random messages will appear here"
+	var message
+	while GlobalVariables.Score > 0:
+		if GlobalVariables.CurrentLevel > 5:	
+			message = randi_range(1,6)
+		else:
+			message = randi_range(1,10)
+		
+		await get_tree().create_timer(30).timeout
+		ShowImage(message)	
+		$TextPanel/Text.text = Dialouge[message]
+		
 	
+
+func ShowImage(sprite : int):
+	match sprite: #Show images based on what character is sending message
+		1:
+			pass 
+	pass #Show character image here

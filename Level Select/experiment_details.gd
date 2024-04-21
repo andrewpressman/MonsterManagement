@@ -11,4 +11,3 @@ var Employee2Numbers = ["Employee 5943833", "Employee 5722346", "Employee 234095
 var Employee3Numbers = ["Employee 7534562", "Employee 4812619", "Employee 8392489"]
 
 var ScientistNames = ["Dr. Malcom Cunningham", "Dr. Zachary Finch", "Dr. Samuel Jacobs"]
-
