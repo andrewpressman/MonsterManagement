@@ -124,7 +124,7 @@ autowrap_mode = 3
 offset_left = 781.0
 offset_top = 104.0
 offset_right = 1144.0
-offset_bottom = 637.0
+offset_bottom = 632.0
 theme = ExtResource("3_nnqoy")
 script = ExtResource("3_aqjdg")
 
@@ -132,7 +132,7 @@ script = ExtResource("3_aqjdg")
 
 [node name="PingAll" type="Button" parent="Actions/Environment"]
 anchors_preset = -1
-anchor_right = 0.0121528
+anchor_right = 0.0130208
 offset_left = 794.0
 offset_top = 178.0
 offset_right = 1123.0
@@ -146,6 +146,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Power" type="Node" parent="Actions/Environment"]
 
 [node name="PowerOn" type="Button" parent="Actions/Environment/Power"]
+anchors_preset = -1
+anchor_left = 0.000868056
+anchor_right = 0.0112847
 offset_left = 793.0
 offset_top = 114.0
 offset_right = 1125.0
@@ -157,7 +160,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PowerOff" type="Button" parent="Actions/Environment/Power"]
 anchors_preset = -1
-anchor_right = 0.0104167
+anchor_left = 0.000868056
+anchor_right = 0.0112847
 offset_left = 793.0
 offset_top = 114.0
 offset_right = 1125.0
@@ -172,10 +176,10 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("5_1bmgd")
 
 [node name="PingType" type="CheckButton" parent="Actions/Environment/Char1Ping"]
-offset_left = 789.0
-offset_top = 242.0
-offset_right = 901.0
-offset_bottom = 278.0
+offset_left = 794.0
+offset_top = 241.0
+offset_right = 906.0
+offset_bottom = 277.0
 theme = ExtResource("3_nnqoy")
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
@@ -189,9 +193,9 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = -1
 anchor_left = -0.00520833
 anchor_right = 0.0104167
-offset_left = 795.0
+offset_left = 800.0
 offset_top = 273.0
-offset_right = 889.0
+offset_right = 894.0
 offset_bottom = 360.0
 theme = ExtResource("3_nnqoy")
 theme_override_font_sizes/font_size = 20
@@ -204,10 +208,10 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("5_1bmgd")
 
 [node name="PingType" type="CheckButton" parent="Actions/Environment/Char2Ping"]
-offset_left = 909.0
-offset_top = 242.0
-offset_right = 1021.0
-offset_bottom = 278.0
+offset_left = 910.0
+offset_top = 241.0
+offset_right = 1022.0
+offset_bottom = 277.0
 theme = ExtResource("3_nnqoy")
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
@@ -220,10 +224,10 @@ metadata/_edit_use_anchors_ = true
 [node name="PingTrigger" type="Button" parent="Actions/Environment/Char2Ping"]
 anchors_preset = -1
 anchor_right = 0.0104167
-offset_left = 909.0
-offset_top = 274.0
-offset_right = 1009.0
-offset_bottom = 361.0
+offset_left = 910.0
+offset_top = 273.0
+offset_right = 1010.0
+offset_bottom = 360.0
 theme = ExtResource("3_nnqoy")
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
@@ -269,6 +273,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Agitate1" type="Button" parent="Actions/Monster"]
 anchors_preset = -1
+anchor_left = -0.00173611
 anchor_right = 0.00434028
 offset_left = 795.0
 offset_top = 375.0
@@ -282,7 +287,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Agitate2" type="Button" parent="Actions/Monster"]
 anchors_preset = -1
-anchor_right = 0.00347222
+anchor_left = -0.00173611
+anchor_right = 0.00434028
 offset_left = 795.0
 offset_top = 433.0
 offset_right = 1031.0
@@ -295,7 +301,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Agitate3" type="Button" parent="Actions/Monster"]
 anchors_preset = -1
-anchor_right = 0.00434028
+anchor_left = -0.000868056
+anchor_right = 0.00520833
 offset_left = 794.0
 offset_top = 491.0
 offset_right = 1030.0
@@ -327,7 +334,8 @@ wait_time = 10.0
 [node name="Execute" type="Button" parent="Actions"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.0385675
+anchor_left = 0.00275482
+anchor_right = 0.0413223
 offset_left = 10.0
 offset_top = 450.0
 offset_right = 340.0
@@ -342,9 +350,9 @@ wait_time = 2.0
 
 [node name="HealthMonitor" type="Panel" parent="."]
 offset_left = 281.0
-offset_top = 108.0
+offset_top = 105.0
 offset_right = 773.0
-offset_bottom = 620.0
+offset_bottom = 632.0
 theme = ExtResource("3_nnqoy")
 
 [node name="Character1" type="Panel" parent="HealthMonitor"]
@@ -386,7 +394,9 @@ offset_right = 337.0
 offset_bottom = 68.0
 
 [node name="Character2" type="Panel" parent="HealthMonitor"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00203252
 offset_left = 15.0
 offset_top = 123.0
 offset_right = 476.0
@@ -424,7 +434,9 @@ offset_right = 337.0
 offset_bottom = 68.0
 
 [node name="Character3" type="Panel" parent="HealthMonitor"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00203252
 offset_left = 15.0
 offset_top = 228.0
 offset_right = 476.0
@@ -465,9 +477,8 @@ offset_bottom = 68.0
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.00203252
-anchor_top = -0.0191571
-anchor_right = 0.00203252
-anchor_bottom = -0.0191571
+anchor_top = -0.0195313
+anchor_bottom = -0.0195313
 offset_left = 15.0
 offset_top = 338.0
 offset_right = 476.0
