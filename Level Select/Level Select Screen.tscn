@@ -37,6 +37,8 @@ offset_top = -61.0
 offset_right = 1208.0
 offset_bottom = 706.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Exit" type="Button" parent="."]
 offset_left = 899.0
@@ -46,6 +48,7 @@ offset_bottom = 73.0
 theme = ExtResource("2_kdt5u")
 theme_override_font_sizes/font_size = 20
 text = "Return to Main Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="StatusGuide" type="Panel" parent="."]
 offset_left = 957.0
@@ -54,6 +57,7 @@ offset_right = 1145.0
 offset_bottom = 314.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="StatusGuide"]
 layout_mode = 0
@@ -124,6 +128,7 @@ offset_bottom = 557.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 script = ExtResource("2_oikne")
+metadata/_edit_use_anchors_ = true
 
 [node name="Level1" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
@@ -212,6 +217,7 @@ theme = ExtResource("2_kdt5u")
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
 text = "o"
+metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level2"]
 offset_left = 145.0
@@ -220,6 +226,7 @@ offset_right = 768.0
 offset_bottom = 377.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level2/MiniInfo"]
 layout_mode = 0
@@ -230,6 +237,7 @@ theme_override_font_sizes/font_size = 19
 text = "Experiment 2"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BigInfo" type="Panel" parent="Cases/Level2"]
 visible = false
@@ -259,6 +267,7 @@ offset_right = 932.0
 offset_bottom = 377.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Cases/Level2/Status"]
 layout_mode = 0
@@ -266,6 +275,7 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 156.0
 offset_bottom = 98.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level3" type="Node" parent="Cases"]
 script = ExtResource("1_1i0fd")
@@ -280,6 +290,7 @@ theme = ExtResource("2_kdt5u")
 theme_override_font_sizes/font_size = 20
 toggle_mode = true
 text = "o"
+metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level3"]
 offset_left = 145.0
@@ -288,6 +299,7 @@ offset_right = 768.0
 offset_bottom = 527.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level3/MiniInfo"]
 layout_mode = 0
@@ -298,6 +310,7 @@ theme_override_font_sizes/font_size = 19
 text = "Experiment 3"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BigInfo" type="Panel" parent="Cases/Level3"]
 visible = false
@@ -327,6 +340,7 @@ offset_right = 931.0
 offset_bottom = 527.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Cases/Level3/Status"]
 layout_mode = 0
@@ -334,6 +348,7 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 156.0
 offset_bottom = 97.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Level Tracker" type="Panel" parent="."]
 offset_left = 7.0
@@ -342,6 +357,7 @@ offset_right = 217.0
 offset_bottom = 90.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Level Tracker"]
 layout_mode = 0
@@ -354,6 +370,7 @@ theme_override_font_sizes/font_size = 19
 text = "Current Shift:"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Begin" type="Button" parent="."]
 offset_left = 912.0
@@ -363,6 +380,7 @@ offset_bottom = 640.0
 theme = ExtResource("2_kdt5u")
 theme_override_font_sizes/font_size = 24
 text = "INITALIZE TEST"
+metadata/_edit_use_anchors_ = true
 
 [node name="MessagePanel" type="Panel" parent="."]
 offset_left = 959.0
@@ -372,6 +390,7 @@ offset_bottom = 564.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 script = ExtResource("4_32hnr")
+metadata/_edit_use_anchors_ = true
 
 [node name="NewMessageAlert" type="AudioStreamPlayer2D" parent="MessagePanel"]
 stream = ExtResource("8_f6jyp")
@@ -384,6 +403,7 @@ offset_top = -5.0
 offset_right = 180.0
 offset_bottom = 217.0
 color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="MessagePanel"]
 layout_mode = 0
@@ -392,6 +412,7 @@ offset_top = 5.0
 offset_right = 173.0
 offset_bottom = 212.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="MessagePanel"]
 layout_mode = 0
@@ -402,6 +423,7 @@ offset_bottom = 129.0
 theme = ExtResource("2_kdt5u")
 theme_override_font_sizes/font_size = 20
 text = "PLAY"
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="MessagePanel"]
 layout_mode = 0
@@ -415,6 +437,7 @@ text = "New Message
 Available!"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LogPlayer" type="AudioStreamPlayer2D" parent="MessagePanel"]
 bus = &"Dialogue"
@@ -426,6 +449,7 @@ offset_top = 218.0
 offset_right = -55.0
 offset_bottom = 295.0
 theme = ExtResource("2_kdt5u")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="MessagePanel/LogPlayer/Subtitles"]
 layout_mode = 0
@@ -434,6 +458,7 @@ offset_top = 7.0
 offset_right = 728.0
 offset_bottom = 71.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ltro4")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="MessagePanel/LogPlayer/Subtitles"]
 layout_mode = 0
@@ -445,18 +470,7 @@ theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
-
-[node name="FinalMessage" type="Button" parent="MessagePanel"]
-visible = false
-layout_mode = 0
-offset_left = 6.0
-offset_top = 140.0
-offset_right = 168.0
-offset_bottom = 204.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 23
-text = "Final
-Transmtion"
+metadata/_edit_use_anchors_ = true
 
 [node name="NextLevel" type="Panel" parent="."]
 offset_left = 230.0
@@ -517,21 +531,19 @@ theme_override_fonts/font = ExtResource("9_dogq0")
 theme_override_font_sizes/font_size = 30
 text = "High Score:"
 
-[connection signal="pressed" from="Exit" to="." method="beep"]
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
-[connection signal="pressed" from="Cases/Level1/select" to="." method="beep"]
+[connection signal="pressed" from="Exit" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]
-[connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
+[connection signal="pressed" from="Cases/Level1/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
-[connection signal="pressed" from="Cases/Level3/select" to="." method="beep"]
+[connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
-[connection signal="pressed" from="Begin" to="." method="beep"]
+[connection signal="pressed" from="Cases/Level3/select" to="." method="beep"]
 [connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
+[connection signal="pressed" from="Begin" to="." method="beep"]
 [connection signal="pressed" from="MessagePanel/Button" to="." method="beep"]
 [connection signal="pressed" from="MessagePanel/Button" to="MessagePanel" method="PlayMessage"]
-[connection signal="pressed" from="MessagePanel/FinalMessage" to="." method="beep"]
-[connection signal="pressed" from="MessagePanel/FinalMessage" to="." method="FinalMessage"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="Reset"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="beep"]
-[connection signal="pressed" from="DecryptedData" to="." method="beep"]
 [connection signal="pressed" from="DecryptedData" to="." method="GoToLore"]
+[connection signal="pressed" from="DecryptedData" to="." method="beep"]

@@ -54,16 +54,15 @@ func _ready():
 	$Begin.visible = false
 	$DecryptedData.visible = false
 	$HighScore.visible = false
-	$MessagePanel/FinalMessage.visible = false
 	
 	SetStatus()
 
 	NextLevel = $NextLevel
 	if AllComplete:
 		if GlobalVariables.CurrentLevel == 5:
-			$NextLevel/Label.text = "All Shifts Complete, Endless Mode Unlocked"
+			SelectEnding()
+			$NextLevel/Label.text = "Test Complete p̴͙̬̰̿͊r̸̥̠̬͐͒o̴̫̊ͅc̴̛͕̍͠ẹ̵̈̎͝ë̴̳͆d̴͓̘̼͋͂̎"
 			GlobalVariables.GameStarted = 2
-			$MessagePanel/FinalMessage.visible = true
 		NextLevel.show()
 	else:
 		NextLevel.hide()
@@ -80,8 +79,16 @@ func _ready():
 	else:
 		$HighScore.visible = false
 
-func FinalMessage():
-	$MessagePanel/LogPlayer.play_message(6)
+#complete = 2, failed = 1
+func SelectEnding():
+	match GlobalVariables.Level1Status:
+		1:
+			if GlobalVariables.UnlockedLogs == [1,1,1,1,1,1,1,1,1]:
+				GlobalVariables.Ending = 2
+			else:
+				GlobalVariables.Ending = 1
+		2:
+			GlobalVariables.Ending = 3
 
 func Startup():
 	$"Level Tracker".visible = true
@@ -233,7 +240,7 @@ func Reset():
 	SetLevel()
 	NextLevel.hide()
 	if GlobalVariables.GameStarted != 2:
-		get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+		get_tree().change_scene_to_file("res://EndScreen/VictoryScreen.tscn")
 	else:
 		Save()
 		get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")

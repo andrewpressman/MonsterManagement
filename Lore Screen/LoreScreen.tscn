@@ -29,6 +29,7 @@ offset_top = -67.0
 offset_right = 1263.0
 offset_bottom = 745.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
 [node name="LogPlayer" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("2_xj4dm")

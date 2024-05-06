@@ -28,6 +28,9 @@ var Level3Status : int
 #Track which logs have been unlocked
 var UnlockedLogs = [0,0,0,0,0,0,0,0,0]
 
+#track ending
+var Ending : int
+
 #GameisOn
 var GameStarted : int = 0
 #Track if a level message has been plyed yet
