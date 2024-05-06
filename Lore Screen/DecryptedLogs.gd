@@ -11,7 +11,7 @@ func play_message(parameter_value: int):
 	# Add your conditions to determine which sound to play based on the parameter_value
 	match parameter_value:
 		1:
-			#stream = preload("res://Assets/Audio Files/SupervisorLogs/Message1.wav")
+			stream = preload("res://Assets/Audio Files/BonusLogs/Nexus_Marketing.wav")
 			play()
 		2:
 			#stream = preload("res://Assets/Audio Files/SupervisorLogs/Message2.wav")	

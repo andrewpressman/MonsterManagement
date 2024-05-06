@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://e5a86i8cxvav"
+path="res://.godot/imported/Nexus_Marketing.wav-35c5b92217a55dc1edeb47b77a09644f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio Files/BonusLogs/Nexus_Marketing.wav"
+dest_files=["res://.godot/imported/Nexus_Marketing.wav-35c5b92217a55dc1edeb47b77a09644f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
