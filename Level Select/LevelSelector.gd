@@ -84,9 +84,9 @@ func SelectEnding():
 	match GlobalVariables.Level1Status:
 		1:
 			if GlobalVariables.UnlockedLogs == [1,1,1,1,1,1,1,1,1]:
-				GlobalVariables.Ending = 2
-			else:
 				GlobalVariables.Ending = 1
+			else:
+				GlobalVariables.Ending = 2
 		2:
 			GlobalVariables.Ending = 3
 

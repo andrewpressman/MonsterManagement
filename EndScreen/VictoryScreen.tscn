@@ -62,19 +62,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ending1" type="Node" parent="."]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 378.0
-offset_top = 146.0
-offset_right = 807.0
-offset_bottom = 230.0
+[node name="Message" type="Label" parent="."]
+offset_left = 374.0
+offset_top = 150.0
+offset_right = 803.0
+offset_bottom = 234.0
 text = "a winner is you"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EndingNo" type="Label" parent="."]
-offset_left = 380.0
-offset_top = 212.0
-offset_right = 809.0
-offset_bottom = 296.0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 373.0
+offset_bottom = 88.0
+text = "Ending Completed:"
 horizontal_alignment = 1
 vertical_alignment = 1
