@@ -76,6 +76,7 @@ func _ready():
 	Startup()
 	if GlobalVariables.CurrentLevel > 5:
 		$HighScore.visible = true
+		NextLevel.hide()
 	else:
 		$HighScore.visible = false
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=16 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_anf0j"]
 [ext_resource type="AudioStream" uid="uid://dmjf0cqqpohd3" path="res://Assets/Audio Files/Other/NewMessage.wav" id="8_f6jyp"]
 [ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
+[ext_resource type="Texture2D" uid="uid://cyynx45fuv5aq" path="res://Assets/Images/TEST.jpg" id="13_je8o5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltro4"]
 bg_color = Color(0.6, 0.6, 0.6, 0.498039)
@@ -360,11 +361,16 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Level Tracker"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 16.0
-offset_right = 155.0
-offset_bottom = 60.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.000142851
+anchor_top = -0.00666667
+anchor_right = 0.130524
+anchor_bottom = 0.0516923
+offset_left = 6.03
+offset_top = 16.52
+offset_right = 138.59
+offset_bottom = 55.968
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "Current Shift:"
@@ -530,6 +536,11 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("9_dogq0")
 theme_override_font_sizes/font_size = 30
 text = "High Score:"
+
+[node name="Test" type="Sprite2D" parent="."]
+position = Vector2(1048, 519)
+scale = Vector2(0.343262, 0.289063)
+texture = ExtResource("13_je8o5")
 
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Exit" to="." method="beep"]

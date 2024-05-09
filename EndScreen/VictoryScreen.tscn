@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ek0xparkuk1w"]
+[gd_scene load_steps=7 format=3 uid="uid://ek0xparkuk1w"]
 
 [ext_resource type="Script" path="res://EndScreen/EndScreen.gd" id="1_4lnae"]
 [ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="2_r1eh0"]
 [ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="3_6nmun"]
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="4_43lgt"]
+[ext_resource type="Texture2D" uid="uid://cyynx45fuv5aq" path="res://Assets/Images/TEST.jpg" id="5_y5pgm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jn44q"]
 bg_color = Color(0.6, 0.6, 0.6, 0.498039)
@@ -23,9 +24,9 @@ metadata/_edit_lock_ = true
 script = ExtResource("2_r1eh0")
 
 [node name="Subtitles" type="Panel" parent="Player"]
-offset_left = 233.0
+offset_left = 219.0
 offset_top = 560.0
-offset_right = 966.0
+offset_right = 952.0
 offset_bottom = 637.0
 theme = ExtResource("3_6nmun")
 metadata/_edit_use_anchors_ = true
@@ -63,19 +64,24 @@ metadata/_edit_use_anchors_ = true
 [node name="Ending1" type="Node" parent="."]
 
 [node name="Message" type="Label" parent="."]
-offset_left = 374.0
-offset_top = 150.0
-offset_right = 803.0
-offset_bottom = 234.0
+offset_left = 353.0
+offset_top = 153.0
+offset_right = 782.0
+offset_bottom = 237.0
 text = "a winner is you"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EndingNo" type="Label" parent="."]
-offset_left = 6.0
-offset_top = 4.0
-offset_right = 373.0
-offset_bottom = 88.0
+offset_left = 400.0
+offset_top = 470.0
+offset_right = 767.0
+offset_bottom = 554.0
 text = "Ending Completed:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Test" type="Sprite2D" parent="."]
+position = Vector2(93, 80)
+scale = Vector2(0.655273, 0.566406)
+texture = ExtResource("5_y5pgm")
