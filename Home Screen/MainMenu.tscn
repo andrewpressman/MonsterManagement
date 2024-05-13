@@ -19,6 +19,7 @@ bus = &"Ambience"
 [node name="MainMenu" type="Panel" parent="."]
 offset_right = 1152.0
 offset_bottom = 645.0
+metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="MainMenu"]
 layout_mode = 0
@@ -184,8 +185,8 @@ text = "Endless Mode"
 visible = false
 offset_left = 484.0
 offset_top = 131.0
-offset_right = 1110.0
-offset_bottom = 634.0
+offset_right = 932.0
+offset_bottom = 629.0
 script = ExtResource("3_71vsw")
 
 [node name="VideoButton" type="Button" parent="OptionsMenu"]
@@ -199,12 +200,11 @@ theme_override_font_sizes/font_size = 20
 text = "Video Settings"
 
 [node name="Video" type="Node2D" parent="OptionsMenu"]
-visible = false
 
 [node name="DisplayMode" type="OptionButton" parent="OptionsMenu/Video"]
 offset_left = 183.0
 offset_top = 101.0
-offset_right = 487.0
+offset_right = 430.0
 offset_bottom = 161.0
 theme_override_font_sizes/font_size = 20
 item_count = 2
@@ -235,7 +235,6 @@ theme_override_font_sizes/font_size = 20
 text = "Sound Settings"
 
 [node name="Sound" type="Node2D" parent="OptionsMenu"]
-visible = false
 
 [node name="LabelGlobal" type="Label" parent="OptionsMenu/Sound"]
 offset_left = 14.0
@@ -370,6 +369,16 @@ offset_bottom = 628.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "close"
+
+[node name="Endings" type="Label" parent="."]
+offset_left = 940.0
+offset_top = 542.0
+offset_right = 1144.0
+offset_bottom = 636.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MainMenu/Continue" to="." method="ContinueGame"]
 [connection signal="pressed" from="MainMenu/LevelSelect" to="." method="ShowLevelSelect"]

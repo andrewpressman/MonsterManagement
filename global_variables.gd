@@ -28,6 +28,9 @@ var Level3Status : int
 #Track which logs have been unlocked
 var UnlockedLogs = [0,0,0,0,0,0,0,0,0]
 
+#tracks unlocked endings
+var UnLockedEndings = [1,1,1]
+
 #track ending
 var Ending : int
 

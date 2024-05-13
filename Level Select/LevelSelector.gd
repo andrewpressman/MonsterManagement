@@ -111,9 +111,9 @@ func Startup():
 
 func SetLevel():
 	if GlobalVariables.CurrentLevel > 5:
-		CurrentLevel.text = "Current Shift: " + "##"
+		CurrentLevel.text = "Shift: " + "##"
 	else:
-		CurrentLevel.text = "Current Shift: " + str(GlobalVariables.CurrentLevel) 
+		CurrentLevel.text = "Shift: " + str(GlobalVariables.CurrentLevel) 
 	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel >= 5:
 		#Level 1 and 3 are hidden and thus marked as fully complete
 		GlobalVariables.Level2Status = 2
@@ -324,7 +324,8 @@ func Save():
 		"AmbienceVolume" : GlobalVariables.Ambience,
 		"DisplayMode" : GlobalVariables.DisplayMode,
 		"UnlockedLogs" : GlobalVariables.UnlockedLogs,
-		"HighScore" : GlobalVariables.HighScore
+		"HighScore" : GlobalVariables.HighScore,
+		"UnlockedEndings" : GlobalVariables.UnlockedEndings
 	}
 	var json_str = JSON.stringify(save_data)
 	save_game.store_line(json_str)

@@ -10,6 +10,7 @@ var LevelSelect : Button
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	LoadGame()
+	showEndings()
 	Continue = $MainMenu/Continue
 	NewGame = $"MainMenu/New Game"
 	Options = $MainMenu/Options
@@ -30,6 +31,10 @@ func _ready():
 		$MainMenu/LevelSelect.visible = true
 		Continue.text = "Continue Endless"
 
+func showEndings():
+	for ending in GlobalVariables.UnLockedEndings:
+		if ending == 1:
+			$Endings.text = $Endings.text + "★"
 
 func StartNewGame():
 	#clear Savegame
@@ -113,6 +118,8 @@ func LoadGame():
 		GlobalVariables.UnlockedLogs = save_data["UnlockedLogs"]
 	if "HighScore" in save_data:
 		GlobalVariables.HighScore = save_data["HighScore"]
+	if "UnlockedEndings" in save_data:
+		GlobalVariables.UnLockedEndings = save_data["UnlockedEndings"]
 
 func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	if not FileAccess.file_exists("user://savegame.save"):
