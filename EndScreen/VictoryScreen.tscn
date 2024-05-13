@@ -64,13 +64,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Ending1" type="Node" parent="."]
 
 [node name="Message" type="Label" parent="."]
-offset_left = 353.0
+offset_left = 93.0
 offset_top = 153.0
-offset_right = 782.0
-offset_bottom = 237.0
+offset_right = 1045.0
+offset_bottom = 490.0
 text = "a winner is you"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="EndingNo" type="Label" parent="."]
 offset_left = 400.0
@@ -85,3 +86,5 @@ vertical_alignment = 1
 position = Vector2(93, 80)
 scale = Vector2(0.655273, 0.566406)
 texture = ExtResource("5_y5pgm")
+
+[connection signal="pressed" from="Button" to="." method="backToMenu"]

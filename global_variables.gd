@@ -29,7 +29,7 @@ var Level3Status : int
 var UnlockedLogs = [0,0,0,0,0,0,0,0,0]
 
 #tracks unlocked endings
-var UnLockedEndings = [1,1,1]
+var UnlockedEndings = [0,0,0]
 
 #track ending
 var Ending : int

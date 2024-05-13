@@ -32,7 +32,7 @@ func _ready():
 		Continue.text = "Continue Endless"
 
 func showEndings():
-	for ending in GlobalVariables.UnLockedEndings:
+	for ending in GlobalVariables.UnlockedEndings:
 		if ending == 1:
 			$Endings.text = $Endings.text + "★"
 
@@ -119,7 +119,7 @@ func LoadGame():
 	if "HighScore" in save_data:
 		GlobalVariables.HighScore = save_data["HighScore"]
 	if "UnlockedEndings" in save_data:
-		GlobalVariables.UnLockedEndings = save_data["UnlockedEndings"]
+		GlobalVariables.UnlockedEndings = save_data["UnlockedEndings"]
 
 func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	if not FileAccess.file_exists("user://savegame.save"):

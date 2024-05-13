@@ -240,11 +240,11 @@ func Reset():
 	GlobalVariables.CurrentLevel += 1
 	SetLevel()
 	NextLevel.hide()
-	if GlobalVariables.GameStarted != 2:
+	if GlobalVariables.GameStarted == 2:
 		get_tree().change_scene_to_file("res://EndScreen/VictoryScreen.tscn")
 	else:
 		Save()
-		get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
+		get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 	
 #show selected bigInfo
 func showBig(button : int):

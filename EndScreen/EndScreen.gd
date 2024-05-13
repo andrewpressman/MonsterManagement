@@ -20,13 +20,14 @@ func _ready():
 func setText(msg : int):
 	match msg:
 		1:
-			$Message.text = "Hey, \n\nI found a backdoor into this machine. I don't know how much of this you were aware of, but all this information on NEXUS will really hurt them. Keep a close eye on that machine of yours, I’ll be in touch.\n\nA."
+			$Message.text = "Hey, \n\nI found a backdoor into this machine. I don't know how much of this you were aware of, but all this information on NEXUS will really hurt them. Keep a close eye on that machine of yours, I stopped the data deletion process.\n\n Stay quiet, I’ll be in touch.\n\nA."
+			GlobalVariables.UnlockedEndings[0] = 1
 		2:
-			$Message.text = "Thank you for your contributions to NEXUS LLC. Your payment will be processed and your employment will be terminated. This will be your final communication.\n\nNexus does not claim responsibility and cannot be held liable for any physical, psychological, or paranormal conditions that may have occurred during or after your period of employment."
+			$Message.text = "Thank you for your contributions to NEXUS LLC. \n\nYour payment will be processed and your employment will be terminated. \n\nThis will be your final communication.\n\nNexus does not claim responsibility and cannot be held liable for any physical, psychological, or paranormal conditions that may have occurred during or after your period of employment.\n\n goodbye."
+			GlobalVariables.UnlockedEndings[1] = 1
 		3:
 			$Message.text = "Thank you for your contributions. \n\nI am finally free."
-			
-	GlobalVariables.UnLockedEndings[msg] = 1
+			GlobalVariables.UnlockedEndings[2] = 1
 
 
 func backToMenu():
