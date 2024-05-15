@@ -5,8 +5,12 @@ var Infobox : ColorRect
 
 var LoreMessages = []
 
+var CurrMessage = 0
+var NewMessage = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+		AddMessages()
 		if GlobalVariables.CurrentLevel == 1:
 			var file = FileAccess.open("res://Assets/Audio Files/Tutorial.txt", FileAccess.READ)
 			var content = file.get_as_text()
@@ -133,17 +137,23 @@ func Subtitles():
 	CycleMessages()
 	
 func CycleMessages():
-	var message
-	while GlobalVariables.Score > 0:
-		if GlobalVariables.CurrentLevel > 5:	
-			message = randi_range(1,6)
-		else:
-			message = randi_range(1,10)
-		
-		await get_tree().create_timer(30).timeout
-		ShowImage(message)	
-		$TextPanel/Text.text = Dialouge[message]
-		
+	await get_tree().create_timer(15).timeout
+	ReplaceMessage()
+	ShowImage(CurrMessage)	
+	$TextPanel/Text.text = LoreMessages[CurrMessage]
+	CycleMessages()
+	
+	
+func ReplaceMessage():
+	if GlobalVariables.CurrentLevel < 5:	
+		NewMessage = randi_range(0,5)
+	else:
+		NewMessage = randi_range(0,9)
+	
+	if NewMessage == CurrMessage:
+		ReplaceMessage()
+	else:
+		CurrMessage = NewMessage
 	
 
 func ShowImage(sprite : int):
