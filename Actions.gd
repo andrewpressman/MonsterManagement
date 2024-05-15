@@ -155,7 +155,7 @@ func _on_Calm_pressed():
 func _on_Char1Trigger_pressed():
 	GameController.Beep()
 	update_button_selection(Char1Trigger)
-
+ 
 func _on_Char2Trigger_pressed():
 	GameController.Beep()
 	update_button_selection(Char2Trigger)

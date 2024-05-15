@@ -18,7 +18,7 @@
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="10_2mwke"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
 [ext_resource type="AudioStream" uid="uid://do0incd5ha8i6" path="res://Assets/Audio Files/SupervisorLogs/Tutorial.wav" id="12_ps3hh"]
-[ext_resource type="Texture2D" uid="uid://cyynx45fuv5aq" path="res://Assets/Images/TEST.jpg" id="19_ojc28"]
+[ext_resource type="Texture2D" uid="uid://cxkqpnw6k55in" path="res://Assets/Images/LogoIdeaHQ.png" id="19_n0g1c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3cfm"]
 bg_color = Color(0.6, 0.6, 0.6, 0.498039)
@@ -776,10 +776,10 @@ theme = ExtResource("3_nnqoy")
 theme_override_font_sizes/font_size = 31
 text = "RETURN"
 
-[node name="Test" type="Sprite2D" parent="."]
-position = Vector2(87, 55)
-scale = Vector2(0.496094, 0.327148)
-texture = ExtResource("19_ojc28")
+[node name="LogoIdeaHq" type="Sprite2D" parent="."]
+position = Vector2(94, 53)
+scale = Vector2(0.0880208, 0.087963)
+texture = ExtResource("19_n0g1c")
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
 [connection signal="pressed" from="Actions/Environment/PingAll" to="Actions" method="_on_AllCharTrigger_pressed"]

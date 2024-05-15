@@ -12,7 +12,7 @@
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_anf0j"]
 [ext_resource type="AudioStream" uid="uid://dmjf0cqqpohd3" path="res://Assets/Audio Files/Other/NewMessage.wav" id="8_f6jyp"]
 [ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
-[ext_resource type="Texture2D" uid="uid://cyynx45fuv5aq" path="res://Assets/Images/TEST.jpg" id="13_je8o5"]
+[ext_resource type="Texture2D" uid="uid://cxkqpnw6k55in" path="res://Assets/Images/LogoIdeaHQ.png" id="13_e2biy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltro4"]
 bg_color = Color(0.6, 0.6, 0.6, 0.498039)
@@ -547,10 +547,10 @@ theme_override_fonts/font = ExtResource("9_dogq0")
 theme_override_font_sizes/font_size = 30
 text = "High Score:"
 
-[node name="Test" type="Sprite2D" parent="."]
-position = Vector2(60, 55)
-scale = Vector2(0.365112, 0.304688)
-texture = ExtResource("13_je8o5")
+[node name="LogoIdeaHq" type="Sprite2D" parent="."]
+position = Vector2(68.5, 54.375)
+scale = Vector2(0.0598958, 0.0655093)
+texture = ExtResource("13_e2biy")
 
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Exit" to="." method="beep"]

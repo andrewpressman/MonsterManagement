@@ -153,7 +153,7 @@ offset_right = 934.0
 offset_bottom = 563.0
 theme_override_fonts/font = ExtResource("4_lepwq")
 theme_override_font_sizes/font_size = 20
-text = "Nexus Corp, gateway to the future. Here at Nexus, we strive for excellence in all that we do. That is why our patented Nexus Link security system has been rated best in class for 5 years running for anomaly security. When you need protection, go to the experts, go to Nexus Security.
+text = "Nexus Corporation, gateway to the future. Here at Nexus, we strive for excellence in all that we do. That is why our patented Nexus Link security system has been rated best in class for anomaly security for 5 years running. When you need protection, go to the experts, go to Nexus Security.
 "
 autowrap_mode = 3
 
@@ -718,7 +718,7 @@ offset_right = 934.0
 offset_bottom = 163.0
 theme_override_fonts/font = ExtResource("4_lepwq")
 theme_override_font_sizes/font_size = 20
-text = "They found out. The data logs. It- it can’t find them. The final test, don’t- escape- subjects - let it out- Awakening- all along- HELP!"
+text = "They found out, The data logs, it knows ----- can’t find ----- assemble them. The final test ----- don’t ----- escape. The subjects ----- real. Nexus ----- let it out. Thing was ----- all along ----- planned ----- The Awakening ----- coming for me -----  you have to save yourself."
 autowrap_mode = 3
 
 [node name="Status" type="Panel" parent="AudioTrack9"]

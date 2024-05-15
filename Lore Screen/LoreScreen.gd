@@ -115,7 +115,6 @@ func on_Play_pressed():
 	Subtitle(GlobalVariables.CurrentLog)
 
 func Subtitle(index : int):
-	print(str(index))
 	var counter = 0
 	for panel in panels:
 		if counter == index:

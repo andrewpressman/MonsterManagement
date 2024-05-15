@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blp64a5j0chr6"
+path="res://.godot/imported/Encrypted6.wav-03561bfa0ca82935d39cd6a2fba75b57.sample"
+
+[deps]
+
+source_file="res://Assets/Audio Files/BonusLogs/Encrypted6.wav"
+dest_files=["res://.godot/imported/Encrypted6.wav-03561bfa0ca82935d39cd6a2fba75b57.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
