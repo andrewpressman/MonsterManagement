@@ -42,10 +42,10 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 985.0
-offset_top = 17.0
-offset_right = 1122.0
-offset_bottom = 76.0
+offset_left = 1009.0
+offset_top = 8.0
+offset_right = 1146.0
+offset_bottom = 67.0
 theme = ExtResource("2_kdt5u")
 theme_override_font_sizes/font_size = 20
 text = "Main Menu"
@@ -220,7 +220,6 @@ script = ExtResource("1_1i0fd")
 Stage = 2
 
 [node name="select" type="Button" parent="Cases/Level2"]
-visible = false
 offset_left = 26.0
 offset_top = 277.0
 offset_right = 133.0
@@ -232,7 +231,6 @@ text = "o"
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level2"]
-visible = false
 offset_left = 145.0
 offset_top = 278.0
 offset_right = 768.0
@@ -242,7 +240,6 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level2/MiniInfo"]
-visible = false
 layout_mode = 0
 offset_right = 626.0
 offset_bottom = 98.0
@@ -263,7 +260,6 @@ theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level2/BigInfo"]
-visible = false
 layout_mode = 0
 offset_left = 4.0
 offset_top = 1.0
@@ -278,7 +274,6 @@ Anomaly Classification:
 Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level2"]
-visible = false
 offset_left = 775.0
 offset_top = 278.0
 offset_right = 932.0
@@ -299,7 +294,6 @@ script = ExtResource("1_1i0fd")
 Stage = 3
 
 [node name="select" type="Button" parent="Cases/Level3"]
-visible = false
 offset_left = 26.0
 offset_top = 427.0
 offset_right = 133.0
@@ -311,7 +305,6 @@ text = "o"
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level3"]
-visible = false
 offset_left = 145.0
 offset_top = 428.0
 offset_right = 768.0
@@ -321,7 +314,6 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level3/MiniInfo"]
-visible = false
 layout_mode = 0
 offset_right = 626.0
 offset_bottom = 98.0
@@ -356,7 +348,6 @@ Anomaly Classification:
 Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level3"]
-visible = false
 offset_left = 774.0
 offset_top = 429.0
 offset_right = 931.0
@@ -366,7 +357,6 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Cases/Level3/Status"]
-visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0

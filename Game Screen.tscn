@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://crrb8pd5fdrp4"]
+[gd_scene load_steps=24 format=3 uid="uid://crrb8pd5fdrp4"]
 
 [ext_resource type="Script" path="res://GameController.gd" id="1_61weh"]
 [ext_resource type="AudioStream" uid="uid://b2x4elq7qvpop" path="res://Assets/Audio Files/Other/ButtonBeep.wav" id="2_d8q78"]
@@ -10,14 +10,15 @@
 [ext_resource type="Script" path="res://CharacterPing.gd" id="5_1bmgd"]
 [ext_resource type="StyleBox" uid="uid://b8gsu8ytet5kr" path="res://Assets/Style Boxes/normal UI button.tres" id="6_ubtia"]
 [ext_resource type="Script" path="res://TutorialPlayer.gd" id="6_uklxq"]
-[ext_resource type="Texture2D" uid="uid://bkucuu3ry52ye" path="res://Assets/Images/TestSubject.png" id="8_a8xxo"]
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_sma8g"]
-[ext_resource type="Texture2D" uid="uid://djqscuy7ruiw7" path="res://Assets/Images/monster-cartoon-icon.png" id="9_0keos"]
 [ext_resource type="Script" path="res://EffectsPlayer.gd" id="9_3vj8r"]
 [ext_resource type="Script" path="res://ObjectiveTracker.gd" id="9_4ck7d"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="10_2mwke"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
 [ext_resource type="AudioStream" uid="uid://do0incd5ha8i6" path="res://Assets/Audio Files/SupervisorLogs/Tutorial.wav" id="12_ps3hh"]
+[ext_resource type="Texture2D" uid="uid://ckq3wx57jax04" path="res://Assets/Images/SubjectRecolor.png" id="13_nb7g0"]
+[ext_resource type="StyleBox" uid="uid://l5mrqawku82t" path="res://Assets/Style Boxes/ProgressBar.tres" id="14_fug1h"]
+[ext_resource type="Texture2D" uid="uid://de3pctn5psriq" path="res://Assets/Images/Monster_Recolor.png" id="14_kdo3s"]
 [ext_resource type="Texture2D" uid="uid://crxddhjkh0amc" path="res://Assets/Images/Nexus-nwbg.webp" id="19_cguha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3cfm"]
@@ -368,6 +369,7 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character1"]
+visible = false
 layout_mode = 0
 offset_left = 19.0
 offset_top = 10.0
@@ -378,22 +380,26 @@ color = Color(1, 1, 0, 0.752941)
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character1"]
 position = Vector2(55, 49)
 scale = Vector2(0.393125, 0.3775)
-texture = ExtResource("8_a8xxo")
+texture = ExtResource("13_nb7g0")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Character1"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.00433839
+anchor_bottom = 0.0102041
 offset_left = 102.0
 offset_top = 14.0
-offset_right = 440.0
-offset_bottom = 83.0
+offset_right = 443.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character1/Status"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 337.0
-offset_bottom = 68.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 339.0
+offset_bottom = 70.0
 
 [node name="Character2" type="Panel" parent="HealthMonitor"]
 layout_mode = 1
@@ -409,6 +415,7 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character2"]
+visible = false
 layout_mode = 0
 offset_left = 19.0
 offset_top = 10.0
@@ -419,22 +426,26 @@ color = Color(1, 1, 0, 0.752941)
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character2"]
 position = Vector2(52, 51)
 scale = Vector2(0.410625, 0.4075)
-texture = ExtResource("8_a8xxo")
+texture = ExtResource("13_nb7g0")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Character2"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.0021692
+anchor_bottom = 0.0102041
 offset_left = 102.0
 offset_top = 14.0
-offset_right = 440.0
-offset_bottom = 83.0
+offset_right = 443.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character2/Status"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 337.0
-offset_bottom = 68.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 339.0
+offset_bottom = 70.0
 
 [node name="Character3" type="Panel" parent="HealthMonitor"]
 layout_mode = 1
@@ -450,6 +461,7 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character3"]
+visible = false
 layout_mode = 0
 offset_left = 16.0
 offset_top = 13.0
@@ -460,22 +472,26 @@ color = Color(1, 1, 0, 0.752941)
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Character3"]
 position = Vector2(50, 50)
 scale = Vector2(0.415625, 0.39)
-texture = ExtResource("8_a8xxo")
+texture = ExtResource("13_nb7g0")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Character3"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.00433839
+anchor_bottom = 0.0102041
 offset_left = 102.0
 offset_top = 14.0
-offset_right = 440.0
-offset_bottom = 83.0
+offset_right = 443.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Character3/Status"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 337.0
-offset_bottom = 68.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 339.0
+offset_bottom = 70.0
 
 [node name="Monster" type="Panel" parent="HealthMonitor"]
 layout_mode = 1
@@ -493,6 +509,7 @@ script = ExtResource("3_o7a42")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Monster"]
+visible = false
 layout_mode = 0
 offset_left = 4.0
 offset_top = 30.0
@@ -503,22 +520,26 @@ color = Color(1, 1, 0, 0.752941)
 [node name="Sprite2D" type="Sprite2D" parent="HealthMonitor/Monster"]
 position = Vector2(50.0163, 87)
 scale = Vector2(0.193761, 0.214141)
-texture = ExtResource("9_0keos")
+texture = ExtResource("14_kdo3s")
 
 [node name="Status" type="Panel" parent="HealthMonitor/Monster"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.00867679
+anchor_bottom = 0.463277
 offset_left = 102.0
 offset_top = 14.0
-offset_right = 445.0
-offset_bottom = 163.0
+offset_right = 443.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="HealthMonitor/Monster/Status"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 342.0
-offset_bottom = 148.0
+offset_left = 5.0
+offset_top = 3.293
+offset_right = 341.0
+offset_bottom = 150.293
 
 [node name="Progress" type="Panel" parent="."]
 offset_left = 8.0
@@ -530,78 +551,83 @@ script = ExtResource("10_7574l")
 
 [node name="P1" type="Panel" parent="Progress"]
 layout_mode = 0
-offset_left = 4.0
+offset_left = 3.0
 offset_top = 4.0
-offset_right = 52.0
-offset_bottom = 84.0
+offset_right = 53.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 
 [node name="ColorRect" type="ColorRect" parent="Progress/P1"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 47.0
-offset_bottom = 79.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 80.0
 
 [node name="P2" type="Panel" parent="Progress"]
 layout_mode = 0
-offset_left = 56.0
+offset_left = 55.0
 offset_top = 4.0
-offset_right = 104.0
-offset_bottom = 84.0
+offset_right = 105.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 
 [node name="ColorRect" type="ColorRect" parent="Progress/P2"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 47.0
-offset_bottom = 79.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 80.0
 
 [node name="P3" type="Panel" parent="Progress"]
 layout_mode = 0
-offset_left = 109.0
+offset_left = 108.0
 offset_top = 4.0
-offset_right = 157.0
-offset_bottom = 84.0
+offset_right = 158.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 
 [node name="ColorRect" type="ColorRect" parent="Progress/P3"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 47.0
-offset_bottom = 79.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 80.0
 
 [node name="P4" type="Panel" parent="Progress"]
 layout_mode = 0
-offset_left = 162.0
+offset_left = 161.0
 offset_top = 4.0
-offset_right = 210.0
-offset_bottom = 84.0
+offset_right = 211.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 
 [node name="ColorRect" type="ColorRect" parent="Progress/P4"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 47.0
-offset_bottom = 79.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 80.0
 
 [node name="P5" type="Panel" parent="Progress"]
 layout_mode = 0
-offset_left = 214.0
+offset_left = 213.0
 offset_top = 4.0
-offset_right = 262.0
-offset_bottom = 84.0
+offset_right = 263.0
+offset_bottom = 86.0
+theme_override_styles/panel = ExtResource("14_fug1h")
 
 [node name="ColorRect" type="ColorRect" parent="Progress/P5"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 47.0
-offset_bottom = 79.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 48.0
+offset_bottom = 80.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = 8.0
+offset_left = 9.0
 offset_top = 516.0
-offset_right = 274.0
+offset_right = 275.0
 offset_bottom = 551.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("10_2mwke")
@@ -615,6 +641,14 @@ offset_right = 275.0
 offset_bottom = 502.0
 theme = ExtResource("3_nnqoy")
 script = ExtResource("9_4ck7d")
+
+[node name="background" type="ColorRect" parent="GameState"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 173.0
+offset_right = 250.0
+offset_bottom = 268.0
+color = Color(1, 1, 0, 1)
 
 [node name="Score" type="Label" parent="GameState"]
 visible = false
@@ -738,6 +772,7 @@ theme_override_font_sizes/font_size = 15
 text = "Abandon Experiment"
 
 [node name="GameOver" type="Panel" parent="."]
+visible = false
 offset_left = -16.0
 offset_top = -11.0
 offset_right = 1176.0

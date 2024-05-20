@@ -33,9 +33,9 @@ metadata/_edit_lock_ = true
 [node name="Title" type="Panel" parent="MainMenu"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 5.0
+offset_top = 12.0
 offset_right = 1110.0
-offset_bottom = 125.0
+offset_bottom = 142.0
 
 [node name="Label" type="Label" parent="MainMenu/Title"]
 layout_mode = 0
@@ -363,6 +363,7 @@ offset_bottom = 622.0
 text = "Purge"
 
 [node name="close" type="Button" parent="."]
+visible = false
 offset_left = 887.0
 offset_top = 140.0
 offset_right = 926.0

@@ -264,7 +264,7 @@ func showBig(button : int):
 			Level2.hideBig()
 
 func ShowSmall():
-	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel >= 5:
 		Level1.showSmall()
 	else:
 		Level1.showSmall()
@@ -272,7 +272,7 @@ func ShowSmall():
 		Level3.showSmall()
 
 func hideSmall():
-	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel >= 5:
 		Level1.hideSmall()
 	else:
 		Level1.hideSmall()
@@ -280,7 +280,7 @@ func hideSmall():
 		Level3.hideSmall()
 
 func hideBig():
-	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel == 5:
+	if GlobalVariables.CurrentLevel == 1 || GlobalVariables.CurrentLevel >= 5:
 		Level1.hideBig()
 	else:
 		Level1.hideBig()
