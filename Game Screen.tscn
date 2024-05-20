@@ -18,10 +18,10 @@
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="10_2mwke"]
 [ext_resource type="Script" path="res://ProgressBar.gd" id="10_7574l"]
 [ext_resource type="AudioStream" uid="uid://do0incd5ha8i6" path="res://Assets/Audio Files/SupervisorLogs/Tutorial.wav" id="12_ps3hh"]
-[ext_resource type="Texture2D" uid="uid://cxkqpnw6k55in" path="res://Assets/Images/LogoIdeaHQ.png" id="19_n0g1c"]
+[ext_resource type="Texture2D" uid="uid://crxddhjkh0amc" path="res://Assets/Images/Nexus-nwbg.webp" id="19_cguha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3cfm"]
-bg_color = Color(0.6, 0.6, 0.6, 0.498039)
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k77d0"]
 bg_color = Color(0.00392157, 0.00392157, 0.00392157, 0.792157)
@@ -738,7 +738,6 @@ theme_override_font_sizes/font_size = 15
 text = "Abandon Experiment"
 
 [node name="GameOver" type="Panel" parent="."]
-visible = false
 offset_left = -16.0
 offset_top = -11.0
 offset_right = 1176.0
@@ -760,7 +759,6 @@ offset_left = 350.0
 offset_top = 251.0
 offset_right = 746.0
 offset_bottom = 342.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "TEST FAILED"
 horizontal_alignment = 1
@@ -776,10 +774,10 @@ theme = ExtResource("3_nnqoy")
 theme_override_font_sizes/font_size = 31
 text = "RETURN"
 
-[node name="LogoIdeaHq" type="Sprite2D" parent="."]
-position = Vector2(94, 53)
-scale = Vector2(0.0880208, 0.087963)
-texture = ExtResource("19_n0g1c")
+[node name="Nexus-nwbg" type="Sprite2D" parent="."]
+position = Vector2(89, 52)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_cguha")
 
 [connection signal="timeout" from="Clock" to="Clock" method="_on_timer_timeout"]
 [connection signal="pressed" from="Actions/Environment/PingAll" to="Actions" method="_on_AllCharTrigger_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxkqpnw6k55in"
-path="res://.godot/imported/LogoIdeaHQ.png-0e9ad5be84253e368ad499d1ac7ea3c1.ctex"
+uid="uid://crxddhjkh0amc"
+path="res://.godot/imported/Nexus-nwbg.webp-4b30a1b1a311a2f3c94ea37844d085da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/LogoIdeaHQ.png"
-dest_files=["res://.godot/imported/LogoIdeaHQ.png-0e9ad5be84253e368ad499d1ac7ea3c1.ctex"]
+source_file="res://Assets/Images/Nexus-nwbg.webp"
+dest_files=["res://.godot/imported/Nexus-nwbg.webp-4b30a1b1a311a2f3c94ea37844d085da.ctex"]
 
 [params]
 

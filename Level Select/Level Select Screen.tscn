@@ -12,10 +12,10 @@
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_anf0j"]
 [ext_resource type="AudioStream" uid="uid://dmjf0cqqpohd3" path="res://Assets/Audio Files/Other/NewMessage.wav" id="8_f6jyp"]
 [ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
-[ext_resource type="Texture2D" uid="uid://cxkqpnw6k55in" path="res://Assets/Images/LogoIdeaHQ.png" id="13_e2biy"]
+[ext_resource type="Texture2D" uid="uid://crxddhjkh0amc" path="res://Assets/Images/Nexus-nwbg.webp" id="13_lf3je"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltro4"]
-bg_color = Color(0.6, 0.6, 0.6, 0.498039)
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfpde"]
 bg_color = Color(0, 0, 0, 1)
@@ -187,6 +187,8 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level1/BigInfo"]
 layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
 offset_right = 623.0
 offset_bottom = 407.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
@@ -218,6 +220,7 @@ script = ExtResource("1_1i0fd")
 Stage = 2
 
 [node name="select" type="Button" parent="Cases/Level2"]
+visible = false
 offset_left = 26.0
 offset_top = 277.0
 offset_right = 133.0
@@ -229,6 +232,7 @@ text = "o"
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level2"]
+visible = false
 offset_left = 145.0
 offset_top = 278.0
 offset_right = 768.0
@@ -238,6 +242,7 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level2/MiniInfo"]
+visible = false
 layout_mode = 0
 offset_right = 626.0
 offset_bottom = 98.0
@@ -258,9 +263,12 @@ theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level2/BigInfo"]
+visible = false
 layout_mode = 0
-offset_right = 623.0
-offset_bottom = 407.0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 622.0
+offset_bottom = 405.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
 text = "Experiment no: 
@@ -270,6 +278,7 @@ Anomaly Classification:
 Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level2"]
+visible = false
 offset_left = 775.0
 offset_top = 278.0
 offset_right = 932.0
@@ -290,6 +299,7 @@ script = ExtResource("1_1i0fd")
 Stage = 3
 
 [node name="select" type="Button" parent="Cases/Level3"]
+visible = false
 offset_left = 26.0
 offset_top = 427.0
 offset_right = 133.0
@@ -301,6 +311,7 @@ text = "o"
 metadata/_edit_use_anchors_ = true
 
 [node name="MiniInfo" type="Panel" parent="Cases/Level3"]
+visible = false
 offset_left = 145.0
 offset_top = 428.0
 offset_right = 768.0
@@ -310,6 +321,7 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Cases/Level3/MiniInfo"]
+visible = false
 layout_mode = 0
 offset_right = 626.0
 offset_bottom = 98.0
@@ -331,7 +343,9 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 
 [node name="Label" type="Label" parent="Cases/Level3/BigInfo"]
 layout_mode = 0
-offset_right = 623.0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 621.0
 offset_bottom = 407.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 19
@@ -342,6 +356,7 @@ Anomaly Classification:
 Threat Level:"
 
 [node name="Status" type="Panel" parent="Cases/Level3"]
+visible = false
 offset_left = 774.0
 offset_top = 429.0
 offset_right = 931.0
@@ -351,6 +366,7 @@ theme_override_styles/panel = ExtResource("3_cwr43")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Cases/Level3/Status"]
+visible = false
 layout_mode = 0
 offset_left = 1.0
 offset_top = 1.0
@@ -369,10 +385,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Level Tracker"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.276808
-anchor_top = 0.0178313
-anchor_right = 0.407475
-anchor_bottom = 0.0761902
+anchor_left = 0.26527
+anchor_top = 0.0057831
+anchor_right = 0.395937
+anchor_bottom = 0.064142
 offset_left = 6.03
 offset_top = 16.52
 offset_right = 138.59
@@ -383,6 +399,11 @@ text = "Shift:"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Nexus-nwbg" type="Sprite2D" parent="Level Tracker"]
+position = Vector2(59, 46)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("13_lf3je")
 
 [node name="Begin" type="Button" parent="."]
 offset_left = 912.0
@@ -397,19 +418,24 @@ metadata/_edit_use_anchors_ = true
 [node name="MessagePanel" type="Panel" parent="."]
 offset_left = 957.0
 offset_top = 331.0
-offset_right = 1133.0
+offset_right = 1145.0
 offset_bottom = 547.0
 theme = ExtResource("2_kdt5u")
 theme_override_styles/panel = ExtResource("3_cwr43")
 script = ExtResource("4_32hnr")
-metadata/_edit_use_anchors_ = true
 
 [node name="NewMessageAlert" type="AudioStreamPlayer2D" parent="MessagePanel"]
 stream = ExtResource("8_f6jyp")
 bus = &"Ambience"
 
 [node name="Alert" type="ColorRect" parent="MessagePanel"]
-layout_mode = 0
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0106383
+anchor_top = 0.0185185
+anchor_right = 0.0585106
+anchor_bottom = 0.0185185
 offset_left = -6.0
 offset_top = -5.0
 offset_right = 180.0
@@ -418,7 +444,9 @@ color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="MessagePanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.0691489
 offset_left = 3.0
 offset_top = 5.0
 offset_right = 173.0
@@ -427,7 +455,10 @@ color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="MessagePanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0265957
+anchor_right = 0.0265957
 offset_left = 12.0
 offset_top = 69.0
 offset_right = 163.0
@@ -438,7 +469,12 @@ text = "PLAY"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="MessagePanel"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0425532
+anchor_top = -0.00462963
+anchor_right = 0.0425532
+anchor_bottom = -0.00462963
 offset_left = 6.0
 offset_top = 3.0
 offset_right = 166.0
@@ -485,6 +521,7 @@ autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="NextLevel" type="Panel" parent="."]
+visible = false
 offset_left = 280.0
 offset_top = 19.0
 offset_right = 942.0
@@ -530,10 +567,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HighScore" type="Panel" parent="."]
 visible = false
-offset_left = 263.0
-offset_top = 11.0
-offset_right = 830.0
-offset_bottom = 85.0
+offset_left = 310.0
+offset_top = 17.0
+offset_right = 877.0
+offset_bottom = 91.0
 theme = ExtResource("2_kdt5u")
 
 [node name="Label" type="Label" parent="HighScore"]
@@ -547,24 +584,19 @@ theme_override_fonts/font = ExtResource("9_dogq0")
 theme_override_font_sizes/font_size = 30
 text = "High Score:"
 
-[node name="LogoIdeaHq" type="Sprite2D" parent="."]
-position = Vector2(68.5, 54.375)
-scale = Vector2(0.0598958, 0.0655093)
-texture = ExtResource("13_e2biy")
-
 [connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Exit" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]
-[connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
-[connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
 [connection signal="pressed" from="Cases/Level3/select" to="." method="beep"]
+[connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
 [connection signal="pressed" from="Begin" to="." method="beep"]
 [connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
 [connection signal="pressed" from="MessagePanel/Button" to="." method="beep"]
 [connection signal="pressed" from="MessagePanel/Button" to="MessagePanel" method="PlayMessage"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="Reset"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="beep"]
-[connection signal="pressed" from="DecryptedData" to="." method="GoToLore"]
 [connection signal="pressed" from="DecryptedData" to="." method="beep"]
+[connection signal="pressed" from="DecryptedData" to="." method="GoToLore"]

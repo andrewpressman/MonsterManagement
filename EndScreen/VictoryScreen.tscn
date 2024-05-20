@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Level Select/MessagePlayer.gd" id="2_r1eh0"]
 [ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="3_6nmun"]
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="4_43lgt"]
-[ext_resource type="Texture2D" uid="uid://cxkqpnw6k55in" path="res://Assets/Images/LogoIdeaHQ.png" id="5_23cci"]
+[ext_resource type="Texture2D" uid="uid://crxddhjkh0amc" path="res://Assets/Images/Nexus-nwbg.webp" id="5_okpvs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jn44q"]
-bg_color = Color(0.6, 0.6, 0.6, 0.498039)
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4lnae")
@@ -82,9 +82,9 @@ text = "Ending Completed:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="LogoIdeaHq" type="Sprite2D" parent="."]
-position = Vector2(114.25, 71.25)
-scale = Vector2(0.109115, 0.121759)
-texture = ExtResource("5_23cci")
+[node name="Nexus-nwbg" type="Sprite2D" parent="."]
+position = Vector2(163, 114)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_okpvs")
 
 [connection signal="pressed" from="Button" to="." method="backToMenu"]

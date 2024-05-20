@@ -305,10 +305,10 @@ func EndGame():
 	if PassFail:
 		MarkComplete()
 		EndState.text = "Test Passed"
-		#GameOver.modulate = Color(0, 1, 0)
+		$GameOver/Text.modulate = Color(0, 1, 0)
 	else:
 		EndState.text = "Test Failed"
-		#GameOver.modulate = Color(1, 0, 0)
+		$GameOver/Text.modulate = Color(1, 0, 0)
 		 
 	$Actions.HideButtons() #Fix for issue of buttons being drawn in wrong hierarchy
 	GameOver.show()
