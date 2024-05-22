@@ -31,9 +31,12 @@ func setText(msg : int):
 
 
 func backToMenu():
-		Save()
-		get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
+	Save()
+	get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
 
+func OnCreditsButtonPressed():
+	Save()
+	get_tree().change_scene_to_file("res://EndScreen/Credits.tscn")
 
 #After level 5 success, go here.
 #if objective is passed, play message 1 and display note 1

@@ -182,7 +182,6 @@ button_group = SubResource("ButtonGroup_mffdt")
 text = "Endless Mode"
 
 [node name="OptionsMenu" type="Panel" parent="."]
-visible = false
 offset_left = 484.0
 offset_top = 131.0
 offset_right = 932.0
@@ -192,12 +191,12 @@ script = ExtResource("3_71vsw")
 [node name="VideoButton" type="Button" parent="OptionsMenu"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 12.0
-offset_right = 185.0
+offset_top = 17.0
+offset_right = 126.0
 offset_bottom = 72.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Video Settings"
+text = "Video"
 
 [node name="Video" type="Node2D" parent="OptionsMenu"]
 visible = false
@@ -227,13 +226,13 @@ vertical_alignment = 1
 
 [node name="SoundButton" type="Button" parent="OptionsMenu"]
 layout_mode = 0
-offset_left = 196.0
-offset_top = 13.0
-offset_right = 372.0
+offset_left = 140.0
+offset_top = 18.0
+offset_right = 255.0
 offset_bottom = 73.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 20
-text = "Sound Settings"
+text = "Audio"
 
 [node name="Sound" type="Node2D" parent="OptionsMenu"]
 visible = false
@@ -346,6 +345,15 @@ offset_right = 413.0
 offset_bottom = 63.0
 theme_override_font_sizes/font_size = 20
 
+[node name="Button" type="Button" parent="OptionsMenu"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 18.0
+offset_right = 394.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "Credits"
+
 [node name="UnlockEndless" type="Button" parent="."]
 visible = false
 offset_left = 458.0
@@ -405,6 +413,7 @@ metadata/_edit_lock_ = true
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelActions/HSlider" to="OptionsMenu/Sound/LabelActions/HSlider" method="onValueChanged"]
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelAmbients/HSlider" to="OptionsMenu" method="OnAmbienceVolumeChanged"]
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelAmbients/HSlider" to="OptionsMenu/Sound/LabelAmbients/HSlider" method="onValueChanged"]
+[connection signal="pressed" from="OptionsMenu/Button" to="." method="OnCreditsButtonPressed"]
 [connection signal="pressed" from="UnlockEndless" to="." method="UnlockAll"]
 [connection signal="pressed" from="PurgeSave" to="." method="ClearDir"]
 [connection signal="pressed" from="close" to="." method="OptionsMenu"]

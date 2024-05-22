@@ -127,6 +127,10 @@ func ClearDir(): #TODO: REMOVE FOR FINAL RELEASE
 	var file_to_remove = "user://savegame.save"
 	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
 
+func OnCreditsButtonPressed():
+	$beeper.play()
+	get_tree().change_scene_to_file("res://EndScreen/Credits.tscn")
+
 func UnlockAll(): #TODO: REMOVE FOR FINAL RELEASE
 		GlobalVariables.GameStarted = 2
 		GlobalVariables.UnlockedLogs = [1,1,1,1,1,1,1,1,1]
