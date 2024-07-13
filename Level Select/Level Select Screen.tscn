@@ -574,8 +574,8 @@ theme_override_fonts/font = ExtResource("9_dogq0")
 theme_override_font_sizes/font_size = 30
 text = "High Score:"
 
-[connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Exit" to="." method="beep"]
+[connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
