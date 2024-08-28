@@ -186,9 +186,9 @@ offset_bottom = 277.0
 theme = ExtResource("3_nnqoy")
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_styles/pressed = ExtResource("6_ubtia")
-theme_override_styles/hover = ExtResource("6_ubtia")
 theme_override_styles/hover_pressed = ExtResource("6_ubtia")
+theme_override_styles/hover = ExtResource("6_ubtia")
+theme_override_styles/pressed = ExtResource("6_ubtia")
 text = " Calm"
 metadata/_edit_use_anchors_ = true
 
@@ -218,9 +218,9 @@ offset_bottom = 277.0
 theme = ExtResource("3_nnqoy")
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_styles/pressed = ExtResource("6_ubtia")
-theme_override_styles/hover = ExtResource("6_ubtia")
 theme_override_styles/hover_pressed = ExtResource("6_ubtia")
+theme_override_styles/hover = ExtResource("6_ubtia")
+theme_override_styles/pressed = ExtResource("6_ubtia")
 text = " Calm"
 metadata/_edit_use_anchors_ = true
 
@@ -252,9 +252,9 @@ offset_bottom = 274.0
 theme = ExtResource("3_nnqoy")
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-theme_override_styles/pressed = ExtResource("6_ubtia")
-theme_override_styles/hover = ExtResource("6_ubtia")
 theme_override_styles/hover_pressed = ExtResource("6_ubtia")
+theme_override_styles/hover = ExtResource("6_ubtia")
+theme_override_styles/pressed = ExtResource("6_ubtia")
 text = " Calm"
 metadata/_edit_use_anchors_ = true
 
@@ -744,7 +744,6 @@ bus = &"Actions"
 script = ExtResource("9_3vj8r")
 
 [node name="StartGame" type="Panel" parent="."]
-visible = false
 offset_left = 295.0
 offset_top = 123.0
 offset_right = 756.0
@@ -753,14 +752,21 @@ theme = ExtResource("3_nnqoy")
 theme_override_styles/panel = SubResource("StyleBoxFlat_k77d0")
 
 [node name="Button" type="Button" parent="StartGame"]
-layout_mode = 0
-offset_left = 80.0
-offset_top = 193.0
-offset_right = 351.0
-offset_bottom = 282.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -44.5
+offset_right = 138.0
+offset_bottom = 44.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_nnqoy")
 theme_override_font_sizes/font_size = 31
-text = "Begin Test"
+text = " Begin Test "
 
 [node name="quit" type="Button" parent="."]
 offset_left = 951.0

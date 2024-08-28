@@ -1,6 +1,6 @@
 extends Node
 
-var CreatureTypes = ["Phantom", "Wraith", "Shade", "Wendigo", "Mutant", "OctoPod"]
+var CreatureTypes = ["Spectral", "Auditory", "Luminous", "Vortex", "Tectonic", "Electromagnetic"]
 
 var Subject1Names = ["Jacob S.", "Kathryn B.", "Liam Z."]
 var Subject2Names = ["Olivia M.", "Noah E.", "Mia Q."]
