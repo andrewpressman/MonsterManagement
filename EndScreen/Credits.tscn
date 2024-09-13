@@ -26,8 +26,8 @@ text = "Developed By:
 Arkulite
 
 Voice Actors:
-Boogs - Sixer
-Momo - Miranda
+Boogie Boogs - Sixer
+@themomodiaries - Miranda
 Peach - Nexus PR voice
 
 Testers:
@@ -36,7 +36,7 @@ Sedona
 
 Art:
 TorrN
-Momo"
+Arkulite"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
