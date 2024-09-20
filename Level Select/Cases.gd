@@ -4,6 +4,30 @@ func _ready():
 	$Level1/BigInfo/Label.text = SetExperimentNumber(1) + Space() + SetCreature(1) + "\n" + "Threat Level:" + str(GlobalVariables.CurrentLevel) + Space() + SetNames(1) + Space() + SetDetails(1)
 	$Level2/BigInfo/Label.text = SetExperimentNumber(2) + Space() + SetCreature(2) + "\n" + "Threat Level:" + str(GlobalVariables.CurrentLevel) + Space() + SetNames(2) + Space() + SetDetails(2)
 	$Level3/BigInfo/Label.text = SetExperimentNumber(3) + Space() + SetCreature(3) + "\n" + "Threat Level:" + str(GlobalVariables.CurrentLevel) + Space() + SetNames(3) + Space() + SetDetails(3)
+	UpdateStatus()
+	
+#Level status, 0 = incomplete, 1 = complete w/o objective, 2 = completed w/ objective 
+func UpdateStatus():
+	if GlobalVariables.Level1Status == 0:
+		$Level1/MiniInfo/Label.text = "Experiment One"
+	if GlobalVariables.Level1Status == 1:
+		$Level1/MiniInfo/Label.text = "Experiment One : Passed"
+	if GlobalVariables.Level1Status == 2:
+		$Level1/MiniInfo/Label.text = "Experiment One : Complete"
+		
+	if GlobalVariables.Level2Status == 0:
+		$Level2/MiniInfo/Label.text = "Experiment Two"
+	if GlobalVariables.Level2Status == 1:
+		$Level2/MiniInfo/Label.text = "Experiment Two : Passed"
+	if GlobalVariables.Level2Status == 2:
+		$Level2/MiniInfo/Label.text = "Experiment Two : Complete"
+
+	if GlobalVariables.Level3Status == 0:
+		$Level3/MiniInfo/Label.text = "Experiment Three"
+	if GlobalVariables.Level3Status == 1:
+		$Level3/MiniInfo/Label.text = "Experiment Three : Passed"
+	if GlobalVariables.Level3Status == 2:
+		$Level3/MiniInfo/Label.text = "Experiment Three : Complete"
 	
 #Sets test number based on Current level + random big nubmer cus fun
 func SetExperimentNumber(testNo : int):

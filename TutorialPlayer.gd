@@ -5,12 +5,15 @@ var Infobox : ColorRect
 
 var LoreMessages = []
 
-var CurrMessage = 0
-var NewMessage = 1
+var CurrMessage : int = 0
+var NewMessage : int = 1
+
+var SpeakerSprite : Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 		AddMessages()
+		SpeakerSprite = $TextPanel/Speaker
 		if GlobalVariables.CurrentLevel == 1:
 			var file = FileAccess.open("res://Assets/Audio Files/Tutorial.txt", FileAccess.READ)
 			var content = file.get_as_text()
@@ -34,7 +37,7 @@ func AddMessages():
 		LoreMessages.append("i WaNt To bE FrEe") #7
 		LoreMessages.append("LET ME OUT OF THE CAGE") #8
 		LoreMessages.append("We are more than just subjects") #9
-		LoreMessages.append("don't believe its lies") #10
+		LoreMessages.append("don't believe their lies") #10
 
 func flashPanel(panel : int, time):
 	match panel:
@@ -139,7 +142,6 @@ func Subtitles():
 func CycleMessages():
 	await get_tree().create_timer(15).timeout
 	ReplaceMessage()
-	ShowImage(CurrMessage)	
 	$TextPanel/Text.text = LoreMessages[CurrMessage]
 	CycleMessages()
 	
@@ -153,11 +155,11 @@ func ReplaceMessage():
 	if NewMessage == CurrMessage:
 		ReplaceMessage()
 	else:
+		PickSprite(NewMessage)
 		CurrMessage = NewMessage
 	
-
-func ShowImage(sprite : int):
-	match sprite: #Show images based on what character is sending message
-		1:
-			pass 
-	pass #Show character image here
+func PickSprite(type : int):
+	if type <= 6:
+		SpeakerSprite.texture = load("res://Assets/Images/LogoBlank_Normal.png")
+	else:
+		SpeakerSprite.texture = load("res://Assets/Images/LogoBlank_Warped.png")

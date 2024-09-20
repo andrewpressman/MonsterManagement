@@ -234,7 +234,6 @@ theme_override_font_sizes/font_size = 20
 text = "Audio"
 
 [node name="Sound" type="Node2D" parent="OptionsMenu"]
-visible = false
 
 [node name="LabelGlobal" type="Label" parent="OptionsMenu/Sound"]
 offset_left = 14.0

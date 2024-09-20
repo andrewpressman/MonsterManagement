@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dst8wwsxp2d0w"]
+[gd_scene load_steps=17 format=3 uid="uid://dst8wwsxp2d0w"]
 
 [ext_resource type="Script" path="res://Level Select/Level.gd" id="1_1i0fd"]
 [ext_resource type="Script" path="res://Level Select/LevelSelector.gd" id="1_t3wki"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="8_anf0j"]
 [ext_resource type="AudioStream" uid="uid://dmjf0cqqpohd3" path="res://Assets/Audio Files/Other/NewMessage.wav" id="8_f6jyp"]
 [ext_resource type="FontFile" uid="uid://doi13s3itttyk" path="res://Assets/Fonts/modeseven.TTF" id="9_dogq0"]
+[ext_resource type="Texture2D" uid="uid://dvnuxauq6rb0y" path="res://Assets/Images/LogoBlank_Normal.png" id="12_suwhu"]
 [ext_resource type="Texture2D" uid="uid://crxddhjkh0amc" path="res://Assets/Images/Nexus-nwbg.webp" id="13_lf3je"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltro4"]
@@ -512,6 +513,11 @@ vertical_alignment = 1
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="MessagePanel/LogPlayer/Subtitles"]
+position = Vector2(50, 39)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_suwhu")
+
 [node name="NextLevel" type="Panel" parent="."]
 visible = false
 offset_left = 280.0
@@ -576,19 +582,19 @@ theme_override_fonts/font = ExtResource("9_dogq0")
 theme_override_font_sizes/font_size = 30
 text = "High Score:"
 
-[connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Exit" to="." method="beep"]
+[connection signal="pressed" from="Exit" to="." method="ReturnToMenu"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="_on_Level1_pressed"]
 [connection signal="pressed" from="Cases/Level1/select" to="." method="beep"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="_on_Level2_pressed"]
 [connection signal="pressed" from="Cases/Level2/select" to="." method="beep"]
-[connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
 [connection signal="pressed" from="Cases/Level3/select" to="." method="beep"]
-[connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
+[connection signal="pressed" from="Cases/Level3/select" to="." method="_on_Level3_pressed"]
 [connection signal="pressed" from="Begin" to="." method="beep"]
+[connection signal="pressed" from="Begin" to="." method="_on_begin_button_pressed"]
 [connection signal="pressed" from="MessagePanel/Button" to="." method="beep"]
 [connection signal="pressed" from="MessagePanel/Button" to="MessagePanel" method="PlayMessage"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="Reset"]
 [connection signal="pressed" from="NextLevel/Continue" to="." method="beep"]
-[connection signal="pressed" from="DecryptedData" to="." method="beep"]
 [connection signal="pressed" from="DecryptedData" to="." method="GoToLore"]
+[connection signal="pressed" from="DecryptedData" to="." method="beep"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btuntjjv6na06"
+path="res://.godot/imported/UpBeep.wav-d47f7efb30119ef39cc56a72befeee05.sample"
+
+[deps]
+
+source_file="res://Assets/Audio Files/Actions Sounds/UpBeep.wav"
+dest_files=["res://.godot/imported/UpBeep.wav-d47f7efb30119ef39cc56a72befeee05.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

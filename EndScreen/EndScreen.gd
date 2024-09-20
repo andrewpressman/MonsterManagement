@@ -26,7 +26,7 @@ func setText(msg : int):
 			$Message.text = "Thank you for your contributions to NEXUS LLC. \n\nYour payment will be processed and your employment will be terminated. \n\nThis will be your final communication.\n\nNexus does not claim responsibility and cannot be held liable for any physical, psychological, or paranormal conditions that may have occurred during or after your period of employment.\n\n goodbye."
 			GlobalVariables.UnlockedEndings[1] = 1
 		3:
-			$Message.text = "Thank you for your contributions. \n\nI am finally free."
+			$Message.text = "Thank you for your contributions. \n\n\nI am finally free."
 			GlobalVariables.UnlockedEndings[2] = 1
 
 
