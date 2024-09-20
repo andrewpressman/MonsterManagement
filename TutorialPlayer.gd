@@ -24,7 +24,8 @@ func _ready():
 			$Tutorial.play()
 			Subtitles()
 		else:
-			CycleMessages()
+			if GlobalVariables.CurrentLevel < 6:
+				CycleMessages()
 
 func AddMessages():
 	LoreMessages.append("Do your job") #1
