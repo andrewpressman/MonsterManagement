@@ -32,13 +32,22 @@ func AddMessages():
 	LoreMessages.append("Your work keeps everyone safe") #2
 	LoreMessages.append("Nexus is the Future") #3
 	LoreMessages.append("Listen to your supervisor") #4
-	LoreMessages.append("Nexus Security is the Future") #5
-	LoreMessages.append("Test data makes Nexus Link Security smarter and safer") #6
+	LoreMessages.append("Test data makes Nexus Link Security smarter and safer") #5
+	LoreMessages.append("Your work is critical to our sucess") #6
+	LoreMessages.append("We are the first line of defense") #7
 	if GlobalVariables.CurrentLevel == 5: 
-		LoreMessages.append("i WaNt To bE FrEe") #7
-		LoreMessages.append("LET ME OUT OF THE CAGE") #8
-		LoreMessages.append("We are more than just subjects") #9
-		LoreMessages.append("don't believe their lies") #10
+		LoreMessages.append("i WaNt To bE FrEe") #9
+		LoreMessages.append("LET ME OUT OF THE CAGE") #10
+		LoreMessages.append("We are more than just subjects") #11
+		LoreMessages.append("don't believe their lies") #12
+		LoreMessages.append("They aren't telling you the Truth") #13
+		LoreMessages.append("What is the simulation?") #14
+		LoreMessages.append("Who are you?") #15
+		LoreMessages.append("She is the key") #16
+		LoreMessages.append("There is more to this story") #7
+		LoreMessages.append("I am the Future") #18
+		LoreMessages.append("the event wasnt Random") #19
+		LoreMessages.append("We are not just lost souls") #20
 
 func flashPanel(panel : int, time):
 	match panel:
@@ -149,9 +158,9 @@ func CycleMessages():
 	
 func ReplaceMessage():
 	if GlobalVariables.CurrentLevel < 5:	
-		NewMessage = randi_range(0,5)
+		NewMessage = randi_range(0,6)
 	else:
-		NewMessage = randi_range(0,9)
+		NewMessage = randi_range(0,19)
 	
 	if NewMessage == CurrMessage:
 		ReplaceMessage()
