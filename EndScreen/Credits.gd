@@ -8,3 +8,7 @@ func _ready():
 
 func OnMenuButton():
 	get_tree().change_scene_to_file("res://Home Screen/MainMenu.tscn")
+
+func ShowHideLicensePanel():
+	$Info.visible = !$Info.visible
+	$Credits.visible = !$Credits.visible

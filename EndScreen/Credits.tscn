@@ -15,15 +15,14 @@ offset_bottom = 764.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Credits" type="Label" parent="."]
 offset_left = 22.0
 offset_top = 72.0
 offset_right = 1150.0
-offset_bottom = 641.0
+offset_bottom = 645.0
 theme_override_fonts/font = ExtResource("1_b44t5")
 theme_override_font_sizes/font_size = 30
-text = "Developed By:
-Arkulite
+text = "Developed By: Arkulite
 
 Voice Actors:
 Boogie Boogs - Sixer
@@ -31,11 +30,12 @@ Boogie Boogs - Sixer
 Peach - Nexus PR voice
 
 Testers:
-Rezz
-Sedona
+Rezz   Sedona
 
 Art:
-@TorrN"
+@TorrN
+
+Made with Godot Engine: https://godotengine.org/license/"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
@@ -45,6 +45,52 @@ offset_right = 1142.0
 offset_bottom = 637.0
 theme = ExtResource("2_k48f6")
 text = "menu"
+
+[node name="Info" type="Panel" parent="."]
+visible = false
+offset_left = 217.0
+offset_top = 68.0
+offset_right = 978.0
+offset_bottom = 561.0
+
+[node name="Label" type="Label" parent="Info"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 751.0
+offset_bottom = 480.0
+text = "https://godotengine.org/license/
+
+This game uses Godot Engine, available under the following license:
+
+Copyright (c) 2014-present Godot Engine contributors.
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the \"Software\"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."
+
+[node name="License" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 576.0
+offset_right = 161.0
+offset_bottom = 638.0
+theme = ExtResource("2_k48f6")
+text = "License"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 1.0
@@ -57,3 +103,4 @@ text = "Thanks to All who helped out:"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="OnMenuButton"]
+[connection signal="pressed" from="License" to="." method="ShowHideLicensePanel"]
