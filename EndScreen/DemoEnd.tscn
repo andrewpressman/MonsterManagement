@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm2kgp5ftkntc"]
+[gd_scene load_steps=4 format=3 uid="uid://b4ohoumu1pnqu"]
 
-[ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="1_b44t5"]
-[ext_resource type="Script" uid="uid://rwgmrp3lsfcj" path="res://EndScreen/Credits.gd" id="1_cdbro"]
-[ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="2_k48f6"]
+[ext_resource type="Script" uid="uid://rwgmrp3lsfcj" path="res://EndScreen/Credits.gd" id="1_do6mn"]
+[ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="2_60yrm"]
+[ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="3_js6hb"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_cdbro")
+script = ExtResource("1_do6mn")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -88.0
@@ -17,25 +17,14 @@ metadata/_edit_lock_ = true
 
 [node name="Credits" type="Label" parent="."]
 offset_left = 22.0
-offset_top = 72.0
+offset_top = 251.0
 offset_right = 1150.0
-offset_bottom = 645.0
-theme_override_fonts/font = ExtResource("1_b44t5")
+offset_bottom = 414.0
+theme_override_fonts/font = ExtResource("2_60yrm")
 theme_override_font_sizes/font_size = 30
-text = "Developed By: Arkulite
+text = "Full game available now on itch.io
 
-Voice Actors:
-Boogie Boogs - Sixer
-@themomodiaries - Miranda
-Peach - Nexus PR voice
-
-Testers:
-Rezz   Sedona
-
-Art:
-@TorrN
-
-Made with Godot Engine: https://godotengine.org/license/"
+All progress will transfer to the full game"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
@@ -43,7 +32,7 @@ offset_left = 1017.0
 offset_top = 575.0
 offset_right = 1142.0
 offset_bottom = 637.0
-theme = ExtResource("2_k48f6")
+theme = ExtResource("3_js6hb")
 text = "menu"
 
 [node name="Info" type="Panel" parent="."]
@@ -84,14 +73,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."
 
-[node name="License" type="Button" parent="."]
-offset_left = 15.0
-offset_top = 576.0
-offset_right = 161.0
-offset_bottom = 638.0
-theme = ExtResource("2_k48f6")
-text = "License"
-
 [node name="Label2" type="Label" parent="."]
 offset_left = 1.0
 offset_top = 25.0
@@ -99,8 +80,7 @@ offset_right = 1150.0
 offset_bottom = 75.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 37
-text = "Thanks to All who helped out:"
+text = "Thanks for Trying out Monster management!"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="OnMenuButton"]
-[connection signal="pressed" from="License" to="." method="ShowHideLicensePanel"]

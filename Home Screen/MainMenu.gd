@@ -122,19 +122,19 @@ func LoadGame():
 	if "UnlockedEndings" in save_data:
 		GlobalVariables.UnlockedEndings = save_data["UnlockedEndings"]
 
-#func ClearDir(): Only for DEBUG purpoeses. Connect to PurgeSave button
-#	if not FileAccess.file_exists("user://savegame.save"):
-#		return #no save game detected.
-#	var file_to_remove = "user://savegame.save"
-#	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
+func ClearDir(): #Only for DEBUG purpoeses. Connect to PurgeSave button
+	if not FileAccess.file_exists("user://savegame.save"):
+		return #no save game detected.
+	var file_to_remove = "user://savegame.save"
+	OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
 
 func OnCreditsButtonPressed():
 	$beeper.play()
 	get_tree().change_scene_to_file("res://EndScreen/Credits.tscn")
 
-#func UnlockAll(): Only for DEBUG purpoeses. Connect to UnlockEndlessButton
-#		GlobalVariables.GameStarted = 2
-#		GlobalVariables.UnlockedLogs = [1,1,1,1,1,1,1,1,1]
+func UnlockAll(): #Only for DEBUG purpoeses. Connect to UnlockEndlessButton
+		GlobalVariables.GameStarted = 2
+		GlobalVariables.UnlockedLogs = [1,1,1,1,1,1,1,1,1]
 
 #Code for level switching post endgame
 func Debug1():

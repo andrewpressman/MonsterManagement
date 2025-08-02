@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://6mmubadtcavy"]
 
-[ext_resource type="Script" path="res://Lore Screen/LoreScreen.gd" id="1_5jo4d"]
+[ext_resource type="Script" uid="uid://ctxx2rjhoxeit" path="res://Lore Screen/LoreScreen.gd" id="1_5jo4d"]
 [ext_resource type="FontFile" uid="uid://cjinnl4kb80xv" path="res://Assets/Fonts/TermReg.ttf" id="1_6sl5u"]
-[ext_resource type="Script" path="res://Lore Screen/LogControl.gd" id="1_ogcst"]
-[ext_resource type="Script" path="res://Lore Screen/DecryptedLogs.gd" id="2_xj4dm"]
+[ext_resource type="Script" uid="uid://c71230stgux8i" path="res://Lore Screen/LogControl.gd" id="1_ogcst"]
+[ext_resource type="Script" uid="uid://pusyqtbd30p8" path="res://Lore Screen/DecryptedLogs.gd" id="2_xj4dm"]
 [ext_resource type="FontFile" uid="uid://oska4i2dd12t" path="res://Assets/Fonts/SansSerif.ttf" id="4_lepwq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66wy3"]

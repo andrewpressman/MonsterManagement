@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdt441cqsrc7a"]
 
-[ext_resource type="Script" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
+[ext_resource type="Script" uid="uid://h5anilnrwhye" path="res://Home Screen/MainMenu.gd" id="1_jo4rk"]
 [ext_resource type="AudioStream" uid="uid://b2x4elq7qvpop" path="res://Assets/Audio Files/Other/ButtonBeep.wav" id="2_hb7u0"]
 [ext_resource type="FontFile" uid="uid://cv5f32m7wk82g" path="res://Assets/Fonts/bitwise.ttf" id="2_uwmcg"]
-[ext_resource type="Script" path="res://Home Screen/Options.gd" id="3_71vsw"]
+[ext_resource type="Script" uid="uid://b5feyjlrnxqlh" path="res://Home Screen/Options.gd" id="3_71vsw"]
 [ext_resource type="Theme" uid="uid://4rojl1yvxswb" path="res://Assets/UITheme.tres" id="3_7772i"]
-[ext_resource type="Script" path="res://Home Screen/Volume.gd" id="4_byofg"]
+[ext_resource type="Script" uid="uid://dyhhoi40rbw24" path="res://Home Screen/Volume.gd" id="4_byofg"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_mffdt"]
 
@@ -210,6 +210,7 @@ theme_override_font_sizes/font_size = 20
 allow_reselect = true
 item_count = 2
 popup/item_0/text = "Full Screen"
+popup/item_0/id = 0
 popup/item_1/text = "Windowed"
 popup/item_1/id = 1
 
@@ -412,4 +413,6 @@ metadata/_edit_lock_ = true
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelAmbients/HSlider" to="OptionsMenu" method="OnAmbienceVolumeChanged"]
 [connection signal="value_changed" from="OptionsMenu/Sound/LabelAmbients/HSlider" to="OptionsMenu/Sound/LabelAmbients/HSlider" method="onValueChanged"]
 [connection signal="pressed" from="OptionsMenu/Button" to="." method="OnCreditsButtonPressed"]
+[connection signal="pressed" from="UnlockEndless" to="." method="UnlockAll"]
+[connection signal="pressed" from="PurgeSave" to="." method="ClearDir"]
 [connection signal="pressed" from="close" to="." method="OptionsMenu"]

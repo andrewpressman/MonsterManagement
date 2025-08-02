@@ -63,6 +63,10 @@ func _ready():
 			SelectEnding()
 			$NextLevel/Label.text = "Test Complete p̴͙̬̰̿͊r̸̥̠̬͐͒o̴̫̊ͅc̴̛͕̍͠ẹ̵̈̎͝ë̴̳͆d̴͓̘̼͋͂̎"
 			GlobalVariables.GameStarted = 2
+		if GlobalVariables.CurrentLevel < 2:
+			$NextLevel/Label.text = "All Tests passed, Proceed to next shift"
+		else:
+			$NextLevel/Label.text = "End of Demo, More in the full game"
 		NextLevel.show()
 	else:
 		NextLevel.hide()
@@ -105,7 +109,7 @@ func Startup():
 	$Begin.visible = true
 	await get_tree().create_timer(.3).timeout
 	if GlobalVariables.CurrentLevel > 1:
-		$DecryptedData.visible = true
+		$DecryptedData.visible = false
 	else:
 		$DecryptedData.visible = false
 
@@ -232,19 +236,23 @@ func setDifficulty(yellow:int, red:int, maxVal:int, INC:int, DEC:int):
 
 #reset values and proceed to next level
 func Reset():
-	GlobalVariables.Level1Status = 0
-	GlobalVariables.Level2Status = 0
-	GlobalVariables.Level3Status = 0
-	GlobalVariables.MessagePlayed = false
-	SetStatus()
-	GlobalVariables.CurrentLevel += 1
-	SetLevel()
-	NextLevel.hide()
-	if GlobalVariables.GameStarted == 2:
-		get_tree().change_scene_to_file("res://EndScreen/VictoryScreen.tscn")
+	if GlobalVariables.CurrentLevel < 2:
+		GlobalVariables.Level1Status = 0
+		GlobalVariables.Level2Status = 0
+		GlobalVariables.Level3Status = 0
+		GlobalVariables.MessagePlayed = false
+		SetStatus()
+		GlobalVariables.CurrentLevel += 1
+		SetLevel()
+		NextLevel.hide()
+		if GlobalVariables.GameStarted == 2:
+			get_tree().change_scene_to_file("res://EndScreen/VictoryScreen.tscn")
+		else:
+			Save()
+			get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
 	else:
 		Save()
-		get_tree().change_scene_to_file("res://Level Select/Level Select Screen.tscn")
+		get_tree().change_scene_to_file("res://EndScreen/DemoEnd.tscn")
 	
 #show selected bigInfo
 func showBig(button : int):

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="MonsterManagement"
 run/main_scene="res://Home Screen/MainMenu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="res://Assets/Images/GameLogo.png"
 config/icon="res://icon.svg"
 config/windows_native_icon="res://Assets/Images/NexusIcon.ico"
